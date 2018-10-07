@@ -68,4 +68,32 @@ print(list(result))
 #<map object at 0x002E0CF0>
 #['anshu', 'anuj', 'anshu']
 =============================
-
+l = ['sat', 'bat', 'cat', 'mat']
+test = list(map(list, l))
+print(test)
+#[['s', 'a', 't'], ['b', 'a', 't'], ['c', 'a', 't'], ['m', 'a', 't']]
+===================
+def calculateSquare(n):
+  return n*n
+numbers = (1, 2, 3, 4)
+result = map(calculateSquare, numbers)
+print(result)
+numbersSquare = set(result)
+print(numbersSquare)
+#<map object at 0x005D9E50>
+#{16, 1, 4, 9}
+===================
+numbers = (1, 2, 3, 4)
+result = map(lambda x: x*x, numbers)
+print(result)
+numbersSquare = set(result)
+print(numbersSquare)
+#<map object at 0x00499E50>
+#{16, 1, 4, 9}
+===================
+def myfunc(n):
+  return len(n)
+x = map(myfunc, ('apple', 'banana', 'cherry'))
+print(list(x))
+#[5, 6, 6]
+===================
