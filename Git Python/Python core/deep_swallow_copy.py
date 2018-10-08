@@ -1,1 +1,109 @@
 #deep_swallowcopy.py
+===============================
+import copy 
+li1 = [1, 2, [3,5], 4] 
+li2 = copy.deepcopy(li1) 
+print ("The original elements before deep copying") 
+for i in range(0,len(li1)): 
+    print (li1[i],end=" ") 
+print("\r") 
+li2[2][0] = 7
+print ("The new list of elements after deep copying ") 
+for i in range(0,len( li1)): 
+    print (li2[i],end=" ") 
+print("\r") 
+print ("The original elements after deep copying") 
+for i in range(0,len( li1)): 
+    print (li1[i],end=" ")
+#The original elements before deep copying
+#1 2 [3, 5] 4 
+#The new list of elements after deep copying 
+#1 2 [7, 5] 4 
+#The original elements after deep copying
+#1 2 [3, 5] 4  
+=======================================
+import copy 
+li1 = [1, 2, [3,5], 4] 
+li2 = copy.copy(li1) 
+print ("The original elements before shallow copying") 
+for i in range(0,len(li1)): 
+    print (li1[i],end=" ") 
+print("\r") 
+li2[2][0] = 7
+print ("The original elements after shallow copying") 
+for i in range(0,len( li1)): 
+    print (li1[i],end=" ") 
+#The original elements before shallow copying
+#1 2 [3, 5] 4 
+#The original elements after shallow copying
+#1 2 [7, 5] 4 
+==========================================
+import copy
+old_list = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+new_list = copy.copy(old_list)
+print("Old list:", old_list)
+print("New list:", new_list)
+#Old list: [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+#New list: [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+===========================================
+import copy
+old_list = [[1, 1, 1], [2, 2, 2], [3, 3, 3]]
+new_list = copy.copy(old_list)
+old_list.append([4, 4, 4])
+print("Old list:", old_list)
+print("New list:", new_list)
+#Old list: [[1, 1, 1], [2, 2, 2], [3, 3, 3], [4, 4, 4]]
+#New list: [[1, 1, 1], [2, 2, 2], [3, 3, 3]]
+============================================
+import copy
+old_list = [[1, 1, 1], [2, 2, 2], [3, 3, 3]]
+new_list = copy.copy(old_list)
+old_list[1][1] = 'AA'
+print("Old list:", old_list)
+print("New list:", new_list)
+#Old list: [[1, 1, 1], [2, 'AA', 2], [3, 3, 3]]
+#New list: [[1, 1, 1], [2, 'AA', 2], [3, 3, 3]]
+=============================================
+import copy
+old_list = [[1, 1, 1], [2, 2, 2], [3, 3, 3]]
+new_list = copy.deepcopy(old_list)
+print("Old list:", old_list)
+print("New list:", new_list)
+#Old list: [[1, 1, 1], [2, 2, 2], [3, 3, 3]]
+#New list: [[1, 1, 1], [2, 2, 2], [3, 3, 3]]
+===============================================
+import copy
+old_list = [[1, 1, 1], [2, 2, 2], [3, 3, 3]]
+new_list = copy.deepcopy(old_list)
+old_list[1][0] = 'BB'
+print("Old list:", old_list)
+print("New list:", new_list)
+#Old list: [[1, 1, 1], ['BB', 2, 2], [3, 3, 3]]
+#New list: [[1, 1, 1], [2, 2, 2], [3, 3, 3]]
+=================================================
+import copy
+list1 = [1,2,3,4,[5,8,7],7]
+list2 = copy.deepcopy(list1)
+print(list1)
+print(list2)
+list2[4][2]=10
+print(list1)
+print(list2)
+#[1, 2, 3, 4, [5, 8, 7], 7]
+#[1, 2, 3, 4, [5, 8, 7], 7]
+#[1, 2, 3, 4, [5, 8, 7], 7]
+#[1, 2, 3, 4, [5, 8, 10], 7]
+=================================================
+import copy
+list1 = [1,2,3,4,[5,8,7],7]
+list2 = copy.copy(list1)
+print(list1)
+print(list2)
+list2[4][2]=10
+print(list1)
+print(list2)
+#[1, 2, 3, 4, [5, 8, 7], 7]
+#[1, 2, 3, 4, [5, 8, 7], 7]
+#[1, 2, 3, 4, [5, 8, 10], 7]
+#[1, 2, 3, 4, [5, 8, 10], 7]
+===================================================
