@@ -359,12 +359,29 @@ c.print(
 #1 20
 ==========================
 class A:
+    def __init__(self):
+        self.__x = 1
+        self.y = 10
+
+    def print(self):
+        print(self.__x, self.y)
+class B(A):
+    def __init__(self):
+        super().__init__()
+        self.__x = 2
+        self.y = 20
+    def print(self):
+        print(self.__x,self.y)
+c = B()
+c.print()
+# 2 20
+==========================
+class A:
     def __init__(self, x = 0):
         self.x = x
 
     def func1(self):
         self.x += 1
-
 class B(A):
     def __init__(self, y = 0):
        A.__init__(self, 3)
