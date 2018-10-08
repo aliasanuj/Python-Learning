@@ -138,3 +138,15 @@ test_var_args_call(1, **kwargs)
 #arg2: two
 #arg3: 3
 ===========================
+def abc(**data):
+  for x,y in data.items():
+    print("{} is {}".format(x,y))
+abc(name="anuj",city="patna")
+abc(name="aman",city="agra",rollno=101,company="NIIT")
+#name is anuj
+#city is patna
+#name is aman
+#city is agra
+#rollno is 101
+#company is NIIT
+==================================
