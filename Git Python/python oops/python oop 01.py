@@ -301,8 +301,34 @@ def main():
     print(b.i, b.j)
 main()
 #A.__init__(self)
-#B.super().__init__() 
+#super().__init__() 
 ==========================
+class A:
+    def __init__(self, i = 1):
+        self.i = i
+class B(A):
+    def __init__(self, j = 2):
+        A.__init__(self)
+        self.j = j
+def main():
+    b = B()
+    print(b.i, b.j)
+main()
+#1 2
+=========================
+class A:
+    def __init__(self, i = 1):
+        self.i = i
+class B(A):
+    def __init__(self, j = 2):
+        super().__init__()
+        self.j = j
+def main():
+    b = B()
+    print(b.i, b.j)
+main()
+#1 2
+============================
 class A:
     def __init__(self, x = 1):
         self.x = x
