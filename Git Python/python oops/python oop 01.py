@@ -124,6 +124,24 @@ class B(A):
         self.i = 3 * i;
 b = B()
 #i from A is 90
+=======================
+class A:
+    def __init__(self):
+        self.abc(30)
+        print(self.i)
+        print("i from A is", self.i)
+
+    def abc(self, i):
+        self.i = 2 * i;
+class B(A):
+    def __init__(self):
+        super().__init__()
+
+    def abc(self, i):
+        self.i = 3 * i;
+b = B()
+#90
+#i from A is 90
 ========================
 class A:
     def __init__(self):
@@ -140,6 +158,22 @@ class B(A):
 b = B()
 #i from B is 90
 ==========================
+class A:
+    def __init__(self):
+        self.abc(30)
+        print(self.i)
+    def abc(self, i):
+        self.i = 2 * i;
+class B(A):
+    def __init__(self):
+        super().__init__()
+        print("i from B is", self.i)
+    def abc(self, i):
+        self.i = 3 * i;
+b = B()
+#90
+#i from B is 90
+========================
 class Test:
     def __init__(self, s):
         self.s = s
