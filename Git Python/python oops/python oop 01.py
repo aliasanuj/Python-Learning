@@ -446,6 +446,17 @@ print ("%d %d" % (obj.x, obj.y))
 ================================
 class A:
     def __init__(self, num):
+        self.x = num
+class B(A):
+    def __init__(self, num):
+        self.x = num
+        self.y = num
+obj = B(11)
+print ("%d %d" % (obj.x, obj.y))
+#11 11
+================================
+class A:
+    def __init__(self, num):
         self.x = 10
 class B(A):
     def __init__(self, num):
