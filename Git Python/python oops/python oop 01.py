@@ -216,6 +216,20 @@ print(val.x)
 #1
 ==============================
 class Test:
+    def __init__(self,m=15):
+        self.m = m
+        self.x = 1
+        self.__y = 1
+
+    def getY(self):
+        return self.__y
+val = Test()
+print(val.x)
+print(val.m)
+#1
+#15
+=============================
+class Test:
     def __init__(self):
         self.x = 1
         self.__y = 1
