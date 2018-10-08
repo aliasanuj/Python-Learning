@@ -32,3 +32,46 @@ corou.close()
 #Dear Atul
 #Closing coroutine!!
 ========================
+def grep(pattern):
+    print("Searching for", pattern)
+    while True:
+        line = (yield)
+        if pattern in line:
+            print(line)
+search = grep('coroutine')
+next(search)
+# Output: Searching for coroutine
+search.send("I love you")
+search.send("Don't you love me?")
+search.send("I love coroutines instead!")
+# Output: I love coroutines instead!
+#Searching for coroutine
+I love coroutines instead!
+============================
+def my_coroutine():
+    while True:
+        received = yield
+        print('Received:', received)
+it = my_coroutine()
+next(it)             # Prime the coroutine
+it.send('First')
+it.send('Second')
+#Received: First
+#Received: Second
+================================
+def minimize():
+    current = yield
+    while True:
+        value = yield current
+        current = min(value, current)
+it = minimize()
+next(it)            # Prime the generator
+print(it.send(10))
+print(it.send(4))
+print(it.send(22))
+print(it.send(-1))
+#10
+#4
+#4
+#-1
+================================
