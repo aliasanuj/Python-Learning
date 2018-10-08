@@ -204,3 +204,148 @@ print ("Phone Num : ", num)
 =================================================================
 https://www.tutorialspoint.com/python/python_reg_expressions.htm
 ==================================================================
+import re
+string1 = '''anuj is 25 and Rupesh is 26
+            Aman is 57 and anshu is 26'''
+age = re.findall(r'\d{1,3}',string1)
+name = re.findall(r'[A-Z][a-z]*',string1)
+print(age)
+print(name)
+#['25', '26', '57', '26']
+#['Rupesh', 'Aman']
+================================
+import re
+string1 = '''anuj is 25 and Rupesh is 26
+            Aman is 57 and anshu is 26'''
+age = re.findall(r'\d{1,3}',string1)
+name = re.findall(r'[A-Z][a-z]*',string1)
+dict = {}
+x = 0
+for i in name:
+    dict[i] = age[x]
+    x = x+1
+print(dict)
+#{'Rupesh': '25', 'Aman': '26'}
+===============================
+import re
+name = "anuj anuj Anuj aman Anuj"
+regex = re.findall("Anuj",name)
+for i in regex:
+    print(i)
+#Anuj
+#Anuj
+===============================
+import re
+string1 = "kumar anun Anuj"
+if re.search("Anuj",string1):
+    print("available")
+else:
+    print("not present")
+#available
+==============================
+import re
+name = "anuj anuj Anuj aman dhfjdAnujjghfd"
+regex = re.findall("Anuj",name)
+for i in regex:
+    print(i)
+#Anuj
+#Anuj
+==================================
+import re
+name = "anuj anuj Anuj aman dhfjdAnujjghfd"
+regex = re.finditer("Anuj",name)
+for i in regex:
+    abc = i.span()
+    print(abc)
+#(10, 14)
+#(25, 29)
+=================================
+import re
+string = "sat pat nat mat"
+regex = re.findall("[spne]at",string)
+for i in regex:
+    print(i)
+#sat
+#pat
+#nat
+===================================
+import re
+string ="sat pat nat mat"
+regex = re.findall("[p-t]at",string)
+for i in regex:
+    print(i)
+#sat
+#pat
+===================================
+import re
+string = "sat pat nat mat"
+regex = re.findall("[^p-t]at",string)
+for i in regex:
+    print(i)
+#nat
+#mat
+===================================
+import re
+string = "anuj anshu aman"
+abc = re.compile("anuj")
+string = abc.sub("aman",string)
+print(string)
+#aman anshu aman
+==============================
+import re
+abc = "here is \\drogba"
+print(re.search(r"\\drogba",abc))
+#<re.Match object; span=(8, 15), match='\\drogba'>
+==============================
+import re
+str = '''anuj
+kumar
+aman
+anshu
+'''
+regex = re.compile("\n")
+result = regex.sub(" ",str)
+print(result)
+#anuj kumar aman anshu 
+==============================
+import re
+a = "12345649874044444"
+print("matches:",len(re.findall("\d",a)))
+print("matches:",len(re.findall("\D",a)))
+print("matches:",len(re.findall("\d[4]",a)))
+#matches: 17
+#matches: 0
+#matches: 6
+==============================
+import re
+a = "12345 123456 1234567"
+b = len(re.findall("\d{6,7}",a))
+print(b)
+#2
+==============================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
