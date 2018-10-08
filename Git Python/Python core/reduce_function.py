@@ -69,3 +69,44 @@ print(product)
 print(list( filter((lambda x: x < 0), range(-5,5))))
 #[-5, -4, -3, -2, -1]
 =============================
+list1 = [1,2,3,4,5,6]
+def add(x):
+    return x+x
+result = map(add,list1)
+print(list(result))
+#[2, 4, 6, 8, 10, 12]
+========================
+import functools
+import operator
+list1 = [1,2,3,4,5,6]
+result = functools.reduce(operator.add,list1)
+print(result)
+#21
+========================
+import functools
+import operator
+list1 = [1,2,3,4,5,6]
+result = functools.reduce(lambda x,y : x+y,list1)
+print(result)
+#21
+========================
+import functools
+lis = [1, 3, 5, 6, 2, ]
+print("The sum of the list elements is : ", end="")
+print(functools.reduce(lambda a, b: a + b, lis))
+print("The maximum element of the list is : ", end="")
+print(functools.reduce(lambda a, b: a if a > b else b, lis))
+#The sum of the list elements is : 17
+#The maximum element of the list is : 6
+========================
+import functools
+import operator
+list1 = [1,2,3,4,5,6]
+result = functools.reduce(lambda x,y : y,list1)
+print(result)
+result = functools.reduce(lambda x,y : x,list1)
+print(result)
+#6
+#1
+========================
+
