@@ -33,7 +33,7 @@ class EmployeeData:
         print("salary is {} and age is {}".format(self.sal,self.age))
 obj = EmployeeData(30000,25)
 obj.getData()
-
+ 
 #salary is 30000 and age is 25
 ================================
 class EmployeeData:
