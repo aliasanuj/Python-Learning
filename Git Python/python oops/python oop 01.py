@@ -483,6 +483,24 @@ main()
 #2
 =================================
 class A:
+    def __init__(self):
+        self.x = 1
+
+    def func(self):
+        self.x = 10
+class B(A):
+    def func(self):
+        print(self.x)
+        self.x += 1
+        return self.x
+def main():
+    b = B()
+    print(b.func())
+main()
+#1
+#2
+=================================
+class A:
     def __str__(self):
         return "A"
 class B(A):
