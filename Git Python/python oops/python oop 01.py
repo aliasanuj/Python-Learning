@@ -78,12 +78,37 @@ class A:
         self.i = i
 class B(A):
     def __init__(self, j = 0):
-        self.j = jb = B()
+        self.j = j
+b = B()
 print(b.i)
 print(b.j)
 
 #AttributeError: 'B' object has no attribute 'i'
 ========================
+class A:
+    def __init__(self, i = 0):
+        self.i = i
+class B(A):
+    def __init__(self, j = 0):
+        self.j = j
+b = B()
+#print(b.i)
+print(b.j)
+#0
+=========================
+class A:
+    def __init__(self, i = 0):
+        self.i = i
+class B(A):
+    def __init__(self, j = 0):
+        self.i = 0
+        self.j = j
+b = B()
+print(b.i)
+print(b.j)
+#0
+#0
+==========================
 class A:
     def __init__(self):
         self.abc(30)
