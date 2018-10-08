@@ -182,7 +182,7 @@ class Test:
         print(self.s)
 a = Test("Python Class")
 a.print()
-#erroe -> self.s
+#python Class
 =========================
 class Test:
     def __init__(self, s):
