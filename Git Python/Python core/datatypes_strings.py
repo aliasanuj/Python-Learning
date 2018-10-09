@@ -148,6 +148,7 @@ print("He said, \"What's there?\"")
 #He said, "What's there?"
 =====================================
 Escape Sequence	Description
+=====================================
 \newline	Backslash and newline ignored
 \\	Backslash
 \'	Single quote
@@ -283,59 +284,61 @@ print("Split the words of the string: %s" % s.split(" "))
 #Split the words of the string: ['Hey', 'there!', 'what', 'should', 'this', 'string', 'be?']
 ========================================
 Method	Description
-capitalize()	Converts the first character to upper case
-casefold()	Converts string into lower case
-center()	Returns a centered string
-count()	Returns the number of times a specified value occurs in a string
-encode()	Returns an encoded version of the string
-endswith()	Returns true if the string ends with the specified value
+========================================
+capitalize()          Converts the first character to upper case
+casefold()	           Converts string into lower case
+center()	           Returns a centered string
+count()	           Returns the number of times a specified value occurs in a string
+encode()	           Returns an encoded version of the string
+endswith()	           Returns true if the string ends with the specified value
 expandtabs()	Sets the tab size of the string
-find()	Searches the string for a specified value and returns the position of where it was found
-format()	Formats specified values in a string
+find()	           Searches the string for a specified value and returns the position of where it was found
+format()	           Formats specified values in a string
 format_map()	Formats specified values in a string
-index()	Searches the string for a specified value and returns the position of where it was found
-isalnum()	Returns True if all characters in the string are alphanumeric
-isalpha()	Returns True if all characters in the string are in the alphabet
+index()	           Searches the string for a specified value and returns the position of where it was found
+isalnum()	           Returns True if all characters in the string are alphanumeric
+isalpha()	           Returns True if all characters in the string are in the alphabet
 isdecimal()	Returns True if all characters in the string are decimals
-isdigit()	Returns True if all characters in the string are digits
+isdigit()	           Returns True if all characters in the string are digits
 isidentifier()	Returns True if the string is an identifier
-islower()	Returns True if all characters in the string are lower case
+islower()	           Returns True if all characters in the string are lower case
 isnumeric()	Returns True if all characters in the string are numeric
 isprintable()	Returns True if all characters in the string are printable
-isspace()	Returns True if all characters in the string are whitespaces
-istitle()	Returns True if the string follows the rules of a title
-isupper()	Returns True if all characters in the string are upper case
-join()	Joins the elements of an iterable to the end of the string
-ljust()	Returns a left justified version of the string
-lower()	Converts a string into lower case
-lstrip()	Returns a left trim version of the string
+isspace()	           Returns True if all characters in the string are whitespaces
+istitle()	           Returns True if the string follows the rules of a title
+isupper()	           Returns True if all characters in the string are upper case
+join()	           Joins the elements of an iterable to the end of the string
+ljust()	           Returns a left justified version of the string
+lower()	           Converts a string into lower case
+lstrip()	           Returns a left trim version of the string
 maketrans()	Returns a translation table to be used in translations
 partition()	Returns a tuple where the string is parted into three parts
-replace()	Returns a string where a specified value is replaced with a specified value
-rfind()	Searches the string for a specified value and returns the last position of where it was found
-rindex()	Searches the string for a specified value and returns the last position of where it was found
+replace()	           Returns a string where a specified value is replaced with a specified value
+rfind()	           Searches the string for a specified value and returns the last position of where it was found
+rindex()	           Searches the string for a specified value and returns the last position of where it was found
 rpartition()	Returns a tuple where the string is parted into three parts
-rsplit()	Splits the string at the specified separator, and returns a list
-rstrip()	Returns a right trim version of the string
-split()	Splits the string at the specified separator, and returns a list
+rsplit()	           Splits the string at the specified separator, and returns a list
+rstrip()	           Returns a right trim version of the string
+split()	           Splits the string at the specified separator, and returns a list
 splitlines()	Splits the string at line breaks and returns a list
 startswith()	Returns true if the string starts with the specified value
-swapcase()	Swaps cases, lower case becomes upper case and vice versa
-title()	Converts the first character of each word to upper case
+swapcase()	           Swaps cases, lower case becomes upper case and vice versa
+title()	           Converts the first character of each word to upper case
 translate()	Returns a translated string
-upper()	Converts a string into upper case
-zfill()	Fills the string with a specified number of 0 values at the beginning
+upper()	           Converts a string into upper case
+zfill()	           Fills the string with a specified number of 0 values at the beginning
 =========================================
-s.lower(), s.upper() -- returns the lowercase or uppercase version of the string
-s.strip() -- returns a string with whitespace removed from the start and end
+s.lower(), s.upper() --          returns the lowercase or uppercase version of the string
+s.strip() --                     returns a string with whitespace removed from the start and end
 s.isalpha()/s.isdigit()/s.isspace()... -- tests if all the string chars are in the various character classes
 s.startswith('other'), s.endswith('other') -- tests if the string starts or ends with the given other string
-s.find('other') -- searches for the given other string (not a regular expression) within s, and returns the first index where it begins or -1 if not found
-s.replace('old', 'new') -- returns a string where all occurrences of 'old' have been replaced by 'new'
-s.split('delim') -- returns a list of substrings separated by the given delimiter. The delimiter is not a regular expression, it's just text. 'aaa,bbb,ccc'.split(',') -> ['aaa', 'bbb', 'ccc']. As a convenient special case s.split() (with no arguments) splits on all whitespace chars.
-s.join(list) -- opposite of split(), joins the elements in the given list together using the string as the delimiter. e.g. '---'.join(['aaa', 'bbb', 'ccc']) -> aaa---bbb---ccc
+s.find('other') --               searches for the given other string (not a regular expression) within s, and returns the first index where it begins or -1 if not found
+s.replace('old', 'new') --       returns a string where all occurrences of 'old' have been replaced by 'new'
+s.split('delim') --              returns a list of substrings separated by the given delimiter. The delimiter is not a regular expression, it's just text. 'aaa,bbb,ccc'.split(',') -> ['aaa', 'bbb', 'ccc']. As a convenient special case s.split() (with no arguments) splits on all whitespace chars.
+s.join(list) --                  opposite of split(), joins the elements in the given list together using the string as the delimiter. e.g. '---'.join(['aaa', 'bbb', 'ccc']) -> aaa---bbb---ccc
 ===========================================
 Format Symbol	Conversion
+===========================================
 %c	character
 %s	string conversion via str() prior to formatting
 %i	signed decimal integer
@@ -360,7 +363,7 @@ Format Symbol	Conversion
 (var)	mapping variable (dictionary arguments)
 m.n.	m is the minimum total width and n is the number of digits to display after the decimal point (if appl.)
 ======================================
-string.ascii_letters	Concatenation of the ascii_lowercase and ascii_uppercase constants.
+string.ascii_letters	           Concatenation of the ascii_lowercase and ascii_uppercase constants.
 string.ascii_lowercase	Concatenation of lowercase letters
 string.ascii_uppercase	Concatenation of uppercase letters
 string.digits	Digit in strings
@@ -380,7 +383,7 @@ String.index	Returns the position of the first occurrence of substring in a stri
 string.uppercase	A string must contain uppercase letters.
 string.whitespace	A string containing all characters that are considered whitespace.
 string.swapcase()	Method converts all uppercase characters to lowercase and vice versa of the given string, and returns it
-replace()	returns a copy of the string where all occurrences of a substring is replaced with another substring.
+replace()	           returns a copy of the string where all occurrences of a substring is replaced with another substring.
 ======================================
 BUILT-IN FUNCTION	DESCRIPTION
 =======================================
@@ -389,10 +392,10 @@ String.Isalnum	Returns true if all the characters in a given string are alphanum
 string.Istitle	Returns True if the string is a titlecased string
 String.partition	splits the string at the first occurrence of the separator and returns a tuple.
 String.Isidentifier	Check whether a string is a valid identifier or not.
-String.len	Returns the length of the string.
+String.len	           Returns the length of the string.
 String.rindex	Returns the highest index of the substring inside the string if substring is found.
-String.Max	Returns the highest alphabetical character in a string.
-String.min	Returns the minimum alphabetical character in a string.
+String.Max	           Returns the highest alphabetical character in a string.
+String.min	           Returns the minimum alphabetical character in a string.
 String.splitlines	Returns a list of lines in the string.
 string.capitalize	Return a word with its first character capitalized.
 string.expandtabs	Expand tabs in a string replacing them by one or more spaces
