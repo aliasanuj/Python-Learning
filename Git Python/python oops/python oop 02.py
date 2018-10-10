@@ -597,3 +597,92 @@ obj=objects()
 print(obj._objects_shape)
 #AttributeError: 'objects' object has no attribute '_objects_shape'
 =================================
+209 
+class A:
+    def one(self):
+        return self.two()
+ 
+    def two(self):
+        return 'A'
+class B(A):
+    def two(self):
+        return 'B'
+obj1=A()
+obj2=B()
+print(obj1.one(),obj2.two())
+#A B
+================================
+class A:
+     def __init__(self):
+         self.__i = 1
+         self.j = 5
+ 
+     def display(self):
+         print(self.__i, self.j)
+class B(A):
+      def __init__(self):
+         super().__init__()
+         self.__i = 2
+         self.j = 7
+      def display(self):
+        print(self.__i, self.j)
+c = B()
+c.display()  
+#2 7
+========================================
+class A:
+	pass
+class B(A):
+	pass
+obj=B()
+print(isinstance(obj,B))
+#True
+============================================
+class A:
+     def __init__(self):
+         self.__i = 1
+         self.j = 5
+ 
+     def display(self):
+         print(self.__i, self.j)
+class B(A):
+     def __init__(self):
+         A.__init__(self)
+         self.__i = 2
+         self.j = 7  
+c = B()
+c.display()
+#1 7
+=================================
+class A:
+    def test1(self):
+        print(" test of A called ")
+class B(A):
+    def test(self):
+        print(" test of B called ")
+class C(A):
+    def test2(self):
+        print(" test of C called ")
+class D(C,B):
+    def test3(self):
+        print(" test of D called ")        
+obj=D()
+obj.test()
+# test of B called 
+============================
+class Demo:
+    def __init__(self):
+        self.x = 1
+    def change(self):
+        self.x = 10
+class Demo_derived(Demo):
+    def change(self):
+        self.x=self.x+1
+def main():
+    obj = Demo_derived()
+    print(obj.change())
+main()
+#None
+====================================
+
+
