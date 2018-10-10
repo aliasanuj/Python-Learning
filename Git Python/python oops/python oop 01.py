@@ -422,7 +422,7 @@ class B(A):
          self.__x = 2
          self.y = 20
 c = B()
-c.print(
+c.print()
 #1 20
 ==========================
 class A:
