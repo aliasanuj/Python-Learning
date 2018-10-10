@@ -20,8 +20,34 @@ class derived(base):
 
 obj = derived("anuj","patna")
 obj.combine()
-
 #anuj patna
+===========================================
+class base:
+    def __init__(self,name):
+        self.name = name
+class derived(base):
+    def __init__(self,name,city):
+        self.name = name
+        self.city = city
+    def combine(self):
+        print(self.name, self.city)
+
+obj = derived("anuj","patna")
+obj.combine()
+#anuj patna
+==========================================
+class A:
+    def __init__(self, i = 0):
+        self.i = i
+class B(A):
+    def __init__(self, j = 0):
+        self.i = 0
+        self.j = j
+b = B()
+print(b.i)
+print(b.j)
+#0
+#0
 ==============================================
 class EmployeeData:
 
@@ -33,7 +59,6 @@ class EmployeeData:
         print("salary is {} and age is {}".format(self.sal,self.age))
 obj = EmployeeData(30000,25)
 obj.getData()
- 
 #salary is 30000 and age is 25
 ================================
 class EmployeeData:
@@ -46,8 +71,19 @@ class EmployeeData:
         print("salary is {0} and age is {1}".format(self.sal,self.age))
 obj = EmployeeData(30000,25)
 obj.getData()
-
 #salary is 30000 and age is 25
+==========================================
+class EmployeeData:
+
+    def __init__(self, sal=0, age=0):
+        self.sal = sal
+        self.age = age
+
+    def getData(self):
+        print("salary is {} and age is {}".format(self.sal,self.age))
+obj = EmployeeData(30000)
+obj.getData()
+#salary is 30000 and age is 0
 ===============================
 class Sales:
     def __init__(self, id):
@@ -56,12 +92,10 @@ class Sales:
 
 val = Sales(123)
 print (val.id)
-
 #123
 ==============================
 s = "\t\tWelcome\n"
 print(s.strip())
-
 #Welcome
 ==================
 class Person:
@@ -70,9 +104,42 @@ class Person:
 sam = Person(100)
 sam.__dict__['age'] = 49
 print (sam.age + len(sam.__dict__))
-
 #51
 =====================
+class Person:
+    def __init__(self, id):
+        self.id = id
+sam = Person(100)
+sam.__dict__['age'] = 49
+print(sam.age)
+print(len(sam.__dict__))
+print (sam.age + len(sam.__dict__))
+#49
+#2
+#51
+================================================
+class Person:
+    def __init__(self, id=0):
+        self.id = id
+sam = Person()
+sam.__dict__['age'] = 49
+print(sam.age)
+print(len(sam.__dict__))
+print (sam.age + len(sam.__dict__))
+#49
+#2
+#51
+==============================================
+class Person:
+    def __init__(self, id):
+        self.id = id
+sam = Person()
+sam.__dict__['age'] = 49
+print(sam.age)
+print(len(sam.__dict__))
+print (sam.age + len(sam.__dict__))
+#TypeError: __init__() missing 1 required positional argument: 'id'
+==============================================
 class A:
     def __init__(self, i = 0):
         self.i = i
