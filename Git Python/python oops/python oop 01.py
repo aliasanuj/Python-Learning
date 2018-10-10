@@ -195,6 +195,19 @@ b = B()
 class A:
     def __init__(self):
         self.abc(30)
+        print("i from A is", self.i)
+
+    def abc(self, i):
+        self.i = 2 * i;
+class B(A):
+    def __init__(self):
+        super().__init__()
+b = B()
+#i from A is 60
+==============================
+class A:
+    def __init__(self):
+        self.abc(30)
         print(self.i)
         print("i from A is", self.i)
 
@@ -827,7 +840,7 @@ class test():
     self.city = city
 object = test("anuj",25,"patna")
 print(object.__dict__)
-{'name': 'anuj', 'age': 25, 'city': 'patna'}
+#{'name': 'anuj', 'age': 25, 'city': 'patna'}
 ==============================
 class outer():
   pass
@@ -1156,4 +1169,232 @@ object.final()
 #name is  anuj city is  patna
 #name is  anuj kumar city is  patna patna
 =========================================
+class A:
+    def __init__(self):
+        self.abc(30)
+
+    def abc(self, i):
+        self.i = 2 * i;
+class B(A):
+    def __init__(self):
+        super().__init__()
+        print("i from B is", self.i)
+b = B()
+#i from B is 60
+===================================
+class Test:
+    def __init__(self, s):
+        self.s = s
+
+    def print(self):
+        print(self.s)
+msg = Test("anuj")
+msg.print()
+#anuj
+================================
+class Test:
+    def __init__(self, s):
+        self.s = "kumar"
+
+    def print(self):
+        print(self.s)
+msg = Test("anuj")
+msg.print()
+#kumar
+=================================
+class A:
+    def __init__(self):
+        self.__x = 1
+        self.y = 10
+
+    def print(self):
+        print(self.__x, self.y)
+class B(A):
+    def __init__(self):
+        super().__init__()
+        self.__x = 2
+        self.y = 20
+c = B()
+c.print()
+#1 20
+===================================
+class A:
+    def __init__(self, x = 0):
+        self.x = x
+
+    def func1(self):
+        self.x += 1
+class B(A):
+    def __init__(self, y = 0):
+        A.__init__(self, 3)
+        self.y = y
+def main():
+    b = B()
+    b.func1()
+    print(b.x, b.y)
+main()
+#4 0
+===========================================
+class A:
+    def __init__(self,x,y):
+        self.x = x
+        self.y = y
+
+    def __str__(self):
+        return "A"
+
+    def __eq__(self, num ):
+        return self.x * self.y == num.x * num.y
+def main():
+    a = A(1, 2)
+    b = A(2, 1)
+    print(a == b)
+main()
+#True
+==================================
+class A:
+    def getInfo(self):
+        return "A's getInfo is called"
+class B(A):
+    def printInfo(self):
+        print(self.getInfo(), end = ' ')
+
+    def getInfo(self):
+        return "B's getInfo is called"
+def main():
+    A().printInfo()
+    B().printInfo()
+main()
+#AttributeError: 'A' object has no attribute 'printInfo'
+=======================================
+class A:
+    def getInfo(self):
+        return "A's getInfo is called"
+    def printInfo(self):
+        print(self.getInfo(), end = ' ')
+class B(A):
+    def printInfo(self):
+        print(self.getInfo(), end = ' ')
+
+    def getInfo(self):
+        return "B's getInfo is called"
+def main():
+    A().printInfo()
+    B().printInfo()
+main()
+#A's getInfo is called B's getInfo is called    
+=========================================
+class fruits:
+    def __init__(self, price):
+        self.price = price
+obj=fruits(5)
+obj.quantity=50
+obj.bags=500
+print(obj.quantity+len(obj.__dict__))
+#53
+========================================
+class fruits:
+    def __init__(self, price):
+        self.price = price
+obj=fruits(5)
+obj.quantity=50
+obj.bags=500
+obj.abc = 5000
+print(obj.quantity+len(obj.__dict__))
+#54
+==================================
+class fruits():
+  def __init__(self,name):
+    self.name = name
+  def getname(self):
+    return self.name
+  def isfruit(self):
+    return True
+class taste(fruits):
+   pass
+object1 = fruits("apple")
+print(object1.getname(), object1.isfruit())
+object2 = taste("sweet")
+print(object1.getname(), object2.isfruit())
+print(object2.getname(), object2.isfruit())
+#apple True
+#apple True
+#sweet True
+==========================================
+896
+class outer():
+  def __init__(self,name="anuj"):
+    self.name = name 
+    #print("name is ",name)
+class inner(outer):
+  def __init__(self,city):
+    outer.__init__(self)  #we can use class name to access other elements in child class
+    self.city = city
+    #print("city name is ",city)
+  def combine(self):
+    print("my name is ",self.name ,"and my city is ", self.city)
+object = inner("anuj")
+object.combine()
+#my name is  anuj and my city is  anuj
+=============================================
+class outer():
+  def __init__(self,number):
+    self.number = number
+  def double(self):
+    self.number = self.number * 2
+    print(self.number)
+  def tripple(self):
+    self.number = self.number * 3
+    print(self.number)
+class inner(outer):
+  def __init__(self,number):
+    super(inner,self).__init__(number)
+  def square(self):
+    self.number = self.number ** 2
+    print(self.number)
+object = inner(10)
+object.double()
+object.tripple()
+object.square()
+#20
+#60
+#3600
+=================================================
+class outer():
+  def __init__(self,fName,lName,age):
+    self.fName = fName
+    self.lName = lName
+    self.age = age
+  def pincode(self,pincode):
+    self.pincode = pincode
+class inner(outer):
+  def __init__(self,fName,lName,age,rollNo):
+    super(inner,self).__init__(fName,lName,age)
+    outer.pincode(self,1001)
+    self.rollNo = rollNo
+object = inner("kumar","anuj",25,101)
+print(object.fName)
+print(object.rollNo)
+print(object.pincode)
+#kumar
+#101
+#1001
+================================================
+class test():
+  "Hello World"
+  def inner(self):
+    print("Hello Anuj")
+object = test()
+print(object.inner)
+print(object.inner())
+print("+++++ next line +++")
+object.inner()
+
+#<bound method test.inner of <__main__.test object at 0x7f43fe3bb588>>
+#Hello Anuj
+#None
+#+++++ next line +++
+#Hello Anuj
+===================================
+
 © 2018 GitHub, Inc.
