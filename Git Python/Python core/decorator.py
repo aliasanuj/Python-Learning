@@ -219,3 +219,109 @@ inner01("anything","anything")
 #XXXXXXXXXXXXXXX
 #anuj
 #XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+=============================================
+def outer(abc,abcd):
+    def inner():
+        print("inner function")
+        abcd()
+        print("abcd function")
+        abc()
+        print("abc function")
+    return inner
+def outer1():
+    print("in outer1 function")
+def outer2():
+    print("in outer2 function")
+obj = outer(outer2,outer1)
+obj()
+#inner function
+#in outer1 function
+#abcd function
+#in outer2 function
+#abc function
+===============================
+def outer(abc):
+    def inner():
+        print("inner function")
+        abc()
+        print("abc function")
+        abcd()
+        print("abcd")
+    return inner
+def outer1():
+    print("in outer1 function")
+obj = outer(outer1)
+obj()
+#inner function
+#in outer1 function
+#abc function
+#NameError: name 'abcd' is not defined
+==========================================
+def outer(abc,abcd):
+    def inner():
+        print("inner function")
+        abc()
+        print("abc function")
+        abcd()
+        print("abcd")
+    return inner
+def outer1():
+    print("in outer1 function")
+obj = outer(outer1)
+obj()
+#TypeError: outer() missing 1 required positional argument: 'abcd'
+==============================================
+def outer(abc,abcd):
+    def inner():
+        print("inner function")
+        abcd()
+        print("abc function")
+        abcd()
+        print("abcd")
+    return inner
+def outer1():
+    print("in outer1 function")
+def outer2():
+    print("in outer2 function")
+obj = outer(outer1,outer2)
+obj()
+#inner function
+#in outer2 function
+#abc function
+#in outer2 function
+#abcd
+=============================================
+def outer(abc,abcd):
+    def inner():
+        print("inner function")
+        abcd()
+        print("abc function")
+        abcd()
+        print("abcd")
+    return inner
+def outer1():
+    print("in outer1 function")
+def outer2():
+    print("in outer2 function")
+obj = outer(outer2,outer1)
+obj()
+#inner function
+#in outer1 function
+#abc function
+#in outer1 function
+#abcd
+===============================================
+def outer(abc):
+  def inner(i,j):
+    print("sadding starts :")
+    print("sum is :",abc(i,j))
+    print("after ading")
+  return inner
+def add_number(i,j):
+  return (i+j)
+obj = outer(add_number)
+obj(10,15)
+#sadding starts :
+#sum is : 25
+#after ading
+===============================================
