@@ -51,3 +51,17 @@ print(obj(1))
 #TypeError: func() got multiple values for argument 'u'
 #we need to assign value of u and its mandetory.
 =========================
+from functools import partial
+def multiplier(x, y):
+    return x * y
+double = partial(multiplier, y=2)
+triple = partial(multiplier, y=3)
+print(double(20))
+print(triple(20))
+print('Double of 2 is {}'.format(double(5)))
+print('Double of 2 is {}'.format(triple(5)))
+#40
+#60
+#Double of 2 is 10
+#Double of 2 is 15
+===========================================
