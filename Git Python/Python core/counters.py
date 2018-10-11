@@ -11,7 +11,17 @@ for color in col:
 #blue 3
 #red 2
 #yellow 1
-#green 0
+#green 0     
+================================
+from collections import Counter
+string1 = "kumare anuj"
+result1 = Counter(string1)
+print(result1)
+string2 = ["anuj","aman","anuj"]
+result2 = Counter(string2)
+print(result2)
+#Counter({'u': 2, 'a': 2, 'k': 1, 'm': 1, 'r': 1, 'e': 1, ' ': 1, #'n': 1, 'j': 1})
+#Counter({'anuj': 2, 'aman': 1})
 =======================
 from collections import Counter 
 coun = Counter(a=1, b=2, c=3) 
