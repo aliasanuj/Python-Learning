@@ -136,4 +136,8 @@ x = map(myfunc, ['apple', 'banana', 'cherry'])
 print(list(x))
 #[5, 6, 6]
 ==========================
-
+list1 = [1,2,3,4,5,6]
+result = map(lambda x : x+x, list1)
+print(list(result))
+#[2, 4, 6, 8, 10, 12]
+======================
