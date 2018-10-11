@@ -130,4 +130,10 @@ result = map(list,list1)
 print(list(result))
 #[['a', 'n', 'u', 'j'], ['k', 'u', 'm', 'a', 'r']]
 =======================================
+def myfunc(n):
+  return len(n)
+x = map(myfunc, ['apple', 'banana', 'cherry'])
+print(list(x))
+#[5, 6, 6]
+==========================
 
