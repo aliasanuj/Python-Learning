@@ -78,9 +78,16 @@ def calculateSquare(n):
 numbers = (1, 2, 3, 4)
 result = map(calculateSquare, numbers)
 print(result)
-numbersSquare = set(result)
-print(numbersSquare)
-#<map object at 0x005D9E50>
+print(list(result))
+#<map object at 0x7f5b520631d0>
+#[1, 4, 9, 16]
+=========================================
+def calculateSquare(n):
+  return n*n
+numbers = (1, 2, 3, 4)
+result = map(calculateSquare, numbers)
+a = set(result)
+print(a)
 #{16, 1, 4, 9}
 ===================
 numbers = (1, 2, 3, 4)
@@ -97,3 +104,30 @@ x = map(myfunc, ('apple', 'banana', 'cherry'))
 print(list(x))
 #[5, 6, 6]
 ===================
+def map1(n):
+    return 
+numbers = (1,2,3,4,5,6)
+result = map(map1,numbers)
+print(list(result))
+#[None, None, None, None, None, None]
+==================================
+def map1(n):
+    pass
+numbers = (1,2,3,4,5,6)
+result = map(map1,numbers)
+print(list(result))
+#[None, None, None, None, None, None]
+===================================
+def map1(n):
+    return n 
+numbers = (1,2,3,4,5,6)
+result = map(map1,numbers)
+print(tuple(result))
+#(1, 2, 3, 4, 5, 6)
+=======================================
+list1 = ("anuj","kumar")
+result = map(list,list1)
+print(list(result))
+#[['a', 'n', 'u', 'j'], ['k', 'u', 'm', 'a', 'r']]
+=======================================
+
