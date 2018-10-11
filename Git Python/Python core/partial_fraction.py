@@ -65,3 +65,11 @@ print('Double of 2 is {}'.format(triple(5)))
 #Double of 2 is 10
 #Double of 2 is 15
 ===========================================
+def abc(a,b,c):
+  print(a,b,c)
+d = {"a":10,"b":20,"c":30}
+abc(*d)
+abc(**d)
+#a b c
+#10 20 30
+==========================================
