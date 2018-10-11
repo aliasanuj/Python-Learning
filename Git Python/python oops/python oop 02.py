@@ -684,5 +684,32 @@ def main():
 main()
 #None
 ====================================
+class base:
+    def __init__(self,x):
+        self.x = "anuj"
+class derived(base):
+    def __init__(self,x,y):
+        super(derived,self).__init__(x)
+        self.y = y
+    def combine(self):
+        print(self.x,self.y)
+obj = derived("abc",20)
+obj.combine()
+#anuj 20
+======================================
+class base:
+    def __init__(self,x):
+        self.x = x
+class derived(base):
+    def __init__(self,x,y):
+        super(derived,self).__init__(x)
+        self.y = y
+    def combine(self):
+        print(self.x,self.y)
+obj = derived("abc",20)
+obj.combine()
+#abc 20
+============================================
+
 
 
