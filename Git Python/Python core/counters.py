@@ -160,3 +160,46 @@ else :
   print("not matched")
 #matched
 ===============================================
+from collections import Counter
+string1 = "kumare anuj"
+result1 = Counter(string1)
+print(result1)
+string2 = ["anuj","aman","anuj"]
+result2 = Counter(string2)
+print(result2)
+#Counter({'u': 2, 'a': 2, 'k': 1, 'm': 1, 'r': 1, 'e': 1, ' ': 1, #'n': 1, 'j': 1})
+#Counter({'anuj': 2, 'aman': 1})
+==================================================
+from collections import Counter 
+coun = Counter() 
+coun.update([1, 2, 3, 1, 2, 1, 1, 2]) 
+print(coun) 
+coun.update([1, 2, 4]) 
+print(coun)
+#Counter({1: 4, 2: 3, 3: 1})
+#Counter({1: 5, 2: 4, 3: 1, 4: 1})
+==================================================
+import collections
+c = collections.Counter()
+print('Initial :', c)
+c.update('abcdaab')
+print('Sequence:', c)
+c.update({'a':1, 'd':5})
+print(c)
+#Initial : Counter()
+#Sequence: Counter({'a': 3, 'b': 2, 'c': 1, 'd': 1})
+#Counter({'d': 6, 'a': 4, 'b': 2, 'c': 1})
+=======================================================
+import collections
+c = collections.Counter('abcdaab')
+for letter in 'abcdefgh':
+    print('%s : %d' % (letter, c[letter]))
+#a : 3
+#b : 2
+#c : 1
+#d : 1
+#e : 0
+#f : 0
+#g : 0
+#h : 0
+=======================================================
