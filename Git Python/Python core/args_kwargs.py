@@ -150,3 +150,24 @@ abc(name="aman",city="agra",rollno=101,company="NIIT")
 #rollno is 101
 #company is NIIT
 ==================================
+def abc(a,*b):
+    print("the first parameter is ",a)
+    for i in (b):
+        print("the second paameter is ",i)
+abc("anuj","aman","anshu","chetan")
+#the first parameter is  anuj
+#the second paameter is  aman
+#the second paameter is  anshu
+#the second paameter is  chetan
+=============================================
+def abc(a,**b):
+    print("the first parameter is ",a)
+    for i in (b):
+        print("the second paameter is ",i)
+abc(a="anuj",b="aman",c="anshu",d="chetan")
+#the first parameter is  anuj
+#the second paameter is  b
+#the second paameter is  c
+#the second paameter is  d
+=============================================
+
