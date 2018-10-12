@@ -26,7 +26,15 @@ myFun(first ='Geeks', mid ='for', last='Geeks')
 #first == Geeks
 #mid == for
 #last == Geeks
-=============================
+============================
+def myFun(**kwargs):  
+    for i in kwargs.items(): 
+        print (i) 
+myFun(first ='Geeks', mid ='for', last='Geeks')
+#('first', 'Geeks')
+#('mid', 'for')
+#('last', 'Geeks')
+==================================
 def myFun(arg1, **kwargs):  
     for key, value in kwargs.items(): 
         print ("%s == %s" %(key, value)) 
@@ -34,7 +42,34 @@ myFun("Hi", first ='Geeks', mid ='for', last='Geeks')
 #first == Geeks
 #mid == for
 #last == Geeks
-=============================
+=======================================
+def myFun(arg1, **kwargs):  
+    for key,value in kwargs.items(): 
+        print ("{} and {}".format(key,value)) 
+myFun("Hi", first ='Geeks', mid ='for', last='Geeks') 
+#first and Geeks
+#mid and for
+#last and Geeks
+==================================================
+def myFun(arg1, **kwargs):  
+  print("the first arg is : ",arg1)
+  for key,value in kwargs.items(): 
+    print ("{} and {}".format(key,value)) 
+myFun("Hi", first ='Geeks', mid ='for', last='Geeks') 
+#the first arg is :  Hi
+#first and Geeks
+#mid and for
+#last and Geeks
+==============================================
+def test_var_kwargs(farg, **kwargs):
+    print("formal arg:", farg)
+    for key,value in kwargs.items():
+        print("{} and {} ".format(key, value))
+test_var_kwargs(farg=1, myarg2="two", myarg3=3)
+#formal arg: 1
+#myarg2 and two 
+#myarg3 and 3
+===============================================
 def myFun(arg1, arg2, arg3): 
     print("arg1:", arg1) 
     print("arg2:", arg2) 
