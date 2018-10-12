@@ -53,6 +53,7 @@ print(any(s))
 #True
 #True
 #False
+#It takes key. It will false when key = 0(int) | False(Boolean)
 ============================================
 d = {0: 'False'}
 print(any(d))
