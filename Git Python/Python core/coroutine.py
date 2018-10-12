@@ -14,6 +14,22 @@ corou.close()
 #Searching prefix:Dear
 #Dear Atul
 ======================
+def outer(parameter):
+  print("the requested word is {}".format(parameter))
+  while True:
+    x = yield
+    if parameter in x:
+      print(x)
+obj = outer("anuj")
+obj.__next__()
+obj.send("anuj")
+obj.send("kumar anuj")
+obj.send("kumar Anuj")
+obj.close()
+#the requested word is anuj
+#anuj
+#kumar anuj
+================================
 def print_name(prefix): 
     print("Searching prefix:{}".format(prefix)) 
     try :  
