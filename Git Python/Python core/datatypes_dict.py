@@ -491,4 +491,59 @@ Sr.No.	Methods with Description
 10	dict.values()
 	Returns list of dictionary dict's values
 ==============================================================
+string1 = "anuj anuj anuj kumar"
+dict1 = {}
+for i in string1:
+  if i in dict1:
+    dict1[i] = dict1[i] + 1
+  else:
+    dict1[i] = 1
+print(dict1)
+#{'a': 4, 'n': 3, 'u': 4, 'j': 3, ' ': 3, 'k': 1, 'm': 1, 'r': 1}
+================================================
+string1 = "anuj anuj anuj kumar"
+dict1 = {}
+for i in string1:
+  if i in dict1:
+    dict1[i] = dict1[i] + 1
+  else:
+    dict1[i] = 1
+for i,j in dict1.items():
+  print(i, "=" ,j)
+#a = 4
+#n = 3
+#u = 4
+#j = 3
+#  = 3
+#k = 1
+#m = 1
+#r = 1
+========================================
+string1 = "anuj anuj anuj kumar"
+string2 = string1.split()
+dict1 = {}
+for i in string2:
+  if i in dict1:
+    dict1[i] = dict1[i] + 1
+  else:
+    dict1[i] = 1
+for i,j in dict1.items():
+  print(i, "=" ,j)
+#anuj = 3
+#kumar = 1
+===========================================
+string1 = "kumar anuj anuj anuj"
+string2 = string1.split()
+dict1 = {}
+for i in string2:
+  if i in dict1:
+    dict1[i] = dict1[i] + 1
+  else:
+    dict1[i] = 1
+for i,j in sorted(dict1.items()):
+  print(i, "=" ,j)
+#anuj = 3
+#kumar = 1
+========================================
+
 
