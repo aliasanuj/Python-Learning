@@ -1,5 +1,3 @@
-#CICSO
-================================
 #Write a factorial program using python where user should give the input. Do using function. 
 #Handle the errors in the factorial program written by you. Ex- if u give 0! Then what will be output. Or any invalid input if given then how you will handle the errors
 num = int(input("enter the number :"))
@@ -314,25 +312,187 @@ which give me:
 #class method
 #instance method
 #instance method
+
+self is used in instance methods, cls is often used in class methods. ... 
+You have to tell Python you want a staticmethod , which won't automatically 
+get passed the instance of the class, ether by doing @staticmethod above the 
+def line, or mymethod = staticmethod(mymethod) below the method body.
+
+self - To access an attribute of an object, you need to prefix the attribute name with the object 
+name (objname.attributename). The same way self is used to access an attribute inside the object 
+(class) itself. So if you didn't prefix a variable with self in a class method, you wouldn't be 
+able to access that variable in other methods of the class, or outside of the class. So you could 
+omit it if you wanted to make the variable local to that method only. The same way if you had a 
+method and you didn't have any variable you wanted to share with other methods, you could omit 
+the self from the method arguments.
+
+cls - Each instance creates it's own "copy" of the attributes, so if you wanted all the instances 
+of a class to share the same variable, you would prefix that variable name with 'cls' in the class
+declaration.
 ==========================================================================
+#wrapper
+Wrappers vastly simplify code by defining a set of common behaviors. 
+In Python, a decorator serves a wrapper. The Python docs say a decorator is 
+“A function returning another function, usually applied as a function transformation 
+using the @wrapper syntax.”
+==============================================================================
+#list vs queue
+-queue - A queue is  ordered, but you'll only work on elements at one end. All elements get inserted at the "end" and removed from the "beginning" (or head) of the queue. You can find out how many elements are in the queue, but you can't find out what, say, the "third" element is. You'll see it when you get there i.e. using FIFO or so.
+Queue queueA = new LinkedList();
+queueA.add("element 0");
+queueA.add("element 1");
+queueA.add("element 2");
+queueA.remove();//element 0
+
+-List - A list is also an ordered list of objects. You can add an element anywhere in the list, change an element anywhere in the list, or remove an element from any position in the list.
+List listA = new ArrayList();
+listA.add("element 0");
+listA.add(1,"element 1");
+listA.add("element 2");
+listA.remove(1); //element 1
+
+stack = ["Amar", "Akbar", "Anthony"] 
+stack.append("Ram") 
+stack.append("Iqbal") 
+print(stack) 
+print(stack.pop()) 
+print(stack) 
+print(stack.pop()) 
+print(stack) 
+
+#['Amar', 'Akbar', 'Anthony', 'Ram', 'Iqbal']
+#Iqbal
+#['Amar', 'Akbar', 'Anthony', 'Ram']
+#Ram
+#['Amar', 'Akbar', 'Anthony']
+
+from collections import deque 
+queue = deque(["Ram", "Tarun", "Asif", "John"]) 
+print(queue) 
+queue.append("Akbar") 
+print(queue) 
+queue.append("Birbal") 
+print(queue) 
+print(queue.popleft())                  
+print(queue.popleft())                  
+print(queue) 
+
+#deque(['Ram', 'Tarun', 'Asif', 'John'])
+#deque(['Ram', 'Tarun', 'Asif', 'John', 'Akbar'])
+#deque(['Ram', 'Tarun', 'Asif', 'John', 'Akbar', 'Birbal'])
+#Ram
+#Tarun
+#deque(['Asif', 'John', 'Akbar', 'Birbal'])
 
 
+q = []
+for i in range( 0, 5 ):
+    q.append( i ) # Add to back of queue
+while q: # Queue not empty
+    j = q.pop( 0 ) # Get from front of queue
+    print( j )
+# Output: 0 1 2 3 4
+=============================================================================
+#deque
+Deque - can be implemented in python using the module “collections“. Deque is preferred over list in the cases where we need quicker append and pop operations from both the ends of container, as deque provides an O(1) time complexity for append and pop operations as compared to list which provides O(n) time complexity.
+Operations on deque :
+1. append() :- This function is used to insert the value in its argument to the right end of deque.
+2. appendleft() :- This function is used to insert the value in its argument to the left end of deque.
+3. pop() :- This function is used to delete an argument from the right end of deque.
+4. popleft() :- This function is used to delete an argument from the left end of deque
 
 
+de = collections.deque([1,2,3]) 
+de.append(4) 
+print ("The deque after appending at right is : ") 
+print (de) 
+de.appendleft(6) 
+print ("The deque after appending at left is : ") 
+print (de) 
+de.pop() 
+print ("The deque after deleting from right is : ") 
+print (de) 
+de.popleft() 
+print ("The deque after deleting from left is : ") 
+print (de) 
+
+#The deque after appending at right is : 
+#deque([1, 2, 3, 4])
+#The deque after appending at left is : 
+#deque([6, 1, 2, 3, 4])
+#The deque after deleting from right is : 
+#deque([6, 1, 2, 3])
+#The deque after deleting from left is : 
+#deque([1, 2, 3])
+=============================================================================
+#sort
+vowels = ['e', 'a', 'u', 'o', 'i']
+vowels.sort()
+print('Sorted list:', vowels)
+#Sorted list: ['a', 'e', 'i', 'o', 'u']
+====================================================================
+#union amnd intersection in list
+def intersection(lst1, lst2): 
+    lst3 = [value for value in lst1 if value in lst2] 
+    return lst3 
+lst1 = [4, 9, 1, 17, 11, 26, 28, 54, 69] 
+lst2 = [9, 9, 74, 21, 45, 11, 63, 28, 26] 
+print(intersection(lst1, lst2))
+#[9, 11, 26, 28]
+
+def intersection(lst1, lst2): 
+    return list(set(lst1) & set(lst2))   
+lst1 = [15, 9, 10, 56, 23, 78, 5, 4, 9] 
+lst2 = [9, 4, 5, 36, 47, 26, 10, 45, 87] 
+print(intersection(lst1, lst2))
+#[9, 10, 4, 5]
+==========================================================
+A = {0, 2, 4, 6, 8}; 
+B = {1, 2, 3, 4, 5}; 
+# union 
+print("Union :", A | B) 
+# intersection 
+print("Intersection :", A & B) 
+# difference 
+print("Difference :", A - B) 
+# symmetric difference 
+print("Symmetric difference :", A ^ B)
+
+#Union : {0, 1, 2, 3, 4, 5, 6, 8}
+#Intersection : {2, 4}
+#Difference : {0, 8, 6}
+#Symmetric difference : {0, 1, 3, 5, 6, 8}
+============================================================
+#append and extend
+append adds its argument as a single element to the end of a list. 
+The length of the list itself will increase by one. extend iterates 
+over its argument adding each element to the list, extending the list. 
+The length of the list will increase by however many elements were in the 
+iterable argument.
 
 
+my_list = ['geeks', 'for'] 
+my_list.append('geeks') 
+print(my_list) 
+#['geeks', 'for', 'geeks']
 
 
+my_list = ['geeks', 'for', 'geeks'] 
+another_list = [6, 0, 4, 1] 
+my_list.append(another_list) 
+print(my_list)
+#['geeks', 'for', 'geeks', [6, 0, 4, 1]]
 
+my_list = ['geeks', 'for'] 
+another_list = [6, 0, 4, 1] 
+my_list.extend(another_list) 
+print(my_list)
+#['geeks', 'for', 6, 0, 4, 1]
 
-
-
-
-
-
-
-
-
-
-nose
+A string is an iterable, so if you extend a list with a string, you’ll append each character as you iterate over the string.
+my_list = ['geeks', 'for', 6, 0, 4, 1] 
+my_list.extend('geeks') 
+print(my_list)
+#['geeks', 'for', 6, 0, 4, 1, 'g', 'e', 'e', 'k', 's']
+==============================================================
 http://net-informations.com/python/iq/checking.htm
