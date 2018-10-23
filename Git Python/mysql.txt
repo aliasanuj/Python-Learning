@@ -1,1 +1,210 @@
 #basics of sql 
+#youtube --> Easy Engineering Classes
+#mysql
+=================================================================
+#Setup Database and Tables for Complete MySQL Course
+=================================================================
+create database college;
+use college;
+
+create table Faculty(Fid int,Fname varchar(100),Qualification varchar(50),DeptId int);
+create table Students(Sid int,Sname varchar(100),Branch varchar(50),marks int);
+create table Dept(deptID int,dname varchar(20));
+
+insert into Faculty values(101,'Aman','B.tech',01);
+insert into Faculty values(102,'Anshu','BCA',02);
+insert into Faculty values(103,'Anuj','BCA',02);
+insert into Faculty values(104,'chetan','B.pharma',04);
+insert into Faculty values(105,'Bhanu','B.tech',01);
+select * from Faculty;
+
+insert into Students values(101,'Aman','IT',75);
+insert into Students values(102,'Anshu','CS',54);
+insert into Students values(103,'Anuj','IT',45);
+insert into Students values(104,'Chetan','CS',76);
+insert into Students values(105,'Bhanu','IT',72);
+select * from student;
+
+insert into Dept(1001,'cs');
+insert into Dept(1002,'EC');
+insert into Dept(1003,'MECH');
+insert into Dept(1004,'EE');
+insert into Dept(1005,'cs');
+select * from Dept;
+
+================================================================
+#Select Statement, Distinct Clause with Example Queries
+=================================================================
+select column1,column2 . . . From table1.table2 . .  .;
+use college; --> to change database
+select fname from faculty;
+select fid,fname from faculty;
+select deptid,dname from Dept
+
+#select * from table_name  --> to fetch all data
+#select Distinct columns from table_name --> to fetch
+
+select * from Dept;
+select * from student;
+select branch from student;
+select distinct branch from student;
+
+select * from faculty;
+select distinct qualification ,deptid from faculty;
+commit; --> Always use the commit before closing or else data will not store.
+==============================================================
+#Where Clause, Logical(AND, OR) Operator
+===============================================================
+#to filter the data we vcan use where clause. where clause allows to filter row based on 
+#certain conditions or expression. 
+
+select column1,column2,. . . from table1,table2 where condition ...
+#filtering data with operator 
+# = equal to 
+# <> or != not equal to 
+# < less than
+# > greater than
+# <= less that or equal to 
+# >= greater than or equal to 
+# and operator --> return true if both true
+# or operator --> return trur either condition true
+
+use college 
+select * from faculty;
+select fid,fname from faculty where qualification='B.Tech';
+# use '' if its varchar, use nothing if it is int
+select * from faculty where qualification != 'ph.D';
+
+select * from student;
+select sname from student where Branch='IT' and marks<80;
+select sname from student where Branch='IT' or Branch='ECE';  
+==================================================================
+# IN, NOT IN Operator with Solved Queries
+==================================================================
+#filtering data--> in operator (used to filter data and allows to
+#determine if the value matches any one of the list or result of subquery.)
+select coumn1,column2,...from table1,table2,..where(expr|column_1)in ('value1','value2');
+
+#filtering data--> not in operator (used to filter data and allows to
+#determine if the value does not matches any one of the list or result of subquery.)
+select coumn1,column2,...from table1,table2,..where(expr|column_1)not in ('value1','value2');
+
+select * from faculty;
+select fname from faculty where deptid=1 or deptid=3;
+select fname from faculty where deptid in (1,3);
+select * from faculty wherer qualification in ('B.tech','Ph.D');
+select * from faculty where branch not in('CS','EC');
+==================================================================
+#Between and NOT Between Operator with Solved Queries
+==================================================================
+#filtering data--> BETWEEN operator (used to filter data and allows to
+#SEPCIFY range 0 value to test.)
+select coumn1,column2,. . from table1,table2,. .  where (expr|column) between begin and end;
+
+use college;
+select * from student;
+select * from student where marks between 60 and 90;
+select * from student where marks not between 50 and 60;
+====================================================================
+#LIMIT and IS NULL Operator with Solved Queries
+====================================================================
+#Limit is used to constrain the number of rows returned by select statement.
+#select col1,col2,. . from tab1,tab2,. . limit offset,count;
+
+#fetch first N rows in mysql.
+#select col1,col2,. . from table limit n;
+
+#IS NULL operator
+#IS NULL operator used to check whether a value is null or not
+#opposite of NULL is NOT NULL.
+
+use college;
+star * from faculty;
+select * from faculty limit 4;
+select * from faculty limit 0,4;
+select * from faculty limit 1,4;
+
+select * from student;
+select * from student order by marks desc;
+select * from student order by marks desc limit 1,1;
+select sname from student order by marks desc limit 1,1;
+select sname from student where branch is null;
+select sname from student where branch is not null;
+====================================================================
+#LIKE Operator with Solved Queries
+====================================================================
+#like operator --> to search or match the patterns.
+#it is used to select rows/data based on patterns following by 
+#two wildcards characters used with like operator
+#percentage - (%) it matches any string of zero or more character
+#underscore - (_) it matches exactly one single character
+#select column from table where condition like 'pattern';
+
+use college;
+select * from faculty;
+select * from faculty where fname like 'A%';
+select * from faculty where fname like '%N';
+select * from faculty where fname like '_A%';
+select sname from faculty where fname like '_A%';
+select sname from faculty where fname not like '%N';
+select sname,marks from student where sname  not like '_A%';
+===============================================================
+#ORDER BY Clause with Solved Examples
+================================================================
+#Order By - it is useed to sort the result of select statement.
+#select column from table order by column1[ASC|DESC], column2[ASC|DESC], . 
+#by default sorting asc 
+
+select * from student;
+select * from student order by sname;
+select * from student order by sname asc;
+select * from student order by sname desc;
+select * from student order by marls desc;
+select * from student order by sname asc, marks desc;
+select * from student order by sname desc, marks asc;
+
+select * from faculty by qualification;
+select * from faculty order by field(qualification,'M.Tech','Ph.D','B.Tech');
+=============================================================
+#JOINS - Cross, Inner, Left, Right and Self Join with Solved Examples
+=============================================================
+#Join - it is method of linking one table with another table.
+1.Cross join
+2.inner join
+3.left join
+4.right join
+#mysql does not support full pouter join.
+#self join
+
+1.cross join - It returns the cartesian product of rows from the joiner tables.
+select * from T1 cross join T2 where join_condition[optional];
+
+
+ 
+
+
+
+
+
+ 
+   
+
+
+ 
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
