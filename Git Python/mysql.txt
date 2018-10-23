@@ -179,6 +179,14 @@ select * from faculty order by field(qualification,'M.Tech','Ph.D','B.Tech');
 1.cross join - It returns the cartesian product of rows from the joiner tables.
 select * from T1 cross join T2 where join_condition[optional];
 
+use college; #to changed database
+select * from faculty;
+select * from dept;
+select * from faculty cross join dept;
+select * from faculty cross join dept where dept.deptid=1;
+
+2.inner join - 
+
 
  
 
