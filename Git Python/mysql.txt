@@ -185,7 +185,29 @@ select * from dept;
 select * from faculty cross join dept;
 select * from faculty cross join dept where dept.deptid=1;
 
-2.inner join - 
+#inner join -> it matches rows of one table with another table.
+select col_list from t1 inner join t2 on join_condition;
+select f.fname,d.dname from faculty f inner join dept d ON f.deptid=d.deptid;
+select f.fname,d.dname from faculty f inner join dept d ON f.deptid=d.deptid where d.deptid=2;
+
+#left join --> it results all the matching rows from two tables and also the rows that are not
+#matched from lest table.
+select col from table1 left join table2 on join_condition;
+select f.fname,d.dname from faculty f left join dept d on f.deptid=d.deptid;
+
+#right join --> it results all the matching rows from two tables and also the rows that are not
+#matched from left table.
+select col from table1 right join table2 on join_condition;
+select f.fname,d.dname from faculty f righjt join dept d on f.deptid=d.deptid;
+
+#self join --> used to join table from itself.
+create table emp(empid int, ename varchar(20), esuper int);
+insert into emp(1,'A',2);
+insert into emp(2,'B',3);
+insert into emp(3,'C',4);
+SELECT * from  emp;
+select e.ename as "employee name", s.name as "supervisor" from emp e,emp s where e.esuper = s.empid;
+
 
 
  
