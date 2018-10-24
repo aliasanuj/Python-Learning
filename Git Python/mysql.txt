@@ -208,6 +208,66 @@ insert into emp(3,'C',4);
 SELECT * from  emp;
 select e.ename as "employee name", s.name as "supervisor" from emp e,emp s where e.esuper = s.empid;
 
+====================================================
+#GROUP BY and HAVING Clause with Solved Examples
+====================================================
+Group by clause is a set of rtows into a set of summary rows by values of column or expressions.
+Generally it is used with aggregates functions like SUM | AVG | MAX | MIN | COUNT
+SELECT col1,col2,. . aggregate_function(col) from tablename where condition group by col1,col2,..;
+use college; --> database changed
+select * from student;
+select sum(marks) from student;
+
+#group by with having  
+this clause is used to filter the groups returned.
+select col1,col2,... aggregate_function(col) from tableName where condition group by col1,col2.,.. having condition;
+select count(*) from student --> to find all 
+select branch,count(*) from student group by branch;
+select branch,sum(marks) from student group by branch;
+select branch,avg(marks) from student group by branch;
+select branch,avg(marks) from student group by branch having branch in ('cse','it');
+=======================================================================
+SubQuery(Nested Query) with EXISTS and NOT EXISTS Clause
+======================================================================
+nested quey -->  subquery is nested query within another queries like select,insert,update or delete.
+select col1,col2,.. from tablename where condition[=|in|not in...] {nested query}
+use college 
+select fname from faculty where deptid IN(select deptid from dept where dname = 'IT');
+select fname from faculty where deptid = (SELECT deptid from dept where dname = 'IT');
+#select fname from faculty where deptid = (select deptid from dept where dname IN('IT','CSE')); --> ERROR
+select fname from faculty where deptid IN(select deptid from dept where dname IN('IT','CSE')); --> ERROR
+SELECT BRANCH,avg(marks) from student where branch in(select dname from dept where deptid not in (1,3)) group by branch;
+
+#exist or not exist
+select * from table_name where exists|not exists(subquery);
+#exist : it is used to test for the existance of any record in a subquery.
+select * from student where exists (select * from dept where deptid=1);
+select * from student where exists (select * from dept where deptid=5); --> empty set
+select * from student where not exists (select * from dept where deptid=1); --> empty set
+select * from student where not exists (select * from dept where deptid=5); --> it will run 
+
+===========================================================================
+UNION, UNION ALL, INTERSECT and MINUS Set Operators
+==============================================================================
+#union --> this operator is used to combine two or more result sets into single result set. By default, 
+#union operator removes duplicate rows(use union all to retain duplicate rows)
+select col1,col2,.. from table1 union|union all select col1,col2,.. from table2;
+rules -->number and order and column must be same.
+rules --> data types of the col must be same.
+use college; --> to select database
+select * from faculty;
+select * from student;
+select * from faculty;
+select fname from faculty union select sname from student;
+insert into student values(9,'varun','ECE',70);
+#with duplicate data, it will not give duplicate data if we are using union.
+#if we use union, duplicasy will automatically removed.
+select fname from faculty union all select sname from student;
+
+#intersect --> this operator is used to fetch common rows from two or more tables.
+#it compares the result of two queries and returns the distinct rows that are output by both left and right queries.
+select col1,col2,.. from table1 intersect select col1,col2,.. from table2;
+
 
 
  
