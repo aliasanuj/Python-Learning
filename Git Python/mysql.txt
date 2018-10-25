@@ -268,6 +268,247 @@ select fname from faculty union all select sname from student;
 #it compares the result of two queries and returns the distinct rows that are output by both left and right queries.
 select col1,col2,.. from table1 intersect select col1,col2,.. from table2;
 
+====================================================
+#GROUP BY and HAVING Clause with Solved Examples
+====================================================
+Group by clause is a set of rtows into a set of summary rows by values of column or expressions.
+Generally it is used with aggregates functions like SUM | AVG | MAX | MIN | COUNT
+SELECT col1,col2,. . aggregate_function(col) from tablename where condition group by col1,col2,..;
+use college; --> database changed
+select * from student;
+select sum(marks) from student;
+
+#group by with having  
+this clause is used to filter the groups returned.
+select col1,col2,... aggregate_function(col) from tableName where condition group by col1,col2.,.. having condition;
+select count(*) from student --> to find all 
+select branch,count(*) from student group by branch;
+select branch,sum(marks) from student group by branch;
+select branch,avg(marks) from student group by branch;
+select branch,avg(marks) from student group by branch having branch in ('cse','it');
+=======================================================================
+SubQuery(Nested Query) with EXISTS and NOT EXISTS Clause
+======================================================================
+nested quey -->  subquery is nested query within another queries like select,insert,update or delete.
+select col1,col2,.. from tablename where condition[=|in|not in...] {nested query}
+use college 
+select fname from faculty where deptid IN(select deptid from dept where dname = 'IT');
+select fname from faculty where deptid = (SELECT deptid from dept where dname = 'IT');
+#select fname from faculty where deptid = (select deptid from dept where dname IN('IT','CSE')); --> ERROR
+select fname from faculty where deptid IN(select deptid from dept where dname IN('IT','CSE')); --> ERROR
+SELECT BRANCH,avg(marks) from student where branch in(select dname from dept where deptid not in (1,3)) group by branch;
+
+#exist or not exist
+select * from table_name where exists|not exists(subquery);
+#exist : it is used to test for the existance of any record in a subquery.
+select * from student where exists (select * from dept where deptid=1);
+select * from student where exists (select * from dept where deptid=5); --> empty set
+select * from student where not exists (select * from dept where deptid=1); --> empty set
+select * from student where not exists (select * from dept where deptid=5); --> it will run 
+
+===========================================================================
+UNION, UNION ALL, INTERSECT and MINUS Set Operators
+==============================================================================
+#union --> this operator is used to combine two or more result sets into single result set. By default, 
+#union operator removes duplicate rows(use union all to retain duplicate rows)
+select col1,col2,.. from table1 union|union all select col1,col2,.. from table2;
+rules -->number and order and column must be same.
+rules --> data types of the col must be same.
+use college; --> to select database
+select * from faculty;
+select * from student;
+select * from faculty;
+select fname from faculty union select sname from student;
+insert into student values(9,'varun','ECE',70);
+#with duplicate data, it will not give duplicate data if we are using union.
+#if we use union, duplicasy will automatically removed.
+select fname from faculty union all select sname from student;
+
+#intersect --> this operator is used to fetch common rows from two or more tables.
+#it compares the result of two queries and returns the distinct rows that are output by both left and right queries.
+select col1,col2,.. from table1 intersect select col1,col2,.. from table2;
+=============================================================================
+INSERT, UPDATE, DELETE Statement with Examples
+=============================================================================
+#data manipulation language 
+insert statement is used to insert data into database tables.
+insert into table(col1,col2,..) values (value1,value2,..);
+#inserting multiple rows -->
+insert into table(col1,col2,..) values(value1,value2,..),() 
+ 
+insert into dept(5,'ICE');
+select * from dept;
+insert into dept('ICE',5); --> it will give error
+insert into dept(dname,deptid) values ('ICE',6); --> no error
+insert into dept values (7,'A'),(8,'B');
+SELECT * FROM DEPT;
+
+#insert with select statement 
+insert with select clause - it is used to insert data into table fromanother table.
+insert into table_name select col1,col2,..from table_name;
+create table dept_temp(deptid int, deptname varchar(20));
+insert into dept_temp select deptid,dname from dept; --> it will fetch all data from dept to dept_temp;
+select * from dept_temp;
+
+modifying data --> this ststement is used to update existing data in a table.
+update table_name set col1 = exp1, col2 = exp2,.. where condition;
+update dept_temp set deptname = 'Applied SC' where deptid=7;
+update dept_temp set deptname = 'Applied SC'; --> all deptname will become same 
+
+#update with select statement.
+update table_name set col1=(nested query) where condition;
+select * from student;
+update dept_temp set deptname = (select branch from student where sanme='lalit') where deptid=1;
+select * from dept_temp;
+
+#delete statement is used to delete data from table,
+delete from table_name where condition[optional];
+
+3delete with limit clause is used to delete specific number of records.
+example - delete first two students records.
+delete from dept_temp wherre deptid=2;
+delete from dept_temp limit 2; --> it will delete 2 column.
+select * from dept_temp;
+delete from dept_temp;
+select * from dept_temp; --> empty set
+================================================================
+#Managing Database in MySQL - Show, Create, Use and Drop
+================================================================
+create database --> use 'create database<database name>'
+display database --> use 'show database' to display all database
+selecting database to work --> use 'use database name' to select the database you want to work with.
+remove database --> use 'drop <database name>' to remove the database.
+#show database --> it will show all database
+create database abc; --> it will create database
+drop database abc; --> it will delete database
+===================================================================
+Create Table with Constraints(NOT NULL, Unique, etc..)
+====================================================================
+create table --> create table <table name>(col1 datatype,col2 datatype,...)
+#various constraints-
+1.NOT NULL OR NULL
+2.AUTO_INCREMENT
+3.DEFAULT
+4.UNIQUE
+5.CHECK
+
+USE COLLEGE;
+create table emp(empid int,ename varchar(40),salary int); --> error(already exists)
+create table new_emp(empid int,ename varchar(40),salary int); --> new table will create
+insert into emp_new(1,'a',2000);
+select * from emp_new;
+
+Not null --> this constraint forces the values of column to non-null values only.
+syntax --> col_name data_type not null;
+steps - 
+check the current cvalues of the column
+update the null values of the column
+add not null constraint.
+
+insert into emp_new(empid,ename) values(1,'B');
+select * from emp_new;
+#one col of salary will null
+
+create table emp1(empid int, ename varchar(20), salary int Not null);
+insert into emp1(empid,ename) values(1,'A'); error-->field salary doesnt have a default value 
+insert into emp1(empid,ename,salary) values(1,'A',1000); --> no error
+# we can also apply not null in existing column.    
+
+select * from emp_new;
+update emp_new set salary = 0 where salary = null;
+alter table emp_new change salary int not null;
+describe emp_new;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 
 
  
