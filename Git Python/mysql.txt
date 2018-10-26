@@ -418,124 +418,160 @@ select * from emp_new;
 update emp_new set salary = 0 where salary = null;
 alter table emp_new change salary int not null;
 describe emp_new;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
-
- 
-
-
-
-
-
- 
-   
-
-
- 
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
+insert into emp_new(emp_id) values(4);
+
+#unique constraint--> this constraint forces the column to have unique value only.
+col_name data_type unique;
+unique constraints on multiple columns:
+constraint constraint_name unique(col1,col2,..)
+create table emp2(empid int unique,ename varchar(40),salary int);
+insert into emp2(empid) values(1);
+
+create table emp2(empid int unique , ename varchar(20), salary int);
+insert into emp2(empid) values(1); --> success
+insert into emp2(empid) values(1); --> error : duplicate entry'1' for keys 'empid'
+
+create table emp3(empid int, ename varchar(40), salary int);
+create table emp3(empid int,ename varchar(40), salary int, constraint u1 unique(empid,ename));
+insert into emp3(empid,ename) values(1,'A');
+insert into emp3(empid,ename) values(1,'B');
+insert into emp3(empid,ename) values(1,'B'); --> error duplicate entry 
+
+#default constraint : this constraint is used to insert a default value into a column.
+col_name data_type default value;
+adding default constraint in existing table column:
+alter table<table-name>
+alter <col-name> set default 'value'
+create table emp4(empid int, ename varchar(40),salary int default 1000);
+insert into emp4(empid) values(3);
+insert into emp4(empid,salary) values(4,2000);
+select * from emp4;
+
+#auto increment constraints: This constraints allows a unique number to be generated when a 
+new record is inserted into a table.
+syntax : col_name data_type auto_increment;
+By default,the starting value for auto_increment is 1, and it will increment by 1 for each record.
+it is used to create sequence in mysql.
+
+create table emp5(empid int auto_increment primary key , ename varchar(40), salary int);
+insert into emp5(salary) values(1000);
+insert into emp5(salary) values(2000);
+insert into emp5(salary) values(3000);
+insert into emp5(salary) values(4000);
+select * from emp5;
+
+check constraint --> it constraints the certain column must satisfy the condition(boolean expression).
+col_name data_type check(condition);
+mysql doesnt support check keyword. There are two ways to emulate this: 
+Using triggers or using updatable view with check option.
+
+========================================================================
+PRIMARY and FOREIGN KEY in MySQL with Example
+=========================================================================
+primary key: it is column or combination of column that uniqely identify a row in table.Rules :
+1.primary key must be contain unique values.
+2.Primary key cant be null.
+3.there is only one primary keys in table.
+syntax -> col_name data_type primary key 
+
+use college;
+create table emp1(empid int primary key, ename varchar(10));
+create table emp2(empid int primary key, ename varchar(10));
+describe emp2;
+create table empo_new1(empid int, ename varchar(10), Primary key(empid,ename));
+create table emp_new2(empid int, ename varchar(10));
+describe emp_new2;
+alter table emp_new2 add primary_key(empid);
+describe emp_new2;
+
+primary key on more than one column:
+primary key(col1,col2,...)
+primary key in existing table:
+alter table<table-name>
+add primary key(primary key column);
+
+#foreign key--> It is a field in a table that matches another field of another table.
+It is used to maintain referential integrity.
+--> A table may have more than one of foreign key, and each foreign key in the child 
+table may refer to a different parent table.
+syntax --> foreign key(col_name) references <parent_table>(col_name)
+
+create table e1(eid int primary key) engine=InnoDB;
+create table d1(did int,foreign key(did)reference e1(eid)) emhine = InnoDB;
+
+insert into e1 values(1);
+insert into e1 values(2);
+select * from e1;
+
+insert into d1 values(1); --> no erroe
+insert into d1 values(1); --> no error
+insert into d1 values(1); --> error 
+
+=============================================================
+#ALTER, DROP, TRUNCATE Table with Examples
+==============================================================
+Alter table : It is used to change existing table structure such as adding or removing columns, changing column attributes, etc.
+Syntax --> Alter table table_name action[,actiopn2,...]
+1.Add new column
+2.Drop a column
+3.Rename Table
+describe emp2;
+alter table emp2 add column dept int Not null after empId;
+alter table emp2 add column dept int Not null; --> if we dont apply after, it willa add in end.
+
+alter table emp2 drop column temp; --> temp will drop.
+rename table emp2 to emp6;
+describe emp6; --> it will runn
+describe emp6; --> it will not run 
+
+#Drop table -->It is used to remove existing tables.
+#Truncate table --> It is a statement which is used to delete all data in table.
+select * from table emp5;
+truncate table emp5;
+select * from emp5;
+describe emp5; --> structure will remain alive
+drop table emp5;
+====================================================
+Indexes in MySQL - CREATE, View and Delete Index
+====================================================
+Index --> An index helps in fast retrival of data from tables.
+It is just like a index of book where you first search index to look for content.
+- All primary key columns are in the primary index of the table automatically.
+creating Mysql index:
+create [unique|fulltext|spatial] index index_name 
+using [Btree|Hash|Rtree] on table_name/column_name[(length)][ASC|DESC]..) 
+
+CREATE emp_new3(eid int,ename varchar(10));
+create index i1 on emp_new3(eid);
+show index from emp_new3\G
+
+Drop index l1 on emp_new3;
+show index from emp_new3\G; --> empty set
+
+===============================================================
+VIEWS in MySQL - Create View, With Check Option, Manage Views
+==============================================================
+view --> a database view is a virtual table that is derived from
+physical/real table. Advantages of views are as follows:
+1.simplifies the complex queries.
+2.limits data access to specific users.
+3.provides extra layer of security.
+4.it enables computed columns.
+Disadvantages --
+1.performances decrease
+2.depedency on tables.
+
+syntax --> create view<view-name> as [select statement]
+select * from student;
+create view viewname as select * from student wherer branch in ('IT','CSE');
+select * from viewname;
+
+create view viewname2 as select f.fname, d.dname from faculty f, department d where f.deptid = d.deptid;
+select * from view2;
+create view view3 as select sname,marks from student where marks>(select avg(marks) from student);
+select * from view3;
+insert into student values(10,'marry','eee',90);
+select * from view3;
+
+#updatable views --> It means to use insert,update and delete statement on view.
 
