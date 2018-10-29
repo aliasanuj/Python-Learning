@@ -216,4 +216,24 @@ Enter a number:  4
 0 0 1 0 
 0 0 0 1 
 
+#String operations
+
+#Python Program to Find the Largest Number in a List
+n1 = int(input("enter the elements : "))
+n2 = []
+for i in range(1,n1+1):
+  n3 = int(input("enter the element {} :".format(i)))
+  n2.append(n3)
+n2.sort()
+print(n2[-1])
+
+#Python Program to Find the Second Largest Number in a List
+n1 = int(input("enter the elements : "))
+n2 = []
+for i in range(1,n1+1):
+  n3 = int(input("enter the element {} :".format(i)))
+  n2.append(n3)
+n2.sort()
+print(n2)
+print(n2[-2])
 
