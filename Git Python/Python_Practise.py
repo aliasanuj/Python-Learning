@@ -217,7 +217,7 @@ Enter a number:  4
 0 0 0 1 
 
 ##########################################
-#String operations########################
+#list operations########################
 ##########################################
 
 #Python Program to Find the Largest Number in a List
