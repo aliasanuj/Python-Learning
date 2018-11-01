@@ -13,6 +13,16 @@
 #Reduce --> Reduce(function,sequence)
 #Accumulate --> Accumulate(sequence,function)
 ==============================================
+#Reduce --> 
+import functools
+functools.reduce(function,iterator)
+functools.reduce(lambda x:x+x,list1)
+
+#Accumulate -->
+import itertools
+itertools.accumulate(list1,lambdax : x+x)
+
+==============================================
 list1 = [1,2,3,4,5,6]
 def add(x):
   return x+x
