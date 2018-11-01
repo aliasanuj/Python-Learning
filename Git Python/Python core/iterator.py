@@ -147,6 +147,18 @@ print(next(a))
 #7
 #9
 ========================
+d = dict()
+d[0]="anuj"
+d[1]="bhanu"
+d[2]="aman"
+
+for i in d:
+    print(i,d[i])
+    
+#0 anuj
+#1 bhanu
+#2 aman
+=============================
 
 
 
