@@ -385,4 +385,100 @@ obj(10,15)
 #sum is : 25
 #after ading
 ===============================================
- 
+def add_num_decorate(abc):
+    def add_num1(i,j):
+        print("before operation")
+        print("sum = ",abc(i,j))
+        print("after operation")
+    return add_num1
+
+@add_num_decorate
+def add_num2(i,j):
+    return i+j
+@add_num_decorate
+def add_num3(i,j):
+    return i*j
+add_num2(10,15)
+add_num3(10,10)
+
+#before operation
+#sum =  25
+#after operation
+#before operation
+#sum =  100
+#after operation
+======================================
+def outer(abc,abcd,abcde):
+    def inner():
+        print("inner function")
+        abcd()
+        print("abcd function")
+        abc()
+        print("abc function")
+        abcde()
+        print("abcde function")
+    return inner
+def outer1():
+    print("in outer1 function")
+def outer2():
+    print("in outer2 function")
+def outer3():
+    print("in outer2 function")
+obj = outer(outer1,outer2,outer3)
+obj()
+
+#inner function
+#in outer2 function
+#abcd function
+#in outer1 function
+#abc function
+#in outer2 function
+#abcde function
+==========================================
+def outer(abc,abcd,abcde):
+    def inner():
+        print("inner function")
+        abcd()
+        print("abcd function")
+        abc()
+        print("abc function")
+        abcde()
+        print("abcde function")
+    return inner
+def outer1():
+    print("in outer1 function")
+def outer2():
+    print("in outer2 function")
+def outer2():
+    print("in outer3 function")
+obj = outer(outer1,outer2,outer2)
+obj()
+
+#inner function
+#in outer3 function
+#abcd function
+#in outer1 function
+#abc function
+#in outer3 function
+#abcde function
+=========================================
+def outer(abc):
+    def inner(*args):
+        print("*" * 5)
+        abc(*args)
+        print("%" * 10)
+        abc(*args)
+        print("^" * 15)
+    return inner
+@outer
+def inner01(x):
+    print("Here we go :")
+inner01("anuj")  #any argument
+
+#*****
+#Here we go :
+#%%%%%%%%%%
+#Here we go :
+#^^^^^^^^^^^^^^^
+
+===========================================
