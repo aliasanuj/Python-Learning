@@ -212,4 +212,44 @@ print(next(obj))
 #2
 #3
 =================================================
+def my_gen():
+    n = 1
+    print(n)
+    # Generator function contains yield statements
+    yield n
+    n += 1
+    print(n)
+    yield n
+    n += 1
+    print(n)
+    yield n
+a = my_gen()
+next(a)
+next(a)
+next(a)
+
+#1
+#2
+#3
+====================================
+import random
+def lottery():
+    for i in range(5):
+        yield random.randint(1,8)
+    yield random.randint(11,20)
+for i in lottery():
+    print("number is ",i)
+
+#number is  5
+#number is  4
+#number is  2
+#number is  6
+#number is  3
+#number is  13
+====================================
+whenever we are using object, we need to  apply "next" keyword.
+print(next(x));  # In Python 3, __next__()
+print(x.__next__());  # In Python 3, __next__()
+#x is object
+
 
