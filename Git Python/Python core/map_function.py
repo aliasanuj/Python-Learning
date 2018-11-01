@@ -1,6 +1,12 @@
 #map_function.py
 ==============================
-
+#Map functions retrurns a list of results after applying the given function to each item of a given iterable (list | tuple).
+#Syntax : map(function,iterable)
+#It require two argument.
+#We can pass one or more than one iteravle also.
+#The return value from map then can be passed to functions like list,tuple.
+#we need list | tuple while printing it.
+=========================================
 def map1(n):
     return n
 numbers = (1,2,3,4,5,6)
@@ -140,4 +146,16 @@ list1 = [1,2,3,4,5,6]
 result = map(lambda x : x+x, list1)
 print(list(result))
 #[2, 4, 6, 8, 10, 12]
-======================
+=========================================
+def calculateSquare(n):
+  return n*n
+numbers = (1, 2, 3, 4)
+result = map(calculateSquare, numbers)
+a = result
+print(set(a))
+print(list(a))
+
+#{16, 1, 4, 9}
+#[]
+
+======================================
