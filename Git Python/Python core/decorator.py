@@ -15,6 +15,27 @@ obj()
 #inner function
 #in outer1 function
 #abc function
+======================
+def outer(abc):
+    def inner():
+        print("in inner function")
+        abc()
+        print("in abc ")
+        abc()
+        print("again in abc")
+    return inner
+
+@outer
+def outer1():
+    print("in outer1 function")
+
+outer1()
+
+#in inner function
+#in outer1 function
+#in abc 
+#in outer1 function
+#again in abc
 =====================
 def outer(abc,abcd):
     def inner():
@@ -33,6 +54,31 @@ obj()
 #inner function
 #in outer2 function
 #abcd function
+#in outer1 function
+#abc function
+=======================
+def outer(abc,abcd):
+    def inner():
+        print("inner function")
+        abcd()
+        print("abcd function")
+        abc()
+        print("abc function")
+        abc()
+        print("abc function")
+    return inner
+def outer1():
+    print("in outer1 function")
+def outer2():
+    print("in outer2 function")
+obj = outer(outer1,outer2)
+obj()
+
+#inner function
+#in outer2 function
+#abcd function
+#in outer1 function
+#abc function
 #in outer1 function
 #abc function
 =======================
@@ -63,6 +109,20 @@ obj(10,15)
 #before adding
 #sum =  25
 #after adding
+========================
+def outer(abc):
+    def inner(i,j):
+        print("before sum :")
+        print("sum = ",abc(i,j))
+        print("after sum")
+    return inner
+@outer
+def outer1(i,j):
+    return i+j
+outer1(10,15)
+#before sum :
+#sum =  25
+#after sum
 ========================
 def add_num_decorate(abc):
     def add_num1(i,j):
