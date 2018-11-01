@@ -1,12 +1,44 @@
 #args_kwargs.py
-
+==================================
 #Args --> The special syntax "*" is function in python is used to pass variable number of arguments to a function.
 #It is used to pass non-keyworded variable-length argument list.
 #The syntax is used to symbol * to take in variable numbers of arguments,by convention it is often used with the word args.
 #* args allows us to do is take an in more aeguments than the number of formal of arguments that you previously defined.
 #with * args,a ny number of extra arguments can be tracked on to your current formal parameter.
+================================
+#kwargs : The special syntax **kwargs in function definations in python is used to pass a keyword, variable-length argument list.
+#We use the name kwargs with double star. The reason is because the double star allow us to pass through keyword arguments(and any number)
+#A key word argument is where you provide a name to the variable as you pass into function.
+======================================= 
+def myFun(**kwargs):
+    for i in kwargs.items():
+        print(i)
+myFun(first ='Geeks', mid ='for', last='Geeks')
 
-=================================
+#('first', 'Geeks')
+#('mid', 'for')
+#('last', 'Geeks')
+================================
+def myFun(**kwargs):
+    for i in kwargs.items():
+        print("%s = %s"%(i))
+myFun(first ='Geeks', mid ='for', last='Geeks')
+
+#first = Geeks
+#mid = for
+#last = Geeks
+===============================
+def test_var_kwargs(farg, **kwargs):
+    print("formal arg:", farg)
+    for i in kwargs.items():
+        print("{}".format(i))
+test_var_kwargs(farg=1, myarg2="two", myarg3=3)
+
+#formal arg: 1
+#('myarg2', 'two')
+#('myarg3', 3)
+
+===============================
 
 def myFun(*argv):  
     for arg in argv:  
