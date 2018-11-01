@@ -1,5 +1,10 @@
 #enumerate.py
 ==============================
+#It is built in function that take input as an iterator, list etc and return a tuple containing index and data at that index in the iterator sequence.
+#syntax : enumerate(iteracble,start=0)
+#Iterable --> Any object that support iteration.
+#Start --> the index value from which the counter is to be started by default it is 0
+======================================
 l1 = ["eat","sleep","repeat"] 
 s1 = "geek"
 obj1 = enumerate(l1) 
@@ -41,6 +46,14 @@ counter_list = list(enumerate(my_list, 1))
 print(counter_list
 #[(1, 'apple'), (2, 'banana'), (3, 'grapes'), (4, 'pear')]
 =========================
+      l1 = ["eat","sleep","repeat"]
+for ele in enumerate(l1,10): 
+    print(ele)
+	
+#(10, 'eat')
+#(11, 'sleep')
+#(12, 'repeat')
+===============================
 grocery = ['bread', 'milk', 'butter']
 for item in enumerate(grocery):
   print(item)
