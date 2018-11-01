@@ -1,5 +1,10 @@
 #lambda.py
-====================
+====================================
+#In python anonymous function is function that is defined without a name, while normal function defined using the def keyword.
+#In python anonymous function is defined by using Lambda keyword.
+#syntax : double(lambda : x*2)
+#Lambda functions used with built in functions like Filter | Map | Reduce | Etc
+====================================
 x = lambda a : a + 10
 print(x(5))
 #15
