@@ -1,5 +1,13 @@
 #counters.py
 ========================
+#Counter --> It is container included in collection module.
+#Container are object which hold objects.
+#They provide a way to access the contained objects and iterable over them.
+#Counter can be zero or negative also.
+#Output --> Dict
+#From collections import counter
+==========================
+
 from collections import Counter 
 z = ['blue', 'red', 'blue', 'yellow', 'blue', 'red'] 
 col_count = Counter(z) 
