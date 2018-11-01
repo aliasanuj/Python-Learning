@@ -1,5 +1,8 @@
 #partial_fraction.py
-=======================
+======================================
+#Partial function allow to fix a certail number of arguments of function and generate a new functions.
+#we need to import is --> from functools import partial | from functools import *
+=======================================
 from functools import partial 
 def f(a, b, c, x): 
     return 1000*a + 100*b + 10*c + x 
