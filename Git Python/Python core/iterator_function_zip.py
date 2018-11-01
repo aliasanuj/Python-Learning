@@ -1,5 +1,29 @@
 #iterator_function_zip.py
 ============================
+#Iterator Functions --> This iterator take two argument.Iterator target and function which would be followed at each iteration of value in target.
+#If no function will be pass,addition take place by default.If iterable will be empty, output iterable will be also empty.
+#Chain(iter1,iter2,....) --> used to print all values 
+#We need to import itertools
+#itertools.accumulate(list1)
+#itertools.chain(list4) #list1+list2+list = list4
+#itertools.chain.from_iterable(list3) #list3=[list1,list2]
+#itertools.dropwhile() --> This iterator start printing the characters only after the function in argument.Return false for first time.
+#itertools.filterfalse(func,seq) --> As the name suggest, this iterator prints only values that return false for passed function.
+#itertools.isslice(iterable,start,stop,step)
+#itertools.starmap(function,tuplelist)
+#itertools.starmap(max,list)
+#itertools.starmap(min,list)
+#itertools.takewhile(func,iterator)
+#itertools.tee(func,iterable)
+#itertools.product(iter1,iter2)
+#itertools.permutation(iter1,group-size)
+#itertools.combination(iter1,group-size)
+#itertools.combination_with_replacement(iter1,group-size)
+#itertools.count(start,stop)
+#itertools.cycle(iterable)
+#itertools.repeat(val,num)
+=====================================
+
 import itertools 
 import operator 
 li1 = [1, 4, 5, 7] 
