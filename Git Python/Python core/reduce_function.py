@@ -1,5 +1,18 @@
 #reduce_function.py
-===========================
+==========================
+#It is used to apply a particular function passed in its argument to all of the list elements mentioned in the sequenced passed along.
+#This is defined in functools module
+#filter(function,iterator)
+#Reduce() | Accumulate()
+#Both reduce and accumulate can be used to calculate the summation od a sequence.
+#But there are some difference in the implementation aspects in both of these.
+#reduce() --> defined in functools
+#Accumuate() --> defined in accumulate
+#Reduce() --> store the intermediate result and only returns the final summation value.
+#Accumulate() returns a list containing the intermediate result. The last number of the list is returned is summation value of the list.
+#Reduce --> Reduce(function,sequence)
+#Accumulate --> Accumulate(sequence,function)
+==============================================
 list1 = [1,2,3,4,5,6]
 def add(x):
   return x+x
