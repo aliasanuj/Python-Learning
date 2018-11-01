@@ -6,6 +6,14 @@ my_list = [1, 2, 3, 4]
 fun(my_list) 
 #TypeError: fun() missing 3 required positional arguments: 'b', 'c', and 'd'
 ============================
+def abc(*a):
+    sum = 0
+    for i in range(0,len(a)):
+        sum = sum + a[i]
+    return sum
+print(abc(1,2,3,4,5))
+#15
+=============================
 def fun(a, b, c, d): 
     print(a, b, c, d) 
 my_list = [1, 2, 3, 4] 
