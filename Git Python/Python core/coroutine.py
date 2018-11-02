@@ -4,7 +4,33 @@
 #Generator produces data for iteration while coroutines can also consume data.
 #Execution of coroutine is similar to generator. When we call coroutine nothing happens.
 #It runs only in response to next() and send() methods.
-===========================
+
+#Closing coroutine : Coroutine might run indefinately to close coroutine close() method is used.
+#When coroutine is close it generate GenerateExit exception which can be done in usual way.
+#If we try to send value after closing coroutine, it will raise StopIteration exception.
+ 
+============================
+def name(prefix):
+  print("searchimg prefix {} ".format(prefix))
+  while True:
+    y = yield
+    if prefix in y:
+      print(y)
+obj = name("anuj")
+obj.__next__()
+obj.send("anuj")
+obj.send("Anuj anuj")
+obj.send("anuj kumar")
+obj.send("kumar anuj")
+obj.close()
+
+#searchimg prefix anuj 
+#anuj
+#Anuj anuj
+#anuj kumar
+#kumar anuj
+==================================
+
 def print_name(prefix): 
     print("Searching prefix:{}".format(prefix)) 
     while True: 
