@@ -1,4 +1,9 @@
 #coroutine.py
+==========================
+#coroutines : Couroutines are similar to generator but with few extramethods and slight change in how we use yield statement.
+#Generator produces data for iteration while coroutines can also consume data.
+#Execution of coroutine is similar to generator. When we call coroutine nothing happens.
+#It runs only in response to next() and send() methods.
 ===========================
 def print_name(prefix): 
     print("Searching prefix:{}".format(prefix)) 
