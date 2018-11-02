@@ -86,6 +86,53 @@
 #re.split()
 #re.sub()
 #re.compile()
+
+#RE Module contacts
+re.compile(pattern)
+re.compile(pattern,string)
+re.DEBUG()
+re.LOCALE
+re.MULTILINE
+re.DOTALL
+re.UNICODE
+re.search
+re.match
+re.split
+re.findall
+re.finditer
+re.sub
+re.subn
+re.escape
+re.purge
+re.error
+
+#Regular expression objects
+search
+match
+split
+findall
+finditer
+sub
+subn
+flags
+groups
+groupindex
+pattern
+
+#Match expands
+expands
+group
+groups
+groupdict
+start
+end
+span
+pos
+endpos
+lastindex
+lastgroup
+re string 
+
 ===========================================
 https://www.tutorialspoint.com/python/python_reg_expressions.htm
 https://www.analyticsvidhya.com/blog/2015/06/regular-expression-python/
