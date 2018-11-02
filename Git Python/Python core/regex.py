@@ -66,7 +66,6 @@
 #[^aeiou]-->Match anything other than a lowercase vowel
 #[^0-9]-->Match anything other than a digit
 
-
 #.-->Match any character except newline
 #\d-->Match a digit: [0-9]
 #\D-->Match a nondigit: [^0-9]
@@ -75,7 +74,21 @@
 #\w-->Match a single word character: [A-Za-z0-9_]
 #\W-->Match a nonword character: [^A-Za-z0-9_]
 
+# \w is equivalent to [a-zA-Z0-9_]. 
+# \w+ matches to group of alphanumeric charcter. 
+# \W matches to non alphanumeric characters. 
+# '\W+' denotes Non-Alphanumeric Characters or group of characters 
+#'\W+' denotes Non-Alphanumeric Characters or group of charactersUpon finding (,) or (') or whitespace ' ', the split(), splits the string from that point.
 
+#re.match()
+#re.search()
+#re.findall()
+#re.split()
+#re.sub()
+#re.compile()
+===========================================
+https://www.tutorialspoint.com/python/python_reg_expressions.htm
+https://www.analyticsvidhya.com/blog/2015/06/regular-expression-python/
 ===============================
 import re 
 p = re.compile('[a-e]') 
@@ -279,8 +292,6 @@ print ("Phone Num : ", num)
 #Phone Num :  2004-959-559 
 #Phone Num :  2004959559
 =================================================================
-https://www.tutorialspoint.com/python/python_reg_expressions.htm
-==================================================================
 import re
 string1 = '''anuj is 25 and Rupesh is 26
             Aman is 57 and anshu is 26'''
@@ -400,29 +411,18 @@ b = len(re.findall("\d{6,7}",a))
 print(b)
 #2
 ==============================
+from re import split
+# '\W+' denotes Non-Alphanumeric Characters or group of characters
+# Upon finding (,) or (') or whitespace ' ', the split(), splits the string from that point
+print(split('\W+', 'Words, words , Words'))
+print(split('\W+', "Word's wo,rds Words"))
+# Here ':', ' ' ,',' are not AlphaNumeric thus, the point where splitting occurs
+print(split('\W+', 'On 12th Jan 2016, at 11:02 AM'))
+# '\d+' denotes Numeric Characters or group of characters
+# Spliting occurs at '12', '2016', '11', '02' only
+print(split('\d+', 'On 12th Jan 2016, at 11:02 AM'))
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#['Words', 'words', 'Words']
+#['Word', 's', 'wo', 'rds', 'Words']
+#['On', '12th', 'Jan', '2016', 'at', '11', '02', 'AM']
+#['On ', 'th Jan ', ', at ', ':', ' AM']
