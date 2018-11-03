@@ -14,7 +14,7 @@
 ==========================================
 Method	Description
 ==========================================
-clear()		Removes all the elements from the dictionary
+clear()	Removes all the elements from the dictionary
 copy()		Returns a copy of the dictionary
 fromkeys()	Returns a dictionary with the specified keys and values
 get()		Returns the value of the specified key
