@@ -18,7 +18,7 @@ clear()	Removes all the elements from the dictionary
 copy()		Returns a copy of the dictionary
 fromkeys()	Returns a dictionary with the specified keys and values
 get()		Returns the value of the specified key
-items()		Returns a list containing the a tuple for each key value pair
+items()	Returns a list containing the a tuple for each key value pair
 keys()		Returns a list contianing the dictionary's keys
 pop()		Removes the element with the specified key
 popitem()	Removes the last inserted key-value pair
