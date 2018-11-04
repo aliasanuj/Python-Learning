@@ -92,7 +92,7 @@ print(("Repeat",) * 3)
 my_tuple = ('p','r','o','g','r','a','m','i','z')
 #del my_tuple[3] -->error
 del my_tuple
-print(my_tuple) --> No tuple exist as error
+print(my_tuple) #--> No tuple exist as error
 
 #Python Tuple Methods -->
 #Methods that add items or remove items are not available with tuple. Only the following two methods are available.
@@ -132,9 +132,9 @@ enumerate()	Return an enumerate object. It contains the index and value of all t
 len()		Return the length (the number of items) in the tuple.
 max()		Return the largest item in the tuple.
 min()		Return the smallest item in the tuple
-sorted()		Take elements in the tuple and return a new sorted list (does not sort the tuple itself).
+sorted()	Take elements in the tuple and return a new sorted list (does not sort the tuple itself).
 sum()		Retrun the sum of all elements in the tuple.
-tuple()		Convert an iterable (list, string, set, dictionary) to a tuple.
+tuple()	Convert an iterable (list, string, set, dictionary) to a tuple.
 
 
 
