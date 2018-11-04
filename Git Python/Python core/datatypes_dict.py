@@ -472,14 +472,13 @@ print("printable string:%s" % str (Dict))
 ===========================================================
 Method	Description	Syntax
 ===========================================================
-copy()		Copy the entire dictionary to new dictionary			dict.copy()
-update()	Update a dictionary by adding a new entry or a key-value pair to an
-		existing entry or by deleting an existing entry.		Dict.update([other])
-items()		Returns a list of tuple pairs (Keys, Value) in the dictionary.	dictionary.items()
-sort()		You can sort the elements	dictionary.			sort()
-len()		Gives the number of pairs in the dictionary.			len(dict)
-cmp()		Compare values and keys of two dictionaries			cmp(dict1, dict2)
-Str()		Make a dictionary into a printable string format		Str(dict)
+copy()		dict.copy()		Copy the entire dictionary to new dictionary			
+update()	Dict.update()		Update a dictionary by adding a new entry or a key-value pair to an existing entry or by deleting an existing entry.
+items()		dictionary.items()	Returns a list of tuple pairs (Keys, Value) in the dictionary.
+sort()		sort()			You can sort the elements	dictionary.			
+len()		len(dict)		Gives the number of pairs in the dictionary.			
+cmp()		cmp(dict1, dict2) 	Compare values and keys of two dictionaries			
+Str()		Str(dict)		Make a dictionary into a printable string format		
 =============================================================
 Sr.No.	Methods with Description
 =============================================================
