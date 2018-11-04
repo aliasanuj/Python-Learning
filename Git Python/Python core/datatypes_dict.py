@@ -40,7 +40,7 @@ Method	Description	Syntax
 ===========================================================
 copy()		dict.copy()		Copy the entire dictionary to new dictionary			
 update()	Dict.update()		Update a dictionary by adding a new entry or a key-value pair to an existing entry or by deleting an existing entry.
-items()		dictionary.items()	Returns a list of tuple pairs (Keys, Value) in the dictionary.
+items()	dictionary.items()	Returns a list of tuple pairs (Keys, Value) in the dictionary.
 sort()		sort()			You can sort the elements	dictionary.			
 len()		len(dict)		Gives the number of pairs in the dictionary.			
 cmp()		cmp(dict1, dict2) 	Compare values and keys of two dictionaries			
