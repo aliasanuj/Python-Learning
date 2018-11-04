@@ -135,18 +135,6 @@ min()		Return the smallest item in the tuple
 sorted()	Take elements in the tuple and return a new sorted list (does not sort the tuple itself).
 sum()		Retrun the sum of all elements in the tuple.
 tuple()	Convert an iterable (list, string, set, dictionary) to a tuple.
-
-
-
-
-
-
-
-
-
-
-
-
 ====================================================
 thistuple = ("apple", "banana", "cherry")
 print(thistuple)
