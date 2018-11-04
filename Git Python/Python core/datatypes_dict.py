@@ -27,6 +27,49 @@ update()	Updates the dictionary with the specified key-value pairs
 values()	Returns a list of all the values in the dictionary
 
 ===================================================
+Function	Description
+=======================================================
+all()		Return True if all keys of the dictionary are true (or if the dictionary is empty).
+any()		Return True if any key of the dictionary is true. If the dictionary is empty, return False.
+len()		Return the length (the number of items) in the dictionary.
+cmp()		Compares items of two dictionaries.
+sorted()	Return a new sorted list of keys in the dictionary.
+=======================================================
+===========================================================
+Method	Description	Syntax
+===========================================================
+copy()		dict.copy()		Copy the entire dictionary to new dictionary			
+update()	Dict.update()		Update a dictionary by adding a new entry or a key-value pair to an existing entry or by deleting an existing entry.
+items()		dictionary.items()	Returns a list of tuple pairs (Keys, Value) in the dictionary.
+sort()		sort()			You can sort the elements	dictionary.			
+len()		len(dict)		Gives the number of pairs in the dictionary.			
+cmp()		cmp(dict1, dict2) 	Compare values and keys of two dictionaries			
+Str()		Str(dict)		Make a dictionary into a printable string format		
+=============================================================
+Sr.No.	Methods with Description
+=============================================================
+1	dict.clear()
+	Removes all elements of dictionary dict
+2	dict.copy()
+	Returns a shallow copy of dictionary dict
+3	dict.fromkeys()
+	Create a new dictionary with keys from seq and values set to value.
+4	dict.get(key, default=None)
+	For key key, returns value or default if key not in dictionary
+5	dict.has_key(key)
+	Returns true if key in dictionary dict, false otherwise
+6	dict.items()
+	Returns a list of dict's (key, value) tuple pairs
+7	dict.keys()
+	Returns list of dictionary dict's keys
+8	dict.setdefault(key, default=None)
+	Similar to get(), but will set dict[key]=default if key is not already in dict
+9	dict.update(dict2)
+	Adds dictionary dict2's key-values pairs to dict
+10	dict.values()
+	Returns list of dictionary dict's values
+==============================================================
+
 thisdict =	{
   "brand": "Ford",
   "model": "Mustang",
@@ -285,14 +328,6 @@ for i in squares:
 #7
 #9
 =======================================================
-Function	Description
-=======================================================
-all()		Return True if all keys of the dictionary are true (or if the dictionary is empty).
-any()		Return True if any key of the dictionary is true. If the dictionary is empty, return False.
-len()		Return the length (the number of items) in the dictionary.
-cmp()		Compares items of two dictionaries.
-sorted()	Return a new sorted list of keys in the dictionary.
-=======================================================
 squares = {1: 1, 3: 9, 5: 25, 7: 49, 9: 81}
 # Output: 5
 print(len(squares))
@@ -469,39 +504,7 @@ print("variable Type: %s" %type (Dict))
 Dict = {'Tim': 18,'Charlie':12,'Tiffany':22,'Robert':25}	
 print("printable string:%s" % str (Dict))
 #printable string:{'Tim': 18, 'Charlie': 12, 'Tiffany': 22, 'Robert': 25}
-===========================================================
-Method	Description	Syntax
-===========================================================
-copy()		dict.copy()		Copy the entire dictionary to new dictionary			
-update()	Dict.update()		Update a dictionary by adding a new entry or a key-value pair to an existing entry or by deleting an existing entry.
-items()		dictionary.items()	Returns a list of tuple pairs (Keys, Value) in the dictionary.
-sort()		sort()			You can sort the elements	dictionary.			
-len()		len(dict)		Gives the number of pairs in the dictionary.			
-cmp()		cmp(dict1, dict2) 	Compare values and keys of two dictionaries			
-Str()		Str(dict)		Make a dictionary into a printable string format		
-=============================================================
-Sr.No.	Methods with Description
-=============================================================
-1	dict.clear()
-	Removes all elements of dictionary dict
-2	dict.copy()
-	Returns a shallow copy of dictionary dict
-3	dict.fromkeys()
-	Create a new dictionary with keys from seq and values set to value.
-4	dict.get(key, default=None)
-	For key key, returns value or default if key not in dictionary
-5	dict.has_key(key)
-	Returns true if key in dictionary dict, false otherwise
-6	dict.items()
-	Returns a list of dict's (key, value) tuple pairs
-7	dict.keys()
-	Returns list of dictionary dict's keys
-8	dict.setdefault(key, default=None)
-	Similar to get(), but will set dict[key]=default if key is not already in dict
-9	dict.update(dict2)
-	Adds dictionary dict2's key-values pairs to dict
-10	dict.values()
-	Returns list of dictionary dict's values
+
 ==============================================================
 string1 = "anuj anuj anuj kumar"
 dict1 = {}
