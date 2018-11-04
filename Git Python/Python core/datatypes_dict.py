@@ -560,5 +560,110 @@ for i,j in sorted(dict1.items()):
 #anuj = 3
 #kumar = 1
 ========================================
+my_dict = {'name':'Jack', 'age': 26}
+# Output: Jack
+print(my_dict['name'])
+# Output: 26
+print(my_dict.get('age'))
+# Trying to access keys which doesn't exist throws error
+print(my_dict.get('address'))
 
+#Jack
+326
+#None
+===================================
+squares = {1:1, 2:4, 3:9, 4:16, 5:25}
+print(squares.pop(4))
+print(squares)
+print(squares.popitem())
+print(squares)
+squares.clear()
+print(squares)
+del squares
+print(squares) #error --> NameError: name 'squares' is not defined
+#16
+#{1: 1, 2: 4, 3: 9, 5: 25}
+#(5, 25)
+#{1: 1, 2: 4, 3: 9}
+#{}
+================================
+marks = {}.fromkeys(['Math','English','Science'], 0)
+print(marks)
+for item in marks.items():
+    print(item)
+for item in marks.keys():
+    print(item)
+print(list(sorted(marks.keys())))
+#{'Math': 0, 'English': 0, 'Science': 0}
+#('Math', 0)
+#('English', 0)
+#('Science', 0)
+#Math
+#English
+#Science
+#['English', 'Math', 'Science']
+===================================
+squares = {x: x*x for x in range(6)}
+print(squares)
+#{0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+============================
+squares = {1: 1, 3: 9, 5: 25, 7: 49, 9: 81}
+print(len(squares))
+print(sorted(squares))
+#5
+#[1, 3, 5, 7, 9]
+===========================
+thisdict =	{
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+for x in thisdict.values():
+  print(x)
+for x in thisdict.keys():
+  print(x)
+#Ford
+#Mustang
+#1964
+#brand
+#model
+#year
+========================
+thisdict =	{
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+if "Ford" in thisdict:
+  print("Yes, 'model' is one of the keys in the thisdict dictionary")
+#No OutPut
+========================
+thisdict =	{
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+x = thisdict.get("brand") #for specified key
+print(x)
+
+#ford
+======================
+my_dict = {'name':'Jack', 'age': 26}
+# Output: Jack
+print(my_dict['name'])
+# Output: 26
+print(my_dict.get('age'))
+# Trying to access keys which doesn't exist throws error
+print(my_dict.get('name',"not found"))
+
+#Jack
+#26
+#Jack
+=========================
+squares = {1: 1, 11: 9, 5: 25, 7: 49, 9: 81}
+print(sorted(squares))
+
+#[1, 5, 7, 9, 11]
+
+========================
 
