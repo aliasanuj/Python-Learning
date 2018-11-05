@@ -63,6 +63,10 @@ print(my_list[:-5])
 print(my_list[5:])
 # elements beginning to end
 print(my_list[:])
+#['o', 'g', 'r']
+#['p', 'r', 'o', 'g']
+#['a', 'm', 'i', 'z']
+#['p', 'r', 'o', 'g', 'r', 'a', 'm', 'i', 'z']
 
 
 #How to change or add elements to a list -->
