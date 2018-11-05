@@ -155,20 +155,22 @@ print(my_list)
 #Methods that are available with list object in Python programming are tabulated below.
 #They are accessed as list.method(). Some of the methods have already been used above.
 
-#Python List Methods
-append()	Add an element to the end of the list
-extend()	Add all elements of a list to the another list
-insert()	Insert an item at the defined index
-remove()	Removes an item from the list
-pop()		Removes and returns an element at the given index
-clear()	Removes all items from the list
-index()	Returns the index of the first matched item
-count()	Returns the count of number of items passed as an argument
-sort()		Sort items in a list in ascending order
-reverse()	Reverse the order of items in the list
-copy()		Returns a shallow copy of the list
-
-#Function	Description
+============================================
+Method	Description
+append()	Adds an element at the end of the list
+clear()		Removes all the elements from the list
+copy()		Returns a copy of the list
+count()		Returns the number of elements with the specified value
+extend()	Add the elements of a list (or any iterable), to the end of the current list
+index()		Returns the index of the first element with the specified value
+insert()	Adds an element at the specified position
+pop()		Removes the element at the specified position
+remove()	Removes the item with the specified value
+reverse()	Reverses the order of the list
+sort()		Sorts the list
+==================================================
+Function	Description
+==================================================
 all()		Return True if all elements of the list are true (or if the list is empty).
 any()		Return True if any element of the list is true. If the list is empty, return False.
 enumerate()	Return an enumerate object. It contains the index and value of all the items of list as a tuple.
@@ -178,8 +180,7 @@ max()		Return the largest item in the list.
 min()		Return the smallest item in the list
 sorted()	Return a new sorted list (does not sort the list itself).
 sum()		Return the sum of all elements in the list.
-
-
+=============================================
 my_list = [3, 8, 1, 6, 0, 8, 4]
 # Output: 1
 print(my_list.index(8))
@@ -287,31 +288,7 @@ print(thislist)
 thislist = list(("apple", "banana", "cherry")) # note the double round-brackets
 print(thislist)
 #['apple', 'banana', 'cherry']
-============================================
-Method	Description
-append()	Adds an element at the end of the list
-clear()		Removes all the elements from the list
-copy()		Returns a copy of the list
-count()		Returns the number of elements with the specified value
-extend()	Add the elements of a list (or any iterable), to the end of the current list
-index()		Returns the index of the first element with the specified value
-insert()	Adds an element at the specified position
-pop()		Removes the element at the specified position
-remove()	Removes the item with the specified value
-reverse()	Reverses the order of the list
-sort()		Sorts the list
-==================================================
-Function	Description
-==================================================
-all()		Return True if all elements of the list are true (or if the list is empty).
-any()		Return True if any element of the list is true. If the list is empty, return False.
-enumerate()	Return an enumerate object. It contains the index and value of all the items of list as a tuple.
-len()		Return the length (the number of items) in the list.
-list()		Convert an iterable (tuple, string, set, dictionary) to a list.
-max()		Return the largest item in the list.
-min()		Return the smallest item in the list
-sorted()	Return a new sorted list (does not sort the list itself).
-sum()		Return the sum of all elements in the list.
+=======================================
  
 # empty list
 my_list = []
