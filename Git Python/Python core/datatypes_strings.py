@@ -232,8 +232,8 @@ Format Symbol	Conversion
 (var)	mapping variable (dictionary arguments)
 m.n.	m is the minimum total width and n is the number of digits to display after the decimal point (if appl.)
 ======================================
-string.ascii_letter			Concatenation of the ascii_lowercase and ascii_uppercase constants.
-string.ascii_lowercase			Concatenation of lowercase letters
+string.ascii_letter              Concatenation of the ascii_lowercase and ascii_uppercase constants.
+string.ascii_lowercase                                 Concatenation of lowercase letters
 string.ascii_uppercase			Concatenation of uppercase letters
 string.digits			Digit in strings
 string.hexdigits			Hexadigit in strings
