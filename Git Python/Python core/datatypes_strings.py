@@ -123,9 +123,9 @@ for i in enumerate(str):
 #Escape Sequence -->
 #If we want to print a text like -He said, "What's there?"- we can neither use single quote or double quotes.
 #This will result into SyntaxError as the text itself contains both single and double quotes.
->>> print("He said, "What's there?"")
+#>>> print("He said, "What's there?"")
 SyntaxError: invalid syntax
->>> print('He said, "What's there?"')
+#>>> print('He said, "What's there?"')
 SyntaxError: invalid syntax
 
 #One way to get around this problem is to use triple quotes. Alternatively, we can use escape sequences.
@@ -146,19 +146,21 @@ print("He said, \"What's there?\"")
 #Here is a list of all the escape sequence supported by Python.
 #Escape Sequence in Python
 #Escape Sequence	Description
-\newline		Backslash and newline ignored
-\\		Backslash
-\'		Single quote
-\"		Double quote
-\a		ASCII Bell
-\b		ASCII Backspace
-\f		ASCII Formfeed
-\n		ASCII Linefeed
-\r		ASCII Carriage Return
-\t		ASCII Horizontal Tab
-\v		ASCII Vertical Tab
-\ooo		Character with octal value ooo
-\xHH		Character with hexadecimal value HH
+#\newline		Backslash and newline ignored
+#\\		Backslash
+#\'		Single quote
+#\"		Double quote
+#\a		ASCII Bell
+#\b		ASCII Backspace
+#\f		ASCII Formfeed
+#\n		ASCII Linefeed
+#\r		ASCII Carriage Return
+#\t		ASCII Horizontal Tab
+#\v		ASCII Vertical Tab
+#\ooo		Character with octal value ooo
+#\xHH		Character with hexadecimal value HH
+
+
 
 
 ===============================
