@@ -232,27 +232,27 @@ Format Symbol	Conversion
 (var)	mapping variable (dictionary arguments)
 m.n.	m is the minimum total width and n is the number of digits to display after the decimal point (if appl.)
 ======================================
-string.ascii_letter				Concatenation of the ascii_lowercase and ascii_uppercase constants.
-string.ascii_lowercase				Concatenation of lowercase letters
-string.ascii_uppercase				Concatenation of uppercase letters
-string.digits				Digit in strings
-string.hexdigits				Hexadigit in strings
-string.letters				concatenation of the strings lowercase and uppercase
-string.lowercase				A string must contain lowercase letters.
-string.octdigits				Octadigit in a string
-string.punctuation				ASCII characters having punctuation characters.
-string.printable				String of characters which are printable
-String.endswith()				Returns True if a string ends with the given suffix otherwise returns False
-String.startswith()				Returns True if a string starts with the given prefix otherwise returns False
-String.isdigit()				Returns “True” if all characters in the string are digits, Otherwise, It returns “False”.
-String.isalpha()				Returns “True” if all characters in the string are alphabets, Otherwise, It returns “False”.
-string.isdecimal()				Returns true if all characters in a string are decimal.
-str.format()				one of the string formatting methods in Python3, which allows multiple substitutions and value formatting.
-String.index				Returns the position of the first occurrence of substring in a string
-string.uppercase				A string must contain uppercase letters.
-string.whitespace				A string containing all characters that are considered whitespace.
-string.swapcase()				Method converts all uppercase characters to lowercase and vice versa of the given string, and returns it
-replace()				returns a copy of the string where all occurrences of a substring is replaced with another substring.
+string.ascii_letter			Concatenation of the ascii_lowercase and ascii_uppercase constants.
+string.ascii_lowercase			Concatenation of lowercase letters
+string.ascii_uppercase			Concatenation of uppercase letters
+string.digits			Digit in strings
+string.hexdigits			Hexadigit in strings
+string.letters			concatenation of the strings lowercase and uppercase
+string.lowercase			A string must contain lowercase letters.
+string.octdigits			Octadigit in a string
+string.punctuation			ASCII characters having punctuation characters.
+string.printable			String of characters which are printable
+String.endswith()			Returns True if a string ends with the given suffix otherwise returns False
+String.startswith()			Returns True if a string starts with the given prefix otherwise returns False
+String.isdigit()			Returns “True” if all characters in the string are digits, Otherwise, It returns “False”.
+String.isalpha()			Returns “True” if all characters in the string are alphabets, Otherwise, It returns “False”.
+string.isdecimal()			Returns true if all characters in a string are decimal.
+str.format()			one of the string formatting methods in Python3, which allows multiple substitutions and value formatting.
+String.index			Returns the position of the first occurrence of substring in a string
+string.uppercase			A string must contain uppercase letters.
+string.whitespace			A string containing all characters that are considered whitespace.
+string.swapcase()			Method converts all uppercase characters to lowercase and vice versa of the given string, and returns it
+replace()			returns a copy of the string where all occurrences of a substring is replaced with another substring.
 ======================================
 BUILT-IN FUNCTION	DESCRIPTION
 =======================================
