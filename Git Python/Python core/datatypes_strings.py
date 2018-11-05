@@ -256,10 +256,10 @@ replace()			returns a copy of the string where all occurrences of a substring is
 ======================================
 BUILT-IN FUNCTION	DESCRIPTION
 =======================================
-string.Isdecimal	Returns true if all characters in a string are decimal
-String.Isalnum	Returns true if all the characters in a given string are alphanumeric.
-string.Istitle	Returns True if the string is a titlecased string
-String.partition	splits the string at the first occurrence of the separator and returns a tuple.
+string.Isdecimal                 Returns true if all characters in a string are decimal
+String.Isalnum                   Returns true if all the characters in a given string are alphanumeric.
+string.Istitle	           Returns True if the string is a titlecased string
+String.partition	           splits the string at the first occurrence of the separator and returns a tuple.
 String.Isidentifier	Check whether a string is a valid identifier or not.
 String.len	           Returns the length of the string.
 String.rindex	Returns the highest index of the substring inside the string if substring is found.
