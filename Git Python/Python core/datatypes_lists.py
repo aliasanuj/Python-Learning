@@ -583,8 +583,7 @@ print(List)
 #List after performing Extend Operation: 
 #[1, 2, 4, 12, 1, 2, 3, (5, 6), ['Geeks', 'For', 'Geeks'], 8, 'Geeks', 'Always']
 ==================================================
-List = [1, 2, 3, 4, 5, 6,  
-        7, 8, 9, 10, 11, 12] 
+List = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] 
 print("Intial List: ") 
 print(List) 
 List.remove(5) 
