@@ -308,7 +308,7 @@ string.replace	Return a copy of string s with all occurrences of substring old r
 #We can use positional arguments or keyword arguments to specify the order.
 
 default_order = "{}, {} and {}".format('John','Bill','Sean')
-print('--- Default Order ---')
+print('--- Default Order ---') 
 print(default_order)
 positional_order = "{1}, {0} and {2}".format('John','Bill','Sean')
 print('--- Positional Order ---')
