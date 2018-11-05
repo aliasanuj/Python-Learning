@@ -618,3 +618,26 @@ print("Split the words of the string: %s" % s.split(" "))
 #String in uppercase: HEY THERE! WHAT SHOULD THIS STRING BE?
 #String in lowercase: hey there! what should this string be?
 #Split the words of the string: ['Hey', 'there!', 'what', 'should', 'this', 'string', 'be?']
+===============================
+a = "ANuj"
+x = a.casefold()
+print(x)
+#anuj
+===================
+a = "AsNuj"
+x = a.endswith('J')
+print(x)
+#False
+======================
+a = "AsNuj"
+x = a.endswith('j')
+print(x)
+#True
+======================
+a = ['a','n','u','j']
+print(type(a))
+x = "".join(a)
+print(type(x))
+#<class 'list'>
+#<class 'str'>
+=====================
