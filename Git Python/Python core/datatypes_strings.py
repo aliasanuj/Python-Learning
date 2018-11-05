@@ -160,8 +160,63 @@ print("He said, \"What's there?\"")
 #\ooo		Character with octal value ooo
 #\xHH		Character with hexadecimal value HH
 
+#Raw String to ignore escape sequence -->
+#Sometimes we may wish to ignore the escape sequences inside a string.
+#To do this we can place r or R in front of the string.
+#This will imply that it is a raw string and any escape sequence inside it will be ignored.
+#>>> print("This is \x61 \ngood example")
+#This is a
+#good example
+#>>> print(r"This is \x61 \ngood example")
+#This is \x61 \ngood example
 
+#The format() Method for Formatting Strings
+#The format() method that is available with the string object is very versatile and powerful in formatting strings.
+#Format strings contains curly braces {} as placeholders or replacement fields which gets replaced.
+#We can use positional arguments or keyword arguments to specify the order.
 
+default_order = "{}, {} and {}".format('John','Bill','Sean')
+print('--- Default Order ---')
+print(default_order)
+positional_order = "{1}, {0} and {2}".format('John','Bill','Sean')
+print('--- Positional Order ---')
+print(positional_order)
+keyword_order = "{s}, {b} and {j}".format(j='John',b='Bill',s='Sean')
+print('--- Keyword Order ---')
+print(keyword_order)
+#--- Default Order ---
+#John, Bill and Sean
+#--- Positional Order ---
+#Bill, John and Sean
+#--- Keyword Order ---
+#Sean, Bill and John
+
+#The format() method can have optional format specifications.
+#They are separated from field name using colon.
+#For example, we can left-justify <, right-justify > or center ^ a string in the given space.
+#We can also format integers as binary, hexadecimal etc. and floats can be rounded or displayed in the exponent format.
+#There are a ton of formatting you can use. Visit here for all the string formatting available with the format() method.
+
+>>> # formatting integers
+>>> "Binary representation of {0} is {0:b}".format(12)
+'Binary representation of 12 is 1100'
+>>> # formatting floats
+>>> "Exponent representation: {0:e}".format(1566.345)
+'Exponent representation: 1.566345e+03'
+>>> # round off
+>>> "One third is: {0:.3f}".format(1/3)
+'One third is: 0.333'
+>>> # string alignment
+>>> "|{:<10}|{:^10}|{:>10}|".format('butter','bread','ham')
+'|butter    |  bread   |       ham|'
+
+#Old style formatting
+#We can even format strings like the old sprintf() style used in C programming language. We use the % operator to accomplish this.
+#>>> x = 12.3456789
+#>>> print('The value of x is %3.2f' %x)
+#The value of x is 12.35
+#>>> print('The value of x is %3.4f' %x)
+#The value of x is 12.3457
 
 ===============================
 a = "Hello, World!"
