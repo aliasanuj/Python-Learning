@@ -176,7 +176,7 @@ len()		Return the length (the number of items) in the list.
 list()		Convert an iterable (tuple, string, set, dictionary) to a list.
 max()		Return the largest item in the list.
 min()		Return the smallest item in the list
-sorted()		Return a new sorted list (does not sort the list itself).
+sorted()	Return a new sorted list (does not sort the list itself).
 sum()		Return the sum of all elements in the list.
 
 
