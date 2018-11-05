@@ -285,7 +285,7 @@ string.swapcase	Converts lower case letters to upper case and vice versa.
 string.translate	translate the characters using table
 string.upper	lower case letters converted to upper case.
 string.ljust	left-justify in a field of given width.
-string.rjust	Right-justify in a field of given width.
+string.rjust	Right-justify in a field of given width. 
 string.center()	Center-justify in a field of given width.
 string-zfill	Pad a numeric string on the left with zero digits until the given width is reached.
 string.replace	Return a copy of string s with all occurrences of substring old replaced by new.
