@@ -160,6 +160,147 @@ print("He said, \"What's there?\"")
 #\ooo		Character with octal value ooo
 #\xHH		Character with hexadecimal value HH
 
+========================================
+Method	Description
+========================================
+capitalize()          Converts the first character to upper case
+casefold()	           Converts string into lower case
+center()	           Returns a centered string
+count()	           Returns the number of times a specified value occurs in a string
+encode()	           Returns an encoded version of the string
+endswith()	           Returns true if the string ends with the specified value
+expandtabs()	Sets the tab size of the string
+find()	           Searches the string for a specified value and returns the position of where it was found
+format()	           Formats specified values in a string
+format_map()	Formats specified values in a string
+index()	           Searches the string for a specified value and returns the position of where it was found
+isalnum()	           Returns True if all characters in the string are alphanumeric
+isalpha()	           Returns True if all characters in the string are in the alphabet
+isdecimal()	Returns True if all characters in the string are decimals
+isdigit()	           Returns True if all characters in the string are digits
+isidentifier()	Returns True if the string is an identifier
+islower()	           Returns True if all characters in the string are lower case
+isnumeric()	Returns True if all characters in the string are numeric
+isprintable()	Returns True if all characters in the string are printable
+isspace()	           Returns True if all characters in the string are whitespaces
+istitle()	           Returns True if the string follows the rules of a title
+isupper()	           Returns True if all characters in the string are upper case
+join()	           Joins the elements of an iterable to the end of the string
+ljust()	           Returns a left justified version of the string
+lower()	           Converts a string into lower case
+lstrip()	           Returns a left trim version of the string
+maketrans()	Returns a translation table to be used in translations
+partition()	Returns a tuple where the string is parted into three parts
+replace()	           Returns a string where a specified value is replaced with a specified value
+rfind()	           Searches the string for a specified value and returns the last position of where it was found
+rindex()	           Searches the string for a specified value and returns the last position of where it was found
+rpartition()	Returns a tuple where the string is parted into three parts
+rsplit()	           Splits the string at the specified separator, and returns a list
+rstrip()	           Returns a right trim version of the string
+split()	           Splits the string at the specified separator, and returns a list
+splitlines()	Splits the string at line breaks and returns a list
+startswith()	Returns true if the string starts with the specified value
+swapcase()	           Swaps cases, lower case becomes upper case and vice versa
+title()	           Converts the first character of each word to upper case
+translate()	Returns a translated string
+upper()	           Converts a string into upper case
+zfill()	           Fills the string with a specified number of 0 values at the beginning
+=========================================
+s.lower(), s.upper() --          returns the lowercase or uppercase version of the string
+s.strip() --                     returns a string with whitespace removed from the start and end
+s.isalpha()/s.isdigit()/s.isspace()... -- tests if all the string chars are in the various character classes
+s.startswith('other'), s.endswith('other') -- tests if the string starts or ends with the given other string
+s.find('other') --               searches for the given other string (not a regular expression) within s, and returns the first index where it begins or -1 if not found
+s.replace('old', 'new') --       returns a string where all occurrences of 'old' have been replaced by 'new'
+s.split('delim') --              returns a list of substrings separated by the given delimiter. The delimiter is not a regular expression, it's just text. 'aaa,bbb,ccc'.split(',') -> ['aaa', 'bbb', 'ccc']. As a convenient special case s.split() (with no arguments) splits on all whitespace chars.
+s.join(list) --                  opposite of split(), joins the elements in the given list together using the string as the delimiter. e.g. '---'.join(['aaa', 'bbb', 'ccc']) -> aaa---bbb---ccc
+===========================================
+Format Symbol	Conversion
+===========================================
+%c	character
+%s	string conversion via str() prior to formatting
+%i	signed decimal integer
+%d	signed decimal integer
+%u	unsigned decimal integer
+%o	octal integer
+%x	hexadecimal integer (lowercase letters)
+%X	hexadecimal integer (UPPERcase letters)
+%e	exponential notation (with lowercase 'e')
+%E	exponential notation (with UPPERcase 'E')
+%f	floating point real number
+%g	the shorter of %f and %e
+%G	the shorter of %f and %E
+==========================================
+*	argument specifies width or precision
+-	left justification
++	display the sign
+<sp>	leave a blank space before a positive number
+#	add the octal leading zero ( '0' ) or hexadecimal leading '0x' or '0X', depending on whether 'x' or 'X' were used.
+0	pad from left with zeros (instead of spaces)
+%	'%%' leaves you with a single literal '%'
+(var)	mapping variable (dictionary arguments)
+m.n.	m is the minimum total width and n is the number of digits to display after the decimal point (if appl.)
+======================================
+string.ascii_letters	           Concatenation of the ascii_lowercase and ascii_uppercase constants.
+string.ascii_lowercase	Concatenation of lowercase letters
+string.ascii_uppercase	Concatenation of uppercase letters
+string.digits	Digit in strings
+string.hexdigits	Hexadigit in strings
+string.letters	concatenation of the strings lowercase and uppercase
+string.lowercase	A string must contain lowercase letters.
+string.octdigits	Octadigit in a string
+string.punctuation	ASCII characters having punctuation characters.
+string.printable	String of characters which are printable
+String.endswith()	Returns True if a string ends with the given suffix otherwise returns False
+String.startswith()	Returns True if a string starts with the given prefix otherwise returns False
+String.isdigit()	Returns “True” if all characters in the string are digits, Otherwise, It returns “False”.
+String.isalpha()	Returns “True” if all characters in the string are alphabets, Otherwise, It returns “False”.
+string.isdecimal()	Returns true if all characters in a string are decimal.
+str.format()	one of the string formatting methods in Python3, which allows multiple substitutions and value formatting.
+String.index	Returns the position of the first occurrence of substring in a string
+string.uppercase	A string must contain uppercase letters.
+string.whitespace	A string containing all characters that are considered whitespace.
+string.swapcase()	Method converts all uppercase characters to lowercase and vice versa of the given string, and returns it
+replace()	           returns a copy of the string where all occurrences of a substring is replaced with another substring.
+======================================
+BUILT-IN FUNCTION	DESCRIPTION
+=======================================
+string.Isdecimal	Returns true if all characters in a string are decimal
+String.Isalnum	Returns true if all the characters in a given string are alphanumeric.
+string.Istitle	Returns True if the string is a titlecased string
+String.partition	splits the string at the first occurrence of the separator and returns a tuple.
+String.Isidentifier	Check whether a string is a valid identifier or not.
+String.len	           Returns the length of the string.
+String.rindex	Returns the highest index of the substring inside the string if substring is found.
+String.Max	           Returns the highest alphabetical character in a string.
+String.min	           Returns the minimum alphabetical character in a string.
+String.splitlines	Returns a list of lines in the string.
+string.capitalize	Return a word with its first character capitalized.
+string.expandtabs	Expand tabs in a string replacing them by one or more spaces
+string.find	Return the lowest indexin a sub string.
+string.rfind	find the highest index.
+string.rindex	Raise ValueError when the substring is not found.
+string.count	Return the number of (non-overlapping) occurrences of substring sub in string
+string.lower	Return a copy of s, but with upper case letters converted to lower case.
+string.split	Return a list of the words of the string,If the optional second argument sep is absent or None
+string.rsplit()	Return a list of the words of the string s, scanning s from the end.
+rpartition()	Method splits the given string into three parts
+string.splitfields	Return a list of the words of the string when only used with two arguments.
+string.join	Concatenate a list or tuple of words with intervening occurrences of sep.
+string.strip()	It return a copy of the string with both leading and trailing characters removed
+string.lstrip	Return a copy of the string with leading characters removed.
+string.rstrip	Return a copy of the string with trailing characters removed.
+string.swapcase	Converts lower case letters to upper case and vice versa.
+string.translate	translate the characters using table
+string.upper	lower case letters converted to upper case.
+string.ljust	left-justify in a field of given width.
+string.rjust	Right-justify in a field of given width.
+string.center()	Center-justify in a field of given width.
+string-zfill	Pad a numeric string on the left with zero digits until the given width is reached.
+string.replace	Return a copy of string s with all occurrences of substring old replaced by new.
+================================================================
+
+
 #Raw String to ignore escape sequence -->
 #Sometimes we may wish to ignore the escape sequences inside a string.
 #To do this we can place r or R in front of the string.
@@ -366,22 +507,7 @@ print("He said, \"What's there?\"")
 #He said, "What's there?"
 #He said, "What's there?"
 =====================================
-Escape Sequence	Description
-=====================================
-\newline	Backslash and newline ignored
-\\	Backslash
-\'	Single quote
-\"	Double quote
-\a	ASCII Bell
-\b	ASCII Backspace
-\f	ASCII Formfeed
-\n	ASCII Linefeed
-\r	ASCII Carriage Return
-\t	ASCII Horizontal Tab
-\v	ASCII Vertical Tab
-\ooo	Character with octal value ooo
-\xHH	Character with hexadecimal value HH
-=========================================
+
 print("This is \x61 \ngood example")
 print(r"This is \x61 \ngood example")
 #This is a 
@@ -501,149 +627,3 @@ print("Split the words of the string: %s" % s.split(" "))
 #String in uppercase: HEY THERE! WHAT SHOULD THIS STRING BE?
 #String in lowercase: hey there! what should this string be?
 #Split the words of the string: ['Hey', 'there!', 'what', 'should', 'this', 'string', 'be?']
-========================================
-Method	Description
-========================================
-capitalize()          Converts the first character to upper case
-casefold()	           Converts string into lower case
-center()	           Returns a centered string
-count()	           Returns the number of times a specified value occurs in a string
-encode()	           Returns an encoded version of the string
-endswith()	           Returns true if the string ends with the specified value
-expandtabs()	Sets the tab size of the string
-find()	           Searches the string for a specified value and returns the position of where it was found
-format()	           Formats specified values in a string
-format_map()	Formats specified values in a string
-index()	           Searches the string for a specified value and returns the position of where it was found
-isalnum()	           Returns True if all characters in the string are alphanumeric
-isalpha()	           Returns True if all characters in the string are in the alphabet
-isdecimal()	Returns True if all characters in the string are decimals
-isdigit()	           Returns True if all characters in the string are digits
-isidentifier()	Returns True if the string is an identifier
-islower()	           Returns True if all characters in the string are lower case
-isnumeric()	Returns True if all characters in the string are numeric
-isprintable()	Returns True if all characters in the string are printable
-isspace()	           Returns True if all characters in the string are whitespaces
-istitle()	           Returns True if the string follows the rules of a title
-isupper()	           Returns True if all characters in the string are upper case
-join()	           Joins the elements of an iterable to the end of the string
-ljust()	           Returns a left justified version of the string
-lower()	           Converts a string into lower case
-lstrip()	           Returns a left trim version of the string
-maketrans()	Returns a translation table to be used in translations
-partition()	Returns a tuple where the string is parted into three parts
-replace()	           Returns a string where a specified value is replaced with a specified value
-rfind()	           Searches the string for a specified value and returns the last position of where it was found
-rindex()	           Searches the string for a specified value and returns the last position of where it was found
-rpartition()	Returns a tuple where the string is parted into three parts
-rsplit()	           Splits the string at the specified separator, and returns a list
-rstrip()	           Returns a right trim version of the string
-split()	           Splits the string at the specified separator, and returns a list
-splitlines()	Splits the string at line breaks and returns a list
-startswith()	Returns true if the string starts with the specified value
-swapcase()	           Swaps cases, lower case becomes upper case and vice versa
-title()	           Converts the first character of each word to upper case
-translate()	Returns a translated string
-upper()	           Converts a string into upper case
-zfill()	           Fills the string with a specified number of 0 values at the beginning
-=========================================
-s.lower(), s.upper() --          returns the lowercase or uppercase version of the string
-s.strip() --                     returns a string with whitespace removed from the start and end
-s.isalpha()/s.isdigit()/s.isspace()... -- tests if all the string chars are in the various character classes
-s.startswith('other'), s.endswith('other') -- tests if the string starts or ends with the given other string
-s.find('other') --               searches for the given other string (not a regular expression) within s, and returns the first index where it begins or -1 if not found
-s.replace('old', 'new') --       returns a string where all occurrences of 'old' have been replaced by 'new'
-s.split('delim') --              returns a list of substrings separated by the given delimiter. The delimiter is not a regular expression, it's just text. 'aaa,bbb,ccc'.split(',') -> ['aaa', 'bbb', 'ccc']. As a convenient special case s.split() (with no arguments) splits on all whitespace chars.
-s.join(list) --                  opposite of split(), joins the elements in the given list together using the string as the delimiter. e.g. '---'.join(['aaa', 'bbb', 'ccc']) -> aaa---bbb---ccc
-===========================================
-Format Symbol	Conversion
-===========================================
-%c	character
-%s	string conversion via str() prior to formatting
-%i	signed decimal integer
-%d	signed decimal integer
-%u	unsigned decimal integer
-%o	octal integer
-%x	hexadecimal integer (lowercase letters)
-%X	hexadecimal integer (UPPERcase letters)
-%e	exponential notation (with lowercase 'e')
-%E	exponential notation (with UPPERcase 'E')
-%f	floating point real number
-%g	the shorter of %f and %e
-%G	the shorter of %f and %E
-==========================================
-*	argument specifies width or precision
--	left justification
-+	display the sign
-<sp>	leave a blank space before a positive number
-#	add the octal leading zero ( '0' ) or hexadecimal leading '0x' or '0X', depending on whether 'x' or 'X' were used.
-0	pad from left with zeros (instead of spaces)
-%	'%%' leaves you with a single literal '%'
-(var)	mapping variable (dictionary arguments)
-m.n.	m is the minimum total width and n is the number of digits to display after the decimal point (if appl.)
-======================================
-string.ascii_letters	           Concatenation of the ascii_lowercase and ascii_uppercase constants.
-string.ascii_lowercase	Concatenation of lowercase letters
-string.ascii_uppercase	Concatenation of uppercase letters
-string.digits	Digit in strings
-string.hexdigits	Hexadigit in strings
-string.letters	concatenation of the strings lowercase and uppercase
-string.lowercase	A string must contain lowercase letters.
-string.octdigits	Octadigit in a string
-string.punctuation	ASCII characters having punctuation characters.
-string.printable	String of characters which are printable
-String.endswith()	Returns True if a string ends with the given suffix otherwise returns False
-String.startswith()	Returns True if a string starts with the given prefix otherwise returns False
-String.isdigit()	Returns “True” if all characters in the string are digits, Otherwise, It returns “False”.
-String.isalpha()	Returns “True” if all characters in the string are alphabets, Otherwise, It returns “False”.
-string.isdecimal()	Returns true if all characters in a string are decimal.
-str.format()	one of the string formatting methods in Python3, which allows multiple substitutions and value formatting.
-String.index	Returns the position of the first occurrence of substring in a string
-string.uppercase	A string must contain uppercase letters.
-string.whitespace	A string containing all characters that are considered whitespace.
-string.swapcase()	Method converts all uppercase characters to lowercase and vice versa of the given string, and returns it
-replace()	           returns a copy of the string where all occurrences of a substring is replaced with another substring.
-======================================
-BUILT-IN FUNCTION	DESCRIPTION
-=======================================
-string.Isdecimal	Returns true if all characters in a string are decimal
-String.Isalnum	Returns true if all the characters in a given string are alphanumeric.
-string.Istitle	Returns True if the string is a titlecased string
-String.partition	splits the string at the first occurrence of the separator and returns a tuple.
-String.Isidentifier	Check whether a string is a valid identifier or not.
-String.len	           Returns the length of the string.
-String.rindex	Returns the highest index of the substring inside the string if substring is found.
-String.Max	           Returns the highest alphabetical character in a string.
-String.min	           Returns the minimum alphabetical character in a string.
-String.splitlines	Returns a list of lines in the string.
-string.capitalize	Return a word with its first character capitalized.
-string.expandtabs	Expand tabs in a string replacing them by one or more spaces
-string.find	Return the lowest indexin a sub string.
-string.rfind	find the highest index.
-string.rindex	Raise ValueError when the substring is not found.
-string.count	Return the number of (non-overlapping) occurrences of substring sub in string
-string.lower	Return a copy of s, but with upper case letters converted to lower case.
-string.split	Return a list of the words of the string,If the optional second argument sep is absent or None
-string.rsplit()	Return a list of the words of the string s, scanning s from the end.
-rpartition()	Method splits the given string into three parts
-string.splitfields	Return a list of the words of the string when only used with two arguments.
-string.join	Concatenate a list or tuple of words with intervening occurrences of sep.
-string.strip()	It return a copy of the string with both leading and trailing characters removed
-string.lstrip	Return a copy of the string with leading characters removed.
-string.rstrip	Return a copy of the string with trailing characters removed.
-string.swapcase	Converts lower case letters to upper case and vice versa.
-string.translate	translate the characters using table
-string.upper	lower case letters converted to upper case.
-string.ljust	left-justify in a field of given width.
-string.rjust	Right-justify in a field of given width.
-string.center()	Center-justify in a field of given width.
-string-zfill	Pad a numeric string on the left with zero digits until the given width is reached.
-string.replace	Return a copy of string s with all occurrences of substring old replaced by new.
-================================================================
-
-
-
-
-
-
-
