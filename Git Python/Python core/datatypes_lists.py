@@ -155,6 +155,10 @@ my_list.clear()
 # Output: []
 print(my_list)
 
+my_list = ['p','r','o','b','l','e','m']
+my_list.remove(1)
+#error ValueError: list.remove(x): x not in list
+
 #Finally, we can also delete items in a list by assigning an empty list to a slice of elements.
 >>> my_list = ['p','r','o','b','l','e','m']
 >>> my_list[2:3] = []
