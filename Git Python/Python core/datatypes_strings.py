@@ -268,27 +268,27 @@ String.min		Returns the minimum alphabetical character in a string.
 String.splitlines	Returns a list of lines in the string.
 string.capitalize	Return a word with its first character capitalized.
 string.expandtabs	Expand tabs in a string replacing them by one or more spaces
-string.find	Return the lowest indexin a sub string.
-string.rfind	find the highest index.
-string.rindex	Raise ValueError when the substring is not found.
-string.count	Return the number of (non-overlapping) occurrences of substring sub in string
-string.lower	Return a copy of s, but with upper case letters converted to lower case.
-string.split	Return a list of the words of the string,If the optional second argument sep is absent or None
-string.rsplit()	Return a list of the words of the string s, scanning s from the end.
-rpartition()	Method splits the given string into three parts
-string.splitfields	Return a list of the words of the string when only used with two arguments.
-string.join	Concatenate a list or tuple of words with intervening occurrences of sep.
-string.strip()	It return a copy of the string with both leading and trailing characters removed
-string.lstrip	Return a copy of the string with leading characters removed.
-string.rstrip	Return a copy of the string with trailing characters removed.
-string.swapcase	Converts lower case letters to upper case and vice versa.
-string.translate	translate the characters using table
-string.upper	lower case letters converted to upper case.
-string.ljust	left-justify in a field of given width.
-string.rjust	Right-justify in a field of given width. 
-string.center()	Center-justify in a field of given width.
-string-zfill	Pad a numeric string on the left with zero digits until the given width is reached.
-string.replace	Return a copy of string s with all occurrences of substring old replaced by new.
+string.find		Return the lowest indexin a sub string.
+string.rfind		find the highest index.
+string.rindex		Raise ValueError when the substring is not found.
+string.count		Return the number of (non-overlapping) occurrences of substring sub in string
+string.lower		Return a copy of s, but with upper case letters converted to lower case.
+string.split		Return a list of the words of the string,If the optional second argument sep is absent or None
+string.rsplit()		Return a list of the words of the string s, scanning s from the end.
+rpartition()		Method splits the given string into three parts
+string.splitfields		Return a list of the words of the string when only used with two arguments.
+string.join		Concatenate a list or tuple of words with intervening occurrences of sep.
+string.strip()		It return a copy of the string with both leading and trailing characters removed
+string.lstrip		Return a copy of the string with leading characters removed.
+string.rstrip		Return a copy of the string with trailing characters removed.
+string.swapcase		Converts lower case letters to upper case and vice versa.
+string.translate		translate the characters using table
+string.upper		lower case letters converted to upper case.
+string.ljust		left-justify in a field of given width.
+string.rjust		Right-justify in a field of given width. 
+string.center()		Center-justify in a field of given width.
+string-zfill		Pad a numeric string on the left with zero digits until the given width is reached.
+string.replace		Return a copy of string s with all occurrences of substring old replaced by new.
 ================================================================
 
 
