@@ -110,6 +110,15 @@ odd[2:2] = [5, 7]
 # Output: [1, 3, 5, 7, 9]
 print(odd)
 
+odd = [1, 9]
+odd.insert(1,5)
+print(odd)
+odd[2:2] = [5, 7]
+print(odd)
+#[1, 5, 9]
+#[1, 5, 5, 7, 9]
+
+
 #How to delete or remove elements from a list ->
 #We can delete one or more items from a list using the keyword del.
 #It can even delete the list entirely.
