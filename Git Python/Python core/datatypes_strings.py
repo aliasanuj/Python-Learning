@@ -163,10 +163,10 @@ print("He said, \"What's there?\"")
 ========================================
 Method	Description
 ========================================
-capitalize()          Converts the first character to upper case
-casefold()            Converts string into lower case
-center()              Returns a centered string
-count()               Returns the number of times a specified value occurs in a string
+capitalize()			Converts the first character to upper case
+casefold()			Converts string into lower case
+center()			Returns a centered string
+count()			Returns the number of times a specified value occurs in a string
 encode()              Returns an encoded version of the string
 endswith()            Returns true if the string ends with the specified value
 expandtabs()          Sets the tab size of the string
@@ -204,17 +204,7 @@ swapcase()	          Swaps cases, lower case becomes upper case and vice versa
 title()	              Converts the first character of each word to upper case
 translate()			  Returns a translated string
 upper()	              Converts a string into upper case
-zfill()	              Fills the string with a specified number of 0 values at the beginning
-=========================================
-s.lower(), s.upper() --          returns the lowercase or uppercase version of the string
-s.strip() --                     returns a string with whitespace removed from the start and end
-s.isalpha()/s.isdigit()/s.isspace()... -- tests if all the string chars are in the various character classes
-s.startswith('other'), s.endswith('other') -- tests if the string starts or ends with the given other string
-s.find('other') --               searches for the given other string (not a regular expression) within s, and returns the first index where it begins or -1 if not found
-s.replace('old', 'new') --       returns a string where all occurrences of 'old' have been replaced by 'new'
-s.split('delim') --              returns a list of substrings separated by the given delimiter. The delimiter is not a regular expression, it's just text. 'aaa,bbb,ccc'.split(',') -> ['aaa', 'bbb', 'ccc']. As a convenient special case s.split() (with no arguments) splits on all whitespace chars.
-s.join(list) --                  opposite of split(), joins the elements in the given list together using the string as the delimiter. e.g. '---'.join(['aaa', 'bbb', 'ccc']) -> aaa---bbb---ccc
-===========================================
+zfill()	              Fills the string with a specified number of 0 values at the beginning===========================================
 Format Symbol	Conversion
 ===========================================
 %c	character
