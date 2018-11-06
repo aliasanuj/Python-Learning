@@ -68,7 +68,7 @@ print(r.headers['content-type'])  # 'application/json'
 #As well as the four HTTP methods, it's important to understand the anatomy 
 #of the HTTP request itself. There are three key parts of a HTTP request:
 
-#1.0The request line - this part contains the request method (i.e. GET, POST, etc) 
+#1.The request line - this part contains the request method (i.e. GET, POST, etc) 
 #and the URL of the resource the request is searching for.
 #2.The header - this part sends additional information to the chosen source, such as 
 #the type of encoding (e.g. UTF-8) and the desired content type (e.g. 'application/json').
