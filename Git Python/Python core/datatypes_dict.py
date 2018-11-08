@@ -504,6 +504,13 @@ print(Dict)
 Dict = {'Tim': 18,'Charlie':12,'Tiffany':22,'Robert':25}	
 print("Students Name: %s" % list(Dict.items()))
 #Students Name: [('Tim', 18), ('Charlie', 12), ('Tiffany', 22), ('Robert', 25)]
+=======================================
+Dict = {'Tim': 18,'Charlie':12,'Tiffany':22,'Robert':25}	
+print(Dict.items())
+print(list(Dict.items()))
+
+#dict_items([('Tim', 18), ('Charlie', 12), ('Tiffany', 22), ('Robert', 25)])
+#[('Tim', 18), ('Charlie', 12), ('Tiffany', 22), ('Robert', 25)]
 ======================================================
 Dict = {'Tim': 18,'Charlie':12,'Tiffany':22,'Robert':25}
 Boys = {'Tim': 18,'Charlie':12,'Robert':25}
