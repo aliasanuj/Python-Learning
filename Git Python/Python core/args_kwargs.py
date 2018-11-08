@@ -146,6 +146,14 @@ test_var_kwargs(farg=1, myarg2="two", myarg3=3)
 #myarg2 and two 
 #myarg3 and 3
 ===============================================
+def test_var_kwargs(farg, *kwargs):
+    print("formal arg:", farg)
+    for i in kwargs.items():
+        print(i)
+test_var_kwargs(farg=1, myarg2="two", myarg3=3)
+#TypeError: test_var_kwargs() got an unexpected keyword argument 'myarg2'
+
+===============================================
 def myFun(arg1, arg2, arg3): 
     print("arg1:", arg1) 
     print("arg2:", arg2) 
