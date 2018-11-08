@@ -110,6 +110,18 @@ myFun(first ='Geeks', mid ='for', last='Geeks')
 #('first', 'Geeks')
 #('mid', 'for')
 #('last', 'Geeks')
+=================================
+def myFun(arg,**kwargs):  
+    print(arg)
+    for i in kwargs.items(): 
+        print (i) 
+myFun('anuj',first ='Geeks', mid ='for', last='Geeks')
+
+#anuj
+#('first', 'Geeks')
+#('mid', 'for')
+#('last', 'Geeks')
+   
 ==================================
 def myFun(arg1, **kwargs):  
     for key, value in kwargs.items(): 
