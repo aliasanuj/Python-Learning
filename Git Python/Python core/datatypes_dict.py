@@ -5,7 +5,8 @@
 #Dictionaries are optimized to retrieve values when the key is known.
 #While values can be of any data type and can repeat, keys must be of immutable type (string, number or tuple with immutable elements)
 #and must be unique.
-#While indexing is used with other container types to access values, dictionary uses keys. Key can be used either inside square brackets or with the get() method.
+#While indexing is used with other container types to access values, dictionary uses keys. Key can be used either inside square 
+#brackets or with the get() method.
 #The difference while using get() is that it returns None instead of KeyError, if the key is not found.
 #Dictionary are mutable. We can add new items or change the value of existing items using assignment operator.
 #If the key is already present, value gets updated, else a new key: value pair is added to the dictionary.
