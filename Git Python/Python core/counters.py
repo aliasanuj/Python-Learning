@@ -128,6 +128,23 @@ print(list(c.elements()))
 #Counter({'e': 3, 'x': 1, 't': 1, 'r': 1, 'm': 1, 'l': 1, 'y': 1, 'z': 0})
 #['e', 'e', 'e', 'x', 't', 'r', 'm', 'l', 'y']
 =====================================
+from collections import Counter 
+coun = Counter(a=1, b=2, c=3) 
+print(coun) 
+print(list(coun.elements())) 
+a = "kumar anuj"
+b = Counter(a)
+print(b)
+print(list(b.elements()))
+
+
+#Counter({'c': 3, 'b': 2, 'a': 1})
+#['a', 'b', 'b', 'c', 'c', 'c']
+#Counter({'u': 2, 'a': 2, 'k': 1, 'm': 1, 'r': 1, ' ': 1, 'n': 1, 'j': 1})
+#['k', 'u', 'u', 'm', 'a', 'a', 'r', ' ', 'n', 'j']
+
+
+================================
 import collections
 c1 = collections.Counter(['a', 'b', 'c', 'a', 'b', 'b'])
 c2 = collections.Counter('alphabet')
