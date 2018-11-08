@@ -107,6 +107,21 @@ print(x)
 #{'brand': 'Ford', 'model': 'Mustang', 'year': 1964}
 #Mustang
 #Mustang
+=================================================
+thisdict =	{
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+print(thisdict)
+x = thisdict["model"]
+print(x)
+x = thisdict.get("anuj","not found")
+print(x)
+
+#{'brand': 'Ford', 'model': 'Mustang', 'year': 1964}
+#Mustang
+#not found
 ============================================================
 thisdict =	{
   "brand": "Ford",
