@@ -97,6 +97,12 @@ myFun(first ='Geeks', mid ='for', last='Geeks')
 #mid == for
 #last == Geeks
 ============================
+def myFun(**argv):  
+    for arg in argv:  
+        print (arg) 
+myFun('Hello', 'Welcome', 'to', 'GeeksforGeeks') 
+#TypeError: myFun() takes 0 positional arguments but 4 were given
+============================
 def myFun(**kwargs):  
     for i in kwargs.items(): 
         print (i) 
