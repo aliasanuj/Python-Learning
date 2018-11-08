@@ -22,9 +22,24 @@ myFun(first ='Geeks', mid ='for', last='Geeks')
 def myFun(**kwargs):
     for i in kwargs.items():
         print(i)
+myFun(a='Geeks',b='for',c='Geeks')
+
+#('a', 'Geeks')
+#('b', 'for')
+#('c', 'Geeks')
+===============================
+def myFun(**kwargs):
+    for i in kwargs.items():
+        print(i)
 myFun('Geeks','for','Geeks')
 #error TypeError: myFun() takes 0 positional arguments but 3 were given
 ================================
+def myFun(**kwargs):
+    for i in kwargs.items():
+        print(i)
+myFun(1=10,2=15,3=20)
+#SyntaxError: keyword can't be an expression
+==============================
 def myFun(**kwargs):
     for i in kwargs.items():
         print("%s = %s"%(i))
