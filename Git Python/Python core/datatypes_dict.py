@@ -196,6 +196,14 @@ thisdict["color"] = "red"
 print(thisdict)
 #{'brand': 'Ford', 'model': 'Mustang', 'year': 1964, 'color': 'red'}
 =======================================================
+import operator
+x = {1: 2, 3: 4, 4: 3, 2: 1, 0: 0}
+sorted_x = sorted(x.items())
+print(sorted_x)
+
+#[(0, 0), (1, 2), (2, 1), (3, 4), (4, 3)]
+
+==================================
 thisdict =	{
   "brand": "Ford",
   "model": "Mustang",
