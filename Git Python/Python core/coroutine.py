@@ -122,3 +122,22 @@ print(it.send(-1))
 #4
 #-1
 ================================
+def abc(n):
+  print("searching element",n)
+  try:
+    while True:
+      y = yield 
+      if n in y:
+        print(n," is there")
+  except GeneratorExit:
+    print("stopped")
+obj1 = abc("anuj")
+obj1.__next__()
+obj1.send("kumar Anuj")
+obj1.send("anUj")
+obj1.close()
+
+#searching element anuj
+#stopped
+
+
