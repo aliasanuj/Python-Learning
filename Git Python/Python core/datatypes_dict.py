@@ -525,6 +525,21 @@ for key in list(Dict.keys()):
 #True
 #False
 #True
+===============================================
+Dict = {'Tim': 18,'Charlie':12,'Tiffany':22,'Robert':25}
+Boys = {'Tim': 18,'Charlie':12,'Robert':25}
+Girls = {'Tiffany':22}
+Students = list(Dict.keys())
+print(Students)
+Students1 = list(Dict.values())
+print(Students1)
+a = sorted(Dict.items())
+print(a)
+
+#['Tim', 'Charlie', 'Tiffany', 'Robert']
+#[18, 12, 22, 25]
+#[('Charlie', 12), ('Robert', 25), ('Tiffany', 22), ('Tim', 18)]
+
 ==========================================================
 Dict = {'Tim': 18,'Charlie':12,'Tiffany':22,'Robert':25}
 Boys = {'Tim': 18,'Charlie':12,'Robert':25}
