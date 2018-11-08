@@ -620,6 +620,21 @@ for i,j in sorted(dict1.items()):
   print(i, "=" ,j)
 #anuj = 3
 #kumar = 1
+======================================
+string1 = "kumar anuj anuj anuj"
+string2 = string1.split()
+dict1 = {}
+for i in string2:
+  if i in dict1:
+    dict1[i] = dict1[i] + 1
+  else:
+    dict1[i] = 1
+for a in dict1.items():
+  print(list(a))
+
+#['kumar', 1]
+#['anuj', 3]
+
 ========================================
 my_dict = {'name':'Jack', 'age': 26}
 # Output: Jack
