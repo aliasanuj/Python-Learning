@@ -21,6 +21,12 @@ myFun(first ='Geeks', mid ='for', last='Geeks')
 ================================
 def myFun(**kwargs):
     for i in kwargs.items():
+        print(i)
+myFun('Geeks','for','Geeks')
+#error TypeError: myFun() takes 0 positional arguments but 3 were given
+================================
+def myFun(**kwargs):
+    for i in kwargs.items():
         print("%s = %s"%(i))
 myFun(first ='Geeks', mid ='for', last='Geeks')
 
