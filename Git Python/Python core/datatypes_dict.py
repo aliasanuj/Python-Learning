@@ -1,14 +1,18 @@
 #datatypes_dict.py
 
-#Python dictionary is an unordered collection of items. While other compound data types have only value as an element, a dictionary has a key: value pair.
+#Python dictionary is an unordered collection of items. While other compound data types have only value as an element,
+#a dictionary has a key: value pair.
 #Dictionaries are optimized to retrieve values when the key is known.
-#While values can be of any data type and can repeat, keys must be of immutable type (string, number or tuple with immutable elements) and must be unique.
+#While values can be of any data type and can repeat, keys must be of immutable type (string, number or tuple with immutable elements)
+#and must be unique.
 #While indexing is used with other container types to access values, dictionary uses keys. Key can be used either inside square brackets or with the get() method.
 #The difference while using get() is that it returns None instead of KeyError, if the key is not found.
 #Dictionary are mutable. We can add new items or change the value of existing items using assignment operator.
 #If the key is already present, value gets updated, else a new key: value pair is added to the dictionary.
-#We can remove a particular item in a dictionary by using the method pop(). This method removes as item with the provided key and returns the value.
-#The method, popitem() can be used to remove and return an arbitrary item (key, value) form the dictionary. All the items can be removed at once using the clear() method.
+#We can remove a particular item in a dictionary by using the method pop(). This method removes as item with the provided key and 
+#returns the value.
+#The method, popitem() can be used to remove and return an arbitrary item (key, value) form the dictionary. All the items 
+#can be removed at once using the clear() method.
 #We can also use the del keyword to remove individual items or the entire dictionary itself.
 
 ==========================================
