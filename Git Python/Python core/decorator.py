@@ -298,7 +298,7 @@ outer1()
 def outer(abc):
     def inner(*args):
         print("*" * 5)
-        abc(*args)
+        abc(*args) #*args is must if inner(*args) is there. It should be same as inner(arg)
         print("%" * 10)
         abc(*args)
         print("^" * 15)
