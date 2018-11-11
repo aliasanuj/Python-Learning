@@ -46,7 +46,7 @@ counter_list = list(enumerate(my_list, 1))
 print(counter_list
 #[(1, 'apple'), (2, 'banana'), (3, 'grapes'), (4, 'pear')]
 =========================
-      l1 = ["eat","sleep","repeat"]
+l1 = ["eat","sleep","repeat"]
 for ele in enumerate(l1,10): 
     print(ele)
 	
