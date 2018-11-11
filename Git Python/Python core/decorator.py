@@ -5,10 +5,12 @@
 #In Python, a function can be passed as parameter to another function (a function can also return another function).
 #Python has an interesting feature called decorators to add functionality to an existing code.
 #This is also called metaprogramming as a part of the program tries to modify another part of the program at compile time.
-#When you run the code, both functions first and second gives same output. Here, the names first and second refer to the same function object.
+#When you run the code, both functions first and second gives same output. Here, the names first and second refer
+#to the same function object.
 #Now things start getting weirder.
 #Functions can be passed as arguments to another function.
 #If you have used functions like map, filter and reduce in Python, then you already know about this.
+#Such function that take other functions as arguments are also called higher order functions. Here is an example of such a function.
 
 Such function that take other functions as arguments are also called higher order functions. Here is an example of such a function.
 def first(msg):
