@@ -290,6 +290,70 @@ string.center()		Center-justify in a field of given width.
 string-zfill	Pad a numeric string on the left with zero digits until the given width is reached.
 string.replace		Return a copy of string s with all occurrences of substring old replaced by new.
 ================================================================
+x = "anuj"
+y = x.capitalize()
+print(y)
+#Anuj
+=========================
+x = "Anuj"
+y = x.casefold()
+print(y)
+#anuj
+=========================
+x = "patna banglore pune"
+y = x.count("b")
+print(y)
+#1
+=======================
+x = "patna banglore pune"
+y = x.encode()
+print(y)
+#b'patna banglore pune'
+=====================
+x = "patna banglore pune"
+y = x.endswith("e")
+print(y)
+#True
+=====================
+x = "patna banglore pune"
+y = x.endswith("p")
+print(y)
+#false
+========================
+x = "patna banglore pune"
+y = x.expandtabs()
+print(y)
+#patna banglore pune
+=====================
+x = "patna banglore pune"
+y = x.find("a")
+print(y)
+#1
+=====================
+x = "patna banglore pune"
+y = x.center(26,"*")
+print(y)
+#***patna banglore pune****
+=================================
+x = "patna banglore pune {}".format(10)
+print(x)
+#patna banglore pune 10
+==============================
+x = "patna banglore pune"
+y = x.index("a")
+print(y)
+#1
+============================
+x = "patnh"
+y = x.isalnum()
+print(y)
+#True
+==========================
+x = "patnh"
+y = x.isalnum()
+print(y)
+#True
+==========================
 
 
 #Raw String to ignore escape sequence -->
