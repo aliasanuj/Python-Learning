@@ -198,6 +198,160 @@ min()		Return the smallest item in the list
 sorted()	Return a new sorted list (does not sort the list itself).
 sum()		Return the sum of all elements in the list.
 =============================================
+list1 = [1,2,3,4,5,6]
+list2 = ["anuj","kumar","aman","anshu"]
+
+list1.append(2) #only one argument
+print(list1)
+list2.append(10) #string or int, it will take all
+print(list2)
+
+#[1, 2, 3, 4, 5, 6, 2]
+#['anuj', 'kumar', 'aman', 'anshu', 10]
+================================
+
+list1 = [1,2,3,4,5,6]
+list2 = ["anuj","kumar","aman","anshu"]
+
+list1.clear()
+print(list1)
+
+#[]
+
+=======================
+
+list1 = [1,2,3,4,5,6]
+list2 = ["anuj","kumar","aman","anshu"]
+
+x = list1.copy()
+print(x)
+
+#[1, 2, 3, 4, 5, 6]
+
+=======================
+
+list1 = [1,2,3,4,5,6,6]
+list2 = ["anuj","kumar","aman","anshu"]
+
+print(list1.count(6))
+
+#2
+
+===================
+
+list1 = [1,2,3,4,5,6,6]
+list2 = ["anuj","kumar","aman","anshu"]
+
+list1.extend(list2)
+print(list1)
+
+#[1, 2, 3, 4, 5, 6, 6, 'anuj', 'kumar', 'aman', 'anshu']
+
+======================
+list1 = [1,2,3,4,5,6,6]
+list2 = ["anuj","kumar","aman","anshu"]
+
+print(list1.index(4))
+print(list1.index(6))
+print(list1.index(6))
+
+#3
+#5
+#5
+
+======================
+
+list1 = [1,2,3,4,5,6,6]
+list2 = ["anuj","kumar","aman","anshu"]
+
+list1.insert(2,10)
+print(list1)
+
+#[1, 2, 10, 3, 4, 5, 6, 6]
+
+==================
+list1 = [1,2,3,4,5,6,6]
+list2 = ["anuj","kumar","aman","anshu"]
+
+list1.pop(2) #indexNo
+print(list1)
+
+#[1, 2, 4, 5, 6, 6]
+
+====================
+
+list1 = [1,2,3,4,5,6,6]
+list2 = ["anuj","kumar","aman","anshu"]
+
+list1.remove(2) #elements
+print(list1)
+
+#[1, 3, 4, 5, 6, 6]
+
+======================
+
+list1 = [1,2,3,4,5,6,6]
+list2 = ["anuj","kumar","aman","anshu"]
+
+list1.reverse()
+print(list1)
+
+#[6, 6, 5, 4, 3, 2, 1]
+
+
+===================
+list1 = [1,28,45,4,3,4,5,6,6]
+list2 = ["anuj","kumar","aman","anshu"]
+
+list1.sort() 
+print(list1)
+
+#[1, 3, 4, 4, 5, 6, 6, 28, 45]
+
+=============================
+list1 = [1,28,45,4]
+list2 = ["anuj","kumar","aman","anshu"]
+
+x = enumerate(list1)
+print(list(x))
+
+y = enumerate(list2,start=10)
+print(list(y))
+
+for i in enumerate(list1,start=10):
+  print(list(i))
+
+for i in enumerate(list1,start=10):
+  print(i)
+
+#[(10, 'anuj'), (11, 'kumar'), (12, 'aman'), (13, 'anshu')]
+#[10, 1]
+#[11, 28]
+#[12, 45]
+#[13, 4]
+#(10, 1)
+#(11, 28)
+#(12, 45)
+#(13, 4)
+
+=============================
+list1 = [1,4,7,9,5,4,77,55,7]
+
+for i in range(len(list1)-1):
+    for i in range(len(list1) -1):
+
+         if list1[i] < list1[i+1]:
+            temp = list1[i]
+            list1[i] = list1[i+1]
+            list1[i+1] = temp
+
+
+print(list1)
+
+==========================
+
+
+=============================================
 my_list = [3, 8, 1, 6, 0, 8, 4]
 # Output: 1
 print(my_list.index(8))
@@ -653,158 +807,4 @@ print(Sliced_List)
 #Printing List in reverse: 
 #['S', 'K', 'E', 'E', 'G', 'R', 'O', 'F', 'S', 'K', 'E', 'E', 'G']
 =====================================================
-
-list1 = [1,2,3,4,5,6]
-list2 = ["anuj","kumar","aman","anshu"]
-
-list1.append(2) #only one argument
-print(list1)
-list2.append(10) #string or int, it will take all
-print(list2)
-
-#[1, 2, 3, 4, 5, 6, 2]
-#['anuj', 'kumar', 'aman', 'anshu', 10]
-================================
-
-list1 = [1,2,3,4,5,6]
-list2 = ["anuj","kumar","aman","anshu"]
-
-list1.clear()
-print(list1)
-
-#[]
-
-=======================
-
-list1 = [1,2,3,4,5,6]
-list2 = ["anuj","kumar","aman","anshu"]
-
-x = list1.copy()
-print(x)
-
-#[1, 2, 3, 4, 5, 6]
-
-=======================
-
-list1 = [1,2,3,4,5,6,6]
-list2 = ["anuj","kumar","aman","anshu"]
-
-print(list1.count(6))
-
-#2
-
-===================
-
-list1 = [1,2,3,4,5,6,6]
-list2 = ["anuj","kumar","aman","anshu"]
-
-list1.extend(list2)
-print(list1)
-
-#[1, 2, 3, 4, 5, 6, 6, 'anuj', 'kumar', 'aman', 'anshu']
-
-======================
-list1 = [1,2,3,4,5,6,6]
-list2 = ["anuj","kumar","aman","anshu"]
-
-print(list1.index(4))
-print(list1.index(6))
-print(list1.index(6))
-
-#3
-#5
-#5
-
-======================
-
-list1 = [1,2,3,4,5,6,6]
-list2 = ["anuj","kumar","aman","anshu"]
-
-list1.insert(2,10)
-print(list1)
-
-#[1, 2, 10, 3, 4, 5, 6, 6]
-
-==================
-list1 = [1,2,3,4,5,6,6]
-list2 = ["anuj","kumar","aman","anshu"]
-
-list1.pop(2) #indexNo
-print(list1)
-
-#[1, 2, 4, 5, 6, 6]
-
-====================
-
-list1 = [1,2,3,4,5,6,6]
-list2 = ["anuj","kumar","aman","anshu"]
-
-list1.remove(2) #elements
-print(list1)
-
-#[1, 3, 4, 5, 6, 6]
-
-======================
-
-list1 = [1,2,3,4,5,6,6]
-list2 = ["anuj","kumar","aman","anshu"]
-
-list1.reverse()
-print(list1)
-
-#[6, 6, 5, 4, 3, 2, 1]
-
-
-===================
-list1 = [1,28,45,4,3,4,5,6,6]
-list2 = ["anuj","kumar","aman","anshu"]
-
-list1.sort() 
-print(list1)
-
-#[1, 3, 4, 4, 5, 6, 6, 28, 45]
-
-=============================
-list1 = [1,28,45,4]
-list2 = ["anuj","kumar","aman","anshu"]
-
-x = enumerate(list1)
-print(list(x))
-
-y = enumerate(list2,start=10)
-print(list(y))
-
-for i in enumerate(list1,start=10):
-  print(list(i))
-
-for i in enumerate(list1,start=10):
-  print(i)
-
-#[(10, 'anuj'), (11, 'kumar'), (12, 'aman'), (13, 'anshu')]
-#[10, 1]
-#[11, 28]
-#[12, 45]
-#[13, 4]
-#(10, 1)
-#(11, 28)
-#(12, 45)
-#(13, 4)
-
-=============================
-list1 = [1,4,7,9,5,4,77,55,7]
-
-for i in range(len(list1)-1):
-    for i in range(len(list1) -1):
-
-         if list1[i] < list1[i+1]:
-            temp = list1[i]
-            list1[i] = list1[i+1]
-            list1[i+1] = temp
-
-
-print(list1)
-
-#[77, 55, 9, 7, 7, 5, 4, 4, 1]
-
-==========================
 
