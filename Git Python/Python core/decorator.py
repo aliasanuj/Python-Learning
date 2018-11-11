@@ -12,7 +12,6 @@
 #If you have used functions like map, filter and reduce in Python, then you already know about this.
 #Such function that take other functions as arguments are also called higher order functions. Here is an example of such a function.
 
-Such function that take other functions as arguments are also called higher order functions. Here is an example of such a function.
 def first(msg):
     print(msg)
 
