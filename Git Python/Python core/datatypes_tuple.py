@@ -1,7 +1,8 @@
 #datatypes_tuple.py
 
 #In Python programming, a tuple is similar to a list.
-#The difference between the two is that we cannot change the elements of a tuple once it is assigned whereas in a list, elements can be changed.
+#The difference between the two is that we cannot change the elements of a tuple once it is assigned whereas in a list,
+#elements can be changed.
 
 #Advantages of Tuple over List:
 #1.Since, tuples are quite similiar to lists, both of them are used in similar situations as well.
@@ -12,7 +13,8 @@
 #6.If you have data that doesn't change, implementing it as tuple will guarantee that it remains write-protected.
 
 #Creating a Tuple
-#1.A tuple is created by placing all the items (elements) inside a parentheses (), separated by comma.The parentheses are optional but is a good practice to write it.
+#1.A tuple is created by placing all the items (elements) inside a parentheses (), separated by comma.The parentheses are
+#optional but is a good practice to write it.
 #2.A tuple can have any number of items and they may be of different types (integer, float, list, string etc.).
 
 #Creating a tuple with one element is a bit tricky.
@@ -65,7 +67,8 @@ print(my_tuple[:])
 
 #4.Changing a Tuple
 #Unlike lists, tuples are immutable.
-#This means that elements of a tuple cannot be changed once it has been assigned. But, if the element is itself a mutable datatype like list, its nested items can be changed.
+#This means that elements of a tuple cannot be changed once it has been assigned. But, if the element is
+#itself a mutable datatype like list, its nested items can be changed.
 #We can also assign a tuple to different values (reassignment).
 my_tuple = (4, 2, 3, [6, 5])
 #my_tuple[1] = 9 error -->
