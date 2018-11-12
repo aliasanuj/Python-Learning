@@ -40,7 +40,19 @@ another()
 #On calling another(), the message was still remembered although 
 #we had already finished executing the print_msg() function.
 #This technique by which some data ("Hello") gets attached to the code is called closure in Python.
+==================================================
 
+x = 'global'
+def outer_func():
+  y = 'enclose'
+  def inner_func():
+    z = 'local'
+    print(x, y, z)
+  inner_func()
+print(outer_func())
+
+#global enclose local
+#None
 
 
 
