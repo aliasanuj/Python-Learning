@@ -5,13 +5,20 @@
 #r+-->Opens a file for both reading and writing. The file pointer placed at the beginning of the file.
 #rb+-->Opens a file for both reading and writing in binary format. The file pointer placed at the beginning of the file.
 #w-->Opens a file for writing only. Overwrites the file if the file exists. If the file does not exist, creates a new file for writing.
-#wb-->Opens a file for writing only in binary format. Overwrites the file if the file exists. If the file does not exist, creates a new file for writing.
-#w+-->Opens a file for both writing and reading. Overwrites the existing file if the file exists. If the file does not exist, creates a new file for reading and writing.
-#wb+-->Opens a file for both writing and reading in binary format. Overwrites the existing file if the file exists. If the file does not exist, creates a new file for reading and writing.
-#a-->Opens a file for appending. The file pointer is at the end of the file if the file exists. That is, the file is in the append mode. If the file does not exist, it creates a new file for writing.
-#ab-->?Opens a file for appending in binary format. The file pointer is at the end of the file if the file exists. That is, the file is in the append mode. If the file does not exist, it creates a new file for writing.
-#a+-->Opens a file for both appending and reading. The file pointer is at the end of the file if the file exists. The file opens in the append mode. If the file does not exist, it creates a new file for reading and writing.
-#ab+-->Opens a file for both appending and reading in binary format. The file pointer is at the end of the file if the file exists. The file opens in the append mode. If the file does not exist, it creates a new file for reading and writing.
+#wb-->Opens a file for writing only in binary format. Overwrites the file if the file exists. If the file does not exist, creates a 
+#new file for writing.
+#w+-->Opens a file for both writing and reading. Overwrites the existing file if the file exists. If the file does not exist,
+#creates a new file for reading and writing.
+#wb+-->Opens a file for both writing and reading in binary format. Overwrites the existing file if the file exists. If the 
+#file does not exist, creates a new file for reading and writing.
+#a-->Opens a file for appending. The file pointer is at the end of the file if the file exists. That is, the file is
+#in the append mode. If the file does not exist, it creates a new file for writing.
+#ab-->?Opens a file for appending in binary format. The file pointer is at the end of the file if the file exists. 
+#That is, the file is in the append mode. If the file does not exist, it creates a new file for writing.
+#a+-->Opens a file for both appending and reading. The file pointer is at the end of the file if the file exists. 
+#The file opens in the append mode. If the file does not exist, it creates a new file for reading and writing.
+#ab+-->Opens a file for both appending and reading in binary format. The file pointer is at the end of the file if the file exists.
+#The file opens in the append mode. If the file does not exist, it creates a new file for reading and writing.
 ============================
 Mode	Description
 'r'	Open a file for reading. (default)
@@ -142,38 +149,52 @@ for line in file:
 #fh.close()
 
 #Overview
-#When you’re working with Python, you don’t need to import a library in order to read and write files. It’s handled natively in the language, albeit in a unique manner.
+#When you’re working with Python, you don’t need to import a library in order to read and write files. It’s handled natively in 
+#the language, albeit in a unique manner.
 #The first thing you’ll need to do is use Python’s built-in open function to get a file object. 
 #The open function opens a file. It’s simple. 
-#When you use the open function, it returns something called a file object. File objects contain methods and attributes that can be used to collect information about the file you opened. They can also be used to manipulate said file.
-#For example, the mode attribute of a file object tells you which mode a file was opened in. And the name attribute tells you the name of the file that the file object has opened. 
+#When you use the open function, it returns something called a file object. File objects contain methods and attributes
+#that can be used to collect information about the file you opened. They can also be used to manipulate said file.
+#For example, the mode attribute of a file object tells you which mode a file was opened in. And the name attribute
+#tells you the name of the file that the file object has opened. 
 #You must understand that a file and file object are two wholly separate – yet related – things.
 
 
 #File Types
 #What you may know as a file is slightly different in Python. 
-#In Windows, for example, a file can be any item manipulated, edited or created by the user/OS. That means files can be images, text documents, executables, and much more. Most files are organized by keeping them in individual folders. 
+#In Windows, for example, a file can be any item manipulated, edited or created by the user/OS. That means files can
+#be images, text documents, executables, and much more. Most files are organized by keeping them in individual folders. 
 #In Python, a file is categorized as either text or binary, and the difference between the two file types is important. 
-#Text files are structured as a sequence of lines, where each line includes a sequence of characters. This is what you know as code or syntax. 
-#Each line is terminated with a special character, called the EOL or End of Line character. There are several types, but the most common is the comma {,} or newline character. It ends the current line and tells the interpreter a new one has begun. 
-#A backslash character can also be used, and it tells the interpreter that the next character – following the slash – should be treated as a new line. This character is useful when you don’t want to start a new line in the text itself but in the code. 
-#A binary file is any type of file that is not a text file. Because of their nature, binary files can only be processed by an application that know or understand the file’s structure. In other words, they must be applications that can read and interpret binary.
+#Text files are structured as a sequence of lines, where each line includes a sequence of characters. 
+#This is what you know as code or syntax. 
+#Each line is terminated with a special character, called the EOL or End of Line character. 
+#There are several types, but the most common is the comma {,} or newline character. It ends the current line and tells 
+#the interpreter a new one has begun. 
+#A backslash character can also be used, and it tells the interpreter that the next character – following the slash
+#– should be treated as a new line. This character is useful when you don’t want to start a new line in the text itself but in the code. 
+#A binary file is any type of file that is not a text file. Because of their nature, binary files can only be
+#processed by an application that know or understand the file’s structure. In other words, they must be
+#applications that can read and interpret binary.
 
 #Open ( ) Function
 #In order to open a file for writing or use in Python, you must rely on the built-in open () function. 
 #As explained above, open ( ) will return a file object, so it is most commonly used with two arguments.  
-#An argument is nothing more than a value that has been provided to a function, which is relayed when you call it. So, for instance, if we declare the name of a file as “Test File,” that name would be considered an argument. 
+#An argument is nothing more than a value that has been provided to a function, which is relayed when you call it.
+#So, for instance, if we declare the name of a file as “Test File,” that name would be considered an argument. 
 #The syntax to open a file object in Python is: 
 
 #file_object  = open(“filename”, “mode”) where file_object is the variable to add the file object. 
 #The second argument you see – mode – tells the interpreter and developer which way the file will be used.
 
 #Mode
-#Including a mode argument is optional because a default value of ‘r’ will be assumed if it is omitted. The ‘r’ value stands for read mode, which is just one of many. 
+#Including a mode argument is optional because a default value of ‘r’ will be assumed if it is omitted.
+#The ‘r’ value stands for read mode, which is just one of many. 
 #The modes are: 
 #‘r’ – Read mode which is used when the file is only being read 
-#‘w’ – Write mode which is used to edit and write new information to the file (any existing files with the same name will be erased when this mode is activated) 
-#‘a’ – Appending mode, which is used to add new data to the end of the file; that is new information is automatically amended to the end 
+#‘w’ – Write mode which is used to edit and write new information to the file (any existing files with 
+#the same name will be erased when this mode is activated) 
+#‘a’ – Appending mode, which is used to add new data to the end of the file; that is new information
+#is automatically amended to the end 
 
 #F = open(“workfile”,”w”) 
 #Print f 
@@ -183,7 +204,8 @@ for line in file:
 
 #Create a text file
 #To get more familiar with text files in Python, let’s create our own and do some additional exercises. 
-#Using a simple text editor, let’s create a file. You can name it anything you like, and it’s better to use something you’ll identify with. 
+#Using a simple text editor, let’s create a file. You can name it anything you like, and it’s better to
+#use something you’ll identify with. 
 #For the purpose of this tutorial, however, we are going to call it “testfile.txt”. 
 #Just create the file and leave it blank. 
 #To manipulate the file, write the following in your Python environment (you can copy and paste if you’d like):
@@ -221,7 +243,8 @@ file.close()
 #Notice how we’re using the same file.read() method, only this time we specify the number of characters to process? 
 #The output for this will look like: 
 #Hello 
-#If you want to read a file line by line – as opposed to pulling the content of the entire file at once – then you use the readline() function. 
+#If you want to read a file line by line – as opposed to pulling the content of the entire file at once – 
+#then you use the readline() function. 
 #Why would you use something like this? 
 #Let’s say you only want to see the first line of the file – or the third. You would execute 
 #the readline() function as many times as possible to get the data you were looking for. 
@@ -234,12 +257,14 @@ file.close()
 #If we wanted to return only the third line in the file, we would use this: 
 #file = open(“testfile.txt”, “r”) 
 #print file.readline(3): 
-#But what if we wanted to return every line in the file, properly separated? You would use the same function, only in a new form. This is called the file.readlines() function. 
+#But what if we wanted to return every line in the file, properly separated? You would use the same function,
+#only in a new form. This is called the file.readlines() function. 
 #file = open(“testfile.txt”, “r”) 
 #print file.readlines() 
 #The output you would get from this is: 
 #[‘Hello World’, ‘This is our new text file’, ‘and this is another line.’, ‘Why? Because we can.’] 
-#Notice how each line is separated accordingly? Note that this is not the ideal way to show users the content in a file. But it’s great when you want to collect information quickly for personal use during development or recall.
+#Notice how each line is separated accordingly? Note that this is not the ideal way to show users the content in a file. 
+#But it’s great when you want to collect information quickly for personal use during development or recall.
 
 #Looping over a file object
 #When you want to read – or return – all the lines from a file in a more memory efficient, and fast manner,
@@ -256,8 +281,10 @@ Why? Because we can.
 
 #See how much simpler that is than the previous methods?
 #Using the File Write Method
-#One thing you’ll notice about the file write method is that it only requires a single parameter, which is the string you want to be written. 
-#This method is used to add information or content to an existing file. To start a new line after you write data to the file, you can add an EOL character.
+#One thing you’ll notice about the file write method is that it only requires a single parameter, which is the string
+#you want to be written. 
+#This method is used to add information or content to an existing file. To start a new line after you write data to the
+#file, you can add an EOL character.
 
 file = open(“testfile.txt”, “w”)
 file.write(“This is a test”) 
@@ -272,8 +299,10 @@ Obviously, this will amend our current file to include the two new lines of text
 #Notice how we have used this in several of our examples to end interaction with a file? This is good practice.
 
 #File Handling in the Real World :
-#To help you better understand some of the methods discussed here, we’re going to offer a few examples of them being used in the real world.
-#Feel free to copy the code and try it out for yourself in a Python interpreter (make sure you have any named files created and accessible first).
+#To help you better understand some of the methods discussed here, we’re going to offer a few examples of them being
+#used in the real world.
+#Feel free to copy the code and try it out for yourself in a Python interpreter (make sure you have any named files
+#created and accessible first).
 Opening a text file:
 fh = open(“hello.txt”, “r”) 
  
