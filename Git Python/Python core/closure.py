@@ -7,6 +7,31 @@
 #we must declare them explicitly as non-local (using nonlocal keyword) in order to modify them
 #A Closure is a function object that remembers values in enclosing scopes even if they are not present in memory. 
 =====================================
+# base concept of decoorator is closore
+def gen_multiplier(x):
+    def multiplier(y):
+        return x * y
+    return multiplier
+obj = gen_multiplier(10)
+print(obj(5))
+#50
+=======================
+def gen_multiplier():
+    x = 10 #non-local variable
+    def multiplier(y): #stores the reference to non-local variable
+        return x * y #x is non local to multiplier
+    return multiplier
+#call the function
+obj = gen_multiplier()
+del gen_multiplier #it will delete
+print(obj(5))
+
+#50
+==========================
+#nested-function
+#nested function should access non-local variable
+#it should return the en-closed function
+=====================================
 def print_msg(msg):
 # This is the outer enclosing function
     def printer():
