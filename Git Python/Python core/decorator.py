@@ -67,6 +67,29 @@ obj()
 #in outer1 function
 #abc function
 ======================
+def decorator(sum,sub,mul):
+    def inner(i,j):
+        print("before operation")
+        print("operation :",sum(i,j))
+        print("operation :",sub(i,j))
+        print("operation :",mul(i,j))
+    return inner
+
+def sum1(i,j):
+    return i+j
+def sub1(i,j):
+    return i-j
+def mul1(i,j):
+    return i*j
+
+obj = decorator(sum1,sub1,mul1)
+obj(10,20)
+
+#before operation
+operation : 30
+operation : -10
+operation : 200
+============================
 def outer(abc):
     def inner():
         print("in inner function")
