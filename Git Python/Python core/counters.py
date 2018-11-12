@@ -7,6 +7,15 @@
 #Output --> Dict
 #From collections import counter
 ==========================
+#elements print(list(coun.elements())) 
+#Most common
+for i in coun.most_common(3): #upto 3 items
+    print(i)
+for i in coun.most_common(): #whole items descending order
+    print(i)
+
+#update coun.update([1, 2, 4])
+===============================
 
 from collections import Counter 
 z = ['blue', 'red', 'blue', 'yellow', 'blue', 'red'] 
