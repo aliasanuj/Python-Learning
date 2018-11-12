@@ -5,6 +5,7 @@
 #Nested functions can access variables of the enclosing scope.
 #In Python, these non-local variables are read only by default and 
 #we must declare them explicitly as non-local (using nonlocal keyword) in order to modify them
+#A Closure is a function object that remembers values in enclosing scopes even if they are not present in memory. 
 =====================================
 def print_msg(msg):
 # This is the outer enclosing function
