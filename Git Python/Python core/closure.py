@@ -98,6 +98,14 @@ def outer_func():
 a = outer_func()
  
 print(a())	# 8
+======================
+def outer_func():
+  x = 5
+  def inner_func(y = 3):
+    return (x + y)
+  return inner_func()
+print(outer_func())
+#8
 
 =======================
 def multiply_by(num):
