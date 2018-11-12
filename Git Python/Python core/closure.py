@@ -53,6 +53,31 @@ print(outer_func())
 
 #global enclose local
 #None
+================================
+def outer_func():
+  x = 5
+  def inner_func(y = 3):
+    return (x + y)
+  return inner_func
+a = outer_func()
+ 
+print(a())	# 8
+
+=======================
+def multiply_by(num):
+  def multiply_by_num(k):
+    return num * k
+  return multiply_by_num
+  
+five = multiply_by(5)
+print(five(2))	# 10
+print(five(4))	# 20
+ 
+decimal = multiply_by(10)
+print(decimal(20))	# 200
+print(decimal(3))	# 30
+=========================
+
 
 
 
