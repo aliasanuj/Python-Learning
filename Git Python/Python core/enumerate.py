@@ -1,6 +1,7 @@
 #enumerate.py
 ==============================
-#It is built in function that take input as an iterator, list etc and return a tuple containing index and data at that index in the iterator sequence.
+#It is built in function that take input as an iterator, list etc and return a tuple containing index and data at that
+#index in the iterator sequence.
 #syntax : enumerate(iteracble,start=0)
 #Iterable --> Any object that support iteration.
 #Start --> the index value from which the counter is to be started by default it is 0
