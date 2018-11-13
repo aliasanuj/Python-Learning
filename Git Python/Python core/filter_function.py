@@ -1,5 +1,16 @@
 #filter_function.py
 ========================
+#The filter() method constructs an iterator from elements of an iterable for which a function returns true.
+I#n simple words, the filter() method filters the given iterable with the help of a function 
+#that tests each element in the iterable to be true or not.
+The syntax of filter() method is:
+#filter(function, iterable)
+#filter() Parameters
+#The filter() method takes two parameters:
+#function - function that tests if elements of an iterable returns true or false
+#If None, the function defaults to Identity function - which returns false if any elements are false
+#iterable - iterable which is to be filtered, could be sets, lists, tuples, or containers of any iterators
+========================
 number_list = range(-5, 5)
 less_than_zero = list(filter(lambda x: x < 0, number_list))
 print(less_than_zero)
