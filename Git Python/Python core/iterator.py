@@ -1,4 +1,28 @@
 #iterator.py
+=======================
+#iterator
+===================
+#Iterators are objects that can be iterated upon.
+#Technically speaking, Python iterator object must implement two special methods,
+# __iter__() and __next__(), collectively called the iterator protocol.
+=======================
+my_list = [4, 7, 0, 3]
+my_iter = iter(my_list)
+print(next(my_iter))
+print(next(my_iter))
+print(my_iter.__next__())
+print(my_iter.__next__())
+next(my_iter)
+
+#4
+#7
+#0
+#3
+Traceback (most recent call last):
+  File "python", line 7, in <module>
+StopIteration
+====================================
+
 list1 = [1,2,3,4]
 a = iter(list1)
 print(next(a))
