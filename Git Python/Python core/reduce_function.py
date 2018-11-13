@@ -132,4 +132,18 @@ print(result)
 #6
 #1
 ========================
+list1 = [1,2,3,6,4,7]
+
+#Reduce --> 
+import functools
+#functools.reduce(function,iterator)
+x=functools.reduce(lambda x,y:x+y,list1)
+print(x)
+#23
+
+#Accumulate -->
+import itertools
+y = itertools.accumulate(list1,lambda x,y : x+y)
+print(list(y))
+#[1, 3, 6, 12, 16, 23]
 
