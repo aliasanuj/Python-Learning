@@ -21,17 +21,21 @@ def my_gen():
     yield 6
     yield 8
     yield 4
+    yield 5
+    yield 6
 print("by objevt creation")
 obj = my_gen()
 print(next(obj))
 print(next(obj))
 print(next(obj))
 print(next(obj))
-
 print("by for loop")
 for i in my_gen():
   print(i)
-
+print("x.__next__()")
+print(obj.__next__())
+print(obj.__next__())
+print(obj.__next__()) #error -> StopIteration
 
 #by objevt creation
 #7
@@ -43,6 +47,15 @@ for i in my_gen():
 #6
 #8
 #4
+#5
+#6
+#x.__next__()
+#5
+#6
+Traceback (most recent call last):
+  File "python", line 20, in <module>
+StopIteration
+
 =============================
 def my_gen():
     n = 1
