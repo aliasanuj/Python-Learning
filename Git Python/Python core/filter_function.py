@@ -1,9 +1,9 @@
 #filter_function.py
 ========================
 #The filter() method constructs an iterator from elements of an iterable for which a function returns true.
-I#n simple words, the filter() method filters the given iterable with the help of a function 
+#In simple words, the filter() method filters the given iterable with the help of a function 
 #that tests each element in the iterable to be true or not.
-The syntax of filter() method is:
+#The syntax of filter() method is:
 #filter(function, iterable)
 #filter() Parameters
 #The filter() method takes two parameters:
