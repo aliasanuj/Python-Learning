@@ -14,7 +14,35 @@
 #Local variables and their states are remembered between successive calls.
 #Finally, when the function terminates, StopIteration is raised automatically on further calls.
 #It is also called lazy evaluation
-#
+
+=============================
+def my_gen():
+    yield 7
+    yield 6
+    yield 8
+    yield 4
+print("by objevt creation")
+obj = my_gen()
+print(next(obj))
+print(next(obj))
+print(next(obj))
+print(next(obj))
+
+print("by for loop")
+for i in my_gen():
+  print(i)
+
+
+#by objevt creation
+#7
+#6
+#8
+#4
+#by for loop
+#7
+#6
+#8
+#4
 =============================
 def my_gen():
     n = 1
