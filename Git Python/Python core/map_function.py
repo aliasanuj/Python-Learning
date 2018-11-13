@@ -17,6 +17,12 @@ print(list(result))
 def map1(n):
     return n
 numbers = (1,2,3,4,5,6)
+result = map(map1,numbers)
+print(tuple(result))
+========================
+def map1(n):
+    return n
+numbers = (1,2,3,4,5,6)
 print(list(map(map1,numbers)))
 #[1, 2, 3, 4, 5, 6]
 ==========================
