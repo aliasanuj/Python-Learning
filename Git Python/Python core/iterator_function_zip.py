@@ -1,6 +1,7 @@
 #iterator_function_zip.py
 ============================
-#Iterator Functions --> This iterator take two argument.Iterator target and function which would be followed at each iteration of value in target.
+#Iterator Functions --> This iterator take two argument.Iterator target and function which would be followed at each iteration
+#of value in target.
 #If no function will be pass,addition take place by default.If iterable will be empty, output iterable will be also empty.
 #Chain(iter1,iter2,....) --> used to print all values 
 #We need to import itertools
