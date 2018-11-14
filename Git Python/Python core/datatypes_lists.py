@@ -168,6 +168,14 @@ my_list.remove(1)
 >>> my_list
 ['p', 'r', 'm']
 
+list1 = ['p','r','o','b','l','e','m']
+list1.pop()
+print(list1)
+list1.pop(2)
+print(list1)
+#['p', 'r', 'o', 'b', 'l', 'e']
+#['p', 'r', 'b', 'l', 'e']
+
 #Python List Methods -->
 #Methods that are available with list object in Python programming are tabulated below.
 #They are accessed as list.method(). Some of the methods have already been used above.
