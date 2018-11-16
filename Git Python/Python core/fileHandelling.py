@@ -95,6 +95,21 @@ Content :
 Hello. I am Anuj.
 Work in Infosys.
 Netflix and amazon.
+============================
+import mmap
+
+with open('test.txt', 'rb', 0) as file,\
+     mmap.mmap(file.fileno(), 0, access=mmap.ACCESS_READ) as s:
+    if s.find(b'anujj') != -1:
+        print('true')
+    else:
+        print("not found")
+o/p -->
+Not found 
+File content :
+Hello. I am Anuj.
+Work in Infosys.
+Netflix and amazon.
 =========================
 6. with open("test.txt","r") as fh:
     print(fh.readline())
