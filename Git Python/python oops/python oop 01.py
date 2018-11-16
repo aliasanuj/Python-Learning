@@ -100,6 +100,23 @@ obj = EmployeeData(30000)
 obj.getData()
 #salary is 30000 and age is 0
 ===============================
+class EmployeeData:
+
+    def __init__(self, sal=0, age=0):
+        self.sal = sal
+        self.age = age
+
+    def getData(self):
+        print("salary is {} and age is {}".format(sal,age))
+obj = EmployeeData(30000)
+obj.getData()
+
+#raceback (most recent call last):
+  File "python", line 10, in <module>
+  File "python", line 8, in getData
+NameError: name 'sal' is not defined
+
+===============================
 class Sales:
     def __init__(self, id):
         self.id = id
