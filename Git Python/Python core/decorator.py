@@ -265,6 +265,28 @@ obj()
 #inner function
 #in outer1 function
 #after inner None
+=============================
+def outer(abc):
+    def inner():
+        print("inner function",abc())
+        abc()
+        print("abc function 00 ")
+        abc()
+        print("abc function 01")
+    return  inner
+@outer
+def outer1():
+    print("outer1 function")
+outer1()
+
+
+#outer1 function
+#inner function None
+#outer1 function
+#abc function 00 
+#outer1 function
+#abc function 01
+
 ===========================
 def outer(abc):
     def inner():
