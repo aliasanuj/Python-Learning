@@ -85,13 +85,17 @@ Work in Infosys.
 Netflix and amazon.
 anuj
 =========================================
-5. with open("test.txt","rb+") as fh:
-    if fh.read() == "anuj": #case sensitive
+5.with open("test.txt","r") as fh:
+    if "Anuj" in fh.read():
         print("true")
     else :
         print("false")
-o/p --> False 
-=========================================
+o/p --> true
+Content :
+Hello. I am Anuj.
+Work in Infosys.
+Netflix and amazon.
+=========================
 6. with open("test.txt","r") as fh:
     print(fh.readline())
 o/p--> 
