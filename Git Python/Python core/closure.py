@@ -6,8 +6,9 @@
 #In Python, these non-local variables are read only by default and 
 #we must declare them explicitly as non-local (using nonlocal keyword) in order to modify them
 #A Closure is a function object that remembers values in enclosing scopes even if they are not present in memory. 
-=====================================
-# base concept of decoorator is closore
+# base concept of decorator is closure
+
+======================================
 def gen_multiplier(x):
     def multiplier(y):
         return x * y
