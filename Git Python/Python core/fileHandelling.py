@@ -47,9 +47,27 @@ truncate(size=None)	Resize the file stream to size bytes. If size is not specifi
 writable()	Returns True if the file stream can be written to.
 write(s)	Write string s to the file and return the number of characters written.
 writelines(lines)	Write a list of lines to the file.
-=================================
+==========================================
 #File handelling 
-===========================================
+==========================================
+with open("test.txt",'r') as fh:
+    x = fh.read().split()
+    print(x)
+    for i in x:
+        if "@" in i:
+            print(i)
+
+Content :
+Hello. I am Anuj.
+Work in Infosys.
+Netflix and amazon.
+anuj@gmail.com
+
+o/p -->
+['Hello.', 'I', 'am', 'Anuj.', 'Work', 'in', 'Infosys.', 'Netflix', 'and', 'amazon.', 'anuj@gmail.com']
+anuj@gmail.com
+==========================================
+
 #file name : Test.txt
 #contents :
 Hello. I am Anuj.
