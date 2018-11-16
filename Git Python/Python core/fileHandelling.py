@@ -66,6 +66,26 @@ anuj@gmail.com
 o/p -->
 ['Hello.', 'I', 'am', 'Anuj.', 'Work', 'in', 'Infosys.', 'Netflix', 'and', 'amazon.', 'anuj@gmail.com']
 anuj@gmail.com
+
+=========================================
+with open("test.txt",'r') as fh:
+    x = fh.read().split()
+    print(x)
+    list1 = []
+    for i in x:
+        if "@" in i:
+            list1.append(i)
+print(list1)
+
+file content :
+Hello. I am Anuj.
+Work in Infosys.
+Netflix and amazon.
+anuj@gmail.com aman@gmai.com
+
+o/p -->
+['Hello.', 'I', 'am', 'Anuj.', 'Work', 'in', 'Infosys.', 'Netflix', 'and', 'amazon.', 'anuj@gmail.com', 'aman@gmai.com']
+['anuj@gmail.com', 'aman@gmai.com']
 ==========================================
 
 #file name : Test.txt
