@@ -14,7 +14,8 @@
 #Local variables and their states are remembered between successive calls.
 #Finally, when the function terminates, StopIteration is raised automatically on further calls.
 #It is also called lazy evaluation
-
+#Generator-Function
+#Generator-Object
 =============================
 def my_gen():
     yield 7
