@@ -36,6 +36,11 @@ col_count = Counter(z)
 print(col_count) 
 for color in col_count.items(): 
     print (color)
+    
+#Counter({'blue': 3, 'red': 2, 'yellow': 1})
+#('blue', 3)
+#('red', 2)
+#('yellow', 1)
 ================================
 from collections import Counter
 string1 = "kumare anuj"
