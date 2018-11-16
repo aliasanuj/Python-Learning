@@ -6,10 +6,12 @@
 #This is important because Unicode is more versatile than ASCII.
 #Unicode strings can store foreign language letters, Roman letters and numerals, symbols, emojis, etc., offering you more choices.
 
-#In Python 2, if you write a number without any digits after the decimal point, it rounds your calculation down to the nearest whole number.
+#In Python 2, if you write a number without any digits after the decimal point, it rounds your calculation down to the nearest 
+#whole number.
 #For example, if you’re trying to perform the calculation 5 divided by 2, and you type 5 / 2, the result will be 2 due to rounding. 
 #You would have to write it as 5.0 / 2.0 to get the exact answer of 2.5.
-#However, in Python 3, the expression 5 / 2 will return the expected result of 2.5 without having to worry about adding those extra zeroes.
+#However, in Python 3, the expression 5 / 2 will return the expected result of 2.5 without having to worry about adding those 
+#extra zeroes.
 #This is one example of how Python 3 syntax can be more intuitive, making it easier for newcomers to learn Python programming.
 
 #THE TWO VERSIONS HAVE DIFFERENT PRINT STATEMENT SYNTAXES
@@ -57,9 +59,11 @@ Output in Python 3.x (Bytes and str are different)
 
 #xrange:
 #xrange() of Python 2.x doesn’t exist in Python 3.x. In Python 2.x, range returns a list i.e. range(3) returns [0, 1, 2] 
-#while xrange returns a xrange object i. e., xrange(3) returns iterator object which work similar to Java iterator and generates number when needed.
+#while xrange returns a xrange object i. e., xrange(3) returns iterator object which work similar to Java iterator and generates
+#number when needed.
 #If we need to iterate over the same sequence multiple times, we prefer range() 
-#as range provides a static list. xrange() reconstructs the sequence every time. xrange() doesn’t support slices and other list methods. The advantage of xrange() is, it saves memory when task is to iterate over a large range.
+#as range provides a static list. xrange() reconstructs the sequence every time. xrange() doesn’t support slices and other list
+#methods. The advantage of xrange() is, it saves memory when task is to iterate over a large range.
 #In Python 3.x, the range function now does what xrange does in Python 2.x, so to keep our code portable, 
 #we might want to stick to using range instead. So Python 3.x’s range function is xrange from Python 2.x.
 for x in xrange(1, 5): 
