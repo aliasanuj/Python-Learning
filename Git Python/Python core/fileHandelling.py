@@ -48,6 +48,109 @@ writable()	Returns True if the file stream can be written to.
 write(s)	Write string s to the file and return the number of characters written.
 writelines(lines)	Write a list of lines to the file.
 =================================
+#File handelling 
+===========================================
+#file name : Test.txt
+#contents :
+Hello. I am Anuj.
+Work in Infosys.
+Netflix and amazon.
+
+1.with open("test.txt","r") as fh:
+    print(fh.read())
+o/p -->
+Hello. I am Anuj.
+Work in Infosys.
+Netflix and amazon.
+===========================================
+2. with open("test.txt","r") as fh:
+    print(fh.read(5))
+o/p -->
+Hello
+===========================================
+3. with open("test.txt","rb") as fh:
+    print(fh.read(5))
+o/p -->
+b'Hello'
+========================================
+4. with open("test.txt","r+") as fh:
+    print(fh.read(5))
+    print(fh.write("anuj"))
+o/p -->
+Hello
+4
+File change :
+Hello. I am Anuj.
+Work in Infosys.
+Netflix and amazon.
+anuj
+=========================================
+5. with open("test.txt","rb+") as fh:
+    if fh.read() == "anuj": #case sensitive
+        print("true")
+    else :
+        print("false")
+o/p --> False 
+=========================================
+6. with open("test.txt","r") as fh:
+    print(fh.readline())
+o/p--> 
+Hello. I am Anuj.
+=========================================
+7. with open("test.txt","r") as fh:
+    print(fh.readlines())
+o/p -->
+['Hello. I am Anuj.\n', 'Work in Infosys.\n', 'Netflix and amazon.\n']
+===========================================
+8. with open("test.txt","w") as fh:
+    print(fh.write("anuj Kumar")) #it will create new file 
+o/p -->
+10
+File contents :
+anuj kumar 
+=======================================
+9. with open("test.txt","r") as fh:
+    for line in fh:
+        print(line)
+o/p -->
+Hello. I am Anuj.
+
+Work in Infosys.
+
+Netflix and amazon.
+
+anuj
+
+File content :
+Hello. I am Anuj.
+Work in Infosys.
+Netflix and amazon.
+anuj
+============================================
+10. with open("test.txt","w") as fh:
+    a = ["Hello World ","I love prime ","also i love netflix "]
+    fh.writelines(a)
+o/p -->
+Hello World I love prime also i love netflix 
+=======================================
+11. with open("test.txt","w") as fh:
+    a = ["Hello World\n","I love prime\n","also i love netflix"]
+    fh.writelines(a)
+o/p -->
+Hello World
+I love prime
+also i love netflix
+===========================================
+12. with open("test.txt","a") as fh:
+    append = "\nI love python"
+    fh.write(append)
+o/p -->
+Hello World
+I love prime
+also i love netflix
+I love python
+============================================
+
 #File handling is an important part of any web application.
 #Python has several functions for creating, reading, updating, and deleting files.
 
