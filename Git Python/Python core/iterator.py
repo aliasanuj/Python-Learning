@@ -5,7 +5,10 @@
 #Iterators are objects that can be iterated upon.
 #Technically speaking, Python iterator object must implement two special methods,
 # __iter__() and __next__(), collectively called the iterator protocol.
-=======================
+#An iterator is an object that contains a countable number of values.
+#Lists, tuples, dictionaries, and sets are all iterable objects. They are iterable containers which you can get an iterator from.
+#All these objects have a iter() method which is used to get an iterator:
+=====================
 my_list = [4, 7, 0, 3]
 my_iter = iter(my_list)
 print(next(my_iter))
