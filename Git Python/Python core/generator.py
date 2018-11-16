@@ -6,7 +6,7 @@
 #it becomes a generator function. Both yield and return will return some value from a function.
 #The difference is that, while a return statement terminates a function entirely, yield 
 #statement pauses the function saving all its states and later continues from there on successive calls.
-
+#every generator is an iterator, but not every iterator is a generator
 #Generator function contains one or more yield statement.
 #When called, it returns an object (iterator) but does not start execution immediately.
 #Methods like __iter__() and __next__() are implemented automatically. So we can iterate through the items using next().
