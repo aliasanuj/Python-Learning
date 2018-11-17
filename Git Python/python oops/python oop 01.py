@@ -154,6 +154,19 @@ obj.getData()
 ===============================
 class EmployeeData:
 
+    def __init__(self, sal, age=0):
+        self.sal = sal
+        self.age = age
+
+    def getData(self):
+        print("salary is {} and age is {}".format(self.sal,self.age))
+obj = EmployeeData(30000)
+obj.getData()
+
+#salary is 30000 and age is 0
+===============================
+class EmployeeData:
+
     def __init__(self, sal=0, age=0):
         self.sal = sal
         self.age = age
