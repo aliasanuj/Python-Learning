@@ -22,6 +22,43 @@ obj = derived("anuj","patna")
 obj.combine()
 #anuj patna
 ===========================================
+class abc:
+  def __init__(self,name,roll):
+    self.name = name
+    self.roll = roll
+
+class x(abc):
+  def __init__(self,name,age,roll):
+    abc.name=name
+    self.age = age
+    self.roll = roll
+
+obj = x("anuj",25,1001)
+print(obj.name)
+print(obj.age)
+print(obj.roll)
+
+#anuj
+#25
+#1001
+========================================
+class base:
+    def __init__(self,name):
+        self.name = name
+class derived(base):
+    def __init__(self,name,city):
+        base.name = name
+        self.city = city
+    def combine(self):
+        print(base.name, self.city)
+        print(self.name, self.city)
+
+obj = derived("anuj","patna")
+obj.combine()
+
+#anuj patna
+#anuj patna
+===========================================
 class base:
     def __init__(self,name):
         self.name = name
