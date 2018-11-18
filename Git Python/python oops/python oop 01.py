@@ -537,6 +537,29 @@ class B(A):
         self.i = 3 * i;
 b = B()
 #i from B is 90
+============================
+class A:
+    def __init__(self):
+        
+        self.abc(30)
+        print(self.i)
+        print("i from A is", self.i)
+
+    def abca(self, i): #it wont called
+        self.i = 2 * i;
+        print("value is ",self.i)
+class B(A):
+    def __init__(self):
+        super().__init__()
+
+    def abc(self, i):
+        self.i = 3 * i;
+b = B()
+b.abca(12)
+
+#90
+#i from A is 90
+#value is  24
 ==========================
 class A:
     def __init__(self):
