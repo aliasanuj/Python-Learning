@@ -511,7 +511,7 @@ class A:
         print(self.i)
         print("i from A is", self.i)
 
-    def abc(self, i):
+    def abc(self, i): #it wont be called
         self.i = 2 * i;
 class B(A):
     def __init__(self):
