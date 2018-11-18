@@ -487,6 +487,23 @@ class B(A):
         super().__init__()
 b = B()
 #i from A is 60
+===============================
+class A:
+    def __init__(self):
+        self.abc(20)
+        print("i from A is", self.i)
+
+    def abc(self, i):
+        self.i = 3 * i;
+        print("value is ",self.i)
+class B(A):
+    def __init__(self):
+        super().__init__()
+
+obj = B()
+
+#value is  60
+#i from A is 60
 ==============================
 class A:
     def __init__(self):
