@@ -808,6 +808,24 @@ class B(A):
 c = B()
 c.print()
 #1 20
+======================
+class A:
+     def __init__(self):
+         self.__x = 1
+         self.y = 10
+ 
+     def print(self):
+         print(self.__x, self.y)
+class B(A):
+     def __init__(self):
+         self.__x = 15
+         super().__init__()
+         self.__x = 2
+         self.y = 20
+c = B()
+c.print()
+
+#1 20
 ==========================
 class A:
     def __init__(self):
