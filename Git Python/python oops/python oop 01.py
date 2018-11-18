@@ -255,7 +255,34 @@ class Sales:
 val = Sales(123)
 print (val.id)
 #123
-==============================
+===============================
+class Sales:
+    def __init__(self, id):
+        self.id = id
+        print(id)
+        id = 100
+        print(id)
+
+val = Sales(123)
+#print (val.id)
+#123
+#100
+
+=============================
+class Sales:
+    def __init__(self, id):
+        self.id = id
+        print(id)
+        id = 100
+        print(id)
+
+val = Sales(123)
+print (val.id)
+#123
+#100
+#123
+=================================
+
 s = "\t\tWelcome\n"
 print(s.strip())
 #Welcome
