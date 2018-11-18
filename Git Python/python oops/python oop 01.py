@@ -78,6 +78,24 @@ obj.combine()
 
 #anuj patna
 #anuj patna
+========================================
+class base:
+    def __init__(self,name):
+        self.name = name
+class derived(base):
+    def __init__(self,name,city):
+        base.name = "aman"
+        self.city = city
+        self.name = "abc"
+    def combine(self):
+        print(base.name, self.city)
+        print(self.name, self.city)
+
+obj = derived("anuj","patna")
+obj.combine()
+
+#aman patna
+#abc patna
 ===========================================
 class base:
     def __init__(self,name):
