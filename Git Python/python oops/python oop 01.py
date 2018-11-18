@@ -8,6 +8,48 @@
 #=====================
 #oops programming====
 #=====================
+class a01:
+  def __init__(self,a,b):
+    self.a = a
+    self.b = b
+
+  def sum(self):
+    print(self.a*self.b)
+
+class a02(a01):
+  def __init__(self,a,b):
+    self.a = a
+    self.b = b
+  def sum(self):
+    print(self.a+self.b)
+
+obj = a02(10,20)
+obj.sum()
+
+#30
+
+=========================
+class a01:
+  def __init__(self,a,b):
+    self.a = a
+    self.b = b
+
+  def sum(self):
+    print(self.a*self.b)
+
+class a02(a01):
+  def __init__(self,a,b):
+    self.a = a
+    self.b = b
+  #def sum(self):
+    #print(self.a+self.b)
+
+obj = a02(10,20)
+obj.sum()
+
+#200
+
+==========================
 class base:
     def __init__(self,name):
         self.name = name
