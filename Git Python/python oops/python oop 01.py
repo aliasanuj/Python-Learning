@@ -577,6 +577,27 @@ b = B()
 #90
 #i from B is 90
 ========================
+class A:
+    def __init__(self):
+        self.abc(30)
+        print(self.i)
+    def abc(self, i):
+        self.i = 2 * i;
+class B(A):
+    def __init__(self):
+      print("zzz")
+      super().__init__()
+      self.abc(50)
+      print("i from B is", self.i)
+    def abcd(self, i):
+        self.i = 3 * i;
+b = B()
+
+#zzz
+#60
+#i from B is 100
+
+=====================
 class Test:
     def __init__(self, s):
         self.s = s
