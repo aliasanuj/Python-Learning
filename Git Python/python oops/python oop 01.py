@@ -638,6 +638,22 @@ class Test:
 msg = Test()
 msg.print()
 #welcome
+=============================
+class Test:
+    def __init__(self):
+        self.x = 1
+        self.__y = 5
+ 
+    def getY(self):
+        return self.__y
+val = Test()
+print(val.x)
+#print(val.y)
+print(val.getY)
+print(val.getY())
+#1
+#<bound method Test.getY of <__main__.Test object at 0x7f14a8a4c0f0>>
+#5
 ===========================
 class Test:
     def __init__(self):
