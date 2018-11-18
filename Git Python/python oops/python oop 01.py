@@ -420,6 +420,24 @@ print(b.j)
 
 #30
 #0
+=========================
+class A:
+    def __init__(self):
+        self.abc(30)
+        print(self.i) #2nd execute
+        print("i from A is", self.i) #last execute
+
+    def abc(self, i):
+      print(i)  #1st exectte
+      self.i = 2 * i;
+class B(A):
+    def __init__(self):
+        super().__init__()
+b = B()
+
+#30
+#60
+#i from A is 60
 ==========================
 class A:
     def __init__(self):
