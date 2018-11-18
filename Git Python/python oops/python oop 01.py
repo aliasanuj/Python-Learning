@@ -406,6 +406,20 @@ print(b.i)
 print(b.j)
 #0
 #0
+=======================
+class A:
+    def __init__(self, i = 10):
+        self.i = 20
+class B(A):
+    def __init__(self, j = 0):
+        self.i = 30
+        self.j = j
+b = B()
+print(b.i)
+print(b.j)
+
+#30
+#0
 ==========================
 class A:
     def __init__(self):
