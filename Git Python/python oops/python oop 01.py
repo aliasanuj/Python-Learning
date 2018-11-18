@@ -460,6 +460,26 @@ class A:
         self.abc(30)
         print("i from A is", self.i)
 
+    def abc(self, i): #it will not called
+        print(i)
+        self.i = 2 * i;
+class B(A):
+    def __init__(self):
+        super().__init__()
+
+    def abc(self, i):
+        print(i)
+        self.i = 3 * i;
+b = B()
+
+#30
+#i from A is 90
+=======================
+class A:
+    def __init__(self):
+        self.abc(30)
+        print("i from A is", self.i)
+
     def abc(self, i):
         self.i = 2 * i;
 class B(A):
