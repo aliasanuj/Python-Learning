@@ -41,6 +41,26 @@ print(obj.roll)
 #anuj
 #25
 #1001
+=======================================
+class abc:
+  def __init__(self,name,roll):
+    self.name = "kumar"
+    self.roll = "101"
+
+class x(abc):
+  def __init__(self,name,age,roll):
+    abc.name="aman"
+    self.age = 102
+    self.roll = 1002
+
+obj = x("anuj",25,1001)
+print(obj.name)
+print(obj.age)
+print(obj.roll)
+
+#aman
+#102
+#1002
 ========================================
 class base:
     def __init__(self,name):
