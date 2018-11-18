@@ -619,6 +619,17 @@ msg.print()
 #TypeError: __init__() missing 1 required positional argument: 's'
 ========================
 class Test:
+    def __init__(self, s):
+        self.s = s
+
+    def print(self):
+        print(self.s)
+msg = Test("anuj")
+msg.print()
+
+#anuj
+=================================
+class Test:
      def __init__(self, s = "Welcome"):
          self.s = s
  
