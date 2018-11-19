@@ -333,7 +333,7 @@ class B(A):
     pass
 obj = B()
 obj.disp()
-A disp()
+#A disp()
 #Class B inherits class A hence the function disp ()
 #becomes part of class B’s definition. Hence disp() 
 #method is properly executed and the line is printed
