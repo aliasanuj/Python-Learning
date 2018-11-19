@@ -229,6 +229,21 @@ obj=test()
 print(obj.variable)
 #Old
 ===================================
+class test:
+    def __init__(self):
+        self.variable = 'Old'
+        self.Change(self.variable)
+    def Change(self, var):
+        var = 'New'
+obj=test()
+print(obj.variable)
+#print(obj.var) #AttributeError: 'test' object has no attribute 'var'
+#print(obj.change) #AttributeError: 'test' object has no attribute 'change'
+
+
+#old
+
+===================================
 class fruits:
     def __init__(self, price):
         self.price = price
