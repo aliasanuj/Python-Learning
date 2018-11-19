@@ -147,6 +147,17 @@ B.first(ob)
 #and this is called as the unbounded method call. 
 #Calling the method using obj.one() is the bounded method call.
 =============================
+class B(object):
+  def first(self):
+    print("First method called")
+  def second():
+    print("Second method called")
+ob = B()
+B.first(ob) #ob.first()
+
+#First method called
+
+====================================
 class demo():
 	def __repr__(self):
 		return '__repr__ built-in function called'
