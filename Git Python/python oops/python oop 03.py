@@ -11,6 +11,16 @@ obj.abc = 5000
 print(obj.quantity+len(obj.__dict__))
 #54
 ==================================
+class fruits:
+    def __init__(self, price):
+        self.price = price
+obj=fruits(5)
+obj.quantity=50
+obj.bags=500
+#obj.abc = 5000
+print(obj.quantity+len(obj.__dict__))
+#53
+===================================
 class fruits():
   def __init__(self,name):
     self.name = name
