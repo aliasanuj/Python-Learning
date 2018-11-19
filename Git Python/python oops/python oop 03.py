@@ -561,13 +561,17 @@ class outer():
     self.age = age
 class inner(outer):
   def __init__(self,fName,lName,age,rollNo):
-    outer.__init__(self,fName,lName,age) #super().__init__(fName,lName,age) #outer.__init__(self,fName,lName,age)
+    outer.__init__(self,fName,lName,age)
     self.rollNo = rollNo
 object = inner("kumar","anuj",25,101)
 print(object.fName)
 print(object.rollNo)
 #kumar
 #101
+
+#super().__init__(fName,lName,age) 
+#outer.__init__(self,fName,lName,age) 
+#super(inner,self).__init__(fName,lName,age)
 ============================
 class outer():
   def __init__(self,number):
@@ -594,7 +598,7 @@ class outer():
     self.age = age
 class inner(outer):
   def __init__(self,fName,lName,age,rollNo):
-    super(inner,self).__init__(fName,lName,age)
+    super(inner,self).__init__(fName,lName,age) 
     self.rollNo = rollNo
 object = inner("kumar","anuj",25,101)
 print(object.fName)
