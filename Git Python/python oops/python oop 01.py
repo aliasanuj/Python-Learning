@@ -1,12 +1,4 @@
-# Below are OOP programming in Python ===========================================
-# I have used different websites for this code snippets. ========================
-# It might possible that some of the snippets may repeted twice or thrice =======
-# Happie Learning ===============================================================
-#================================================================================
-#================================================================================
-#=====================
-#=====================
-#oops programming====
+#oops programming
 #=====================
 class a01:
   def __init__(self,a,b):
@@ -25,9 +17,7 @@ class a02(a01):
 
 obj = a02(10,20)
 obj.sum()
-
 #30
-
 =========================
 class a01:
   def __init__(self,a,b):
@@ -46,9 +36,7 @@ class a02(a01):
 
 obj = a02(10,20)
 obj.sum()
-
 #200
-
 ==========================
 class base:
     def __init__(self,name):
@@ -79,7 +67,6 @@ obj = x("anuj",25,1001)
 print(obj.name)
 print(obj.age)
 print(obj.roll)
-
 #anuj
 #25
 #1001
@@ -99,7 +86,6 @@ obj = x("anuj",25,1001)
 print(obj.name)
 print(obj.age)
 print(obj.roll)
-
 #aman
 #102
 #1002
@@ -117,7 +103,6 @@ class derived(base):
 
 obj = derived("anuj","patna")
 obj.combine()
-
 #anuj patna
 #anuj patna
 ========================================
@@ -1007,7 +992,9 @@ main()
 #2
 =================================
 =================================
+=================================
+=================================
 © 2018 GitHub, Inc.
 =================================
 =================================
-
+=================================
