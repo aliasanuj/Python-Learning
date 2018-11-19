@@ -665,6 +665,28 @@ print(object.pincode)
 #kumar
 #101
 #1000
+==========================
+class outer():
+  def __init__(self,fName,lName,age):
+    self.fName = fName
+    self.lName = lName
+    self.age = age
+  def pincode(self,pincode):
+    self.pincode = 1111
+    print(self.pincode)
+class inner(outer):
+  def __init__(self,fName,lName,age,rollNo):
+    super(inner,self).__init__(fName,lName,age)
+    #self.pincode = 1000    #outer.pincode(self,1001)
+    self.rollNo = rollNo
+object = inner("kumar","anuj",25,101)
+print(object.fName)
+print(object.rollNo)
+object.pincode(100)
+
+#kumar
+#101
+#1111
 =============================
 class outer():
   def __init__(self,fName,lName,age):
