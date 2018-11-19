@@ -530,7 +530,8 @@ object = inner(10)
 object.double()
 object.tripple()
 #20
-=====================================class outer():
+=====================================
+class outer():
   def __init__(self,number):
     self.number = number
   def double(self):
@@ -553,6 +554,21 @@ object.tripple()
 #20
 #80
 =====================================
+class outer():
+  def __init__(self,fName,lName,age):
+    self.fName = fName
+    self.lName = lName
+    self.age = age
+class inner(outer):
+  def __init__(self,fName,lName,age,rollNo):
+    outer.__init__(self,fName,lName,age) #super().__init__(fName,lName,age) #outer.__init__(self,fName,lName,age)
+    self.rollNo = rollNo
+object = inner("kumar","anuj",25,101)
+print(object.fName)
+print(object.rollNo)
+#kumar
+#101
+============================
 class outer():
   def __init__(self,number):
     self.number = number
