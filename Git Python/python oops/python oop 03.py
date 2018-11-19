@@ -811,6 +811,21 @@ class test():
   city = "patna"
   def __init__(self):
     self.__name = "anuj"
+    self.__company = "infosys"
+  def combine(self):
+    print("roll no is ",self.__name,"and name is",self.__company)
+object = test()
+object.combine()
+print(object.name)
+
+#roll no is  anuj and name is infosys
+#kumar
+==========================================
+class test():
+  name = "kumar"
+  city = "patna"
+  def __init__(self):
+    self.__name = "anuj"
     self.__city = "patna"
   def combine(self):
     print("name is ",self.__name,"city is ",self.__city)
