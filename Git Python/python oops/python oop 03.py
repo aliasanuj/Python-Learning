@@ -240,6 +240,54 @@ stud1.age=7
 print(hasattr(stud1, 'roll_no','age'))
 #TypeError: hasattr expected 2 arguments, got 3
 =======================
+class stud:
+   def __init__(self, roll_no, grade):
+      self.roll_no = roll_no
+      self.grade = grade
+   def display (self):
+      print("Roll no : ", self.roll_no,  ", Grade: ", self.grade)
+stud1 = stud(34, 'S')
+stud1.age=7
+print(hasattr(stud1, 'zzz'))
+
+#false
+====================================
+class stud:
+   def __init__(self, roll_no, grade):
+      self.roll_no = roll_no
+      self.grade = grade
+   def display (self):
+      print("Roll no : ", self.roll_no,  ", Grade: ", self.grade)
+stud1 = stud(34, 'S')
+stud1.grade=7
+print(hasattr(stud1, 'zzz'))
+
+#false
+=================================
+class stud:
+   def __init__(self, roll_no, grade):
+      self.roll_no = roll_no
+      self.grade = grade
+   def display (self):
+      print("Roll no : ", self.roll_no,  ", Grade: ", self.grade)
+stud1 = stud(34, 'S')
+stud1.grade=7
+print(hasattr(stud1, 'grade'))
+
+#True
+===================================
+class stud:
+   def __init__(self, roll_no, grade):
+      self.roll_no = roll_no
+      self.grade = grade
+   def display (self):
+      print("Roll no : ", self.roll_no,  ", Grade: ", self.grade)
+stud1 = stud(34, 'S')
+stud1.abc=7
+print(hasattr(stud1, 'abc'))
+
+#True
+====================================
 class Demo:
     def __new__(self):
         self.__init__(self)
