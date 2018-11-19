@@ -235,10 +235,7 @@ obj=test()
 print(obj.variable)
 #print(obj.var) #AttributeError: 'test' object has no attribute 'var'
 #print(obj.change) #AttributeError: 'test' object has no attribute 'change'
-
-
 #old
-
 ===================================
 class fruits:
     def __init__(self, price):
@@ -997,4 +994,6 @@ obj.bags=500
 print(obj.quantity+len(obj.__dict__))
 #53
 ===================================
+===================================
 © 2018 GitHub, Inc
+===================================
