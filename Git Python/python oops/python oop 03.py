@@ -820,6 +820,26 @@ print(object.name)
 
 #roll no is  anuj and name is infosys
 #kumar
+===========================================
+class test():
+  name = "kumar"
+  city = "patna"
+  print(name)
+  def __init__(self):
+    self.__name = "anuj"
+    self.__company = "infosys"
+    print(name) #erroe
+  def combine(self):
+    print(name) #error
+object = test()
+object.combine()
+print(object.name)
+
+#kumar
+Traceback (most recent call last):
+  File "python", line 11, in <module>
+  File "python", line 8, in __init__
+NameError: name 'name' is not defined
 ==========================================
 class test():
   name = "kumar"
