@@ -418,6 +418,23 @@ object = inner("anuj","patna")
 object.combine()
 #my name is  anuj and my city is  patna
 ===========================================
+class outer():
+  def __init__(self,name):
+    self.name = name 
+    #print("name is ",name)
+class inner(outer):
+  def __init__(self,name,city):
+    super().__init__(name) #super(inner,self).__init__(name)
+    self.city = city
+    #print("city name is ",city)
+  def combine(self):
+    print("my name is ",self.name ,"and my city is ", self.city)
+object = inner("anuj","patna")
+object.combine()
+
+#my name is  anuj and my city is  patna
+
+======================================
 #how to access parent member in sub class
 class outer():
   def __init__(self,name,age):
