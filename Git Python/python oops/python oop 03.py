@@ -21,6 +21,22 @@ class A:
     def __str__(self):
         return "A"
 class B(A):
+    def __str__(self):
+        return "B"
+class C(B):
+    def __str__(self):
+        return "C"
+
+c = C()
+print(c)
+
+
+#C
+=======================
+class A:
+    def __str__(self):
+        return "A"
+class B(A):
     def __init__(self):
         super().__init__()
 class C(B):
