@@ -453,6 +453,23 @@ object.combine()
 #name anuj age 25 city patna
 ==========================================
 class outer():
+  def __init__(self,name,age):
+    self.name = name
+    self.age = age
+    #print("name is ",name)
+class inner(outer):
+  def __init__(self,name,age,city):
+    super().__init__(name,age) #    super(inner,self).__init__(name,age)
+
+    self.city = city
+    #print("city name is ",city)
+  def combine(self):
+    print("name",self.name ,"age", self.age,"city",self.city)
+object = inner("anuj",25,"patna")
+object.combine()
+#name anuj age 25 city patna
+==========================================
+class outer():
   def __init__(self,number):
     self.number = number
   def double(self):
