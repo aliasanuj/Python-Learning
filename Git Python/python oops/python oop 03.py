@@ -39,7 +39,6 @@ print(object2.getname(), object2.isfruit())
 #apple True
 #sweet True
 ==========================================
-896
 class outer():
   def __init__(self,name="anuj"):
     self.name = name 
