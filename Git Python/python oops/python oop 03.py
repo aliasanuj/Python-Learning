@@ -758,6 +758,19 @@ class outer():
     print("Hi i am anuj")
 object = outer()
 #Hi i am anuj
+==============================
+class outer():
+
+  def __init__(self):
+    print("Hi i am anuj")
+  def abc(self,name):
+    self.name = name
+    print("i am ",self.name)
+object = outer()
+object.abc("anuj")
+
+#Hi i am anuj
+#i am  anuj
 ===============================
 class outer():
   def __init__(self):
