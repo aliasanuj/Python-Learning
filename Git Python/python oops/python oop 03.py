@@ -184,6 +184,18 @@ obj=test()
 obj.display()
 #TypeError: __init__() missing 1 required positional argument: 'a'
 ===========================
+class test:
+     def __init__(self,a):
+         self.a=a
+ 
+     def display(self):
+         print(self.a)
+obj=test(10)
+obj.display()
+
+#10
+
+=============================
 class A:
 	def __init__(self,b):
 		self.b=b
