@@ -530,6 +530,28 @@ object = inner(10)
 object.double()
 object.tripple()
 #20
+=====================================class outer():
+  def __init__(self,number):
+    self.number = number
+  def double(self):
+    self.number = self.number * 2
+    print(self.number)
+  def tripple(self):
+    self.number = self.number * 3
+    print(self.number)
+class inner(outer):
+  def __init__(self,number):
+    outer.__init__(self,number)
+  def tripple(self):
+    self.number = self.number * 4
+    print(self.number)
+
+object = inner(10)
+object.double()
+object.tripple()
+
+#20
+#80
 =====================================
 class outer():
   def __init__(self,number):
