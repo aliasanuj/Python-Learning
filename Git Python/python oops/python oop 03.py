@@ -710,6 +710,27 @@ class B(A):
 obj = B()
 #30
 ============================
+class A:
+    def __init__(self):
+        self.multiply(15)
+        print("aaa")
+    def multiply(self, i):
+        self.i = 4 * i;
+        print("sss")
+class B(A):
+    def __init__(self):
+        super().__init__()
+        print(self.i)
+        print("vvv")
+ 
+    def multiply(self, i):
+        self.i = 2 * i;
+obj = B()
+
+#aaa
+#30
+#vvv
+============================
 class Demo:
     def __check(self):
         return " Demo's check "
