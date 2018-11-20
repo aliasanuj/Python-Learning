@@ -781,6 +781,21 @@ print(obj.__b)
 #AttributeError: 'Demo' object has no attribute '__b'
 #The program has an error because b is private and hence can’t be printed
 ===========================
+class Demo:
+    def __init__(self):
+        self.a = 1
+        self.__b = 1
+        print("aaa")
+ 
+    def display(self):
+        return self.__b
+ 
+obj = Demo()
+print(obj.display())
+
+#aaa
+#1
+=============================
 def Demo:
 def __init__(self):
     __a = 1
