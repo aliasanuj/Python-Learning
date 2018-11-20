@@ -1,0 +1,33 @@
+===========================
+=========destructor========
+===========================
+1. The destructor is defined using __del__(self).
+2. The obj is created and manually deleted, therefore, both messages will be displayed.
+3. However, if you comment out the last line ‘del obj’, the destructor will not be called immediately.
+4. Instead, the Garbage Collector (GC) will take care of the deletion automatically.
+5. If you raise an exception in the destructor, it will be ignored.
+6. In Python, destructors are needed much less, because Python has a garbage collector that 
+handles memory management
+
+class TestClass:
+    def __init__(self):
+        print("constructor")
+    def __del__(self):
+        print("destructor")
+obj = TestClass()
+del obj
+#constructor
+#destructor
+
+
+class TestClass:
+    def __init__(self):
+        print("constructor")
+    def __del__(self):
+        print("destructor")
+        raise Exception("raise")
+obj = TestClass()
+del obj
+#constructor
+#destructor
+#Exception ignored in: <function TestClass.__del__ at 0x00DCA4B0>
