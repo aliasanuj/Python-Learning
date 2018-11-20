@@ -106,7 +106,6 @@ print(object.inner)
 print(object.inner())
 print("+++++ next line +++")
 object.inner()
-
 #<bound method test.inner of <__main__.test object at 0x7f43fe3bb588>>
 #Hello Anuj
 #None
@@ -154,9 +153,7 @@ class B(object):
     print("Second method called")
 ob = B()
 B.first(ob) #ob.first()
-
 #First method called
-
 ====================================
 class demo():
 	def __repr__(self):
@@ -249,7 +246,6 @@ class stud:
 stud1 = stud(34, 'S')
 stud1.age=7
 print(hasattr(stud1, 'zzz'))
-
 #false
 ====================================
 class stud:
@@ -261,7 +257,6 @@ class stud:
 stud1 = stud(34, 'S')
 stud1.grade=7
 print(hasattr(stud1, 'zzz'))
-
 #false
 =================================
 class stud:
@@ -273,7 +268,6 @@ class stud:
 stud1 = stud(34, 'S')
 stud1.grade=7
 print(hasattr(stud1, 'grade'))
-
 #True
 ===================================
 class stud:
@@ -285,7 +279,6 @@ class stud:
 stud1 = stud(34, 'S')
 stud1.abc=7
 print(hasattr(stud1, 'abc'))
-
 #True
 ====================================
 class Demo:
@@ -306,7 +299,6 @@ main()
 #Derived_Demo’s __new__() invoked
 #Demo’s __init__() invoked
 #Demo’s __new__() invoked
-
 #Since the object for the derived class is 
 #declared first, __new__() method of the derived 
 #class is invoked first, followed by the constructor 
@@ -439,7 +431,6 @@ class B(A):
          print("abc")
 c = B()
 c.display()
-
 #abc
 #1 7
 ==========================
@@ -476,7 +467,6 @@ class B(A):
 obj=B()
 print(isinstance(obj,B))
 print(isinstance(obj,A))
-
 #True
 #True
 ============================
@@ -553,7 +543,6 @@ class D(C,B):
         print(" test of D called ")        
 obj=D()
 obj.test1()
-
 # test of B called 
 =================================
 class A:
@@ -726,7 +715,6 @@ class B(A):
     def multiply(self, i):
         self.i = 2 * i;
 obj = B()
-
 #aaa
 #30
 #vvv
@@ -775,8 +763,7 @@ class Demo:
  
     def display(self):
         return self.__b
- 
-obj = Demo()
+ obj = Demo()
 print(obj.__b)
 #AttributeError: 'Demo' object has no attribute '__b'
 #The program has an error because b is private and hence can’t be printed
@@ -789,10 +776,8 @@ class Demo:
  
     def display(self):
         return self.__b
- 
-obj = Demo()
+ obj = Demo()
 print(obj.display())
-
 #aaa
 #1
 =============================
@@ -875,14 +860,12 @@ obj=student()
 print(obj._student__cgpa)
 obj.display()
 print(self.__cgpa) #error
-
 8.7
 97
 Traceback (most recent call last):
   File "python", line 10, in <module>
 NameError: name 'self' is not defined
 =================================
-209 
 class A:
     def one(self):
         return self.two()
@@ -940,6 +923,24 @@ c.display()
 #1 7
 =================================
 class A:
+     def __init__(self):
+         self.__i = 1
+         self.j = 5
+         print("aaa")
+ 
+     def display(self):
+         print(self.__i, self.j)
+class B(A):
+     def __init__(self):
+         A.__init__(self)
+         self.__i = 2
+         self.j = 7  
+c = B()
+c.display()
+#aaa
+#1 7
+=================================
+class A:
     def test1(self):
         print(" test of A called ")
 class B(A):
@@ -994,11 +995,5 @@ class derived(base):
 obj = derived("abc",20)
 obj.combine()
 #abc 20
-===================================
-===================================
-===================================
-===================================
+==============
 © 2018 GitHub, Inc.
-===================================
-===================================
-===================================
