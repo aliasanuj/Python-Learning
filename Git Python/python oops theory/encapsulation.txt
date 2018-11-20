@@ -2,9 +2,10 @@
 Encapsulation:===========
 =========================
 
-1. In an object oriented python program, you can restrict access to methods and variables. This can prevent the data from being modified by accident and is known as encapsulation.
+1. In an object oriented python program, you can restrict access to methods and variables. 
+This can prevent the data from being modified by accident and is known as encapsulation.
 2. Python does not have the private keyword, unlike some other object oriented languages, but encapsulation can be done.
-3. Encapsulation is a mechanism that restricts direct access to objects’ data and methods. But at the same time, it facilitates operation on that data (objects’ methods).
+3. Encapsulation is a mechanism that restricts direct access to objectsâ€™ data and methods. But at the same time, it facilitates operation on that data (objectsâ€™ methods).
 
 class Robot(object):
    def __init__(self):
