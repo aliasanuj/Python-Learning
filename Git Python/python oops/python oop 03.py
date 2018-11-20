@@ -865,6 +865,23 @@ obj=objects()
 print(obj._objects_shape)
 #AttributeError: 'objects' object has no attribute '_objects_shape'
 =================================
+class student:
+    def __init__(self):
+        self.marks = 97
+        self.__cgpa = 8.7
+    def display(self):
+        print(self.marks)
+obj=student()
+print(obj._student__cgpa)
+obj.display()
+print(self.__cgpa) #error
+
+8.7
+97
+Traceback (most recent call last):
+  File "python", line 10, in <module>
+NameError: name 'self' is not defined
+=================================
 209 
 class A:
     def one(self):
