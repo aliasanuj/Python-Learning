@@ -839,6 +839,7 @@ class fruits:
         print(self.__bags)
 obj=fruits()
 obj.display()
+#5
 #The program runs fine and 5 is printed
 #Private class members can be printed by 
 #methods which are members of the class.
