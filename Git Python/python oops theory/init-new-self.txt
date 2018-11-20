@@ -1,0 +1,26 @@
+================================
+========__init__================
+================================
+1. The __init__ function is called a constructor, or initializer, and is 
+automatically called when you create a new instance of a class.
+Within that function, the newly created object is assigned to the parameter self .
+The notation self.legs is an attribute called legs of the object in the variable self
+2. __init__ is called when ever an object of the class is constructed.
+That means when ever we will create a student object we will see the message 
+“A student object is created” in the prompt
+
+
+====================================
+===========self=====================
+====================================
+1. self represents the instance of the class. By using the "self" keyword we can access 
+the attributes and methods of the class in python.
+
+
+==>Use __new__ when you need to control the creation of a new instance. 
+==>Use __init__ when you need to control initialization of a new instance.
+
+==>__new__ is the first step of instance creation. 
+It's called first, and is responsible for returning a new instance of your class. 
+In contrast, __init__ doesn't return anything; it's only responsible for initializing the instance 
+after it's been created.
