@@ -1,0 +1,109 @@
+===============================
+constructor :==================
+===============================
+1. A constructor is a special kind of method that Python calls when it 
+instantiates an object using the definitions found in your class
+2. The name of a constructor is always the same, __init__()
+3. The constructor can accept arguments when necessary to create the object
+4. When you create a class without a constructor, Python automatically creates a default constructor
+for you that doesn’t do anything.
+5. Every class must have a constructor, even if it simply relies on the default constructor. 
+6. Constructor can be parameterized and non-parameterized as well. 
+7. A constructor is a class function that begins with double underscore (_). 
+8. The name of the constructor is always the same __init__()
+
+
+parameterized constructors:
+---------------------------
+1. The parameterized constructors are used to set custom value for instance variables
+that can be used further in the application.
+2. constructor with parameters is known as parameterized constructor.
+
+class Student:  
+    # Constructor - parameterized  
+    def __init__(self, name):  
+        print("This is parametrized constructor")  
+        self.name = name  
+    def show(self):  
+        print("Hello",self.name)  
+student = Student("irfan")  
+student.show()  
+
+op-->
+This is parametrized constructor
+Hello irfan
+
+
+Non Parameterized Constructor:
+-----------------------------------
+1. This constructor doesn’t accept any arguments.
+ 
+class Student:  
+    # Constructor - non parameterized  
+    def __init__(self):  
+        print("This is non parametrized constructor")  
+    def show(self,name):  
+        print("Hello",name)  
+student = Student()  
+student.show("irfan")  
+
+op-->
+This is non parametrized constructor
+Hello irfan
+
+
+When we do not declare a constructor:
+------------------------------------
+class DemoClass:
+    num = 101
+
+    # a method
+    def read_number(self):
+        print(self.num)
+# creating object of the class
+obj = DemoClass()
+# calling the instance method using the object obj
+obj.read_number()
+
+op-->101
+
+When we declare a constructor:
+-----------------------------------
+class DemoClass:
+    num = 101
+    # non-parameterized constructor
+    def __init__(self):
+        self.num = 999
+    # a method
+    def read_number(self):
+        print(self.num)
+# creating object of the class
+obj = DemoClass()
+# calling the instance method using the object obj
+obj.read_number()
+
+op-->999
+
+Parameterized constructor example:
+-----------------------------------
+class DemoClass:
+    num = 101
+    # parameterized constructor
+    def __init__(self, data):
+        self.num = data
+    # a method
+    def read_number(self):
+        print(self.num)
+# creating object of the class
+# this will invoke parameterized constructor
+obj = DemoClass(55)
+# calling the instance method using the object obj
+obj.read_number()
+# creating another object of the class
+obj2 = DemoClass(66)
+# calling the instance method using the object obj
+obj2.read_number()
+
+op-->
+55
+66
