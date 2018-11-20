@@ -470,6 +470,17 @@ isinstance(obj,A)
 #True
 ============================
 class A:
+	pass
+class B(A):
+	pass
+obj=B()
+print(isinstance(obj,B))
+print(isinstance(obj,A))
+
+#True
+#True
+============================
+class A:
     def __init__(self):
         self.__x = 1
 class B(A):
