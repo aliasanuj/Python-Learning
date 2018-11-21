@@ -48,3 +48,18 @@ print("Garbage collector: collected",
 
 output :
 #Garbage collector: collected 0 objects.
+
+gc.enable()
+Enable automatic garbage collection.
+
+gc.disable()
+Disable automatic garbage collection.
+
+gc.isenabled()¶
+Returns true if automatic collection is enabled.
+
+gc.get_debug()
+Return the debugging flags currently set.
+
+gc.get_objects()
+Returns a list of all objects tracked by the collector, excluding the list returned.
