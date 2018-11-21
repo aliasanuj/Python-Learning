@@ -8,7 +8,9 @@ The notation self.legs is an attribute called legs of the object in the variable
 2. __init__ is called when ever an object of the class is constructed.
 That means when ever we will create a student object we will see the message 
 “A student object is created” in the prompt
-
+3. All classes have a function called __init__(), which is always executed when the class is being initiated.
+4. Use the __init__() function to assign values to object properties, or other operations that are necessary 
+to do when the object is being created
 
 ====================================
 ===========self=====================
