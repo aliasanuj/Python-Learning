@@ -6,7 +6,13 @@
 2. In Python, super() built-in has two major use cases:
 ==>Allows us to avoid using base class explicitly
 ==>Working with Multiple Inheritance
+3. If your program contains multi-level inheritance, then this super() function is helpful for you.
+4. super() is useful for accessing inherited methods that have been overridden in a class. 
+5. The search order is same as that used by getattr() except that the type itself is skipped.
 
+
+super() with Single Inheritance:
+----------------------------------
 class Mammal(object):
   def __init__(self, mammalName):
     print(mammalName, 'is a warm-blooded animal.')
@@ -29,3 +35,51 @@ class Dog(Mammal):
 d1 = Dog()
 #Dog has four legs.
 #Dog is a warm-blooded animal.
+
+super() with Multiple Inheritance:
+---------------------------------
+class Animal:
+  def __init__(self, animalName):
+    print(animalName, 'is an animal.');
+class Mammal(Animal):
+  def __init__(self, mammalName):
+    print(mammalName, 'is a warm-blooded animal.')
+    super().__init__(mammalName)
+class NonWingedMammal(Mammal):
+  def __init__(self, NonWingedMammalName):
+    print(NonWingedMammalName, "can't fly.")
+    super().__init__(NonWingedMammalName)
+class NonMarineMammal(Mammal):
+  def __init__(self, NonMarineMammalName):
+    print(NonMarineMammalName, "can't swim.")
+    super().__init__(NonMarineMammalName)
+class Dog(NonMarineMammal, NonWingedMammal):
+  def __init__(self):
+    print('Dog has 4 legs.');
+    super().__init__('Dog')
+d = Dog()
+print('')
+bat = NonMarineMammal('Bat') 
+
+#Dog has 4 legs.
+#Dog can't swim.
+#Dog can't fly.
+#Dog is a warm-blooded animal.
+#Dog is an animal.
+#
+#Bat can't swim.
+#Bat is a warm-blooded animal.
+#Bat is an animal.
+
+Method Resolution Order (MRO):
+=============================
+It's the order in which method should be inherited in the presence of multiple inheritance. 
+You can view the MRO by using __mro__ attribute.
+
+print(Dog.__mro__)
+(<class 'Dog'>, 
+<class 'NonMarineMammal'>, 
+<class 'NonWingedMammal'>, 
+<class 'Mammal'>, 
+<class 'Animal'>, 
+<class 'object'>)
