@@ -1,0 +1,23 @@
+=============================================
+============Python Garbage Collection========
+=============================================
+1. The process of memory management in Python is straightforward. 
+Python handles its objects by keeping a count to the references each object have in the program, 
+which means, each object stores how many times it is referenced in the program.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
