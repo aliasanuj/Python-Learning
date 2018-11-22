@@ -1,0 +1,90 @@
+=============================
+========2D Array=============
+=============================
+1. Two dimensional array is an array within an array.
+It is an array of arrays. 
+In this type of array the position of an data element is referred by two indices instead of one
+
+Accessing Values in a Two Dimensional Array:
+--------------------------------------------
+The data elements in two dimesnional arrays can be accessed using two indices.
+One index referring to the main or parent array and another index referring to the position of the 
+data element in the inner array
+
+from array import *
+T = [[11, 12, 5, 2], [15, 6,10], [10, 8, 12, 5], [12,15,8,6]]
+print(T[0])
+print(T[1][2])
+# [11, 12, 5, 2]
+#10
+
+
+from array import *
+T = [[11, 12, 5, 2], [15, 6,10], [10, 8, 12, 5], [12,15,8,6]]
+for i in T:
+  for j in i:
+    print(j,end =" ")
+  print(" ")
+#11 12 5 2  
+#15 6 10  
+#10 8 12 5  
+#12 15 8 6 
+
+Inserting Values in Two Dimensional Array:
+------------------------------------------
+We can insert new data elements at specific position by using the insert() method and specifying the index.
+
+from array import *
+
+T = [[11, 12, 5, 2], [15, 6,10], [10, 8, 12, 5], [12,15,8,6]]
+T.insert(2, [0,5,11,13,6])
+for r in T:
+    for c in r:
+        print(c,end = " ")
+    print()
+#11 12 5 2 
+#15 6 10 
+#0 5 11 13 6 
+#10 8 12 5 
+#12 15 8 6
+
+
+Updating Values in Two Dimensional Array:
+----------------------------------------
+We can update the entire inner array or some specific data elements of the inner array 
+by reassigning the values using the array index.
+
+from array import *
+T = [[11, 12, 5, 2], [15, 6,10], [10, 8, 12, 5], [12,15,8,6]]
+T[2] = [11,9]
+T[0][3] = 7
+for r in T:
+    for c in r:
+        print(c,end = " ")
+    print()
+#11 12 5 7 
+#15 6 10 
+#11 9 
+#12 15 8 6 
+
+Deleting the Values in Two Dimensional Array:
+-------------------------------------------
+We can delete the entire inner array or some specific data elements of 
+the inner array by reassigning the values using the del() method with index
+
+from array import *
+T = [[11, 12, 5, 2], [15, 6,10], [10, 8, 12, 5], [12,15,8,6]]
+del T[3]
+for r in T:
+    for c in r:
+        print(c,end = " ")
+    print()
+#11 12 5 2 
+#15 6 10 
+#10 8 12 5
+
+
+
+
+
+
