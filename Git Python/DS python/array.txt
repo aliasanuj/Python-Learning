@@ -1,3 +1,102 @@
-=============================
-===========array=============
-=============================
+==================================
+============array=================
+==================================
+1. Array is a container which can hold a fix number of items and these items should be of the same type.
+Most of the data structures make use of arrays to implement their algorithms.
+==>Element- Each item stored in an array is called an element.
+==>Index - Each location of an element in an array has a numerical index, which is used to identify the element.
+
+2. Basic Operations
+Traverse - print all the array elements one by one.
+Insertion - Adds an element at the given index.
+Deletion - Deletes an element at the given index.
+Search - Searches an element using the given index or by the value.
+Update - Updates an element at the given index.
+
+3. Array is created in Python by importing array module to the python program.
+from array import *
+arrayName = array(typecode, [Initializers])
+
+from array import *
+array1 = array('i', [10,20,30,40,50])
+for x in array1:
+ print(x, end = " ")
+#10 20 30 40 50    
+
+4. Accessing Array Element:
+We can access each element of an array using the index of the element.
+
+from array import *
+array1 = array('i', [10,20,30,40,50])
+print (array1[0])
+print (array1[2])
+#10
+#30
+
+5. Insertion Operation:
+Insert operation is to insert one or more data elements into an array.
+Based on the requirement, a new element can be added at the beginning, end, or any given index of array.
+
+from array import *
+array1 = array('i', [10,20,30,40,50])
+array1.insert(1,60)
+for x in array1:
+ print(x)
+#10
+#60
+#20
+#30
+#40
+#50
+
+
+from array import *
+array1 = array('i', [10,20,30,40,50])
+array1.insert(-1,60) #(indexno,element to be added)
+for x in array1:
+ print(x)
+
+#10
+#20
+#30
+#40
+#60
+#50
+
+6. Deletion Operation:
+Deletion refers to removing an existing element from the array and re-organizing all elements of an array.
+
+from array import *
+array1 = array('i', [10,20,30,40,50])
+array1.remove(40) #elements, not index no 
+for x in array1:
+ print(x)
+
+#10
+#20
+#30
+#50
+
+7. Search Operation:
+You can perform a search for an array element based on its value or its index
+
+from array import *
+array1 = array('i', [10,20,30,40,50])
+print (array1.index(40)) #element
+#3
+
+8. Update Operation:
+Update operation refers to updating an existing element from the array at a given index.
+
+from array import *
+array1 = array('i', [10,20,30,40,50])
+array1[2] = 80
+for x in array1:
+ print(x)
+
+#10
+#20
+#80
+#40
+#50
+
