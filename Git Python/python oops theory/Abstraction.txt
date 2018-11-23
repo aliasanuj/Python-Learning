@@ -13,6 +13,8 @@ class B(AbstractClass):
 a = AbstractClass()
 b = B()
 
+Data abstraction --> refers to providing only essential information about the data to the outside world, hiding the background details or implementation.
+Data encapsulation --> is one of the fundamentals of OOP (object-oriented programming). It refers to the bundling of data with the methods that operate on that data. Encapsulation is used to hide the values or state of a structured data object inside a class, preventing unauthorized parties' direct access to them.
 
 
 
