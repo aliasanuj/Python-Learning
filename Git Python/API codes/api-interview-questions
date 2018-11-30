@@ -1,0 +1,257 @@
+====================
+API Questions :
+====================
+1. Explain what is REST and RESTFUL?
+REST represents REpresentational State Transfer; it is a relatively new aspect of writing web API.
+RESTFUL is referred for web services written by applying REST architectural concept are called RESTful 
+services, it focuses on system resources and how state of resource should be transported over HTTP 
+protocol to different clients written in different language. In RESTFUL web service HTTP methods like 
+GET, POST, PUT and DELETE can be used to perform CRUD operations.
+
+2. Explain the architectural style for creating web API?
+The architectural style for creating web api are
+-HTTP for client server communication
+-XML/JSON as formatting language
+-Simple URI as the address for the services
+-Stateless communication
+
+3. Mention what tools are required to test your web API?
+SOAPUI tool for SOAP WS and Firefox "poster" plugin for RESTFUL services.
+
+4. Mention what are the HTTP methods supported by REST?
+HTTP methods supported by REST are:
+-GET: It requests a resource at the request URL. It should not contain a request body as it 
+will be discarded. Maybe it can be cached locally or on the server.
+-POST: It submits information to the service for processing; it should typically return the 
+modified or new resource
+-PUT: At the request URL it update the resource
+-DELETE: At the request URL it removes the resource
+-OPTIONS: It indicates which techniques are supported
+-HEAD: About the request URL it returns meta information
+
+5. Mention whether you can use GET request instead of PUT to create a resource?
+No, you are not supposed to use POST or GET. GET operations should only have view rights
+
+6. Mention what are resources in a REST architecture?
+Resources are identified by logical URLs; it is the key element of a RESTful design. 
+Unlike, SOAP web services in REST, you view the product data as a resource and this resource 
+should contain all the required information.
+
+7. Mention what is the difference between AJAX and REST?
+AJAX :
+-In Ajax, the request are sent to the server by using XMLHttpRequest objects. The response is used by the JavaScript 
+code to dynamically alter the current page
+-Ajax is a set of technology; it is a technique of dynamically updating parts of UI without having to reload the page
+-Ajax eliminates the interaction between the customer and server asynchronously
+
+REST :
+-REST requires the interaction between the customer and server
+-REST have a URL structure and a request/response pattern the revolve around the use of resources
+-REST is a type of software architecture and a method for users to request data or information from servers
+-REST requires the interaction between the customer and server
+
+8. Mention some key characteristics of REST?
+-Some key characteristics of REST includes
+-REST is stateless, therefore the SERVER has no state (or session data)
+-With a well-applied REST API, the server could be restarted between two calls as every data is passed to the server
+-Web service mostly uses POST method to make operations, whereas REST uses GET to access resources
+
+9. Mention what are the different application integration styles?
+The different integration styles include
+-Shared database
+-Batch file transfer
+-Invoking remote procedure (RPC)
+-Swapping asynchronous messages over a message oriented middle-ware (MOM)
+
+10. Explain how JAXB related to RESTful web API?
+JAXB stands for java arch for XML binding.
+
+11.  Mention what is the difference between PUT and POST?
+-"PUT" puts a file or resource at a particular URI and exactly at that URI. If there is already a file or resource 
+at that URI, PUT changes that file or resource. If there is no resource or file there, PUT makes one
+-POST sends data to a particular URI and expects the resource at that URI to deal with the request. The web server 
+at this point can decide what to do with the data in the context of specified resource
+-PUT is idempotent meaning, invoking it any number of times will not have an impact on resources.
+-However, POST is not idempotent, meaning if you invoke POST multiple times it keeps creating more resources
+
+12. Mention which markup language can be used in restful web api?
+JSON and XML are the two markup language that can be used in restful web api
+
+13. Mention what is JAX-WS and JAX-RS?
+Both JAX-WS and JAX-RS are libraries (APIs) for doing communication in various ways in Java. 
+JAX-WS is a library that can be used to do SOAP communication in JAVA, and JAX-RS lets you do the REST communication in JAVA.
+
+14. List out the tools or API for developing or testing web api?
+Testing tools for web services for REST APIs includes
+-Spring REST web service using MVC
+-Jersey API
+-CFX
+-Axis
+-Restlet,
+
+15. Mention what is the difference between SOAP and REST?
+-SOAP is a protocol through which two computer communicates by sharing XML document
+-SOAP permits only XML
+-SOAP based reads cannot be cached
+-SOAP is like custom desktop application, closely connected to the server
+-SOAP is slower than REST
+-It runs on HTTP but envelopes the message
+
+REST
+-Rest is a service architecture and design for network-based software architectures
+-REST supports many different data formats
+-REST reads can be cached
+-A REST client is more like a browser; it knows how to standardized methods and an application has to fit inside it
+-REST is faster than SOAP
+It uses the HTTP headers to hold meta information
+
+================================================================
+1. Explain REST?
+REST stands for Representational State Transfer. 
+REST is an architectural style of developing web services which take advantage of the ubiquity of 
+HTTP protocol and leverages HTTP method to define actions. It revolves around resource where every 
+component is a resource which can be accessed by a common interface using HTTP standard methods.
+In REST architecture, a REST Server provides access to resources and REST client accesses and presents 
+those resources. Here each resource is identified by URIs or global IDs. REST uses different ways to 
+represent a resource like text, JSON, and XML.XML and JSON are the most popular representations of 
+resources these days.
+
+2. Explain The RESTFul Web Service?
+Mostly, there are two kinds of Web Services which are quite popular.
+-SOAP (Simple Object Access Protocol) which is an XML-based way to expose web services.
+-Web services developed using REST style are known as RESTful web services. 
+These web services use HTTP methods to implement the concept of REST architecture. 
+A RESTful web service usually defines a URI, Uniform Resource Identifier a service, 
+provides resource representation such as JSON and set of HTTP Methods.
+
+3. Explain What Is A “Resource” In REST?
+REST architecture treats every content as a resource. 
+These resources can be either text files, HTML pages, images, videos or dynamic business data.
+REST Server provides access to resources and REST client accesses and modifies these resources. 
+Here each resource is identified by URIs/ global IDs.
+
+4. What Is The Most Popular Way To Represent A Resource In REST?
+REST uses different representations to define a resource like text, JSON, and XML.
+XML and JSON are the most popular representations of resources.
+
+5. Which Protocol Is Used By RESTful Web Services?
+-RESTful web services make use of HTTP protocol as a medium of communication between client and server.
+
+6. What Is Messaging In RESTful Web Services?
+RESTful web services make use of HTTP protocol as a medium of communication between client and server. 
+The client sends a message in the form of an HTTP Request.
+In response, the server transmits the HTTP Response. This technique is called Messaging. These messages 
+contain message data and metadata i.e. information about the message itself.
+
+7. State The Core Components Of An HTTP Request?
+Each HTTP request includes five key elements.
+-The Verb which indicates HTTP methods such as GET, PUT, POST, DELETE.
+-URI stands for Uniform Resource Identifier (URI).It is the identifier for the resource on the server.
+-HTTP Version which indicates HTTP version, for example-HTTP v1.1.
+-Request Header carries metadata (as key-value pairs) for the HTTP Request message. 
+Metadata could be a client (or browser) type, the format that client supports, message body format, and cache settings.
+-Request Body indicates the message content or resource representation.
+
+8. State The Core Components Of An HTTP Response?
+Every HTTP response includes four key elements.
+-Status/Response Code – Indicates Server status for the resource present in the HTTP request.
+For example, 404 means resource not found and 200 means response is ok.
+-HTTP Version – Indicates HTTP version, for example-HTTP v1.1.
+-Response Header – Contains metadata for the HTTP response message stored in the form of key-value pairs. 
+For example, content length, content type, response date, and server type.
+-Response Body – Indicates response message content or resource representation.
+
+9. Name The Most Commonly Used HTTP Methods Supported By REST?
+There are a few HTTP methods in REST which are more popular.
+-GET -It requests a resource at the request-URL. It should not contain a request body as it will get discarded. 
+Maybe it can be cached locally or on the server.
+-POST – It submits information to the service for processing; it should typically return the modified or new resource.
+-PUT – At the request URL it updates the resource.
+-DELETE – It removes the resource at the request-URL.
+-OPTIONS -It indicates the supported techniques.
+-HEAD – It returns meta information about the request URL.
+
+10. Mention, Whether You Can Use GET Request Instead Of PUT, To Create A Resource?
+-No, you shouldn’t use a PUT or POST method. Instead, apply the GET operation which has view-only rights.
+
+11. Is There Any Difference Between PUT And POST Operations? Explain It.
+PUT and POST operation are almost same. The only difference between the two is in the terms of the result generated by them.
+PUT operation is idempotent while POST operation can give a different result.
+Let’s take an example.
+1. PUT puts a file or resource at a particular URI and exactly at that URI. If the resource already exists, 
+then PUT updates it. If it’s a first-time request, then PUT creates one.
+2. POST sends data to a particular URI and expects the resource at that URI to deal with the request. 
+The web server at this point can decide what to do with the data in the context of specified resource.
+
+12. What Purpose Does The OPTIONS Method Serve For The RESTful Web Services?
+This method lists down all the operations a web service supports. It makes read-only requests to the server.
+
+13. What Is URI? Explain Its Purpose In REST Based Web Services. What Is Its Format?
+URI stands for Uniform Resource Identifier. URI is the identifier for the resource in REST architecture.
+The purpose of a URI is to locate a resource(s) on the server hosting the web service. A URI is of the following format-
+<protocol>://<service-name>/<ResourceType>/<ResourceID>
+
+14. What Do You Understand By Payload In RESTFul Web Service?
+Request body of every HTTP message includes request data called as Payload. 
+This part of the message is of interest to the recipient.
+We can say that we send the payload in POST method but not in <GET> and <DELTE> methods.
+
+15. What Is The Upper Limit For A Payload To Pass In The POST Method?
+<GET> appends data to the service URL. But, its size shouldn’t exceed the maximum URL length. 
+However, <POST> doesn’t have any such limit.
+So, theoretically, a user can pass unlimited data as the payload to POST method. 
+But, if we consider a real use case, then sending POST with large payload will consume more 
+bandwidth. It’ll take more time and present performance challenges to your server. 
+Hence, a user should take action accordingly.
+
+16. Explain The Caching Mechanism?
+Caching is a process of storing server response at the client end. 
+It makes the server save significant time from serving the same resource again and again.
+The server response holds information which leads a client to perform the caching. 
+It helps the client to decide how long to archive the response or not to store it at all.
+
+17. List The Main Differences Between SOAP And REST?
+SOAP:
+-----------
+1. SOAP is a protocol through which two computer communicates by sharing XML document.
+2. SOAP supports the only XML format.
+3. SOAP does not support caching.
+4. SOAP is like custom desktop application, closely connected to the server.
+5. SOAP is slower than REST.
+6. It runs on HTTP but envelopes the message.
+
+REST:
+------------
+1. Rest is a service architecture and design for network-based software architecture.
+2. It supports many different data formats.
+3. It supports caching.
+4. A REST client is just like a browser and uses standard methods. An application has to fit inside it.
+5. It is faster than SOAP.
+6. It uses the HTTP headers to hold meta information.
+
+18. Explain The Factors That Help To Decide About The Style Of Web Service To Use? SOAP Or REST?
+In general, using REST based web service is preferred due to its simplicity, performance, scalability, and support 
+for multiple data formats.
+However, SOAP is favorable to use where service requires an advanced level of security and transactional reliability.
+But you can read the following facts before opting for any of the styles.
+1. Does the service expose data or business logic? To expose data REST will be a better choice and SOAP for logic.
+2. If the consumer or the service providers require a formal contract, then SOAP can provide such a contract via WSDL.
+3. Need to support multiple data formats. REST supports this.
+4. Support for AJAX calls. REST can use the XMLHttpRequest. 
+5. Synchronous and asynchronous calls – SOAP enables both synchronous/asynchronous operations whereas REST has 
+built-in support for synchronous.
+6. Stateless or Stateful calls -REST is suited for stateless operations.
+Here are some of the advanced-level facts that you can consider as well.
+1. Security requirement – SOAP provides a high level of security.
+2. Transaction support – SOAP has good support for transaction management.
+3. Limited bandwidth – SOAP has a lot of overhead when sending/receiving packets since it’s XML based, requires a SOAP header. 
+However, REST requires less bandwidth to send requests to the server. Its messages are mostly built using JSON.
+4. Ease of use – It is easy to implement, test, and maintain REST based application.
+
+19.Can You Tell Us Which Java API Helps In Developing A RESTFul Web Service?
+There are many frameworks and libraries available that a developer can use to create RESTful web services in Java. 
+For example, the JAX-RS library is a standard way to develop a REST web service.
+Also, Jersey is another most popular implementations of JAX-RS which offers more than what the specs recommend. 
+There are others like RESTEasy, RESTlet, and Apache CFX.
+If you like Scala, then you should be using Play framework to develop RESTful web services.
+
