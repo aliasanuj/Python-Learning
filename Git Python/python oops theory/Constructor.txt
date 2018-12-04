@@ -12,6 +12,18 @@ for you that doesn’t do anything.
 7. A constructor is a class function that begins with double underscore (_). 
 8. The name of the constructor is always the same __init__()
 
+========================
+__init__ :
+========================
+"__init__" is a reseved method in python classes. It is known as a constructor in object oriented concepts.
+This method called when an object is created from the class and it allow the class to initialize the 
+attributes of a class.
+===============
+self:
+===============
+In the init method, self refers to the newly created object; in other class methods, 
+it refers to the instance whose method was called.
+
 
 parameterized constructors:
 ---------------------------
