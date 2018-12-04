@@ -32,6 +32,21 @@ student.show()
 op-->
 This is parametrized constructor
 Hello irfan
+----------------------------------
+class outer():
+    def __init__(self,name):
+        print("this is parametrised constructor")
+        self.name = name
+
+    def inner(self):
+        print(self.name)
+
+obj1 = outer("anuj") #parametrised constructor
+obj1.inner()
+
+#this is parametrised constructor
+#anuj
+
 
 
 Non Parameterized Constructor:
