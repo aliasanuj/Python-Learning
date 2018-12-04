@@ -88,6 +88,23 @@ main()
 #Stevie
 #This user has 77 followers
 #fish
+==============================
+class abc():
+    a = "anuj"
+    b = "ball"
+    def inner(self):
+        c = "cat"
+        print("inner")
+    d = "dog"
+obj1 = abc()
+print(obj1.a)
+print(obj1.b)
+print(obj1.d)
+obj1.inner()
+#anuj
+#ball
+#dog
+#inner
 
 
 ========================================
