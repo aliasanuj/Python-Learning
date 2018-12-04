@@ -183,3 +183,17 @@ obj1.inner1("anuj")
 #abc
 #anuj
 
+--------------------------
+
+class abc:
+    def __inin__(self,name):
+        self.name = name
+        print("name",name)
+
+    def __init__(self,roll):
+        self.roll = roll
+        print("roll",roll)
+
+obj = abc(101)
+#101
+
