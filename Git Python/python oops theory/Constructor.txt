@@ -79,8 +79,24 @@ class DemoClass:
 obj = DemoClass()
 # calling the instance method using the object obj
 obj.read_number()
-
 op-->101
+
+
+class DemoClass:
+    num = 101
+
+    # a method
+    def read_number(self,num):
+        print(self.num)
+        print(num)
+# creating object of the class
+obj = DemoClass()
+# calling the instance method using the object obj
+obj.read_number(10)
+#101
+#10
+
+
 
 When we declare a constructor:
 -----------------------------------
