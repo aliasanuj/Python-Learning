@@ -157,4 +157,17 @@ obj1.inner("anuj")
 #this is non parametrised constructor
 #anuj
 
+---------------------------
+class abc:
+    def inner(self):
+        print("abc")
+    def inner1(self,name):
+        print(name)
+
+obj1 = abc()
+obj1.inner()
+obj1.inner1("anuj")
+
+#abc
+#anuj
 
