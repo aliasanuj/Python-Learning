@@ -14,7 +14,74 @@ class B(AbstractClass):
     pass
 a = AbstractClass()
 b = B()
+================================
+class abc:
+    def aaa(self):
+        pass
+class abc02(abc):
+    def aaa(self):
+        print("class abc02")
+class abc03(abc):
+    def aaa(self):
+        print("class abc03")
+def main():
+    obj1 = abc02()
+    obj1.aaa()
 
+    obj2 = abc03()
+    obj2.aaa()
+if __name__ == "__main__":
+    a1 = abc() #NOT NECESSDARE as it wont do anything
+    main()
+#class abc02
+#class abc03
+===============================
+from abc import ABC, abstractmethod
+class abc(ABC):
+    @abstractmethod
+    def aaa(self):
+        pass
+class abc02(abc):
+    def aaa(self):
+        print("class abc02")
+class abc03(abc):
+    def aaa(self):
+        print("class abc03")
+def main():
+    obj1 = abc02()
+    obj1.aaa()
+
+    obj2 = abc03()
+    obj2.aaa()
+if __name__ == "__main__":
+    a1 = abc()
+    main()
+
+#TypeError: Can't instantiate abstract class abc with abstract methods aaa
+=================================
+from abc import ABC, abstractmethod
+class abc(ABC):
+    @abstractmethod
+    def aaa(self):
+        pass
+class abc02(abc):
+    def aaa(self):
+        print("class abc02")
+class abc03(abc):
+    def aaa(self):
+        print("class abc03")
+def main():
+    obj1 = abc02()
+    obj1.aaa()
+
+    obj2 = abc03()
+    obj2.aaa()
+if __name__ == "__main__":
+    #a1 = abc()
+    main()
+#class abc02
+#class abc03
+===================================
 Data abstraction --> refers to providing only essential information about the data to the outside world, hiding
 the background details or implementation.
 Data encapsulation --> is one of the fundamentals of OOP (object-oriented programming). It refers to the bundling of 
