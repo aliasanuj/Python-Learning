@@ -122,3 +122,23 @@ obj2.read_number()
 op-->
 55
 66
+-----------------------------
+#non parametrised constructor
+
+class outer():
+    def __init__(self):
+        print("this is non parametrised constructor")
+        #self.name = name
+
+    def inner(self,name):
+        #print(self.name) #it will give error AttributeError: 'outer' object has no attribute 'name'
+        print(name)
+
+
+obj1 = outer() #non parametrised constructor
+obj1.inner("anuj")
+
+#this is non parametrised constructor
+#anuj
+
+
