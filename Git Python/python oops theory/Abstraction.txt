@@ -35,7 +35,31 @@ if __name__ == "__main__":
     main()
 #class abc02
 #class abc03
-=============================== 
+================================
+class abc:
+    def aaa(self):
+        print("aabbcc")
+class abc02(abc):
+    def aaa(self):
+        print("class abc02")
+class abc03(abc):
+    def aaa(self):
+        print("class abc03")
+def main():
+    obj1 = abc02()
+    obj1.aaa()
+
+    obj2 = abc03()
+    obj2.aaa()
+if __name__ == "__main__":
+    a1 = abc() #NOT NECESSDARE as it wont do anything
+    a1.aaa()
+    main()
+
+#aabbcc
+#class abc02
+#class abc03
+===============================
 from abc import ABC, abstractmethod
 class abc(ABC):
     @abstractmethod
@@ -59,6 +83,60 @@ if __name__ == "__main__":
 
 #TypeError: Can't instantiate abstract class abc with abstract methods aaa
 =================================
+from abc import ABC, abstractmethod
+class abc(ABC):
+    #@abstractmethod
+    def aaa(self):
+        print("aabbcc")
+class abc02(abc):
+    def aaa(self):
+        print("class abc02")
+class abc03(abc):
+    def aaa(self):
+        print("class abc03")
+def main():
+    obj1 = abc02()
+    obj1.aaa()
+
+    obj2 = abc03()
+    obj2.aaa()
+if __name__ == "__main__":
+    a1 = abc()
+    main()
+
+#class abc02
+#class abc03
+=================================
+from abc import ABC, abstractmethod
+
+class abc(ABC):
+    #@abstractmethod
+    def aaa(self):
+        print("aabbcc")
+class abc02(abc):
+    @abstractmethod
+    def aaa(self):
+        print("class abc02")
+class abc03(abc):
+    def aaa(self):
+        print("class abc03")
+def main():
+    obj1 = abc()
+    obj1.aaa()
+
+    obj2 = abc03()
+    obj2.aaa()
+
+    #obj2 = abc02() it will give error
+    #obj2.aaa()
+
+if __name__ == "__main__":
+    a1 = abc()
+    main()
+
+#aabbcc
+#class abc03
+=================================
 class abc:
     def aaa(self):
         pass
@@ -76,6 +154,27 @@ if __name__ == "__main__":
     main()
     
  #NO OUTPUT
+ ================================
+ class abc:
+    def aaa(self):
+        print("aabbc")
+class abc02(abc):
+    def aaa(self):
+        print("class abc02")
+class abc03(abc):
+    def aab(self):
+        print("class abc03")
+def main():
+    obj1 = abc()
+    obj1.aaa()
+    obj1.aab() #error
+
+if __name__ == "__main__":
+    a1 = abc() #NOT NECESSDARE as it wont do anything
+    main()
+
+#aabbc
+#AttributeError: 'abc' object has no attribute 'aab'
 =================================
 from abc import ABC, abstractmethod
 class abc(ABC):
@@ -100,6 +199,7 @@ if __name__ == "__main__":
 #class abc02
 #class abc03
 
+=====================================
 from abc import ABC, abstractmethod
 class abcd(ABC):
     @abstractmethod
@@ -131,17 +231,4 @@ the background details or implementation.
 Data encapsulation --> is one of the fundamentals of OOP (object-oriented programming). It refers to the bundling of 
 data with the methods that operate on that data. Encapsulation is used to hide the values or state of a 
 structured data object inside a class, preventing unauthorized parties' direct access to them.
-
-
-
-
-
-
-
-
-
-
-
-
-
 
