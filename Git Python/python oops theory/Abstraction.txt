@@ -59,6 +59,24 @@ if __name__ == "__main__":
 
 #TypeError: Can't instantiate abstract class abc with abstract methods aaa
 =================================
+class abc:
+    def aaa(self):
+        pass
+class abc02(abc):
+    def aaa(self):
+        print("class abc02")
+class abc03(abc):
+    def aaa(self):
+        print("class abc03")
+def main():
+    obj1 = abc()
+    obj1.aaa()
+if __name__ == "__main__":
+    a1 = abc() #NOT NECESSDARE as it wont do anything
+    main()
+    
+ #NO OUTPUT
+=================================
 from abc import ABC, abstractmethod
 class abc(ABC):
     @abstractmethod
