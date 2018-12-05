@@ -81,6 +81,32 @@ if __name__ == "__main__":
     main()
 #class abc02
 #class abc03
+
+from abc import ABC, abstractmethod
+class abcd(ABC):
+    @abstractmethod
+    def __init__(self):
+        print("aaa")
+    def aaa(self):
+        pass
+class abc02(abcd):
+    def __init__(self):
+        print("zzz")
+    def __init__(self):
+        print("xxx")
+    def aaa(self):
+        print("class abc02")
+class abc03(abcd):
+    def aaa(self):
+        print("class abc03")
+def main():
+    obj1 = abc02()
+    obj1.aaa()
+if __name__ == "__main__":
+    main()
+
+#xxx
+#class abc02
 ===================================
 Data abstraction --> refers to providing only essential information about the data to the outside world, hiding
 the background details or implementation.
