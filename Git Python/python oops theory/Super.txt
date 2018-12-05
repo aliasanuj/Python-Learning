@@ -1,6 +1,9 @@
 ===============================
 ==========super================
 ===============================
+super().__init__('Dog') --> super().__init("argument")
+Mammal.__init__(self, 'Dog') --> baseclassName.__init__(self,"argument")
+
 
 1. The super() builtin returns a proxy object that allows you to refer parent class by 'super'.
 2. In Python, super() built-in has two major use cases:
@@ -23,7 +26,22 @@ class Dog(Mammal):
 d1 = Dog()
 #Dog has four legs.
 #Dog is a warm-blooded animal.
+==================================
+class Mammal(object):
+  def __init__(self, mammalName):
+      self.mammalName = mammalName
+      print(self.mammalName, 'is a warm-blooded animal.')
+      print(mammalName, 'is a warm-blooded animal.')
+class Dog(Mammal):
+  def __init__(self):
+    print('Dog has four legs.')
+    super().__init__('Dog')
+d1 = Dog()
 
+#Dog has four legs.
+#Dog is a warm-blooded animal.
+#Dog is a warm-blooded animal.
+=================================
 
 class Mammal(object):
   def __init__(self, mammalName):
@@ -83,3 +101,4 @@ print(Dog.__mro__)
 <class 'Mammal'>, 
 <class 'Animal'>, 
 <class 'object'>)
+
