@@ -47,6 +47,20 @@ Person.printAge()
 #The age is: 25
 #The age is: 25
 =============================
+class Person:
+    age = 25
+    print("class person")
+    def printAge(cls):
+        print('The age is:', cls.age)
+# create printAge class method
+Person.printAge = classmethod(Person.printAge)
+Person().printAge()
+Person.printAge()
+
+#class person
+#The age is: 25
+#The age is: 25
+=============================
 class abc:
     print("class method")
     age = 20
