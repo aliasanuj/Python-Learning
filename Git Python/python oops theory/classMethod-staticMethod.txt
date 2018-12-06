@@ -46,6 +46,17 @@ abc.inner()
 #the age is  20
 ============================
 class abc:
+    print("class method")
+    age = 20
+    @classmethod
+    def inner(cls,age):
+        print("the age is ",age)
+abc.inner = classmethod(abc.inner(10))
+
+#class method
+#the age is  10
+============================
+class abc:
     print("class abc")
     @classmethod
     def inner(cls,age):
