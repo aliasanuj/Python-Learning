@@ -147,6 +147,30 @@ class outer:
     def inner02(cls,fname,lname):
         outer.fname1=fname
         outer.lname1=lname
+        print("first name",fname)
+        print("last name",lname)
+
+outer.inner01 = classmethod(outer.inner01(100,10))
+outer.inner02 = classmethod(outer.inner02("kumar","anuj"))
+
+#roll no is  10
+#salary  is  100
+#first name kumar
+#last name anuj
+=========================================
+class outer:
+
+    @classmethod
+    def inner01(cls,salary,rollno):
+        outer.salary1 = salary
+        outer.rollno1 = rollno
+        print("roll no is ",rollno)
+        print("salary  is ",salary)
+
+    @classmethod
+    def inner02(cls,fname,lname):
+        outer.fname1=fname
+        outer.lname1=lname
 
 outer().inner01 = classmethod(outer.inner01(100,10))
 
