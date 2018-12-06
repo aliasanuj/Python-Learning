@@ -8,7 +8,7 @@
 5. If you raise an exception in the destructor, it will be ignored.
 6. In Python, destructors are needed much less, because Python has a garbage collector that 
 handles memory management
-
+====================================
 class TestClass:
     def __init__(self):
         print("constructor")
@@ -18,8 +18,20 @@ obj = TestClass()
 del obj
 #constructor
 #destructor
-
-
+==================================
+class TestClass:
+    def __init__(self):
+        print("constructor")
+    def __del__(self):
+        print("destructor")
+obj1 = TestClass()
+del obj1
+obj1 = TestClass()
+#constructor
+#destructor
+#constructor
+#destructor
+===============================
 class TestClass:
     def __init__(self):
         print("constructor")
