@@ -81,11 +81,15 @@ print(outer.xyzanything)
 print(obj.xyzanything)
 print(outer.rollno1)
 print(obj.rollno1)
+print(obj.firstname)
+print(obj.lastname)
 
 #1000
 #1000
 #101
 #101
+#kumar
+#anuj
 ========================================
 class outer:
 
