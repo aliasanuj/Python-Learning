@@ -113,6 +113,23 @@ class outer:
         outer.xyzanything = salary
         outer.rollno1 = rollno
 obj = outer("kumar","anuj")
+outer.inner01 = classmethod(outer.inner01(1000,101))
+print(outer.rollno1)
+print(outer.xyzanything)
+
+#101
+#1000
+===========================
+class outer:
+    def __init__(self,fname,lname):
+        self.firstname = fname
+        self.lastname = lname
+
+    @classmethod
+    def inner01(cls,salary,rollno):
+        outer.xyzanything = salary
+        outer.rollno1 = rollno
+obj = outer("kumar","anuj")
 outer.inner01(1000,101)
 print(outer.xyzanything)
 print(obj.xyzanything)
