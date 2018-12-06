@@ -87,6 +87,17 @@ class abc:
     print("class method")
     age = 20
     @classmethod
+    def __init__(cls,age):
+        print("the age is ",cls.age)
+obj = abc(20)
+
+#class method
+#the age is  20
+============================
+class abc:
+    print("class method")
+    age = 20
+    @classmethod
     def inner(cls,age):
         print("the age is ",age)
 abc.inner = classmethod(abc.inner)
