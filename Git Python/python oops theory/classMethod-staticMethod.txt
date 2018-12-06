@@ -34,6 +34,19 @@ fun: function that needs to be converted into a class method
 returns: a class method for function.
 8. It can modify a class state that would apply across all the instances of the class. 
 =============================
+class Person:
+    age = 25
+
+    def printAge(cls):
+        print('The age is:', cls.age)
+# create printAge class method
+Person.printAge = classmethod(Person.printAge)
+Person().printAge()
+Person.printAge()
+
+#The age is: 25
+#The age is: 25
+=============================
 class abc:
     print("class method")
     age = 20
