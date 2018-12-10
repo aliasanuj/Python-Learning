@@ -186,6 +186,7 @@ obj.read_number()
 #101
 =====================================
 class DemoClass:
+    global num
     num = 101
     # non-parameterized constructor
     def __init__(self):
@@ -194,12 +195,16 @@ class DemoClass:
     def read_number(self,anything):
         self.abc = anything
         print(self.abc)
+        print(self.num)
+        print(num)
 # creating object of the class
 obj = DemoClass()
 # calling the instance method using the object obj
 obj.read_number(100)
 
 #100
+#999
+#101
 =====================================
 class DemoClass:
     num = 101
