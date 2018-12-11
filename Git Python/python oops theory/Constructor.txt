@@ -140,7 +140,7 @@ obj.read_number()
 #101
 ====================================
 class DemoClass:
-    num = 101
+    num = 101 #No global means it can be called with self.num
 
     # a method
     def read_number(self,num):
