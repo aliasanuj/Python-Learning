@@ -49,6 +49,25 @@ Person.printAge()
 =============================
 class Person:
     age = 25
+
+    def printAge(cls,abc):
+        cls.abc = abc
+        print('The age is:', cls.age)
+        print('The age is:', cls.abc)
+
+# create printAge class method
+Person.printAge = classmethod(Person.printAge)
+Person().printAge(20)
+Person.printAge(15)
+
+#The age is: 25
+#The age is: 20
+#The age is: 25
+#The age is: 15
+
+=============================
+class Person:
+    age = 25
     print("class person")
     def printAge(cls):
         print('The age is:', cls.age)
@@ -60,6 +79,19 @@ Person.printAge()
 #class person
 #The age is: 25
 #The age is: 25
+=============================
+class Person:
+    age = 25
+    print("class person")
+    def printAge(cls):
+        print('The age is:', cls.age)
+# create printAge class method
+Person.printAge = classmethod(Person.printAge)
+#Person().printAge()
+#Person.printAge()
+
+#class person
+
 =============================
 class abc:
     print("class method")
@@ -89,10 +121,22 @@ class abc:
     @classmethod
     def __init__(cls,age):
         print("the age is ",cls.age)
-obj = abc(20)
+obj = abc(50)
 
 #class method
 #the age is  20
+============================
+class abc:
+    print("class method")
+    age = 20
+    @classmethod
+    def __init__(cls,age):
+        cls.age = age
+        print("the age is ",cls.age)
+obj = abc(50)
+
+#class method
+#the age is  50
 ============================
 class abc:
     print("class method")
@@ -112,7 +156,19 @@ class abc:
 abc.inner = classmethod(abc.inner(20))
 
 #class abc
-#age is  20
+#age is  
+============================
+class abc:
+    age = 125
+    print("class abc")
+    @classmethod
+    def inner(cls,age):
+        print("age is ",cls.age)
+abc.inner = classmethod(abc.inner(20))
+
+
+#class abc
+#age is  125
 ============================
 class outer:
     def __init__(self,fname,lname):
@@ -130,6 +186,20 @@ print(outer.xyzanything)
 
 #101
 #1000
+===========================
+class outer:
+    def __init__(self,fname,lname):
+        self.firstname = fname
+        self.lastname = lname
+
+    @classmethod
+    def inner01(cls,salary,rollno):
+        outer.xyzanything = salary
+        outer.rollno1 = rollno
+obj = outer("kumar","anuj")
+outer.inner01 = classmethod(outer.inner01(1000,101))
+print(outer.rollno1)
+print(outer.xyzanything)
 ===========================
 class outer:
     def __init__(self,fname,lname):
@@ -174,6 +244,29 @@ outer.inner01 = classmethod(outer.inner01(100,10))
 
 #roll no is  10
 #salary  is  100
+========================================
+class outer:
+
+    @classmethod
+    def inner01(self,salary,rollno):
+        self.salary1 = salary
+        outer.rollno1 = rollno
+        print("roll no is ",rollno)
+        print("salary  is ",salary)
+
+    @classmethod
+    def inner02(cls,fname,lname):
+        outer.fname1=fname
+        cls.lname1=lname
+        print(fname)
+
+outer.inner01 = classmethod(outer.inner01(100,10))
+outer.inner02 = classmethod(outer.inner02("kumar","anuj"))
+
+
+#roll no is  10
+#salary  is  100
+#kumar
 ========================================
 class outer:
 
@@ -287,5 +380,3 @@ outer().inner02 = staticmethod(outer.inner02("kumar","anuj"))
 some parameters and work upon those parameters. On the other hand class methods must have class as parameter.
 4. We use @classmethod decorator in python to create a class method and we use @staticmethod 
 decorator to create a static method in python.
-
-
