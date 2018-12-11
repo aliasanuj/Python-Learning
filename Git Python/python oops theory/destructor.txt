@@ -24,9 +24,34 @@ class TestClass:
         print("constructor")
     def __del__(self):
         print("destructor")
+obj = TestClass()
+#del obj
+
+#constructor
+#destructor
+==================================
+class TestClass:
+    def __init__(self):
+        print("constructor")
+    def __del__(self):
+        print("destructor")
 obj1 = TestClass()
 del obj1
 obj1 = TestClass()
+#constructor
+#destructor
+#constructor
+#destructor
+===============================
+class TestClass:
+    def __init__(self):
+        print("constructor")
+    def __del__(self):
+        print("destructor")
+obj1 = TestClass()
+del obj1
+obj1 = TestClass()
+
 #constructor
 #destructor
 #constructor
