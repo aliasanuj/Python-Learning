@@ -293,10 +293,11 @@ class outer():
         self.abc = name
 
     def inner(self):
-        print(self.abc) #it will give error AttributeError: 'outer' object has no attribute 'name'
-        #print(name)
+        print(self.abc)
+        #print(name) #it will give error AttributeError: 'outer' object has no attribute 'name'
 obj1 = outer("xdjcbnd") #non parametrised constructor
 obj1.inner()
+
 #this is non parametrised constructor
 #xdjcbnd
 ---------------------------
