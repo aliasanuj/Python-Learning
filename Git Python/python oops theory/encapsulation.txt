@@ -5,7 +5,8 @@ Encapsulation:===========
 1. In an object oriented python program, you can restrict access to methods and variables. 
 This can prevent the data from being modified by accident and is known as encapsulation.
 2. Python does not have the private keyword, unlike some other object oriented languages, but encapsulation can be done.
-3. Encapsulation is a mechanism that restricts direct access to objects’ data and methods. But at the same time, it facilitates operation on that data (objects’ methods).
+3. Encapsulation is a mechanism that restricts direct access to objects’ data and methods. But at the same time, it 
+facilitates operation on that data (objects’ methods).
 
 class Robot(object):
    def __init__(self):
@@ -34,26 +35,23 @@ Private methods :----
 We create a class Car which has two methods:  drive() and updateSoftware().
 When a car object is created, it will call the private methods __updateSoftware().  
 This function cannot be called on the object directly, only from within the class.
-
+-----------------------
 class Car:
- 
+
     def __init__(self):
         self.__updateSoftware()
- 
+
     def drive(self):
-        print 'driving'
- 
+        print('driving')
+
     def __updateSoftware(self):
-        print 'updating software'
- redcar = Car()
+        print('updating software')
+redcar = Car()
 redcar.drive()
 #redcar.__updateSoftware()  not accesible from object.
-
-output ->
-updating software
-driving
- 
-
+#updating software
+#driving
+------------------------------
 class Car:
  
     __maxspeed = 0
@@ -72,7 +70,24 @@ redcar.drive()
 
 #driving. maxspeed 200
 #driving. maxspeed 200
+-----------------------------
+class abc:
+    def __init__(self):
+        self.__variable = 20
+        self.__abc03()
 
+    def abc01(self):
+        print(self.__variable)
+
+    def __abc03(self):
+        print("abc03")
+
+obj = abc()
+obj.abc01()
+
+
+#abc03
+#20
 =========================================
 Type			Description
 =========================================
@@ -80,7 +95,7 @@ public methods		Accessible from anywhere
 private methods		Accessible only in their own class. starts with two underscores
 public variables	Accessible from anywhere
 private variables	Accesible only in their own class or by a method if defined. starts with two underscores
-
+----------------------------------------
 class Person:
   def __init__(self): 
     self.name = 'Manjula'
@@ -94,8 +109,7 @@ P = Person()
 print(P.name) #Manjula
 print(P.PrintName()) #Manjula Dube
 print(P.__lastname) #error
-
-
+----------------------------------------
 class Robot(object):
    def __init__(self):
       self.__version = 22
