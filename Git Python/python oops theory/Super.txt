@@ -115,3 +115,32 @@ print(Dog.__mro__)
 <class 'Animal'>, 
 <class 'object'>)
 
+==========================
+class parent:
+    def __init__(self):
+        self.fname = "kumar"
+        self.lname = "anuj"
+        self.roll = 101
+        print("this is constructor call")
+
+    def inner(self):
+        print("this is inner class")
+        print("first name is ",self.fname)
+        print("last name is ",self.lname)
+class child(parent):
+    def __init__(self):
+        self.city = "patna"
+        print("child class constructor")
+        parent.__init__(self) #super().__init__() it will also work
+    def inner1(self):
+        print("another inner class")
+obj = child()
+obj.inner()
+
+
+#child class constructor
+#this is constructor call
+#this is inner class
+#first name is  kumar
+#last name is  anuj
+
