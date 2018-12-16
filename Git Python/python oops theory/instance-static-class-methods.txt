@@ -52,7 +52,8 @@ de = DecoratorExample.example_function()
 
 2. The @staticmethod decorator was used to tell Python that this method is a static method.
 3. Static methods are great for utility functions, which perform a task in isolation. 
-4. They don’t need to (and cannot) access class data. They should be completely self-contained, and only work with data passed in as arguments. 
+4. They don’t need to (and cannot) access class data. They should be completely self-contained, and only work with data 
+passed in as arguments. 
 5. You may use a static method to add two numbers together, or print a given string.
 
 
