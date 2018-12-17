@@ -52,7 +52,7 @@ def main():
     obj2 = abc03()
     obj2.aaa()
 if __name__ == "__main__":
-    a1 = abc() #NOT NECESSDARE as it wont do anything
+    a1 = abc() 
     a1.aaa()
     main()
 
@@ -82,6 +82,30 @@ if __name__ == "__main__":
     main()
 
 #TypeError: Can't instantiate abstract class abc with abstract methods aaa
+=================================
+from abc import ABC, abstractmethod
+class abc(ABC):
+    @abstractmethod
+    def aaa(self):
+        pass
+class abc02(abc):
+    def aaa(self):
+        print("class abc02")
+class abc03(abc):
+    def aaa(self):
+        print("class abc03")
+def main():
+    obj1 = abc02()
+    obj1.aaa()
+
+    obj2 = abc03()
+    obj2.aaa()
+if __name__ == "__main__":
+    #a1 = abc()
+    main()
+
+#class abc02
+#class abc03
 =================================
 from abc import ABC, abstractmethod
 class abc(ABC):
@@ -137,6 +161,67 @@ if __name__ == "__main__":
 #aabbcc
 #class abc03
 =================================
+from abc import ABC, abstractmethod
+
+class abc():
+    #@abstractmethod
+    def aaa(self):
+        print("aabbcc")
+class abc02(abc):
+    @abstractmethod
+    def aaa(self):
+        print("class abc02")
+class abc03(abc):
+    def aaa(self):
+        print("class abc03")
+def main():
+    obj1 = abc()
+    obj1.aaa()
+
+    obj2 = abc03()
+    obj2.aaa()
+
+    obj2 = abc02() #it will give error
+    obj2.aaa()
+
+if __name__ == "__main__":
+    a1 = abc()
+    main()
+
+#aabbcc
+#class abc03
+#class abc02
+=================================
+from abc import ABC, abstractmethod
+
+class abc(ABC):  #ERROR IS COMING BECAUSE ABS IS THERE IN ARGUMENT
+    #@abstractmethod
+    def aaa(self):
+        print("aabbcc")
+class abc02(abc):
+    @abstractmethod
+    def aaa(self):
+        print("class abc02")
+class abc03(abc):
+    def aaa(self):
+        print("class abc03")
+def main():
+    obj1 = abc()
+    obj1.aaa()
+
+    obj2 = abc03()
+    obj2.aaa()
+
+    obj2 = abc02() #it will give error
+    obj2.aaa()
+
+if __name__ == "__main__":
+    a1 = abc()
+    main()
+
+#obj2 = abc02() #it will give error
+#TypeError: Can't instantiate abstract class abc02 with abstract methods aaa
+=================================
 class abc:
     def aaa(self):
         pass
@@ -150,7 +235,7 @@ def main():
     obj1 = abc()
     obj1.aaa()
 if __name__ == "__main__":
-    a1 = abc() #NOT NECESSDARE as it wont do anything
+    a1 = abc() #NOT NECESSARY as it wont do anything
     main()
     
  #NO OUTPUT
@@ -176,6 +261,27 @@ if __name__ == "__main__":
 #aabbc
 #AttributeError: 'abc' object has no attribute 'aab'
 =================================
+class abc:
+    def aaa(self):
+        print("aabbc")
+class abc02(abc):
+    def aaa(self):
+        print("class abc02")
+class abc03(abc):
+    def aab(self):
+        print("class abc03")
+def main():
+    obj1 = abc03()
+    obj1.aaa()
+    obj1.aab()
+
+if __name__ == "__main__":
+    a1 = abc() #NOT NECESSDARE as it wont do anything
+    main()
+
+#aabbc
+#class abc03
+=================================
 from abc import ABC, abstractmethod
 class abc(ABC):
     @abstractmethod
@@ -198,7 +304,30 @@ if __name__ == "__main__":
     main()
 #class abc02
 #class abc03
+=====================================
+from abc import ABC, abstractmethod
+class abc(ABC):
+    @abstractmethod
+    def aaa(self):
+        pass
+class abc02(abc):
+    def aaa(self):
+        print("class abc02")
+class abc03(abc):
+    def aaa(self):
+        print("class abc03")
+def main():
+    obj1 = abc02()
+    obj1.aaa()
 
+    obj2 = abc03()
+    obj2.aaa()
+if __name__ == "__main__":
+    #a1 = abc() #iT WILL GIVE ERROR
+    main()
+
+#class abc02
+#class abc03
 =====================================
 from abc import ABC, abstractmethod
 class abcd(ABC):
@@ -226,8 +355,44 @@ if __name__ == "__main__":
 #xxx
 #class abc02
 ===================================
+from abc import ABC, abstractmethod
+class abcd(ABC):
+    @abstractmethod
+    def __init__(self):
+        print("aaa")
+    def aaa(self):
+        pass
+class abc02(abcd):
+    def __init__(self):
+        print("zzz")
+    def __init__(self):
+        print("xxx")
+    def aaa(self):
+        print("class abc02")
+class abc03(abcd):
+    def aaa(self):
+        print("class abc03")
+def main():
+    obj1 = abc02()
+    obj1.aaa()
+
+    #obj2 = abcd() #TypeError: Can't instantiate abstract class abcd with abstract methods __init__
+    #obj2.aaa() #erroe
+
+
+if __name__ == "__main__":
+    main()
+
+
+#xxx
+#class abc02
+
+
+
+===================================
 Data abstraction --> refers to providing only essential information about the data to the outside world, hiding
 the background details or implementation.
 Data encapsulation --> is one of the fundamentals of OOP (object-oriented programming). It refers to the bundling of 
 data with the methods that operate on that data. Encapsulation is used to hide the values or state of a 
 structured data object inside a class, preventing unauthorized parties' direct access to them.
+
