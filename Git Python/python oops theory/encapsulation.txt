@@ -53,23 +53,58 @@ redcar.drive()
 #driving
 ------------------------------
 class Car:
- 
+
+    def __init__(self):
+        self.__updateSoftware()
+
+    def drive(self):
+        print('driving')
+
+    def __updateSoftware(self):
+        print('updating software')
+redcar = Car()
+redcar.drive()
+redcar.__updatesoftware() #error -->AttributeError: 'Car' object has no attribute '__updatesoftware'
+
+#updating software
+#driving
+#AttributeError: 'Car' object has no attribute '__updatesoftware'
+------------------------------
+class Car:
+
+    def __init__(self):
+        self.__updateSoftware()
+
+    def drive(self):
+        print('driving')
+        self.__updateSoftware()
+
+    def __updateSoftware(self):
+        print('updating software')
+redcar = Car()
+redcar.drive()
+
+#updating software
+#driving
+#updating software
+------------------------------
+class Car:
     __maxspeed = 0
     __name = ""
- 
+
     def __init__(self):
         self.__maxspeed = 200
         self.__name = "Supercar"
- 
+
     def drive(self):
-        print('driving. maxspeed ' + str(self.__maxspeed))
+        print('driving  maxspeed ' + str(self.__maxspeed))
 redcar = Car()
 redcar.drive()
 redcar.__maxspeed = 10  # will not change variable because its private
 redcar.drive()
 
-#driving. maxspeed 200
-#driving. maxspeed 200
+#driving  maxspeed 200
+#driving  maxspeed 200
 -----------------------------
 class abc:
     def __init__(self):
@@ -97,18 +132,20 @@ public variables	Accessible from anywhere
 private variables	Accesible only in their own class or by a method if defined. starts with two underscores
 ----------------------------------------
 class Person:
-  def __init__(self): 
-    self.name = 'Manjula'
-    self.__lastname = 'Dube'
-    
-  def PrintName(self):
-    return self.name +' ' + self.__lastname
-    
-#Outside class    
+    def __init__(self):
+        self.name = 'Manjula'
+        self.__lastname = 'Dube'
+
+    def PrintName(self):
+        return self.name + ' ' + self.__lastname #we can access the private variable in any method.
+# Outside class
 P = Person()
-print(P.name) #Manjula
-print(P.PrintName()) #Manjula Dube
-print(P.__lastname) #error
+print(P.name)  # Manjula
+print(P.PrintName())  # Manjula Dube
+#print(P.__lastname)  # error
+
+#Manjula
+#Manjula Dube
 ----------------------------------------
 class Robot(object):
    def __init__(self):
@@ -129,3 +166,27 @@ print(obj.__version)
 #22
 #23
 #error
+=====================================
+class outer:
+    def __init__(self):
+        self.__fname = "anuj"
+        self.lname = "kumar"
+        print("init")
+
+    def abc(self):
+        print("abc method")
+        print(self.__fname)
+
+    def changeValue(self,aaa):
+        self.__fname = aaa
+obj = outer()
+obj.abc()
+obj.changeValue("zzz")
+obj.abc()
+
+#init
+#abc method
+#anuj
+#abc method
+#zzz
+
