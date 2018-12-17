@@ -90,14 +90,72 @@ class parent:
         self.roll = 101
         print("this is constructor call")
 
+    def __new__(self):
+        self.a = "aaaa"
+        self.b = "bbbbbb"
+        print(self.a)
+        print(self.b)
+parent()
+print(parent())
+
+#aaaa
+#bbbbbb
+#aaaa
+#bbbbbb
+#None
+
+------------------------------
+class parent:
+    def inner(self):
+        print("this is inner class")
+        print("first name is ",self.fname)
+        print("last name is ",self.lname)
+
+    def __init__(self):
+        self.fname = "kumar"
+        self.lname = "anuj"
+        self.roll = 101
+        print("this is constructor call")
+
     def __new__(cls):
         print("__new__")
 obj = parent()
-
-
 #__new__
 -------------------------------
+class parent:
+    def inner(self):
+        print("this is inner class")
+        print("first name is ",self.fname)
+        print("last name is ",self.lname)
+
+    def __init__(self):
+        self.fname = "kumar"
+        self.lname = "anuj"
+        self.roll = 101
+        print("this is constructor call")
+
+    def __new__(cls):
+        print("__new__")
+parent()
+#__new__
+--------------------------------------
 class A(object):
+
+    def __new__(cls):
+        print("A.__new__ called")
+
+    def __init__(self):
+        print("A.__init__ called")  # -> is actually never called
+
+print(A())
+A()
+
+
+#A.__new__ called
+#None
+#A.__new__ called
+-------------------------------
+class A:
 
     def __new__(cls):
         print("A.__new__ called")
@@ -142,6 +200,25 @@ class parent:
 obj = parent()
 
 #this is constructor call
+--------------------------
+class parent:
+    def inner(self):
+        print("this is inner class")
+        print("first name is ",self.fname)
+        print("last name is ",self.lname)
+
+    def __init__(self):
+        self.fname = "kumar"
+        self.lname = "anuj"
+        self.roll = 101
+        print("this is constructor call")
+
+    #def __new__(cls):
+     #   print("__new__")
+parent()
+
+#this is constructor call
+
 --------------------------
 class A:  # -> don't forget the object specified as base
 
