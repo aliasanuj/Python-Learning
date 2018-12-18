@@ -113,3 +113,19 @@ class A:
         print ('second method', )
 ob=A()
 ob.stackoverflow() #second method
+=================================
+class Robot:
+    def action1(self):
+        print('action 1')
+    def action1(self):
+        print('action 2')
+
+class HelloRobot(Robot):
+    def action(self):
+        print('Hello world')
+r = HelloRobot()
+r.action()
+r.action1()
+
+#Hello world
+#action 2
