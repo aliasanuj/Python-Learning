@@ -9,8 +9,7 @@ It does so by redefining it
 5. Override means having two methods with the same name but doing different tasks. It means that one of the methods overrides the other.
 If there is any method in the superclass and a method with the same name in a subclass, then by executing the method,
 the method of the corresponding class will be executed.
-
-
+--------------------------
 class A:
   def sayhi(self):
     print("I'm in A")                          
@@ -22,8 +21,7 @@ bobj.sayhi()
 A.sayhi("xxx")
 #I'm in B
 #I'm in A
-
-
+------------------------
 class A:
   def sayhi():
     print("I'm in A")                          
@@ -33,7 +31,7 @@ class B(A):
 bobj=B()
 bobj.sayhi1()
 #TypeError: sayhi1() takes 0 positional arguments but 1 was given
-
+-------------------------
 class A:
   def sayhi():
     print("I'm in A")                          
@@ -43,7 +41,7 @@ class B(A):
 bobj=B()
 bobj.sayhi1()
 #I'm in B
-
+-------------------------
 class A:
   def sayhi(self):
     print("I'm in A")                          
@@ -53,8 +51,7 @@ class B(A):
 bobj=B()
 bobj.sayhi1()
 #TypeError: sayhi1() takes 0 positional arguments but 1 was given
-
-
+---------------------------
 class Rectangle():
 	def __init__(self,length,breadth):
 		self.length = length
