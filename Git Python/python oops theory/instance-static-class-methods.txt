@@ -1,7 +1,6 @@
 =========================================
 ==========Instance methods===============
 =========================================
-
 1. Instance methods are the most common type of methods in Python classes. These are so called because 
 they can access unique data of their instance. If you have two objects each created from a car class, 
 then they each may have different properties. They may have different colors, engine sizes, seats, and so on.
@@ -10,7 +9,7 @@ Self is another Python special term. Inside any instance method, you can use sel
 methods that may reside in your class. You won’t be able to access them without going through self.
 3. Finally, as instance methods are the most common, there’s no decorator needed. Any method you 
 create will automatically be created as an instance method, unless you tell Python otherwise.
-
+---------------------------------------
 class DecoratorExample:
   """ Example Class """
   def __init__(self):
@@ -22,7 +21,20 @@ class DecoratorExample:
     """ This method is an instance method! """
     print('I\'m an instance method!')
     print('My name is ' + self.name)
- 
+de = DecoratorExample()
+de.example_function()
+#Hello, World!
+#I'm an instance method!
+#My name is Decorator_Example
+
+----------------------------------
+class DecoratorExample:
+    def __init__(self):
+        print('Hello, World!')
+        self.name = 'Decorator_Example'
+    def example_function(self):
+        print('I\'m an instance method!')
+        print('My name is ' + self.name)
 de = DecoratorExample()
 de.example_function()
 
@@ -44,17 +56,24 @@ It doesn't require creation of a class instance, much like staticmethod.
 Class.classmethod()
 Or even
 Class().classmethod()
-
+----------------------------------
 6. Create class method using classmethod()
 class Person:
     age = 25
-
     def printAge(cls):
         print('The age is:', cls.age)
-# create printAge class method
 Person.printAge = classmethod(Person.printAge)
 Person.printAge()
 #The age is: 25
+---------------------------------
+class Person:
+    age = 25
+    def printAge(self):
+        print('The age is:', self.age)
+Person.printAge = classmethod(Person.printAge)
+Person.printAge()
+#The age is: 25
+--------------------------------
 7. A class method receives the class as implicit first argument, just like an instance 
 method receives the instance
 
@@ -64,6 +83,7 @@ class C(object):
        ....
 fun: function that needs to be converted into a class method
 returns: a class method for function.
+
 8. It can modify a class state that would apply across all the instances of the class. 
 =============================
 1. Class methods are the third and final OOP method type to know. Class methods know about their class. 
@@ -71,7 +91,7 @@ returns: a class method for function.
 3. Class methods don’t need self as an argument, but they do need a parameter called cls. 
 4. This stands for class, and like self, gets automatically passed in by Python.
 5. Class methods are created using the @classmethod decorator.
-
+-----------------------------
 class DecoratorExample:
   """ Example Class """
   def __init__(self):
@@ -87,14 +107,44 @@ class DecoratorExample:
   @staticmethod
   def some_other_function():
     print('Hello!')
- 
-de = DecoratorExample()
+ de = DecoratorExample()
 de.example_function()
-
 #Hello, World!
 #I'm a class method!
 #Hello!
-
+------------------------------
+class DecoratorExample:
+    def __init__(self):
+        print('Hello, World!')
+    @classmethod
+    def example_function(cls):
+        print('I\'m a class method!')
+        cls.some_other_function()
+    @staticmethod
+    def some_other_function():
+        print('Hello!')
+de = DecoratorExample()
+de.example_function()
+# Hello, World!
+# I'm a class method!
+# Hello!
+-------------------------------
+class DecoratorExample:
+    def __init__(self):
+        print('Hello, World!')
+    @classmethod
+    def example_function(cls):
+        print('I\'m a class method!')
+        cls.some_other_function()
+    @staticmethod
+    def some_other_function():
+        print('Hello!')
+de = DecoratorExample()
+de.example_function()
+de.some_other_function()
+# Hello, World!
+# I'm a class method!
+# Hello!
 
 6. Class methods are possibly the more confusing method types of the three, but they do have their uses. 
 7. Class methods can manipulate the class itself, which is useful when you’re working on larger, more complex projects
@@ -129,7 +179,17 @@ Person.printAge(15)
 #The age is: 20
 #The age is: 25
 #The age is: 15
+=============================
+class Person:
+    age = 25
 
+    def printAge(cls):
+        print('The age is:', cls.age)
+# create printAge class method
+obj = Person()
+obj.printAge()
+
+#25
 =============================
 class Person:
     age = 25
@@ -156,6 +216,20 @@ Person.printAge = classmethod(Person.printAge)
 #Person.printAge()
 
 #class person
+=============================
+class Person:
+    age = 25
+    print("class person")
+    def printAge(cls):
+        print('The age is:', cls.age)
+# create printAge class method
+Person.printAge = classmethod(Person.printAge)
+Person().printAge()
+Person.printAge()
+
+#class person
+#The age is: 25
+#The age is: 25
 
 =============================
 class abc:
@@ -184,6 +258,19 @@ class abc:
     print("class method")
     age = 20
     @classmethod
+    def inner(cls,age):
+        print("the age is ",age)
+        print("the age is ",cls.age)
+abc.inner = classmethod(abc.inner(10))
+
+#class method
+#the age is  10
+#the age is  20
+============================
+class abc:
+    print("class method")
+    age = 20
+    @classmethod
     def __init__(cls,age):
         print("the age is ",cls.age)
 obj = abc(50)
@@ -207,6 +294,20 @@ class abc:
     print("class method")
     age = 20
     @classmethod
+    def __init__(cls,age):
+        cls.age = age
+        print("the age is ",cls.age)
+        print("the age is ",age)
+obj = abc(50)
+
+#class method
+#the age is  50
+#the age is  50
+============================
+class abc:
+    print("class method")
+    age = 20
+    @classmethod
     def inner(cls,age):
         print("the age is ",age)
 abc.inner = classmethod(abc.inner)
@@ -214,14 +315,36 @@ abc.inner = classmethod(abc.inner)
 #class method
 ============================
 class abc:
+    print("class method")
+    age = 20
+    @classmethod
+    def inner(cls,age):
+        print("the age is ",age)
+abc.inner = classmethod(abc.inner)
+abc.inner()
+
+#class method
+#the age is  <class '__main__.abc'>
+============================
+class abc:
     print("class abc")
     @classmethod
     def inner(cls,age):
         print("age is ",age)
-abc.inner = classmethod(abc.inner(20))
+abc.inner = classmethod(abc.inner(10))
 
 #class abc
-#age is  
+#age is  10
+============================
+class abc:
+    print("class abc")
+    @classmethod
+    def inner(cls,age):
+        print("age is ",age)
+abc.inner = classmethod(abc.inner)
+
+#class abc
+
 ============================
 class abc:
     age = 125
@@ -230,7 +353,6 @@ class abc:
     def inner(cls,age):
         print("age is ",cls.age)
 abc.inner = classmethod(abc.inner(20))
-
 
 #class abc
 #age is  125
@@ -265,6 +387,29 @@ obj = outer("kumar","anuj")
 outer.inner01 = classmethod(outer.inner01(1000,101))
 print(outer.rollno1)
 print(outer.xyzanything)
+===========================
+class outer:
+    @classmethod
+    def __init__(self,fname,lname):
+        self.firstname = fname
+        self.lastname = lname
+        print(self.firstname)
+        print(self.lastname)
+
+    @classmethod
+    def inner01(cls,salary,rollno):
+        outer.xyzanything = salary
+        outer.rollno1 = rollno
+
+obj = outer("kumar","anuj")
+outer.inner01 = classmethod(outer.inner01(1000,101))
+print(outer.xyzanything)
+print(outer.rollno1)
+
+#kumar
+#anuj
+#1000
+#101
 ===========================
 class outer:
     def __init__(self,fname,lname):
@@ -328,6 +473,27 @@ class outer:
 outer.inner01 = classmethod(outer.inner01(100,10))
 outer.inner02 = classmethod(outer.inner02("kumar","anuj"))
 
+
+#roll no is  10
+#salary  is  100
+#kumar
+========================================
+class outer:
+
+    @classmethod
+    def inner01(self,salary,rollno):
+        self.salary1 = salary
+        outer.rollno1 = rollno
+        print("roll no is ",rollno)
+        print("salary  is ",salary)
+
+    @classmethod
+    def inner02(cls,fname,lname):
+        outer.fname1=fname
+        cls.lname1=lname
+        print(fname)
+obj = classmethod(outer.inner01(100,10))
+obj = classmethod(outer.inner02("kumar","anuj"))
 
 #roll no is  10
 #salary  is  100
@@ -419,6 +585,26 @@ class DecoratorExample:
  
 de = DecoratorExample.example_function()
 #I'm a static method!
+----------------------------------------
+class DecoratorExample:
+    def __init__(self):
+        print('Hello, World!')\
+    @staticmethod
+    def example_function():
+        print('I\'m a static method!')
+de = DecoratorExample.example_function()
+#I'm a static method!
+---------------------------------------
+class DecoratorExample:
+    def __init__(self):
+        print('Hello, World!')\
+    @staticmethod
+    def example_function():
+        print('I\'m a static method!')
+de = staticmethod(DecoratorExample.example_function())
+
+#I'm a static method!
+-----------------------------------
 
 2. The @staticmethod decorator was used to tell Python that this method is a static method.
 3. Static methods are great for utility functions, which perform a task in isolation. 
@@ -459,7 +645,27 @@ outer().inner02 = staticmethod(outer.inner02("kumar","anuj"))
 #salary  is  100
 #fname is  kumar
 #lname  is  anuj
+=============================================
+class outer:
+    @staticmethod
+    def inner01(salary,rollno):
+        outer.salary1 = salary
+        outer.rollno1 = rollno
+        print("roll no is ",rollno)
+        print("salary  is ",salary)
+    @staticmethod
+    def inner02(fname,lname):
+        outer.fname1=fname
+        outer.lname1=lname
+        print("fname is ", fname)
+        print("lname  is ", lname)
+obj1 = staticmethod(outer.inner01(100,10))
+obj2 = staticmethod(outer.inner02("kumar","anuj"))
 
+#roll no is  10
+#salary  is  100
+#fname is  kumar
+#lname  is  anuj
 ===========================================
 ====Class method vs Static Method==========
 ===========================================
