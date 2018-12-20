@@ -106,7 +106,7 @@ class Student:
     def __init__(self):
         print("This is non parametrized constructor")
     def show(self,name):
-        #print("Hello",self.name) #(AttributeError: 'Student' object has no attribute 'name')
+        print("Hello",self.name) #(AttributeError: 'Student' object has no attribute 'name')
 student = Student()
 student.show("irfan")
 
