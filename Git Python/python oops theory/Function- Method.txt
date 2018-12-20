@@ -27,7 +27,8 @@ class_ref.method_abc()
 ===========Functions========
 ============================
 1. Function is block of code that is also called by its name. (independent)
-2. The function can have different parameters or may not have any at all. If any data (parameters) are passed, they are passed explicitly.
+2. The function can have different parameters or may not have any at all. If any data (parameters) 
+are passed, they are passed explicitly.
 3. It may or may not return any data.
 4. Function does not deal with Class and its instance concept.
 5. Basic Function Structure in Python :
