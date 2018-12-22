@@ -5,6 +5,8 @@
 much needed in C++ because Python has a garbage collector that handles memory management automatically.
 The __del__() method is a known as a destructor method in Python. It is called when all references to the
 object have been deleted i.e when an object is garbage collected.
+==>Destructors are called when an object gets destroyed. It’s the polar opposite of the constructor, which gets called on creation.
+==>These methods are only called on creation and destruction of the object. They are not called manually but completely automatic. 
 
 1. The destructor is defined using __del__(self).
 2. The obj is created and manually deleted, therefore, both messages will be displayed.
