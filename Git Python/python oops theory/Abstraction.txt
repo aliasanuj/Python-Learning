@@ -613,3 +613,101 @@ if __name__ == "__main__":
 #xxx
 #class abc02
 ===================================
+from abc import ABC, abstractmethod
+class abc(ABC):
+    @abstractmethod
+    def aaa(self):
+        pass
+class abc02():
+    @abstractmethod
+    def aaa(self):
+        print("class abc02")
+class abc03(abc):
+    def aaa(self):
+        print("class abc03")
+def main():
+    obj1 = abc02()
+    obj1.aaa()
+
+    obj2 = abc03()
+    obj2.aaa()
+if __name__ == "__main__":
+    #a1 = abc()
+    main()
+    
+#class abc02
+#class abc03
+======================
+from abc import ABC, abstractmethod
+class abc(ABC):
+    @abstractmethod
+    def aaa(self):
+        pass
+class abc02(abc):
+    @abstractmethod
+    def aaa(self):
+        print("class abc02")
+class abc03(abc):
+    def aaa(self):
+        print("class abc03")
+def main():
+    obj1 = abc02()
+    obj1.aaa()
+
+    obj2 = abc03()
+    obj2.aaa()
+if __name__ == "__main__":
+    #a1 = abc()
+    main()
+    
+# obj1 = abc02()
+#TypeError: Can't instantiate abstract class abc02 with abstract methods aaa
+=======================
+from abc import ABC, abstractmethod
+class abc():
+    #@abstractmethod
+    def aaa(self):
+        print("jdvjd")
+class abc02(abc):
+    def aaa(self):
+        print("class abc02")
+class abc03(abc):
+    def aaa(self):
+        print("class abc03")
+def main():
+    obj1 = abc02()
+    obj1.aaa()
+
+    obj2 = abc03()
+    obj2.aaa()
+if __name__ == "__main__":
+    #a1 = abc() #iT WILL GIVE ERROR
+    main()
+
+#class abc02
+#class abc03
+=========================
+from abc import ABC, abstractmethod
+class abc():
+    #@abstractmethod
+    def aaa(self):
+        print("jdvjd")
+class abc02(abc):
+    def aaas(self):
+        print("class abc02")
+class abc03(abc):
+    def aaa(self):
+        print("class abc03")
+def main():
+    obj1 = abc02()
+    obj1.aaa()
+
+    obj2 = abc03()
+    obj2.aaa()
+if __name__ == "__main__":
+    #a1 = abc() #iT WILL GIVE ERROR
+    main()
+
+#jdvjd
+#class abc03
+===========================
