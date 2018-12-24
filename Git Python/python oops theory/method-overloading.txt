@@ -3,6 +3,13 @@
 ===========================================
 1. Like other languages (for example method overloading in C++) do, python does not supports method overloading.
 We may overload the methods but can only use the latest defined method.
+2. Method overloading. In Python you can define a method in such a way that there are multiple ways to call it. 
+Given a single method or function, we can specify the number of parameters ourself. Depending on the function 
+definition, it can be called with zero, one, two or more parameters.
+3. In Python you can define a method in such a way that there are multiple ways to call it.
+Given a single method or function, we can specify the number of parameters ourself.
+Depending on the function definition, it can be called with zero, one, two or more parameters.
+This is known as method overloading. Not all programming languages support method overloading, but Python does.
 ----------------------------------
 # First product method. 
 # Takes two argument and print their 
@@ -31,7 +38,6 @@ def product(a, b, c):
     print(p)
 #product(4, 5)
 product(4, 5,10)
-
 #200
 ---------------------------------
 def add(datatype, *args): 
