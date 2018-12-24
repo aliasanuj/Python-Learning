@@ -14,8 +14,9 @@ add more features to a class without modifying it.
 then all the subclasses of B would automatically inherit from class A.
 7. A process of using details from a new class without modifying existing class
 
+---------------------------------
 Multiple Inheritance in Python :
--------------------------------
+---------------------------------
 1. In multiple inheritance, the features of all the base classes are inherited into the derived class
 2. class Base1:
     pass
@@ -27,6 +28,7 @@ Here, MultiDerived is derived from classes Base1 and Base2.
 3. In the multiple inheritance scenario, any specified attribute is searched first in the current class. 
 If not found, the search continues into parent classes in depth-first, left-right fashion without searching same class twice
 
+-----------------------------------
 class Person:
     def __init__(self, personName, personAge):
         self.name = personName
@@ -51,10 +53,9 @@ class Resident(Person, Student):
 resident1 = Resident('John', 30, '102')
 resident1.showName()
 print(resident1.getId())
-
 #John
 #102
---------------------------------
+------------------------------------------
 class outer:
     def __init__(self,fname,lname):
         self.fname = fname
@@ -64,14 +65,12 @@ class outer:
         print(self.fname)
     def Lname(self):
         print(self.lname)
-
 class inner:
     def __init__(self,rollno):
         self.rollno = rollno
 
     def rol(self):
         print(self.rollno)
-
 class final(outer,inner):
     def __init__(self,firstname,lastname,rollno):
         outer.__init__(self,firstname,lastname)
@@ -80,8 +79,6 @@ obj = final("kumar","anuj",101)
 obj.Fname()
 obj.Lname()
 obj.rol()
-
-
 #kumar
 #anuj
 #101
