@@ -26,7 +26,6 @@ de.example_function()
 #Hello, World!
 #I'm an instance method!
 #My name is Decorator_Example
-
 ----------------------------------
 class DecoratorExample:
     def __init__(self):
@@ -37,7 +36,6 @@ class DecoratorExample:
         print('My name is ' + self.name)
 de = DecoratorExample()
 de.example_function()
-
 #Hello, World!
 #I'm an instance method!
 #My name is Decorator_Example
@@ -74,6 +72,17 @@ Person.printAge = classmethod(Person.printAge)
 Person.printAge()
 #The age is: 25
 --------------------------------
+class Person:
+    age = 25
+    def printAge(cls):
+        print('The age is:', cls.age)
+
+    def printAge1(cls):
+        print('The age is Printage1:', cls.age)
+Person.printAge1 = classmethod(Person.printAge1)
+Person.printAge1()
+#The age is Printage1: 25
+---------------------------------
 7. A class method receives the class as implicit first argument, just like an instance 
 method receives the instance
 
@@ -102,16 +111,34 @@ class DecoratorExample:
   def example_function(cls):
     """ This method is a class method! """
     print('I\'m a class method!')
-    cls.some_other_function()
+    cls.some_other_function()  #for calling static method
 
   @staticmethod
   def some_other_function():
     print('Hello!')
- de = DecoratorExample()
+de = DecoratorExample()
 de.example_function()
 #Hello, World!
 #I'm a class method!
 #Hello!
+------------------------------
+class DecoratorExample:
+  """ Example Class """
+  def __init__(self):
+    """ Example Setup """
+    print('Hello, World!')
+
+  @classmethod
+  def example_function(cls):
+    """ This method is a class method! """
+    print('I\'m a class method!')
+    cls.some_other_function()
+
+  #@staticmethod
+  def some_other_function():
+    print('Hello!')
+de = DecoratorExample()
+de.example_function()
 ------------------------------
 class DecoratorExample:
     def __init__(self):
@@ -158,7 +185,6 @@ class Person:
 Person.printAge = classmethod(Person.printAge)
 Person().printAge()
 Person.printAge()
-
 #The age is: 25
 #The age is: 25
 =============================
@@ -169,12 +195,10 @@ class Person:
         cls.abc = abc
         print('The age is:', cls.age)
         print('The age is:', cls.abc)
-
 # create printAge class method
 Person.printAge = classmethod(Person.printAge)
 Person().printAge(20)
 Person.printAge(15)
-
 #The age is: 25
 #The age is: 20
 #The age is: 25
@@ -188,7 +212,6 @@ class Person:
 # create printAge class method
 obj = Person()
 obj.printAge()
-
 #25
 =============================
 class Person:
@@ -200,7 +223,6 @@ class Person:
 Person.printAge = classmethod(Person.printAge)
 Person().printAge()
 Person.printAge()
-
 #class person
 #The age is: 25
 #The age is: 25
@@ -214,7 +236,6 @@ class Person:
 Person.printAge = classmethod(Person.printAge)
 #Person().printAge()
 #Person.printAge()
-
 #class person
 =============================
 class Person:
@@ -226,11 +247,9 @@ class Person:
 Person.printAge = classmethod(Person.printAge)
 Person().printAge()
 Person.printAge()
-
 #class person
 #The age is: 25
 #The age is: 25
-
 =============================
 class abc:
     print("class method")
@@ -239,7 +258,6 @@ class abc:
         print("the age is ",cls.age)
 abc.inner = classmethod(abc.inner)
 abc.inner()
-
 #class method
 #the age is  20
 ============================
@@ -250,7 +268,6 @@ class abc:
     def inner(cls,age):
         print("the age is ",age)
 abc.inner = classmethod(abc.inner(10))
-
 #class method
 #the age is  10
 ============================
@@ -262,7 +279,6 @@ class abc:
         print("the age is ",age)
         print("the age is ",cls.age)
 abc.inner = classmethod(abc.inner(10))
-
 #class method
 #the age is  10
 #the age is  20
@@ -274,7 +290,6 @@ class abc:
     def __init__(cls,age):
         print("the age is ",cls.age)
 obj = abc(50)
-
 #class method
 #the age is  20
 ============================
@@ -286,7 +301,6 @@ class abc:
         cls.age = age
         print("the age is ",cls.age)
 obj = abc(50)
-
 #class method
 #the age is  50
 ============================
@@ -299,7 +313,6 @@ class abc:
         print("the age is ",cls.age)
         print("the age is ",age)
 obj = abc(50)
-
 #class method
 #the age is  50
 #the age is  50
@@ -311,7 +324,6 @@ class abc:
     def inner(cls,age):
         print("the age is ",age)
 abc.inner = classmethod(abc.inner)
-
 #class method
 ============================
 class abc:
@@ -322,7 +334,6 @@ class abc:
         print("the age is ",age)
 abc.inner = classmethod(abc.inner)
 abc.inner()
-
 #class method
 #the age is  <class '__main__.abc'>
 ============================
@@ -332,7 +343,6 @@ class abc:
     def inner(cls,age):
         print("age is ",age)
 abc.inner = classmethod(abc.inner(10))
-
 #class abc
 #age is  10
 ============================
@@ -342,9 +352,7 @@ class abc:
     def inner(cls,age):
         print("age is ",age)
 abc.inner = classmethod(abc.inner)
-
 #class abc
-
 ============================
 class abc:
     age = 125
@@ -353,7 +361,6 @@ class abc:
     def inner(cls,age):
         print("age is ",cls.age)
 abc.inner = classmethod(abc.inner(20))
-
 #class abc
 #age is  125
 ============================
@@ -370,7 +377,6 @@ obj = outer("kumar","anuj")
 outer.inner01 = classmethod(outer.inner01(1000,101))
 print(outer.rollno1)
 print(outer.xyzanything)
-
 #101
 #1000
 ===========================
@@ -389,6 +395,22 @@ print(outer.rollno1)
 print(outer.xyzanything)
 ===========================
 class outer:
+    def __init__(self,fname,lname):
+        self.firstname = fname
+        self.lastname = lname
+
+    @classmethod
+    def inner01(cls,salary,rollno):
+        outer.xyzanything = salary
+        outer.rollno1 = rollno
+obj = outer("kumar","anuj")
+outer.inner01 = classmethod(outer.inner01(1000,101))
+print(outer.rollno1)
+print(outer.xyzanything)
+#101
+#1000
+===========================
+class outer:
     @classmethod
     def __init__(self,fname,lname):
         self.firstname = fname
@@ -400,12 +422,10 @@ class outer:
     def inner01(cls,salary,rollno):
         outer.xyzanything = salary
         outer.rollno1 = rollno
-
 obj = outer("kumar","anuj")
 outer.inner01 = classmethod(outer.inner01(1000,101))
 print(outer.xyzanything)
 print(outer.rollno1)
-
 #kumar
 #anuj
 #1000
