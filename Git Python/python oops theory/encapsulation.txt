@@ -7,28 +7,26 @@ This can prevent the data from being modified by accident and is known as encaps
 2. Python does not have the private keyword, unlike some other object oriented languages, but encapsulation can be done.
 3. Encapsulation is a mechanism that restricts direct access to objects’ data and methods. But at the same time, it 
 facilitates operation on that data (objects’ methods).
-
+=============================
 class Robot(object):
    def __init__(self):
       self.a = 123
       self._b = 123
       self.__c = 123
-
 obj = Robot()
 print(obj.a)
 print(obj._b)
 print(obj.__c)
-
-123
-123
+#123
+#123
 Traceback (most recent call last):
   File "test.py", line 10, in &lt;module&gt;
     print(obj.__c)
 AttributeError: 'Robot' object has no attribute '__c' 
-
+==============================
 ==>A single underscore: Private variable, it should not be accessed directly. But nothing stops you from doing that (except convention).
 ==>A double underscore: Private variable, harder to access but still possible.
-
+==============================
 ---------------------
 Private methods :----
 ---------------------
@@ -49,6 +47,20 @@ class Car:
 redcar = Car()
 redcar.drive()
 #redcar.__updateSoftware()  not accesible from object.
+#updating software
+#driving
+------------------------------
+class Car:
+    def __init__(self):
+        #self.__updateSoftware()
+        pass
+    def drive(self):
+        self.__updateSoftware()
+        print('driving')
+    def __updateSoftware(self):
+        print('updating software')
+redcar = Car()
+redcar.drive()
 #updating software
 #driving
 ------------------------------
@@ -189,4 +201,6 @@ obj.abc()
 #anuj
 #abc method
 #zzz
+
+
 
