@@ -157,3 +157,7 @@ obj1.inner()
 level are called instance variables.
 2. Instance variables are for data which is unique to every object but, Class variables are for data 
 shared between different instances of a class.
+
+
+==> Class or static variables are shared by all objects.
+==>Instance or non-static variables are different for different objects (every object has a copy of it)
