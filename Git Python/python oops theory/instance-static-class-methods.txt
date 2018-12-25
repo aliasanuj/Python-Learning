@@ -83,6 +83,23 @@ Person.printAge1 = classmethod(Person.printAge1)
 Person.printAge1()
 #The age is Printage1: 25
 ---------------------------------
+class Person:
+    age = 25
+    def printAge(cls):
+        print('The age is:', cls.age)
+
+    def printAge1(cls):
+        print('The age is Printage1:', cls.age)
+Person.printAge1 = classmethod(Person.printAge1)
+Person.printAge1()
+Person.printAge = classmethod(Person.printAge)
+Person.printAge()
+
+#The age is Printage1: 25
+#The age is: 25
+
+
+---------------------------------
 7. A class method receives the class as implicit first argument, just like an instance 
 method receives the instance
 
