@@ -459,6 +459,24 @@ if __name__ == "__main__":
 =================================
 class abc:
     def aaa(self):
+        print("method aaa")
+class abc02(abc):
+    def aaa(self):
+        print("class abc02")
+class abc03(abc):
+    def aaab(self):
+        print("class abc03")
+def main():
+    obj1 = abc03()
+    obj1.aaa()
+if __name__ == "__main__":
+    a1 = abc() #NOT NECESSARY as it wont do anything
+    main()
+
+#method aaa
+=================================
+class abc:
+    def aaa(self):
         pass
 class abc02(abc):
     def aaa(self):
