@@ -6,7 +6,7 @@ Abstraction:==================
 3. Abstract classes may not be instantiated, and require subclasses to provide implementations for the abstract methods. 
 4. Subclasses of an abstract class in Python are not required to implement abstract methods of the parent class.
 ==============================
-==> Data abstraction refers to providing only essential information about the data to the outside world, hiding the background
+==> Abstraction refers to providing only essential information about the data to the outside world, hiding the background
 details or implementation.
 ==============================
 ==>Data encapsulation --> is one of the fundamentals of OOP (object-oriented programming). It refers to the bundling of 
