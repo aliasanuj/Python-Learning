@@ -352,7 +352,7 @@ def main():
     obj2 = abc03()
     obj2.aaa()
 
-    obj2 = abc02() #it will give error
+    obj2 = abc02() 
     obj2.aaa()
 
 if __name__ == "__main__":
