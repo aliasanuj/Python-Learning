@@ -75,6 +75,10 @@ print(r.headers['content-type'])  # 'application/json'
 #3.The body - this part is optional, but when using the POST or PUT methods the data 
 #required for the update is contained here.
 
+The request line -->
+The Header -->
+The body --> (optional but in case of post or put, it require data)
+
 
 >>> r = requests.get('http://swapi.co/api/planets/1/')
 #The first thing to confirm is whether the request was successful, 
