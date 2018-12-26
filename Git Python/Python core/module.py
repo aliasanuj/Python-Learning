@@ -14,7 +14,7 @@ Modules used #https://docs.python.org/3/py-modindex.html
 8. from functools import partial (partial fractions)
 9. import functools import reduce(for reduce functions)
 10.import re 
-11.import datetime-->	Basic date and time types.
+11.import datetime ==>	Basic date and time types.
 12.import email--> Package supporting the parsing, manipulating, and generating email messages.
 13.import 	filecmp-->Compare files efficiently.
 14.import json-->Encode and decode the JSON format.
