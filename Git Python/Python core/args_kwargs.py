@@ -9,7 +9,23 @@
 #kwargs : The special syntax **kwargs in function definations in python is used to pass a keyword, variable-length argument list.
 #We use the name kwargs with double star. The reason is because the double star allow us to pass through keyword arguments(and any number)
 #A key word argument is where you provide a name to the variable as you pass into function.
-======================================= 
+=======================================
+def abc(a, *b, **c):
+    print("first argument is ",a)
+    for i in b:
+        print(i, end = " ")
+    print("\n")
+    for j in c.items():
+        print(j)
+abc("anuj", "kumar", "dfvdf", one = "dbvfdfj", two="vknjd" , three="fklnhdf")
+
+#first argument is  anuj
+#kumar dfvdf 
+
+#('one', 'dbvfdfj')
+#('two', 'vknjd')
+#('three', 'fklnhdf')
+=======================================
 def myFun(**kwargs):
     for i in kwargs.items():
         print(i)
