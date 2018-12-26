@@ -55,6 +55,21 @@ myFun(first ='Geeks', mid ='for', last='Geeks')
 def myFun(**kwargs):
     for i in kwargs.items():
         print(i)
+myFun(a=10, b=20,c=30)
+myFun(a="10", b="20",c="30")
+#myFun("a"="10", "b"="20","c"="30") #SyntaxError: keyword can't be an expression
+#myFun(1="10", 2="20",3="30") #SyntaxError: keyword can't be an expression
+
+#('a', 10)
+#('b', 20)
+#('c', 30)
+#('a', '10')
+#('b', '20')
+#('c', '30')
+===================================
+def myFun(**kwargs):
+    for i in kwargs.items():
+        print(i)
 myFun(first ='Geeks', mid ='for', last='Geeks')
 
 #('first', 'Geeks')
