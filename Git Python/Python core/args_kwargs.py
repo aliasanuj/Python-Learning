@@ -4,7 +4,7 @@
 #It is used to pass non-keyworded variable-length argument list.
 #The syntax is used to symbol * to take in variable numbers of arguments,by convention it is often used with the word args.
 #* args allows us to do is take an in more aeguments than the number of formal of arguments that you previously defined.
-#with * args,a ny number of extra arguments can be tracked on to your current formal parameter.
+#with * args,any number of extra arguments can be tracked on to your current formal parameter.
 ================================
 #kwargs : The special syntax **kwargs in function definations in python is used to pass a keyword, variable-length argument list.
 #We use the name kwargs with double star. The reason is because the double star allow us to pass through keyword arguments(and any number)
