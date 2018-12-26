@@ -119,6 +119,25 @@ returns: a class method for function.
 5. Class methods are created using the @classmethod decorator.
 -----------------------------
 class DecoratorExample:
+    def __init__(fvgxfd):
+        print('Hello, World!')
+    @classmethod
+    def example_function(abc):
+        print('I\'m a class method!')
+        abc.some_other_function()
+    @staticmethod
+    def some_other_function():
+        print('Hello!')
+de = DecoratorExample()
+de.example_function()
+de.some_other_function()
+
+#Hello, World!
+#I'm a class method!
+#Hello!
+#Hello!
+-----------------------------
+class DecoratorExample:
   """ Example Class """
   def __init__(self):
     """ Example Setup """
