@@ -1,4 +1,5 @@
 #any_all.py
+=====================
 #Returns true if any of the items is True. 
 #It returns False if empty or all are false.
 #Any can be thought of as a sequence of OR operations on the provided iterables.
