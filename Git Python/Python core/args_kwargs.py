@@ -26,6 +26,25 @@ abc("anuj", "kumar", "dfvdf", one = "dbvfdfj", two="vknjd" , three="fklnhdf")
 #('two', 'vknjd')
 #('three', 'fklnhdf')
 =======================================
+
+
+def abc(a, *b, **c):
+    print("first argument is ",a)
+    for i in b:
+        print(i, end = " ")
+    print("\n")
+    for j in c.items():
+        print(j)
+list1 = ["ckvnd","dvjdf","bmngfjbn"]
+abc(list1, "kumar", "dfvdf", one = "dbvfdfj", two="vknjd" , three="fklnhdf")
+
+#first argument is  ['ckvnd', 'dvjdf', 'bmngfjbn']
+#kumar dfvdf 
+
+#('one', 'dbvfdfj')
+#('two', 'vknjd')
+#('three', 'fklnhdf')
+========================================
 def myFun(**kwargs):
     for i in kwargs.items():
         print(i)
