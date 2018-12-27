@@ -7,7 +7,6 @@
 #we must declare them explicitly as non-local (using nonlocal keyword) in order to modify them
 #A Closure is a function object that remembers values in enclosing scopes even if they are not present in memory. 
 # base concept of decorator is closure
-
 ======================================
 def gen_multiplier(x):
     def multiplier(y):
@@ -26,9 +25,19 @@ def gen_multiplier():
 obj = gen_multiplier()
 del gen_multiplier #it will delete
 print(obj(5))
-
 #50
 ==========================
+def gen_multiplier(a):
+    x = 10 #non-local variable
+    def multiplier(y): #stores the reference to non-local variable
+        return x * y * a #x is non local to multiplier
+    return multiplier
+#call the function
+obj = gen_multiplier(10)
+del gen_multiplier #it will delete
+print(obj(5))
+#500
+===========================
 #nested-function
 #nested function should access non-local variable
 #it should return the en-closed function
@@ -43,6 +52,14 @@ def print_msg(msg):
 # Output: Hello
 print_msg("Hello")
 =====================================
+def outer(a1):
+    def inner(a2):
+        print(a1 + a2)
+    return inner
+obj = outer(12)
+obj(15)
+#27
+=================================
 def print_msg(msg):
 # This is the outer enclosing function
     def printer():
@@ -78,7 +95,6 @@ another()
 #we had already finished executing the print_msg() function.
 #This technique by which some data ("Hello") gets attached to the code is called closure in Python.
 ==================================================
-
 x = 'global'
 def outer_func():
   y = 'enclose'
@@ -87,7 +103,6 @@ def outer_func():
     print(x, y, z)
   inner_func()
 print(outer_func())
-
 #global enclose local
 #None
 ================================
@@ -97,8 +112,7 @@ def outer_func():
     return (x + y)
   return inner_func
 a = outer_func()
- 
-print(a())	# 8
+ print(a())	# 8
 ======================
 def outer_func():
   x = 5
@@ -107,7 +121,6 @@ def outer_func():
   return inner_func()
 print(outer_func())
 #8
-
 =======================
 def multiply_by(num):
   def multiply_by_num(k):
@@ -122,15 +135,3 @@ decimal = multiply_by(10)
 print(decimal(20))	# 200
 print(decimal(3))	# 30
 =========================
-
-
-
-
-
-
-
-
-
-
-
-
