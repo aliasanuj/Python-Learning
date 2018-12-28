@@ -13,10 +13,19 @@ for i in coun.most_common(3): #upto 3 items
     print(i)
 for i in coun.most_common(): #whole items descending order
     print(i)
-
 #update coun.update([1, 2, 4])
 ===============================
+from collections import Counter
+a = [1936, 2401, 2916, 4761, 9216, 9216, 9604, 9801]
+c = Counter(a)
+print(c)
+print(c.most_common(1))
+print(c.most_common(2))
 
+#Counter({9216: 2, 1936: 1, 2401: 1, 2916: 1, 4761: 1, 9604: 1, 9801: 1})
+#[(9216, 2)]
+#[(9216, 2), (1936, 1)]
+===============================
 from collections import Counter 
 z = ['blue', 'red', 'blue', 'yellow', 'blue', 'red'] 
 col_count = Counter(z) 
@@ -76,7 +85,7 @@ for i in coun.most_common(3):
 
 #('f', 219)
 #3('d', 120)
-3('c', 3)
+#('c', 3)
 ========================
 from collections import Counter 
 # With sequence of items  
@@ -194,6 +203,12 @@ from collections import Counter
 c = Counter(['eggs', 'ham'])
 print(c['bacon'])
 #0
+=============================================
+from collections import Counter
+c = Counter(['eggs', 'ham'])
+print(c['ham'])
+
+#1
 =============================================
 from collections import Counter 
 c = Counter(a=4, b=2, c=0, d=-2)
