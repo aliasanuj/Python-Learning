@@ -74,7 +74,6 @@ Sr.No.	Methods with Description
 10	dict.values()
 	Returns list of dictionary dict's values
 ==============================================================
-
 thisdict =	{
   "brand": "Ford",
   "model": "Mustang",
@@ -129,7 +128,6 @@ thisdict =	{
   "year": 1964
 }
 thisdict["year"] = 2018
-
 for x in thisdict:
   print(x)
 #brand
@@ -200,9 +198,7 @@ import operator
 x = {1: 2, 3: 4, 4: 3, 2: 1, 0: 0}
 sorted_x = sorted(x.items())
 print(sorted_x)
-
 #[(0, 0), (1, 2), (2, 1), (3, 4), (4, 3)]
-
 ==================================
 thisdict =	{
   "brand": "Ford",
@@ -276,20 +272,15 @@ my_dict = dict({1:'apple', 2:'ball'})
 my_dict = dict([(1,'apple'), (2,'ball')])
 ===================================================================
 my_dict = {'name':'Jack', 'age': 26}
-# Output: Jack
 print(my_dict['name'])
-# Output: 26
 print(my_dict.get('age'))
 print(my_dict.get("anuj"))
-
 #Jack
 #26
 #None
 ==============================================
 my_dict = {'name':'Jack', 'age': 26}
-# Output: Jack
 print(my_dict['name'])
-# Output: 26
 print(my_dict.get('age'))
 # Trying to access keys which doesn't exist throws error
 # my_dict.get('address')
@@ -310,11 +301,9 @@ print(my_dict)
 #{'name': 'Jack', 'age': 27, 'address': 'Downtown'}
 ===================================================================
 marks = {}.fromkeys(['Math','English','Science'], 0)
-# Output: {'English': 0, 'Math': 0, 'Science': 0}
 print(marks)
 for item in marks.items():
     print(item)
-# Output: ['English', 'Math', 'Science']
 print(list(sorted(marks.keys())))
 #{'Math': 0, 'English': 0, 'Science': 0}
 #('Math', 0)
@@ -353,7 +342,6 @@ print(49 in squares)
 squares = {1: 1, 3: 9, 5: 25, 7: 49, 9: 81}
 for i in squares:
     print(squares[i])
-
 for i in squares:
     print(i)  
 #1
@@ -375,7 +363,7 @@ print(sorted(squares))
 #[1, 3, 5, 7, 9]
 =======================================================
 Dict = {} 
-print("Empty Dictionary: ") 
+print("Empty Dictionary: ")
 print(Dict) 
 Dict = {1: 'Geeks', 2: 'For', 3: 'Geeks'} 
 print("\nDictionary with the use of Integer Keys: ") 
@@ -395,19 +383,14 @@ print("\nNested Dictionary: ")
 print(Dict) 
 #Empty Dictionary: 
 #{}
-
 #Dictionary with the use of Integer Keys: 
 #{1: 'Geeks', 2: 'For', 3: 'Geeks'}
-
 #Dictionary with the use of Mixed Keys: 
 #{'Name': 'Geeks', 1: [1, 2, 3, 4]}
-
 #Dictionary with the use of dict(): 
 #{1: 'Geeks', 2: 'For', 3: 'Geeks'}
-
 #Dictionary with each item as a pair: 
 #{1: 'Geeks', 2: 'For'}
-
 #Nested Dictionary: 
 #{1: {'A': 'Geeks', 'B': 'For', 'C': 'Geeks'}, 2: {'D': 'Welcome', 'E': 'To', 'F': 'Geeks'}}
 =======================================================
@@ -430,16 +413,12 @@ print("\nAdding a Nested Key: ")
 print(Dict)
 #Empty Dictionary: 
 #{}
-
 #Dictionary after adding 3 elements: 
 #{0: 'Geeks', 2: 'For', 3: 1}
-
 #Dictionary after adding 3 elements: 
 #{0: 'Geeks', 2: 'For', 3: 1, 'Value_set': (2, 3, 4)}
-
 #Updated key value: 
 #{0: 'Geeks', 2: 'Welcome', 3: 1, 'Value_set': (2, 3, 4)}
-
 #Adding a Nested Key: 
 #{0: 'Geeks', 2: 'Welcome', 3: 1, 'Value_set': (2, 3, 4), 5: {'Nested': {'1': 'Life', '2': 'Geeks'}}}
 ==========================================================
@@ -465,19 +444,14 @@ print("\nDeleting Entire Dictionary: ")
 print(Dict)
 #Initial Dictionary: 
 #{5: 'Welcome', 6: 'To', 7: 'Geeks', 'A': {1: 'Geeks', 2: 'For', 3: 'Geeks'}, 'B': {1: 'Geeks', 2: 'Life'}}
-
 #Deleting a specific key: 
 #{5: 'Welcome', 7: 'Geeks', 'A': {1: 'Geeks', 2: 'For', 3: 'Geeks'}, 'B': {1: 'Geeks', 2: 'Life'}}
-
 #Deleting a key from Nested Dictionary: 
 #{5: 'Welcome', 7: 'Geeks', 'A': {1: 'Geeks', 3: 'Geeks'}, 'B': {1: 'Geeks', 2: 'Life'}}
-
 #Popping specific element: 
 #{7: 'Geeks', 'A': {1: 'Geeks', 3: 'Geeks'}, 'B': {1: 'Geeks', 2: 'Life'}}
-
 #Pops first element: 
 #{7: 'Geeks', 'A': {1: 'Geeks', 3: 'Geeks'}}
-
 #Deleting Entire Dictionary: 
 #{}
 ====================================================
@@ -496,6 +470,11 @@ Dict.update({"Sarah":9})
 print(Dict)
 #{'Tim': 18, 'Charlie': 12, 'Tiffany': 22, 'Robert': 25, 'Sarah': 9}
 ================================================
+Dict = {'Tim': 18,'Charlie':12,'Tiffany':22,'Robert':25}
+Dict.update({"Tim":9})
+print(Dict)
+#{'Tim': 9, 'Charlie': 12, 'Tiffany': 22, 'Robert': 25}
+================================================
 Dict = {'Tim': 18,'Charlie':12,'Tiffany':22,'Robert':25}	
 del Dict ['Charlie']
 print(Dict)
@@ -508,7 +487,6 @@ print("Students Name: %s" % list(Dict.items()))
 Dict = {'Tim': 18,'Charlie':12,'Tiffany':22,'Robert':25}	
 print(Dict.items())
 print(list(Dict.items()))
-
 #dict_items([('Tim', 18), ('Charlie', 12), ('Tiffany', 22), ('Robert', 25)])
 #[('Tim', 18), ('Charlie', 12), ('Tiffany', 22), ('Robert', 25)]
 ======================================================
@@ -520,7 +498,6 @@ for key in list(Dict.keys()):
         print(True)
     else:       
         print(False)
-
 #True
 #True
 #False
@@ -535,11 +512,9 @@ Students1 = list(Dict.values())
 print(Students1)
 a = sorted(Dict.items())
 print(a)
-
 #['Tim', 'Charlie', 'Tiffany', 'Robert']
 #[18, 12, 22, 25]
 #[('Charlie', 12), ('Robert', 25), ('Tiffany', 22), ('Tim', 18)]
-
 ==========================================================
 Dict = {'Tim': 18,'Charlie':12,'Tiffany':22,'Robert':25}
 Boys = {'Tim': 18,'Charlie':12,'Robert':25}
@@ -548,7 +523,6 @@ Students = list(Dict.keys())
 Students.sort()
 for S in Students:
       print(":".join((S,str(Dict[S]))))
-
 #Charlie:12
 #Robert:25
 #Tiffany:22
@@ -565,7 +539,6 @@ print("variable Type: %s" %type (Dict))
 Dict = {'Tim': 18,'Charlie':12,'Tiffany':22,'Robert':25}	
 print("printable string:%s" % str (Dict))
 #printable string:{'Tim': 18, 'Charlie': 12, 'Tiffany': 22, 'Robert': 25}
-
 ==============================================================
 string1 = "anuj anuj anuj kumar"
 dict1 = {}
@@ -608,6 +581,17 @@ for i,j in dict1.items():
 #anuj = 3
 #kumar = 1
 ===========================================
+a = "anuj kumar anuj kumar anuj"
+s = a.split()
+d = {}
+for i in s:
+    if i in d:
+        d [i] = d[i] + 1
+    else :
+        d[i] = 1
+print(d)
+#{'anuj': 3, 'kumar': 2}
+===========================================
 string1 = "kumar anuj anuj anuj"
 string2 = string1.split()
 dict1 = {}
@@ -631,10 +615,8 @@ for i in string2:
     dict1[i] = 1
 for a in dict1.items():
   print(list(a))
-
 #['kumar', 1]
 #['anuj', 3]
-
 ========================================
 my_dict = {'name':'Jack', 'age': 26}
 # Output: Jack
@@ -643,9 +625,8 @@ print(my_dict['name'])
 print(my_dict.get('age'))
 # Trying to access keys which doesn't exist throws error
 print(my_dict.get('address'))
-
 #Jack
-326
+#26
 #None
 ===================================
 squares = {1:1, 2:4, 3:9, 4:16, 5:25}
@@ -721,7 +702,6 @@ thisdict =	{
 }
 x = thisdict.get("brand") #for specified key
 print(x)
-
 #ford
 ======================
 my_dict = {'name':'Jack', 'age': 26}
@@ -731,15 +711,11 @@ print(my_dict['name'])
 print(my_dict.get('age'))
 # Trying to access keys which doesn't exist throws error
 print(my_dict.get('name',"not found"))
-
 #Jack
 #26
 #Jack
 =========================
 squares = {1: 1, 11: 9, 5: 25, 7: 49, 9: 81}
 print(sorted(squares))
-
 #[1, 5, 7, 9, 11]
-
 ========================
-
