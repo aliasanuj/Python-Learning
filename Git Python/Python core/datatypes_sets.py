@@ -1,7 +1,5 @@
-#sets
-=================
-
-#sets
+================================
+#sets===========================
 ================================
 #Sets in Python
 #A Set is an unordered collection data type that is iterable, mutable, and 
@@ -14,37 +12,34 @@
 #methods and operators that produce a result without a?ecting the 
 #frozen set or sets to which they are applied.
 ===================================
+1. set --> mutable
+2. frozenset --> Imutable
+===================================
 # Same as {"a", "b","c"} 
 normal_set = set(["a", "b","c"]) 
-  
 # Adding an element to normal set is fine 
 normal_set.add("d") 
-  
 print("Normal Set") 
 print(normal_set) 
-  
 # A frozen set 
 frozen_set = frozenset(["e", "f", "g"]) 
-  
 print("Frozen Set") 
 print(frozen_set) 
-  
 # Uncommenting below line would cause error as 
 # we are trying to add element to a frozen set 
 # frozen_set.add("h") 
-
 Output:
 #Normal Set
 #set(['a', 'c', 'b', 'd'])
 #Frozen Set
 #frozenset(['e', 'g', 'f'])
 ========================================
-#1. add(x) Method: Adds the item x to set if it is not already present in the set.
+1. add(x) Method: Adds the item x to set if it is not already present in the set.
 people = {"Jay", "Idrish", "Archil"}
 people.add("Daxit") 
 -> This will add Daxit in people set.
 
-#2. union(s) Method: Returns a union of two set.Using the ‘|’ operator between
+2. union(s) Method: Returns a union of two set.Using the ‘|’ operator between
 #2 sets is the same as writing set1.union(set2)
 people = {"Jay", "Idrish", "Archil"}
 vampires = {"Karan", "Arjun"}
@@ -53,19 +48,19 @@ OR
 population = people|vampires
 #Set population set will have components of both people and vampire
 
-#3. intersect(s) Method: Returns an intersection of two sets.The ‘&’ 
+3. intersect(s) Method: Returns an intersection of two sets.The ‘&’ 
 #operator comes can also be used in this case.
 victims = people.intersection(vampires)
 -> Set victims will contain the common element of people and vampire
 
-#4. difference(s) Method: Returns a set containing all the elements of invoking
+4. difference(s) Method: Returns a set containing all the elements of invoking
 # set but not of the second set. We can use ‘-‘ operator here.
 safe = people.difference(vampires)
 OR
 safe = people – vampires
 #-> Set safe  will have all the elements that are in people but not vampire
 
-#4.5. clear() Method: Empties the whole set.
+5. clear() Method: Empties the whole set.
 victims.clear()
 -> Clears victim set
 However there are two major pitfalls in Python sets:
@@ -91,6 +86,3 @@ symmetric_difference()	Returns a set with the symmetric differences of two sets
 symmetric_difference_update()	inserts the symmetric differences from this set and another
 union()	Return a set containing the union of sets
 update()	Update the set with the union of this set and others
-
-
-
