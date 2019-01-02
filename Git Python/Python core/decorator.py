@@ -11,46 +11,82 @@
 #Functions can be passed as arguments to another function.
 #If you have used functions like map, filter and reduce in Python, then you already know about this.
 #Such function that take other functions as arguments are also called higher order functions. Here is an example of such a function.
-
+=====================================
 def first(msg):
     print(msg)
-
 first("Hello")
 second = first
 second("Hello")
-
 #Hello
 #Hello
 =============================
 def add1(a):
   return 1+a
-
 def add2(a):
   return 2+a
-
 def abc(func,a):
   result = func(a)
   print(result)
-
 abc(add1,5)
 abc(add2,6)
 #6
 #8
 ==============================
+def a1(a):
+    return a+1
+def a2(a):
+    return  a+2
+def abc(func,a):
+    result = func(a)
+    print(result)
+obj = abc(a1,5)
+#6
+=============================
 def make_pretty(func):
     def inner():
         print("I got decorated")
         func()
     return inner
-
 def ordinary():
     print("I am ordinary")
-
 pretty = make_pretty(ordinary)
 pretty()
-
 #I got decorated
 #I am ordinary
+===================================
+def outer():
+    print("in outer")
+    def inner():
+        print("in inner")
+        def inner1():
+            print("inner1")
+obj = outer()
+#in outer
+=================================
+def outer(func):
+    print("in outer")
+    def inner():
+        print("in inner")
+        func()
+    return inner
+def outer1():
+    print("outer 1")
+obj1 = outer(outer1)
+obj1()
+#in outer
+#in inner
+#outer 1
+===============================
+def outer(func):
+    print("in outer")
+    def inner():
+        print("in inner")
+        func()
+    return inner
+def outer1():
+    print("outer 1")
+obj1 = outer(outer1)
+#in outer
 ===================================
 def outer(abc):
     def inner():
@@ -62,7 +98,6 @@ def outer1():
     print("in outer1 function")
 obj = outer(outer1)
 obj()
-
 #inner function
 #in outer1 function
 #abc function
@@ -74,17 +109,14 @@ def decorator(sum,sub,mul):
         print("operation :",sub(i,j))
         print("operation :",mul(i,j))
     return inner
-
 def sum1(i,j):
     return i+j
 def sub1(i,j):
     return i-j
 def mul1(i,j):
     return i*j
-
 obj = decorator(sum1,sub1,mul1)
 obj(10,20)
-
 #before operation
 operation : 30
 operation : -10
@@ -98,13 +130,10 @@ def outer(abc):
         abc()
         print("again in abc")
     return inner
-
 @outer
 def outer1():
     print("in outer1 function")
-
 outer1()
-
 #in inner function
 #in outer1 function
 #in abc 
@@ -147,7 +176,6 @@ def outer2():
     print("in outer2 function")
 obj = outer(outer1,outer2)
 obj()
-
 #inner function
 #in outer2 function
 #abcd function
@@ -204,7 +232,6 @@ def add_num_decorate(abc):
         print("sum = ",abc(i,j))
         print("after adding")
     return add_num1
-
 @add_num_decorate
 def add_num2(i,j):
     return i+j
@@ -226,7 +253,27 @@ def add_num_decorate(abc):
         print("sum = ",abc(i,j))
         print("after adding")
     return add_num1
-
+def add_num2(i,j):
+    return i+j
+def add_num3(i,j):
+    return i+j
+obj1 = add_num_decorate(add_num2)
+obj2 = add_num_decorate(add_num3)
+obj1(10,15)
+obj2(10,10)
+#before adding
+#sum =  25
+#after adding
+#before adding
+#sum =  20
+#after adding
+==============================
+def add_num_decorate(abc):
+    def add_num1(i,j):
+        print("before adding")
+        print("sum = ",abc(i,j))
+        print("after adding")
+    return add_num1
 @add_num_decorate
 def add_num2(i,j):
     return i+j
@@ -235,6 +282,36 @@ add_num2(10,10)
 #sum =  20
 #after adding
 ============================
+def add_num_decorate(abc):
+    def add_num1(i,j):
+        print("before adding")
+        print("sum = ",abc(i,j))
+        print("after adding")
+    return add_num1
+@add_num_decorate
+def add_num2(i,j):
+    return i+j
+def add_num3(i,j):
+    return i*j
+add_num2(10,10)
+#before adding
+#sum =  20
+#after adding
+==========================
+def add_num_decorate(abc):
+    def add_num1(i,j):
+        print("before adding")
+        print("sum = ",abc(i,j))
+        print("after adding")
+    return add_num1
+@add_num_decorate
+def add_num2(i,j):
+    return i+j
+def add_num2(i,j):
+    return i*j
+add_num2(10,10)
+#no output
+==============================
 def outer(abc,abcd,abcde):
     def inner():
         print("inner function")
@@ -266,6 +343,19 @@ obj()
 #in outer1 function
 #after inner None
 =============================
+def outer(abcd):
+    def inner():
+        print("inner function")
+        print(abcd(),"jkghdfjh")
+    return inner
+def outer1():
+    print("in outer1 function")
+obj = outer(outer1)
+obj()
+#inner function
+#in outer1 function
+#None jkghdfjh
+=============================
 def outer(abc):
     def inner():
         print("inner function",abc())
@@ -278,15 +368,12 @@ def outer(abc):
 def outer1():
     print("outer1 function")
 outer1()
-
-
 #outer1 function
 #inner function None
 #outer1 function
 #abc function 00 
 #outer1 function
 #abc function 01
-
 ===========================
 def outer(abc):
     def inner():
@@ -327,15 +414,12 @@ def outer(abc):
         abc()
         abc()
     return  inner
-
 #file name : learning1.py
-
 from learning import outer
 @outer
 def outer1():
     print("outer1 function")
 outer1()
-
 #inner function
 #outer1 function
 #outer1 function
@@ -487,7 +571,6 @@ def add_num_decorate(abc):
         print("sum = ",abc(i,j))
         print("after operation")
     return add_num1
-
 @add_num_decorate
 def add_num2(i,j):
     return i+j
@@ -496,7 +579,6 @@ def add_num3(i,j):
     return i*j
 add_num2(10,15)
 add_num3(10,10)
-
 #before operation
 #sum =  25
 #after operation
@@ -522,7 +604,6 @@ def outer3():
     print("in outer2 function")
 obj = outer(outer1,outer2,outer3)
 obj()
-
 #inner function
 #in outer2 function
 #abcd function
@@ -549,7 +630,6 @@ def outer2():
     print("in outer3 function")
 obj = outer(outer1,outer2,outer2)
 obj()
-
 #inner function
 #in outer3 function
 #abcd function
@@ -576,5 +656,4 @@ inner01("anuj")  #any argument
 #%%%%%%%%%%
 #Here we go :
 #^^^^^^^^^^^^^^^
-
 ===========================================
