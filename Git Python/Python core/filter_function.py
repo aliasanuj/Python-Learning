@@ -1,21 +1,26 @@
 #filter_function.py
 ========================
-#The filter() method constructs an iterator from elements of an iterable for which a function returns true.
-#In simple words, the filter() method filters the given iterable with the help of a function 
-#that tests each element in the iterable to be true or not.
-#The syntax of filter() method is:
-#filter(function, iterable)
-#filter() Parameters
-#The filter() method takes two parameters:
-#function - function that tests if elements of an iterable returns true or false
-#If None, the function defaults to Identity function - which returns false if any elements are false
-#iterable - iterable which is to be filtered, could be sets, lists, tuples, or containers of any iterators
+1. The filter() method constructs an iterator from elements of an iterable for which a function returns true.
+2. In simple words, the filter() method filters the given iterable with the help of a function 
+that tests each element in the iterable to be true or not.
+3. The syntax of filter() method is:
+filter(function, iterable)
+filter() Parameters
+4. The filter() method takes two parameters:
+function - function that tests if elements of an iterable returns true or false
+5. If None, the function defaults to Identity function - which returns false if any elements are false
+iterable - iterable which is to be filtered, could be sets, lists, tuples, or containers of any iterators
 ========================
 number_list = range(-5, 5)
 less_than_zero = list(filter(lambda x: x < 0, number_list))
 print(less_than_zero)
 #[-5, -4, -3, -2, -1]
 ===========================
+number_list = range(-5, 5)
+less_than_zero = list(map(lambda x: x < 0, number_list))
+print(less_than_zero)
+#[True, True, True, True, True, False, False, False, False, False]
+================================
 number_list = range(-5, 5)
 less_than_zero = tuple(filter(lambda x: x < 0, number_list))
 print(less_than_zero)
@@ -73,3 +78,5 @@ result = map(lambda x : x>5,list1)
 print(list(result))
 #[False, False, False, True, False, False, True, True, True]
 ==============================
+
+
