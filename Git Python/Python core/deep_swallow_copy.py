@@ -1,16 +1,16 @@
 #deep_swallowcopy.py
 ===============================
-#Copy --> Python defines a module which allows to deep copy or shallow copy mutable objkect using inbuilt functions present in the module copy.
-#Assignment ststements in python do not copy objects, they create bindings between a target and an object. For collections that are
-#mutable or contain mutable items,a copy is sometimes needed so one can change one copy without changing the color.
+Copy --> Python defines a module which allows to deep copy or shallow copy mutable objkect using inbuilt functions present in the module copy.
+Assignment ststements in python do not copy objects, they create bindings between a target and an object. For collections that are
+mutable or contain mutable items,a copy is sometimes needed so one can change one copy without changing the color.
 
-#Deep Copy --> In case of deep copy, an object is copied in another object. It means any change made to copy of object,
-#do not reflect in the original object. In python it is implemented using "deep copy()" function.
-#We need to import copy 
+Deep Copy --> In case of deep copy, an object is copied in another object. It means any change made to copy of object,
+do not reflect in the original object. In python it is implemented using "deep copy()" function.
+We need to import copy 
 
-#shallow copy --> 	In this, references of object is copied in other object. 
-#It means that any change made to a copy of object do reflect in the original object.
-#In python, it is implemented by "copy()" function.
+shallow copy --> 	In this, references of object is copied in other object. 
+It means that any change made to a copy of object do reflect in the original object.
+In python, it is implemented by "copy()" function.
 ========================================================
 import copy 
 li1 = [1, 2, [3,5], 4] 
