@@ -25,7 +25,6 @@ number_list = range(-5, 5)
 less_than_zero = tuple(filter(lambda x: x < 0, number_list))
 print(less_than_zero)
 #(-5, -4, -3, -2, -1)
-
 ==========================
 def fun(variable): 
     letters = ['a', 'e', 'i', 'o', 'u'] 
@@ -41,6 +40,21 @@ for s in filtered:
 #e
 #e
 ==========================
+user = str(input("Enter any alphabet : "))
+list1 = []
+list2 = []
+for i in user:
+    list1.append(i)
+print(list1)
+
+def abc(list1):
+    vowel = ["a","e","i","o","u"]
+    for i in vowel:
+        if i in list1:
+            list2.append(i)
+    print("the vowel is ",list2)
+abc(list1)
+=============================
 seq = [0, 1, 2, 3, 5, 8, 13] 
 result = filter(lambda x: x % 2, seq) 
 print(list(result)) 
@@ -78,5 +92,3 @@ result = map(lambda x : x>5,list1)
 print(list(result))
 #[False, False, False, True, False, False, True, True, True]
 ==============================
-
-
