@@ -1,27 +1,29 @@
 #reduce_function.py
 ==========================
-#It is used to apply a particular function passed in its argument to all of the list elements mentioned in the sequenced passed along.
-#This is defined in functools module
-#filter(function,iterator)
-#Reduce() | Accumulate()
-#Both reduce and accumulate can be used to calculate the summation od a sequence.
-#But there are some difference in the implementation aspects in both of these.
-#reduce() --> defined in functools
-#Accumuate() --> defined in accumulate
-#Reduce() --> store the intermediate result and only returns the final summation value.
-#Accumulate() returns a list containing the intermediate result. The last number of the list is returned is summation value of the list.
-#Reduce --> Reduce(function,sequence)
-#Accumulate --> Accumulate(sequence,function)
-==============================================
+1. It is used to apply a particular function passed in its argument to all of the list elements mentioned in the sequenced passed along.
+2. This is defined in functools module
+filter(function,iterator)
+Reduce() | Accumulate()
+3. Both reduce and accumulate can be used to calculate the summation od a sequence.
+4. But there are some difference in the implementation aspects in both of these.
+reduce() --> defined in functools
+Accumuate() --> defined in accumulate
+5. Reduce() --> store the intermediate result and only returns the final summation value.
+Accumulate() returns a list containing the intermediate result. The last number of the list is returned is summation value of the list.
+6. Reduce --> Reduce(function,sequence)
+Accumulate --> Accumulate(sequence,function)
+7. filter(function, iterable)
+map(function,iterable)
 #Reduce --> 
 import functools
 functools.reduce(function,iterator)
 functools.reduce(lambda x:x+x,list1)
-
-#Accumulate -->
+=======================================
 import itertools
-itertools.accumulate(list1,lambdax : x+x)
-
+list1 = [1,5,4,7,9,6,3,5,8]
+aa = list(itertools.accumulate(list1,lambda x ,y: x+y))
+print(aa)
+#[1, 6, 10, 17, 26, 32, 35, 40, 48]
 ==============================================
 list1 = [1,2,3,4,5,6]
 def add(x):
@@ -133,17 +135,16 @@ print(result)
 #1
 ========================
 list1 = [1,2,3,6,4,7]
-
-#Reduce --> 
 import functools
 #functools.reduce(function,iterator)
 x=functools.reduce(lambda x,y:x+y,list1)
 print(x)
 #23
-
+==========================
 #Accumulate -->
+list1 = [1,2,3,6,4,7]
 import itertools
 y = itertools.accumulate(list1,lambda x,y : x+y)
 print(list(y))
 #[1, 3, 6, 12, 16, 23]
-
+====================================
