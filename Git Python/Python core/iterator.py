@@ -1,13 +1,13 @@
 #iterator.py
 =======================
-#iterator
-===================
-#Iterators are objects that can be iterated upon.
-#Technically speaking, Python iterator object must implement two special methods,
-# __iter__() and __next__(), collectively called the iterator protocol.
-#An iterator is an object that contains a countable number of values.
-#Lists, tuples, dictionaries, and sets are all iterable objects. They are iterable containers which you can get an iterator from.
-#All these objects have a iter() method which is used to get an iterator:
+=======================
+=======================
+1. Iterators are objects that can be iterated upon.
+2. Technically speaking, Python iterator object must implement two special methods,
+3.  __iter__() and __next__(), collectively called the iterator protocol.
+4. An iterator is an object that contains a countable number of values.
+5. Lists, tuples, dictionaries, and sets are all iterable objects. They are iterable containers which you can get an iterator from.
+6. All these objects have a iter() method which is used to get an iterator:
 =====================
 my_list = [4, 7, 0, 3]
 my_iter = iter(my_list)
@@ -16,7 +16,6 @@ print(next(my_iter))
 print(my_iter.__next__())
 print(my_iter.__next__())
 next(my_iter)
-
 #4
 #7
 #0
@@ -25,7 +24,6 @@ Traceback (most recent call last):
   File "python", line 7, in <module>
 StopIteration
 ====================================
-
 list1 = [1,2,3,4]
 a = iter(list1)
 print(next(a))
@@ -133,19 +131,16 @@ for i in d:
 #geeks
 #for
 #geeks
-
 #Tuple Iteration
 #geeks
 #for
 #geeks
-
 #String Iteration
 #G
 #e
 #e
 #k
 #s
-
 #Dictionary Iteration
 #xyz  123
 #abc  345
@@ -178,16 +173,9 @@ d = dict()
 d[0]="anuj"
 d[1]="bhanu"
 d[2]="aman"
-
 for i in d:
     print(i,d[i])
-    
 #0 anuj
 #1 bhanu
 #2 aman
 =============================
-
-
-
-
-
