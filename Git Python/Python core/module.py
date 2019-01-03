@@ -1,9 +1,10 @@
 #module 
 =====================
+=====================
 
-=================================
+=========================================================
 Modules used #https://docs.python.org/3/py-modindex.html
-=================================
+=========================================================
 1. From collections import counter
 2. import threading 
 3. import copy 
@@ -29,22 +30,3 @@ Modules used #https://docs.python.org/3/py-modindex.html
 23.import 	time ==>  Time access and conversions.
 24.import tkinter ==> Interface to Tcl/Tk for graphical user interfaces
 25.import xml ==> Package containing XML processing modules
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
