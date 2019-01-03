@@ -223,7 +223,7 @@ print(re.sub('ub', '~*' , 'Subject has Uber booked already', flags = re.IGNORECA
 # Consider the Case Senstivity, 'Ub' in "Uber", will not be reaplced. 
 print(re.sub('ub', '~*' , 'Subject has Uber booked already')) 
 # As count has been given value 1, the maximum times replacement occurs is 1 
-print(re.sub('ub', '~*' , 'Subject has Uber booked already', count=1, flags = re.IGNORECASE)) 
+print(re.sub('ub', '~*' , 'Subject has Uber booked already', count=1, flags = re.IGNORECASE))  
 # 'r' before the patter denotes RE, \s is for start and end of a String. 
 print(re.sub(r'\sAND\s', ' & ', 'Baked Beans And Spam', flags=re.IGNORECASE)) 
 #S~*ject has ~*er booked already
