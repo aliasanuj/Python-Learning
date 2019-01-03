@@ -21,5 +21,5 @@ code than do custom iterator.
 itertools vs functools
 ====================================
 ====================================
-import itertools -- itertools.accumulate -- return list
-import functools -- functools.reduce -- return singleton value (not list)
+import itertools -----> itertools.accumulate -- return list
+import functools -----> functools.reduce -- return singleton value (not list)
