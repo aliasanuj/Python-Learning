@@ -1,7 +1,9 @@
 Differences :
+  
 ========================
 ========================
 Generator vs iterator :
+========================
 ========================
 1. In creating a python generator, we use a function. But in creating an iterator in python, we use the iter() and next() functions.
 2. A generator in python makes use of the ‘yield’ keyword. A python iterator doesn’t.
@@ -15,3 +17,9 @@ iter() and next() functions.
 code than do custom iterator.
 
 ====================================
+====================================
+itertools vs functools
+====================================
+====================================
+import itertools --> itertools.accumulate --> return list
+import functools --> functools.reduce --> return singleton value (not list)
