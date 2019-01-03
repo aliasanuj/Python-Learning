@@ -37,7 +37,6 @@ print("x.__next__()")
 print(obj.__next__())
 print(obj.__next__())
 print(obj.__next__()) #error -> StopIteration
-
 #by objevt creation
 #7
 #6
@@ -56,7 +55,6 @@ print(obj.__next__()) #error -> StopIteration
 Traceback (most recent call last):
   File "python", line 20, in <module>
 StopIteration
-
 =============================
 def my_gen():
     n = 1
@@ -77,6 +75,26 @@ next(a)
 #This is printed second
 #This is printed at last
 =======================
+def my_gen():
+    n = 1
+    print('This is printed first')
+    # Generator function contains yield statements
+    yield n
+    n += 1
+    print('This is printed second')
+    yield n
+    n += 1
+    print('This is printed at last')
+    yield n
+for i in my_gen():
+    print(i)
+#This is printed first
+#1
+#This is printed second
+#2
+#This is printed at last
+#3
+========================
 def simpleGeneratorFun():
     yield 1
     yield 2
@@ -250,6 +268,42 @@ next(a)
 #2
 #This is printed at last
 ===============================================
+def my_gen():
+    n = 1
+    print('This is printed first')
+    # Generator function contains yield statements
+    yield n
+    n += 1
+    print('This is printed second')
+    yield n
+    n += 1
+    print('This is printed at last')
+    yield n
+a = my_gen()
+next(a)
+next(a)
+#This is printed first
+#This is printed second
+=======================================
+def my_gen():
+    n = 1
+    print('This is printed first')
+    # Generator function contains yield statements
+    yield n
+    n += 1
+    print('This is printed second')
+    yield n
+    n += 1
+    print('This is printed at last')
+    yield n
+a = my_gen()
+print(next(a))
+print(next(a))
+#This is printed first
+#1
+#This is printed second
+#2
+======================================
 def simpleGeneratorFun():
     yield 1
     yield 2
@@ -285,7 +339,6 @@ a = my_gen()
 next(a)
 next(a)
 next(a)
-
 #1
 #2
 #3
@@ -309,5 +362,3 @@ whenever we are using object, we need to  apply "next" keyword.
 print(next(x));  # In Python 3, __next__()
 print(x.__next__());  # In Python 3, __next__()
 #x is object
-
-
