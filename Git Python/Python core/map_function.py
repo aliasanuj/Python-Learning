@@ -19,6 +19,7 @@ def map1(n):
 numbers = (1,2,3,4,5,6)
 result = map(map1,numbers)
 print(tuple(result))
+#(1, 2, 3, 4, 5, 6)
 ========================
 def map1(n):
     return n
@@ -160,8 +161,6 @@ result = map(calculateSquare, numbers)
 a = result
 print(set(a))
 print(list(a))
-
 #{16, 1, 4, 9}
 #[]
-
 ======================================
