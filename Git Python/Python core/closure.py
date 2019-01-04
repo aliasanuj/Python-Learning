@@ -1,12 +1,12 @@
 #closure.py
 =====================
-#Before getting into what a closure is, we have to first understand what a nested function and nonlocal variable is.
-#A function defined inside another function is called a nested function. 
-#Nested functions can access variables of the enclosing scope.
-#In Python, these non-local variables are read only by default and 
-#we must declare them explicitly as non-local (using nonlocal keyword) in order to modify them
-#A Closure is a function object that remembers values in enclosing scopes even if they are not present in memory. 
-# base concept of decorator is closure
+1. Before getting into what a closure is, we have to first understand what a nested function and nonlocal variable is.
+2. A function defined inside another function is called a nested function. 
+3. Nested functions can access variables of the enclosing scope.
+4. In Python, these non-local variables are read only by default and 
+5. we must declare them explicitly as non-local (using nonlocal keyword) in order to modify them
+6. A Closure is a function object that remembers values in enclosing scopes even if they are not present in memory. 
+base concept of decorator is closure
 ======================================
 def gen_multiplier(x):
     def multiplier(y):
@@ -38,9 +38,9 @@ del gen_multiplier #it will delete
 print(obj(5))
 #500
 ===========================
-#nested-function
-#nested function should access non-local variable
-#it should return the en-closed function
+nested-function
+nested function should access non-local variable
+it should return the en-closed function
 =====================================
 def print_msg(msg):
 # This is the outer enclosing function
@@ -69,12 +69,10 @@ def print_msg(msg):
 # We execute the function
 # Output: Hello
 print_msg("Hello")
-
 #Hello
 #We can see that the nested function printer() was able to access the non-local variable msg of the enclosing function.
 =================================
 #Defining a Closure Function
-
 def print_msg(msg):
 # This is the outer enclosing function
 
@@ -83,12 +81,10 @@ def print_msg(msg):
         print(msg)
 
     return printer  # this got changed
-
 # Now let's try calling this function.
 # Output: Hello
 another = print_msg("Hello")
 another()
-
 #The print_msg() function was called with the string "Hello" 
 #and the returned function was bound to the name another.
 #On calling another(), the message was still remembered although 
