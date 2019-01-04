@@ -1,38 +1,30 @@
 #zip.py
-
+===================================
+===================================
 Basically, .zip is a container itself. It holds the real file inside. 
 Similarly, Python zip is a container that holds real data inside. 
 Python zip function takes iterable elements as input, and returns iterator.
 ======================================
-name = [ "Manjeet", "Nikhil", "Shambhavi"] 
-roll_no = [ 4, 1, 3, 2 ] 
-marks = [ 40, 50, 60, 70 ] 
-mapped = zip(name, roll_no, marks) 
-
-#print(list(mapped))
-#[('Manjeet', 4, 40), ('Nikhil', 1, 50), ('Shambhavi', 3, 60), ('Astha', 2, 70)]
-
-#print(set(mapped)) 
-#{('Astha', 2, 70), ('Nikhil', 1, 50), ('Manjeet', 4, 40), ('Shambhavi', 3, 60)}
-
-print(tuple(mapped)) 
-#(('Manjeet', 4, 40), ('Nikhil', 1, 50), ('Shambhavi', 3, 60), ('Astha', 2, 70))
-
-=-=========================================
-name = [ "Manjeet", "Nikhil", "Shambhavi"] 
-roll_no = [ 4, 1, 3, 2 ] 
-marks = [ 40, 50, 60, 70 ] 
-mapped = zip(name, roll_no, marks) 
-
-#print(list(mapped))
+name = [ "Manjeet", "Nikhil", "Shambhavi"]
+roll_no = [ 4, 1, 3, 2 ]
+marks = [ 40, 50, 60, 70 ]
+mapped = zip(name, roll_no, marks)
+print(list(mapped))
 #[('Manjeet', 4, 40), ('Nikhil', 1, 50), ('Shambhavi', 3, 60)]
-
-#print(set(mapped)) 
+=========================================
+name = [ "Manjeet", "Nikhil", "Shambhavi"]
+roll_no = [ 4, 1, 3, 2 ]
+marks = [ 40, 50, 60, 70 ]
+mapped = zip(name, roll_no, marks)
+print(set(mapped))
 #{('Manjeet', 4, 40), ('Shambhavi', 3, 60), ('Nikhil', 1, 50)}
-
-#print(tuple(mapped)) 
+========================================
+name = [ "Manjeet", "Nikhil", "Shambhavi"]
+roll_no = [ 4, 1, 3, 2 ]
+marks = [ 40, 50, 60, 70 ]
+mapped = zip(name, roll_no, marks)
+print(tuple(mapped))
 #(('Manjeet', 4, 40), ('Nikhil', 1, 50), ('Shambhavi', 3, 60))
-
 ====================================================
 name = [ "Manjeet", "Nikhil", "Shambhavi", "Astha" ] 
 roll_no = [ 4, 1, 3, 2 ] 
@@ -47,7 +39,6 @@ print (mapped)
 #The zipped result is : {('Shambhavi', 3, 60), ('Astha', 2, 70),
 #('Manjeet', 4, 40), ('Nikhil', 1, 50)}
 ======================================
-
 name = [ "Manjeet", "Nikhil", "Shambhavi", "Astha" ] 
 roll_no = [ 4, 1, 3, 2 ] 
 marks = [ 40, 50, 60, 70 ] 
@@ -128,4 +119,4 @@ print('The first list was ', list(a));
 print('The second list was ', list(b));	
 #The first list was  ['Alpha', 'Beta', 'Gamma', 'Sigma']
 #The second list was  ['one', 'two', 'three', 'six']	
-==============================================================
+=============================================================
