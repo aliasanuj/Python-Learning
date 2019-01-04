@@ -153,6 +153,52 @@ re string
 https://www.tutorialspoint.com/python/python_reg_expressions.htm
 https://www.analyticsvidhya.com/blog/2015/06/regular-expression-python/
 ===============================
+re.compile()
+re.findall()
+
+import re 
+p = re.compile('\d') 
+print(p.findall("I went to him at 11 A.M. on 4th July 1886")) 
+p = re.compile('\d+') 
+print(p.findall("I went to him at 11 A.M. on 4th July 1886")) 
+#['1', '1', '4', '1', '8', '8', '6']
+#['11', '4', '1886']
+================================
+re.split()
+
+from re import split 
+print(split('\W+', 'Words, words , Words')) 
+print(split('\W+', "Word's words Words"))  
+#['Words', 'words', 'Words']
+#['Word', 's', 'words', 'Words']
+=================================
+re.sub()
+
+import re 
+print(re.sub('ub', '~*' , 'Subject has Uber booked already', flags = re.IGNORECASE)) 
+print(re.sub('ub', '~*' , 'Subject has Uber booked already')) 
+#S~*ject has ~*er booked already
+#S~*ject has Uber booked already
+===================================
+re.subn()
+
+import re
+print(re.subn('ub', '~*' , 'Subject has Uber booked already'))
+print(re.subn('ub', '~*' , 'Subject has Uber booked already', flags = re.IGNORECASE))
+#('S~*ject has Uber booked already', 1)
+#('S~*ject has ~*er booked already', 2)
+==================================
+re.escape()
+
+import re 
+print(re.escape("This is Awseome even 1 AM")) 
+print(re.escape("I Asked what is this [a-9], he said \t ^WoW")) 
+#This\ is\ Awseome\ even\ 1\ AM
+#I\ Asked\ what\ is\ this\ \[a\-9\]\,\ he\ said\ \	\ \^WoW
+==================================
+regex = r"([a-zA-Z]+) (\d+)"
+match = re.search(regex, "I was born on June 24") 
+
 import re 
 p = re.compile('[a-e]') 
 print(p.findall("Aye, said Mr. Gibenson Stark"))
