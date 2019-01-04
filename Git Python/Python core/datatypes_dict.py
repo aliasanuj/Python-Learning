@@ -1,21 +1,20 @@
 #datatypes_dict.py
-
-#Python dictionary is an unordered collection of items. While other compound data types have only value as an element,
-#a dictionary has a key: value pair.
-#Dictionaries are optimized to retrieve values when the key is known.
-#While values can be of any data type and can repeat, keys must be of immutable type (string, number or tuple with immutable elements)
-#and must be unique.
-#While indexing is used with other container types to access values, dictionary uses keys. Key can be used either inside square 
-#brackets or with the get() method.
-#The difference while using get() is that it returns None instead of KeyError, if the key is not found.
-#Dictionary are mutable. We can add new items or change the value of existing items using assignment operator.
-#If the key is already present, value gets updated, else a new key: value pair is added to the dictionary.
-#We can remove a particular item in a dictionary by using the method pop(). This method removes as item with the provided key and 
-#returns the value.
-#The method, popitem() can be used to remove and return an arbitrary item (key, value) form the dictionary. All the items 
-#can be removed at once using the clear() method.
-#We can also use the del keyword to remove individual items or the entire dictionary itself.
-
+================================
+1. Python dictionary is an unordered collection of items. While other compound data types have only value as an element,
+a dictionary has a key: value pair.
+2. Dictionaries are optimized to retrieve values when the key is known.
+3. While values can be of any data type and can repeat, keys must be of immutable type (string, number or tuple with immutable elements)
+and must be unique.
+4. While indexing is used with other container types to access values, dictionary uses keys. Key can be used either inside square 
+brackets or with the get() method.
+5. The difference while using get() is that it returns None instead of KeyError, if the key is not found.
+6. Dictionary are mutable. We can add new items or change the value of existing items using assignment operator.
+7. If the key is already present, value gets updated, else a new key: value pair is added to the dictionary.
+8. We can remove a particular item in a dictionary by using the method pop(). This method removes as item with the provided key and 
+returns the value.
+9. The method, popitem() can be used to remove and return an arbitrary item (key, value) form the dictionary. All the items 
+can be removed at once using the clear() method.
+10. We can also use the del keyword to remove individual items or the entire dictionary itself.
 ==========================================
 Method	Description
 ==========================================
@@ -30,7 +29,6 @@ popitem()	Removes the last inserted key-value pair
 setdefault()	Returns the value of the specified key. If the key does not exist: insert the key, with the specified value
 update()	Updates the dictionary with the specified key-value pairs
 values()	Returns a list of all the values in the dictionary
-
 ===================================================
 Function	Description
 =======================================================
@@ -39,7 +37,6 @@ any()		Return True if any key of the dictionary is true. If the dictionary is em
 len()		Return the length (the number of items) in the dictionary.
 cmp()		Compares items of two dictionaries.
 sorted()	Return a new sorted list of keys in the dictionary.
-=======================================================
 ===========================================================
 Method	Description	Syntax
 ===========================================================
@@ -117,7 +114,6 @@ x = thisdict["model"]
 print(x)
 x = thisdict.get("anuj","not found")
 print(x)
-
 #{'brand': 'Ford', 'model': 'Mustang', 'year': 1964}
 #Mustang
 #not found
