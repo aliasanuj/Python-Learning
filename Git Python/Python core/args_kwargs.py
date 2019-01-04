@@ -1,14 +1,14 @@
 #args_kwargs.py
 ==================================
-#Args --> The special syntax "*" is function in python is used to pass variable number of arguments to a function.
-#It is used to pass non-keyworded variable-length argument list.
-#The syntax is used to symbol * to take in variable numbers of arguments,by convention it is often used with the word args.
-#* args allows us to do is take an in more aeguments than the number of formal of arguments that you previously defined.
-#with * args,any number of extra arguments can be tracked on to your current formal parameter.
+1. Args --> The special syntax "*" is function in python is used to pass variable number of arguments to a function.
+2. It is used to pass non-keyworded variable-length argument list.
+3. The syntax is used to symbol * to take in variable numbers of arguments,by convention it is often used with the word args.
+* args allows us to do is take an in more aeguments than the number of formal of arguments that you previously defined.
+with * args,any number of extra arguments can be tracked on to your current formal parameter.
 ================================
-#kwargs : The special syntax **kwargs in function definations in python is used to pass a keyword, variable-length argument list.
-#We use the name kwargs with double star. The reason is because the double star allow us to pass through keyword arguments(and any number)
-#A key word argument is where you provide a name to the variable as you pass into function.
+1. kwargs : The special syntax **kwargs in function definations in python is used to pass a keyword, variable-length argument list.
+2. We use the name kwargs with double star. The reason is because the double star allow us to pass through keyword arguments(and any number)
+3. A key word argument is where you provide a name to the variable as you pass into function.
 =======================================
 def abc(a, *b, **c):
     print("first argument is ",a)
@@ -18,10 +18,8 @@ def abc(a, *b, **c):
     for j in c.items():
         print(j)
 abc("anuj", "kumar", "dfvdf", one = "dbvfdfj", two="vknjd" , three="fklnhdf")
-
 #first argument is  anuj
 #kumar dfvdf 
-
 #('one', 'dbvfdfj')
 #('two', 'vknjd')
 #('three', 'fklnhdf')
@@ -35,10 +33,8 @@ def abc(a, *b, **c):
         print(j)
 list1 = ["ckvnd","dvjdf","bmngfjbn"]
 abc(list1, "kumar", "dfvdf", one = "dbvfdfj", two="vknjd" , three="fklnhdf")
-
 #first argument is  ['ckvnd', 'dvjdf', 'bmngfjbn']
 #kumar dfvdf 
-
 #('one', 'dbvfdfj')
 #('two', 'vknjd')
 #('three', 'fklnhdf')
@@ -357,5 +353,4 @@ abc(a="anuj",b="aman",c="anshu",d="chetan")
 #the second paameter is  b
 #the second paameter is  c
 #the second paameter is  d
-=============================================
-
+===========================================
