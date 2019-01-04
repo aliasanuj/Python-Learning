@@ -1,15 +1,13 @@
 #coroutine.py
 ==========================
-#coroutines : Couroutines are similar to generator but with few extramethods and slight change in how we use yield statement.
-#Generator produces data for iteration while coroutines can also consume data.
-#Execution of coroutine is similar to generator. When we call coroutine nothing happens.
-#It runs only in response to next() and send() methods.
-
-#Closing coroutine : Coroutine might run indefinately to close coroutine close() method is used.
-#When coroutine is close it generate GenerateExit exception which can be done in usual way.
-#If we try to send value after closing coroutine, it will raise StopIteration exception.
- 
-============================
+1. coroutines : Couroutines are similar to generator but with few extramethods and slight change in how we use yield statement.
+2. Generator produces data for iteration while coroutines can also consume data.
+3. Execution of coroutine is similar to generator. When we call coroutine nothing happens.
+4. It runs only in response to next() and send() methods.
+5. Closing coroutine : Coroutine might run indefinately to close coroutine close() method is used.
+6. When coroutine is close it generate GenerateExit exception which can be done in usual way.
+7. If we try to send value after closing coroutine, it will raise StopIteration exception.
+ ============================
 def name(prefix):
   print("searchimg prefix {} ".format(prefix))
   while True:
@@ -23,14 +21,12 @@ obj.send("Anuj anuj")
 obj.send("anuj kumar")
 obj.send("kumar anuj")
 obj.close()
-
 #searchimg prefix anuj 
 #anuj
 #Anuj anuj
 #anuj kumar
 #kumar anuj
 ==================================
-
 def print_name(prefix): 
     print("Searching prefix:{}".format(prefix)) 
     while True: 
@@ -136,8 +132,5 @@ obj1.__next__()
 obj1.send("kumar Anuj")
 obj1.send("anUj")
 obj1.close()
-
 #searching element anuj
 #stopped
-
-
