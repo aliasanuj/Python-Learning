@@ -1,13 +1,12 @@
 #__repr__ and __str__
 ============================
-
-#According to the official Python documentation, __repr__ is a built-in function 
-#used to compute the "official" string reputation of an object, while __str__ is a 
-#built-in function that computes the "informal" string representations of an object. 
-#So both __repr__ and __str__ are used to represent objects, but in different ways.
-#The best way to understand the difference between these two functions is to see them in action.
-
-
+============================
+According to the official Python documentation, __repr__ is a built-in function 
+used to compute the "official" string reputation of an object, while __str__ is a 
+built-in function that computes the "informal" string representations of an object. 
+So both __repr__ and __str__ are used to represent objects, but in different ways.
+The best way to understand the difference between these two functions is to see them in action.
+===========================
 >>>x=4
 >>>repr(x)
 '4'
@@ -18,38 +17,43 @@
 "'stringy'"
 >>>str(y)
 'stringy'
-
-#str() vs repr() in Python
-#str() and repr() both are used to get a string representation of object.
+============================
+str() vs repr() in Python
+str() and repr() both are used to get a string representation of object.
 Example of str():
 s = 'Hello, Geeks.'
 print str(s) 
 print str(2.0/11.0) 
-Copy CodeRun on IDE
-
 #Output:
 #Hello, Geeks.
 #0.181818181818
-
+==========================
 #Example of repr():
 s = 'Hello, Geeks.'
 print repr(s) 
 print repr(2.0/11.0) 
 Copy CodeRun on IDE
-
 #Output:
 #'Hello, Geeks.'
 #0.18181818181818182
-
-#str() is used for creating output for end user while repr() is mainly 
-#used for debugging and development. repr’s goal is to be unambiguous and 
-#str’s is to be readable. For example, if we suspect a float has a small 
-#rounding error, repr will show us while str may not.
-
-#object.__repr__(self): called by the repr() built-in function and by string 
-#conversions (reverse quotes) to compute the "official" string representation 
-#of an object.
-
-#object.__str__(self): called by the str() build-in function and by 
-#the print statement to compute the "informal" string representation 
-#of an object
+==========================
+1. str() is used for creating output for end user while repr() is mainly  
+used for debugging and development. repr’s goal is to be unambiguous and 
+str’s is to be readable. For example, if we suspect a float has a small 
+rounding error, repr will show us while str may not.
+2. object.__repr__(self): called by the repr() built-in function and by string 
+conversions (reverse quotes) to compute the "official" string representation 
+of an object.
+3. object.__str__(self): called by the str() build-in function and by 
+the print statement to compute the "informal" string representation 
+of an object
+==================================
+import datetime
+today = datetime.datetime.now()
+print(str(today))
+print(repr(today))
+#2019-01-04 10:58:07.298377
+#datetime.datetime(2019, 1, 4, 10, 58, 7, 298377)
+===================================
+__str__ and __repr__ are both methods for getting a string representation of an object.
+__str__ is supposed to be shorter and more user-friendly, while __repr__ is supposed to provide more detail.
