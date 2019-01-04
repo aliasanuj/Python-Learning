@@ -1,13 +1,13 @@
 #counters.py
 ========================
-#Counter --> It is container included in collection module.
-#Container are object which hold objects.
-#They provide a way to access the contained objects and iterable over them.
-#Counter can be zero or negative also.
-#Output --> Dict
-#From collections import counter
+1. Counter --> It is container included in collection module.
+2. Container are object which hold objects.
+3. They provide a way to access the contained objects and iterable over them.
+4. Counter can be zero or negative also.
+5. Output --> Dict
+6. From collections import counter
 ==========================
-#elements print(list(coun.elements())) 
+elements print(list(coun.elements())) 
 #Most common
 for i in coun.most_common(3): #upto 3 items
     print(i)
@@ -21,7 +21,6 @@ c = Counter(a)
 print(c)
 print(c.most_common(1))
 print(c.most_common(2))
-
 #Counter({9216: 2, 1936: 1, 2401: 1, 2916: 1, 4761: 1, 9604: 1, 9801: 1})
 #[(9216, 2)]
 #[(9216, 2), (1936, 1)]
@@ -32,7 +31,7 @@ col_count = Counter(z)
 print(col_count) 
 col = ['blue','red','yellow','green'] 
 for color in col: 
-    print (color, col_count[color]) 
+    print (color, col_count[color])  # [] square bracket
 #Counter({'blue': 3, 'red': 2, 'yellow': 1})
 #blue 3
 #red 2
@@ -45,7 +44,6 @@ col_count = Counter(z)
 print(col_count) 
 for color in col_count.items(): 
     print (color)
-    
 #Counter({'blue': 3, 'red': 2, 'yellow': 1})
 #('blue', 3)
 #('red', 2)
@@ -82,7 +80,6 @@ coun = Counter(a=1, b=2, c=3, d=120, e=1, f=219)
 # This prints 3 most frequent characters 
 for i in coun.most_common(3): 
     print(i) 
-
 #('f', 219)
 #3('d', 120)
 #('c', 3)
@@ -166,14 +163,10 @@ a = "kumar anuj"
 b = Counter(a)
 print(b)
 print(list(b.elements()))
-
-
 #Counter({'c': 3, 'b': 2, 'a': 1})
 #['a', 'b', 'b', 'c', 'c', 'c']
 #Counter({'u': 2, 'a': 2, 'k': 1, 'm': 1, 'r': 1, ' ': 1, 'n': 1, 'j': 1})
 #['k', 'u', 'u', 'm', 'a', 'a', 'r', ' ', 'n', 'j']
-
-
 ================================
 import collections
 c1 = collections.Counter(['a', 'b', 'c', 'a', 'b', 'b'])
@@ -207,7 +200,6 @@ print(c['bacon'])
 from collections import Counter
 c = Counter(['eggs', 'ham'])
 print(c['ham'])
-
 #1
 =============================================
 from collections import Counter 
@@ -273,4 +265,4 @@ for letter in 'abcdefgh':
 #f : 0
 #g : 0
 #h : 0
-=======================================================
+======================================================
