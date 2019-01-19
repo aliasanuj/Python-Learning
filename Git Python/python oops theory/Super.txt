@@ -1,7 +1,7 @@
 ===============================
 ==========super================
 ===============================
-super().__init__('Dog') --> super().__init("argument")
+super().__init__('Dog') --> super().__init__("argument")
 Mammal.__init__(self, 'Dog') --> baseclassName.__init__(self,"argument")
 
 
