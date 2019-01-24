@@ -1,68 +1,169 @@
-Function	Description
-============================
-abs()	Returns the absolute value of a number
-all()	Returns True if all items in an iterable object are true
-any()	Returns True if any item in an iterable object is true
-ascii()	Returns a readable version of an object. Replaces none-ascii characters with escape character
-bin()	Returns the binary version of a number
-bool()	Returns the boolean value of the specified object
-bytearray()	Returns an array of bytes
-bytes()	Returns a bytes object
-callable()	Returns True if the specified object is callable, otherwise False
-chr()	Returns a character from the specified Unicode code.
-classmethod()	Converts a method into a class method
-compile()	Returns the specified source as an object, ready to be executed
-complex()	Returns a complex number
-delattr()	Deletes the specified attribute (property or method) from the specified object
-dict()	Returns a dictionary (Array)
-dir()	Returns a list of the specified object's properties and methods
-divmod()	Returns the quotient and the remainder when argument1 is divided by argument2
-enumerate()	Takes a collection (e.g. a tuple) and returns it as an enumerate object
-eval()	Evaluates and executes an expression
-exec()	Executes the specified code (or object)
-filter()	Use a filter function to exclude items in an iterable object
-float()	Returns a floating point number
-format()	Formats a specified value
-frozenset()	Returns a frozenset object
-getattr()	Returns the value of the specified attribute (property or method)
-globals()	Returns the current global symbol table as a dictionary
-hasattr()	Returns True if the specified object has the specified attribute (property/method)
-hash()	Returns the hash value of a specified object
-help()	Executes the built-in help system
-hex()	Converts a number into a hexadecimal value
-id()	Returns the id of an object
-input()	Allowing user input
-int()	Returns an integer number
-isinstance()	Returns True if a specified object is an instance of a specified object
-issubclass()	Returns True if a specified class is a subclass of a specified object
-iter()	Returns an iterator object
-len()	Returns the length of an object
-list()	Returns a list
-locals()	Returns an updated dictionary of the current local symbol table
-map()	Returns the specified iterator with the specified function applied to each item
-max()	Returns the largest item in an iterable
-memoryview()	Returns a memory view object
-min()	Returns the smallest item in an iterable
-next()	Returns the next item in an iterable
-object()	Returns a new object
-oct()	Converts a number into an octal
-open()	Opens a file and returns a file object
-ord()	Convert an integer representing the Unicode of the specified character
-pow()	Returns the value of x to the power of y
-print()	Prints to the standard output device
-property()	Gets, sets, deletes a property
-range()	Returns a sequence of numbers, starting from 0 and increments by 1 (by default)
-repr()	Returns a readable version of an object
-reversed()	Returns a reversed iterator
-round()	Rounds a numbers
-set()	Returns a new set object
-setattr()	Sets an attribute (property/method) of an object
-slice()	Returns a slice object
-sorted()	Returns a sorted list
-@staticmethod()	Converts a method into a static method
-str()	Returns a string object
-sum()	Sums the items of an iterator
-tuple()	Returns a tuple
-type()	Returns the type of an object
-vars()	Returns the __dict__ property of an object
-zip()	Returns an iterator, from two or more iterators
+Python abs()
+The abs() method returns the absolute value of the given number. If the number is a complex number, abs() returns its magnitude.
+# random integer
+integer = -20
+print('Absolute value of -20 is:', abs(integer))
+#random floating number
+floating = -30.33
+print('Absolute value of -30.33 is:', abs(floating))
+Absolute value of -20 is: 20
+Absolute value of -30.33 is: 30.33
+===================================
+Python any()
+The any() method returns True if any element of an iterable is True. If not, any() returns False.
+==================================
+Python all()
+The all() method returns True when all elements in the given iterable are true. If not, it returns False.
+================================
+Python ascii()
+The ascii() method returns a string containing a printable representation of an object. It escapes the non-ASCII characters in the string using \x, \u or \U escapes.
+normalText = 'Python is interesting'
+print(ascii(normalText))
+otherText = 'Pythön is interesting'
+print(ascii(otherText))
+print('Pyth\xf6n is interesting')
+'Python is interesting'
+'Pyth\xf6n is interesting'
+Pythön is interesting
+===========================
+Python bin()
+The bin() method converts and returns the binary equivalent string of a given integer. If the parameter isn't an integer, it has to implement __index__() method to return an integer.
+number = 5
+print('The binary equivalent of 5 is:', bin(number))
+The binary equivalent of 5 is: 0b101
+==========================
+Python bool()
+The bool() method converts a value to Boolean (True or False) using the standard truth testing procedure.
+==============================
+Python bytearray()
+The bytearray() method returns a bytearray object which is an array of the given bytes.
+bytearray() Parameters
+The bytearray() takes three optional parameters:
+
+source (Optional) - source to initialize the array of bytes.
+encoding (Optional) - if source is a string, the encoding of the string.
+errors (Optional) - if source is a string, the action to take when the encoding conversion fails (Read more: String encoding)
+
+string = "Python is interesting."
+# string with encoding 'utf-8'
+arr = bytearray(string, 'utf-8')
+print(arr)
+bytearray(b'Python is interesting.')
+==============================
+Python callable()
+The callable() method returns True if the object passed appears callable. If not, it returns False.
+x = 5
+print(callable(x))
+def testFunction():
+  print("Test")
+y = testFunction
+print(callable(y))
+False
+True
+==================================
+Python bytes()
+The bytes() method returns a immutable bytes object initialized with the given size and data
+string = "Python is interesting."
+# string with encoding 'utf-8'
+arr = bytes(string, 'utf-8')
+print(arr)
+b'Python is interesting.'
+====================================
+Python chr()
+The chrt() method returns a character (a string) from an integer (represents unicode code point of the character).
+print(chr(97))
+print(chr(65))
+print(chr(1200))
+a
+A
+Ұ
+====================================
+Python compile()
+The compile() method returns a Python code object from the source (normal string, a byte string, or an AST object).
+codeInString = 'a = 5\nb=6\nsum=a+b\nprint("sum =",sum)'
+codeObejct = compile(codeInString, 'sumstring', 'exec')
+exec(codeObejct)
+sum = 11
+=====================================
+Python classmethod()
+The classmethod() method returns a class method for the given function.
+class Person:
+    age = 25
+
+    def printAge(cls):
+        print('The age is:', cls.age)
+# create printAge class method
+Person.printAge = classmethod(Person.printAge)
+Person.printAge()
+Person().printAge()
+#The age is: 25
+#The age is: 25
+=========================================
+Python complex()
+The complex() method returns a complex number when real and imaginary parts are provided, or it converts a string to a complex number.
+z = complex(2, -3)
+print(z)
+z = complex(1)
+print(z)
+z = complex()
+print(z)
+z = complex('5-9j')
+print(z)
+(2-3j)
+(1+0j)
+0j
+(5-9j)
+========================================
+Python delattr()
+The delattr() deletes an attribute from the object (if the object allows it).
+class Coordinate:
+  x = 10
+  y = -5
+  z = 0
+point1 = Coordinate() 
+print('x = ',point1.x)
+print('y = ',point1.y)
+print('z = ',point1.z)
+delattr(Coordinate, 'z')
+print('--After deleting z attribute--')
+print('x = ',point1.x)
+print('y = ',point1.y)
+# Raises Error
+print('z = ',point1.z)
+x =  10
+y =  -5
+z =  0
+--After deleting z attribute--
+x =  10
+y =  -5
+Traceback (most recent call last):
+  File "python", line 19, in <module>
+AttributeError: 'Coordinate' object has no attribute 'z'
+=======================================
+Python dict()
+The dict() constructor creates a dictionary in Python.
+numbers = dict(x=5, y=0)
+print('numbers = ',numbers)
+print(type(numbers))
+empty = dict()
+print('empty = ',empty)
+print(type(empty))
+numbers =  {'x': 5, 'y': 0}
+<class 'dict'>
+empty =  {}
+<class 'dict'>
+=======================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
