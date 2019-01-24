@@ -1,4 +1,4 @@
-Python abs()
+1. Python abs()
 The abs() method returns the absolute value of the given number. If the number is a complex number, abs() returns its magnitude.
 # random integer
 integer = -20
@@ -9,13 +9,13 @@ print('Absolute value of -30.33 is:', abs(floating))
 Absolute value of -20 is: 20
 Absolute value of -30.33 is: 30.33
 ===================================
-Python any()
+2. Python any()
 The any() method returns True if any element of an iterable is True. If not, any() returns False.
 ==================================
-Python all()
+3. Python all()
 The all() method returns True when all elements in the given iterable are true. If not, it returns False.
 ================================
-Python ascii()
+4. Python ascii()
 The ascii() method returns a string containing a printable representation of an object. It escapes the non-ASCII characters in the string using \x, \u or \U escapes.
 normalText = 'Python is interesting'
 print(ascii(normalText))
@@ -26,16 +26,16 @@ print('Pyth\xf6n is interesting')
 'Pyth\xf6n is interesting'
 Pythön is interesting
 ===========================
-Python bin()
+5. Python bin()
 The bin() method converts and returns the binary equivalent string of a given integer. If the parameter isn't an integer, it has to implement __index__() method to return an integer.
 number = 5
 print('The binary equivalent of 5 is:', bin(number))
 The binary equivalent of 5 is: 0b101
 ==========================
-Python bool()
+6. Python bool()
 The bool() method converts a value to Boolean (True or False) using the standard truth testing procedure.
 ==============================
-Python bytearray()
+7. Python bytearray()
 The bytearray() method returns a bytearray object which is an array of the given bytes.
 bytearray() Parameters
 The bytearray() takes three optional parameters:
@@ -286,7 +286,21 @@ print('The empty frozen set is:', frozenset())
 The frozen set is: frozenset({'u', 'e', 'o', 'i', 'a'})
 The empty frozen set is: frozenset()
 ===============================================
-
+Python getattr()
+The getattr() method returns the value of the named attribute of an object. If not found, it returns the default value provided to the function.
+class Person:
+    age = 23
+    name = "Adam"
+person = Person()
+# when default value is provided
+print('The sex is:', getattr(person, 'sex', 'Male'))
+# when no default value is provided
+print('The sex is:', getattr(person, 'sex'))
+The sex is: Male
+AttributeError: 'Person' object has no attribute 'sex'
+==========================================
+Python globals()
+The globals() method returns the dictionary of the current global symbol table.
 
 
 
