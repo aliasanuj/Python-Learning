@@ -153,6 +153,167 @@ numbers =  {'x': 5, 'y': 0}
 empty =  {}
 <class 'dict'>
 =======================================
+Python dir()
+The dir() method tries to return a list of valid attributes of the object.
+number = "anuj"
+print(dir(number))
+#['__add__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__',
+# '__getattribute__', '__getitem__', '__getnewargs__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__',
+# '__le__', '__len__', '__lt__', '__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__',
+# '__rmod__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'capitalize', 'casefold', 'center',
+# 'count', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'format_map', 'index', 'isalnum', 'isalpha', 'isascii',
+# 'isdecimal', 'isdigit', 'isidentifier', 'islower', 'isnumeric', 'isprintable', 'isspace', 'istitle', 'isupper', 'join',
+# 'ljust', 'lower', 'lstrip', 'maketrans', 'partition', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit',
+# 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
+=====================================
+Python divmod()
+The divmod() method takes two numbers and returns a pair of numbers (a tuple) consisting of their quotient and remainder.
+
+print('divmod(8, 3) = ', divmod(8, 3))
+print('divmod(3, 8) = ', divmod(3, 8))
+print('divmod(5, 5) = ', divmod(5, 5))
+# divmod() with Floats
+print('divmod(8.0, 3) = ', divmod(8.0, 3))
+print('divmod(3, 8.0) = ', divmod(3, 8.0))
+print('divmod(7.5, 2.5) = ', divmod(7.5, 2.5))
+print('divmod(2.6, 0.5) = ', divmod(2.6, 0.5))
+divmod(8, 3) =  (2, 2)
+divmod(3, 8) =  (0, 3)
+divmod(5, 5) =  (1, 0)
+divmod(8.0, 3) =  (2.0, 2.0)
+divmod(3, 8.0) =  (0.0, 3.0)
+divmod(7.5, 2.5) =  (3.0, 0.0)
+divmod(2.6, 0.5) =  (5.0, 0.10000000000000009)
+=============================================
+Python enumerate()
+The enumerate() method adds counter to an iterable and returns it (the enumerate object).
+grocery = ['bread', 'milk', 'butter']
+enumerateGrocery = enumerate(grocery)
+print(type(enumerateGrocery))
+# converting to list
+print(list(enumerateGrocery))
+# changing the default counter
+enumerateGrocery = enumerate(grocery, 10)
+print(list(enumerateGrocery))
+for i in enumerate(grocery):
+    print(i)
+<class 'enumerate'>
+[(0, 'bread'), (1, 'milk'), (2, 'butter')]
+[(10, 'bread'), (11, 'milk'), (12, 'butter')]
+(0, 'bread')
+(1, 'milk')
+(2, 'butter')
+==========================================
+Python staticmethod()
+The staticmethod() built-in function returns a static method for a given function.
+class Mathematics:
+
+    def addNumbers(x, y):
+        return x + y
+# create addNumbers static method
+Mathematics.addNumbers = staticmethod(Mathematics.addNumbers)
+print('The sum is:', Mathematics.addNumbers(5, 10))
+The sum is: 15
+==========================================
+Python filter()
+The filter() method constructs an iterator from elements of an iterable for which a function returns true.
+
+# list of alphabets
+alphabets = ['a', 'b', 'd', 'e', 'i', 'j', 'o']
+# function that filters vowels
+def filterVowels(alphabet):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+
+    if(alphabet in vowels):
+        return True
+    else:
+        return False
+filteredVowels = filter(filterVowels, alphabets)
+print('The filtered vowels are:')
+for vowel in filteredVowels:
+    print(vowel)
+
+The filtered vowels are:
+a
+e
+i
+o
+===========================================
+Python eval()
+The eval() method parses the expression passed to this method and runs python expression (code) within the program.
+x = 1
+print(eval('x + 1')) #it must be string
+2
+==========================================
+Python float()
+The float() method returns a floating point number from a number or a string.
+# for integers
+print(float(10))
+# for floats
+print(float(11.22))
+# for string floats
+print(float("-13.33"))
+# for string floats with whitespaces
+print(float("     -24.45\n"))
+# string float error
+print(float("abc"))
+10.0
+11.22
+-13.33
+-24.45
+ValueError: could not convert string to float: 'abc'
+===========================================
+Python format()
+The built-in format() method returns a formatted representation of the given value controlled by the format specifier.
+# d, f and b are type
+# integer
+print(format(123, "d"))
+# float arguments
+print(format(123.4567898, "f"))
+# binary format
+print(format(12, "b"))
+123
+123.456790
+1100
+==========================================
+Python frozenset()
+The frozenset() method returns an immutable frozenset object initialized with elements from the given iterable.
+# tuple of vowels
+vowels = ('a', 'e', 'i', 'o', 'u','u')
+fSet = frozenset(vowels)
+print('The frozen set is:', fSet)
+print('The empty frozen set is:', frozenset())
+The frozen set is: frozenset({'u', 'e', 'o', 'i', 'a'})
+The empty frozen set is: frozenset()
+===============================================
+
+
+
+
+
+
+
+8880943943
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
