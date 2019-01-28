@@ -144,7 +144,7 @@ Traceback (most recent call last):
 AttributeError: 'Coordinate' object has no attribute 'z'
 =======================================
 15. Python dict()
-The dict() constructor creates a dictionary in Python.
+The dict() constructor creates a dictionary in Python. 
 numbers = dict(x=5, y=0)
 print('numbers = ',numbers)
 print(type(numbers))
