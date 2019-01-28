@@ -16,7 +16,8 @@ The any() method returns True if any element of an iterable is True. If not, any
 The all() method returns True when all elements in the given iterable are true. If not, it returns False.
 ================================
 4. Python ascii()
-The ascii() method returns a string containing a printable representation of an object. It escapes the non-ASCII characters in the string using \x, \u or \U escapes.
+The ascii() method returns a string containing a printable representation of an object. It escapes the non-ASCII characters in the 
+string using \x, \u or \U escapes.
 normalText = 'Python is interesting'
 print(ascii(normalText))
 otherText = 'Pythön is interesting'
@@ -27,7 +28,8 @@ print('Pyth\xf6n is interesting')
 Pythön is interesting
 ===========================
 5. Python bin()
-The bin() method converts and returns the binary equivalent string of a given integer. If the parameter isn't an integer, it has to implement __index__() method to return an integer.
+The bin() method converts and returns the binary equivalent string of a given integer. If the parameter isn't an integer, it has
+to implement __index__() method to return an integer.
 number = 5
 print('The binary equivalent of 5 is:', bin(number))
 The binary equivalent of 5 is: 0b101
@@ -101,6 +103,7 @@ Person().printAge()
 =========================================
 13. Python complex()
 The complex() method returns a complex number when real and imaginary parts are provided, or it converts a string to a complex number.
+
 z = complex(2, -3)
 print(z)
 z = complex(1)
@@ -287,7 +290,8 @@ The frozen set is: frozenset({'u', 'e', 'o', 'i', 'a'})
 The empty frozen set is: frozenset()
 ===============================================
 25. Python getattr()
-The getattr() method returns the value of the named attribute of an object. If not found, it returns the default value provided to the function.
+The getattr() method returns the value of the named attribute of an object. If not found, it returns the default value provided to the
+function.
 class Person:
     age = 23
     name = "Adam"
@@ -646,10 +650,13 @@ test = object()
 print(type(test))
 print(dir(test))
 <class 'object'>
-['__class__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__']
+['__class__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__',
+ '__init__', '__init_subclass__', '__le__', '__lt__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__',
+ '__sizeof__', '__str__', '__subclasshook__']
 =====================================
 47. Python oct()
-The oct() method takes an integer number and returns its octal representation. If the given number is an int, it must implement __index__() method to return an integer.
+The oct() method takes an integer number and returns its octal representation. If the given number is an int, it must 
+implement __index__() method to return an integer.
 # decimal number
 print('oct(10) is:', oct(10))
 # binary number
@@ -682,7 +689,8 @@ f = open("path_to_file", mode = 'w')
 f = open("path_to_file", mode = 'a')
 ===================================
 50. Python pow()
-The pow() method returns x to the power of y. If the third argument (z) is given, it returns x to the power of y modulus z, i.e. pow(x, y) % z.
+The pow() method returns x to the power of y. If the third argument (z) is given, it returns x to the power of y
+modulus z, i.e. pow(x, y) % z.
 # positive x, positive y (x**y)
 print(pow(2, 2))
 # negative x, positive y
@@ -721,7 +729,8 @@ print(repr(var))
 The reversed() method returns the reversed iterator of the given sequence.
 ===================================
 56. Python round()
-The round() method returns the floating point number rounded off to the given ndigits digits after the decimal point. If no ndigits is provided, it rounds off the number to the nearest integer.
+The round() method returns the floating point number rounded off to the given ndigits digits after the decimal point.
+If no ndigits is provided, it rounds off the number to the nearest integer.
 # for integers
 print(round(10))
 # for floating point
@@ -795,7 +804,8 @@ t1= ('P', 'y', 't', 'h', 'o', 'n')
 t1= (1, 2)
 ===================================
 64. Python type()
-If a single argument (object) is passed to type() built-in, it returns type of the given object. If three arguments (name, bases and dict) are passed, it returns a new type object.
+If a single argument (object) is passed to type() built-in, it returns type of the given object. If three arguments 
+(name, bases and dict) are passed, it returns a new type object.
 ===================================
 65. Python vars()
 The vars() function returns the __dict__ attribute of the given object if the object has __dict__ attribute.
@@ -808,7 +818,8 @@ print(vars(InstanceOfFoo))
 {'a': 5, 'b': 10}
 ===================================
 66. Python zip()
-The zip() function take iterables (can be zero or more), makes iterator that aggregates elements based on the iterables passed, and returns an iterator of tuples.
+The zip() function take iterables (can be zero or more), makes iterator that aggregates elements based on the 
+iterables passed, and returns an iterator of tuples.
 ===================================
 67. Python __import__()
 The __import__() is an advanced function that is called by the import statement.
