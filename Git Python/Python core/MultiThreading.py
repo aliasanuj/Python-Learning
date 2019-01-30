@@ -203,3 +203,26 @@ pointer that holds the current state of the thread and controls what executes ne
 Similarly, the ability of a process to execute multiple threads parallelly is 
 called multithreading. Ideally, multithreading can significantly improve the
 performance of any program.
+=================================
+threading.activeCount() − Returns the number of thread objects that are active.
+threading.currentThread() − Returns the number of thread objects in the caller's thread control.
+threading.enumerate() − Returns a list of all thread objects that are currently active.
+============================
+In addition to the methods, the threading module has the Thread class that implements threading.
+The methods provided by the Thread class are as follows −
+1. run() − The run() method is the entry point for a thread.
+2. start() − The start() method starts a thread by calling the run method.
+3. join([time]) − The join() waits for threads to terminate.
+4. isAlive() − The isAlive() method checks whether a thread is still executing.
+5. getName() − The getName() method returns the name of a thread.
+6. setName() − The setName() method sets the name of a thread.
+================================
+Multithreaded Priority Queue :
+The Queue module allows you to create a new queue object that can hold a specific number of items.
+There are following methods to control the Queue −
+1. get() − The get() removes and returns an item from the queue.
+2. put() − The put adds item to a queue.
+3. qsize() − The qsize() returns the number of items that are currently in the queue.
+4. empty() − The empty( ) returns True if queue is empty; otherwise, False.
+5. full() − the full() returns True if queue is full; otherwise, False.
+============================
