@@ -316,6 +316,19 @@ print(list(sorted(marks.keys())))
 #('English', 0)
 #('Science', 0)
 #['English', 'Math', 'Science']
+==================================================
+marks = {}.fromkeys(['Math','English','Science'], 0)
+print(marks)
+for item in marks.items():
+    print(item)
+print(list(sorted(marks.values())))
+print(list(sorted(marks.keys())))
+#{'Math': 0, 'English': 0, 'Science': 0}
+#('Math', 0)
+#('English', 0)
+#('Science', 0)
+#[0, 0, 0]
+#['English', 'Math', 'Science']
 ===================================================================
 squares = {x: x*x for x in range(6)}
 # Output: {0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
