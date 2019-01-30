@@ -219,6 +219,16 @@ thisdict =	{
   "model": "Mustang",
   "year": 1964
 }
+thisdict.pop()
+print(thisdict)
+#    thisdict.pop()
+#TypeError: pop expected at least 1 arguments, got 0
+=======================================================
+thisdict =	{
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
 thisdict.popitem()
 print(thisdict)
 #{'brand': 'Ford', 'model': 'Mustang'}
