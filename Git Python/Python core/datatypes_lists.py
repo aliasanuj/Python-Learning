@@ -203,6 +203,12 @@ print(list2)
 #[1, 2, 3, 4, 5, 6, 2]
 #['anuj', 'kumar', 'aman', 'anshu', 10]
 ================================
+list1 = [1,2,3,4,5,6]
+list2 = ["anuj","kumar","aman","anshu"]
+list1.append(list2) #only one argument
+print(list1)
+#[1, 2, 3, 4, 5, 6, ['anuj', 'kumar', 'aman', 'anshu']]
+================================
 a1 = {1:"abc", 2:"boy", 3:"cat"}
 print(list(a1))
 #[1, 2, 3]
