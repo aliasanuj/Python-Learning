@@ -600,6 +600,16 @@ for i,j in dict1.items():
 #anuj = 3
 #kumar = 1
 ===========================================
+from collections import  Counter
+a = "anuj kumar anuj kumar anuj"
+s = a.split()
+print(s)
+c = dict(Counter(s))
+print(c)
+
+#['anuj', 'kumar', 'anuj', 'kumar', 'anuj']
+#{'anuj': 3, 'kumar': 2}
+===========================================
 a = "anuj kumar anuj kumar anuj"
 s = a.split()
 d = {}
