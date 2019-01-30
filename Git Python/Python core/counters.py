@@ -277,3 +277,11 @@ for letter in 'abcdefgh':
 #g : 0
 #h : 0
 ======================================================
+- coun.most_common(3)
+- for color in col_count.items(): 
+    print (color)
+- for letter, count in coun.most_common(3): 
+    print('%s: %d' % (letter, count)) 
+- print(list(c.elements()))
+- coun.update
+======================================================
