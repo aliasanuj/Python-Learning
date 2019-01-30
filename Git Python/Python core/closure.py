@@ -38,6 +38,18 @@ del gen_multiplier #it will delete
 print(obj(5))
 #500
 ===========================
+m = 12
+def gen_multiplier(a):
+    x = 10 #non-local variable
+    def multiplier(y): #stores the reference to non-local variable
+        return x * y * a * m#x is non local to multiplier
+    return multiplier
+#call the function
+obj = gen_multiplier(10)
+del gen_multiplier #it will delete
+print(obj(5))
+#6000
+===========================
 nested-function
 nested function should access non-local variable
 it should return the en-closed function
