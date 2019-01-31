@@ -17,6 +17,13 @@ print(list(enumerate(s1,2)))
 #[(0, 'eat'), (1, 'sleep'), (2, 'repeat')]
 #[(2, 'g'), (3, 'e'), (4, 'e'), (5, 'k')]
 ========================
+l1 = ["eat","sleep","repeat"]
+s1 = "geek"
+print(list(enumerate(s1,start = 5)))
+print(list(enumerate(l1,start = 5)))
+#[(5, 'g'), (6, 'e'), (7, 'e'), (8, 'k')]
+#[(5, 'eat'), (6, 'sleep'), (7, 'repeat')]
+============================
 l1 = ["eat","sleep","repeat"] 
 for ele in enumerate(l1): 
     print(ele)
