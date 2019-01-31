@@ -303,6 +303,17 @@ finally:
 #result is 0.0
 #executing finally clause
 ===================================================
+try:
+    result = 5 / 2
+except ZeroDivisionError:
+    print ("division by zero!")
+else:
+    print ("result is", result)
+finally:
+    print ("executing finally clause")
+#result is 2.5
+#executing finally clause
+===================================================
 import sys
 randomList = ['a', 0, 2]
 for entry in randomList:
