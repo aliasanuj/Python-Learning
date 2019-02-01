@@ -9,18 +9,25 @@ Abstraction:==================
 ==> Abstraction refers to providing only essential information about the data to the outside world, hiding the background
 details or implementation.
 ==============================
-==>Data encapsulation --> is one of the fundamentals of OOP (object-oriented programming). It refers to the bundling of 
-data with the methods that operate on that data. Encapsulation is used to hide the values or state of a 
+Abstraction: Suppose you are going to an ATM to withdraw money. You simply insert your card and click some buttons and get
+the money. You don’t know what is happening internally on press of these buttons. Basically you are hiding unnecessary 
+information from user. So, abstraction is a method to hide internal functionalities from user.
+===============================
+==>Data encapsulation -->is one of the fundamentals of OOP (object-oriented programming). It refers to the bundling of 
+data with the methods that operate on that data.Encapsulation is used to hide the values or state of a 
 structured data object inside a class, preventing unauthorized parties' direct access to them.
 ==============================
+Encapsulation: Suppose there is a tree. Now a tree can have its components like root, stem, branches, leaves, flowers 
+and fruits. It has some functionalities like Photosynthesis. But in a single unit we call it a tree. In same way encapsulation 
+is a characteristic to bind data members and functions in single unit.
+======================================
 class AbstractClass:
-    
-    def do_something(self):
+	def do_something(self):
         pass
 class B(AbstractClass):
     pass
 a = AbstractClass()
-b = B()
+b = `	B()
 ================================
 class abc:
     def aaa(self):
@@ -677,10 +684,57 @@ def main():
 if __name__ == "__main__":
     #a1 = abc()
     main()
-    
+#good example
 # obj1 = abc02()
 #TypeError: Can't instantiate abstract class abc02 with abstract methods aaa
 =======================
+from abc import ABC, abstractmethod
+class abc():
+    @abstractmethod
+    def aaa(self):
+        pass
+class abc02(abc):
+    @abstractmethod
+    def aaa(self):
+        print("class abc02")
+class abc03(abc):
+    def aaa(self):
+        print("class abc03")
+def main():
+    obj1 = abc02()
+    obj1.aaa()
+
+    obj2 = abc03()
+    obj2.aaa()
+if __name__ == "__main__":
+    #a1 = abc()
+    main()
+#class abc02
+#class abc03
+===============================
+from abc import ABC, abstractmethod
+class abc(ABC):
+    #@abstractmethod
+    def aaa(self):
+        pass
+class abc02(abc):
+    @abstractmethod
+    def aaa(self):
+        print("class abc02")
+class abc03(abc):
+    def aaa(self):
+        print("class abc03")
+def main():
+    obj1 = abc02()
+    obj1.aaa()
+
+    obj2 = abc03()
+    obj2.aaa()
+if __name__ == "__main__":
+    #a1 = abc()
+    main()
+#error
+==================================
 from abc import ABC, abstractmethod
 class abc():
     #@abstractmethod
@@ -729,3 +783,27 @@ if __name__ == "__main__":
 #jdvjd
 #class abc03
 ===========================
+from abc import ABC, abstractmethod
+class abc(ABC):
+    #@abstractmethod
+    def aaa(self):
+        print("jdvjd")
+class abc02(abc):
+    def aaas(self):
+        print("class abc02")
+class abc03(abc):
+    def aaa(self):
+        print("class abc03")
+def main():
+    obj1 = abc02()
+    obj1.aaa()
+
+    obj2 = abc03()
+    obj2.aaa()
+if __name__ == "__main__":
+    #a1 = abc() #iT WILL GIVE ERROR
+    main()
+
+#jdvjd
+#class abc03
+============================
