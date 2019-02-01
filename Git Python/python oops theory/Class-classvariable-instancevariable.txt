@@ -148,7 +148,7 @@ obj1.inner()
 
 #anuj
 #ball
-#AttributeError: 'abc' object has no attribute 'c'
+#inner
 
 ========================================
 ==class vs instance variable============
@@ -161,3 +161,4 @@ shared between different instances of a class.
 
 ==> Class or static variables are shared by all objects.
 ==>Instance or non-static variables are different for different objects (every object has a copy of it)
+
