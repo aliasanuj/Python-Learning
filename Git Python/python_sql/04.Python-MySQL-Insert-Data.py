@@ -82,33 +82,6 @@ VALUES('Harry Potter And The Order Of The Phoenix', '9780439358071'),
 To insert multiple rows into a table in Python, you use the  executemany() method of the MySQLCursor object. 
 See the following code:
 
-
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
 from mysql.connector import MySQLConnection, Error
 from python_mysql_dbconfig import read_db_config
  
