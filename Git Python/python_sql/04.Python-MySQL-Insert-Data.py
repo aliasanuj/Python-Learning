@@ -13,7 +13,7 @@ To insert new rows into a MySQL table, you follow the steps below:
 - Close the database connection.
 
 MySQL Connector/Python provides API that allows you to insert one or many rows into a table at a time. 
-Let’s examine at each method in more detail.
+Letâ€™s examine at each method in more detail.
 
 1. Insert one row into a table
 The following code inserts a new book into the  books table:
@@ -68,10 +68,82 @@ insert id of the AUTO_INCREMENT column by using the  lastrowid property of the M
 isbn to insert a new row into the  books table.
 
 
+2. Insert multiple rows into a table
+
+MySQL INSERT statement allows you to insert multiple rows by using  VALUES syntax. You just need to include 
+multiple lists of column values. Each list is enclosed within parentheses and separated by commas. 
+For example, to insert multiple books into the  books table, you use the following statement:
+
+INSERT INTO books(title,isbn)
+VALUES('Harry Potter And The Order Of The Phoenix', '9780439358071'),
+       ('Gone with the Wind', '9780446675536'),
+       ('Pride and Prejudice (Modern Library Classics)', '9780679783268');
+
+To insert multiple rows into a table in Python, you use the  executemany() method of the MySQLCursor object. 
+See the following code:
 
 
-
-
-
-
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+from mysql.connector import MySQLConnection, Error
+from python_mysql_dbconfig import read_db_config
+ 
+def insert_books(books):
+    query = "INSERT INTO books(title,isbn) " \
+            "VALUES(%s,%s)"
+ 
+    try:
+        db_config = read_db_config()
+        conn = MySQLConnection(**db_config)
+ 
+        cursor = conn.cursor()
+        cursor.executemany(query, books)
+ 
+        conn.commit()
+    except Error as e:
+        print('Error:', e)
+ 
+    finally:
+        cursor.close()
+        conn.close()
+ 
+def main():
+    books = [('Harry Potter And The Order Of The Phoenix', '9780439358071'),
+             ('Gone with the Wind', '9780446675536'),
+             ('Pride and Prejudice (Modern Library Classics)', '9780679783268')]
+    insert_books(books)
+ 
+if __name__ == '__main__':
+    main()
+	
+- The logic in this example is similar to the logic in the first example. However, in this example, 
+instead of calling the  execute() method, we use  executemany() method.
+- In the  main() function, we pass a list of tuples, each contains title and isbn of the book.
+- By calling the  executemany() method of the MySQLCursor object, the MySQL Connector/Python translates 
+the  INSERT statement into the one that contains multiple lists of values.
+- In this tutorial, we have shown you how to insert one or multiple rows into a MySQL table in Python.
 
