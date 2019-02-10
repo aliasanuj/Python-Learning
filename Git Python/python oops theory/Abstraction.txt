@@ -2,7 +2,7 @@
 Abstraction:==================
 ==============================
 1. Abstract classes are classes that contain one or more abstract methods.
-2. An abstract method is a method that is declared, but contains no implementation
+2. An abstract method is a method that is declared, but contains no implementation.
 3. Abstract classes may not be instantiated, and require subclasses to provide implementations for the abstract methods. 
 4. Subclasses of an abstract class in Python are not required to implement abstract methods of the parent class.
 ==============================
@@ -27,8 +27,18 @@ class AbstractClass:
 class B(AbstractClass):
     pass
 a = AbstractClass()
-b = `	B()
+b = B()
 ================================
+class AbstractClass:
+    def do_something(self):
+        print("abc")
+class B(AbstractClass):
+    print("zzz")
+a = AbstractClass()
+a.do_something()
+#zzz
+#abc
+=================================
 class abc:
     def aaa(self):
         pass
@@ -116,10 +126,8 @@ if __name__ == "__main__":
     a1 = abc()
     a1.aaa()
     main()
-
 #a1 = abc()
 #TypeError: Can't instantiate abstract class abc with abstract methods aaa
-
 =================================
 from abc import ABC, abstractmethod
 class abc(ABC):
@@ -164,7 +172,6 @@ def main():
 if __name__ == "__main__":
     #a1 = abc()
     main()
-
 #class abc02
 #class abc03
 ==============================
@@ -211,10 +218,8 @@ if __name__ == "__main__":
     a1 = abc()
     a1.aaa()
     main()
-
 # a1 = abc()
 #TypeError: Can't instantiate abstract class abc with abstract methods aaa
-
 ===============================
 from abc import ABC, abstractmethod
 class abc():
@@ -261,7 +266,6 @@ if __name__ == "__main__":
     a1 = abc()
     a1.aaa()
     main()
-
 #dbfsd
 #obj1 = abc02()
 #TypeError: Can't instantiate abstract class abc02 with abstract methods aaa
