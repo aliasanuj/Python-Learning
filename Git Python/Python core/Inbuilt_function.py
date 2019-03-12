@@ -62,6 +62,15 @@ arr = bytearray(string, 'utf-8')
 print(arr)
 
 bytearray(b'Python is interesting.')
+------------
+for i in bytes(b"hi"):
+    print(type(i))
+for i in bytearray(b"hi"):
+    print(type(i))
+#<class 'int'>
+#<class 'int'>
+#<class 'int'>
+#<class 'int'>
 ==============================
 8. Python callable()
 The callable() method returns True if the object passed appears callable. If not, it returns False.
@@ -84,6 +93,15 @@ arr = bytes(string, 'utf-8')
 print(arr)
 
 b'Python is interesting.'
+-----------
+for i in bytes(b"hi"):
+    print(type(i))
+for i in bytearray(b"hi"):
+    print(type(i))
+#<class 'int'>
+#<class 'int'>
+#<class 'int'>
+#<class 'int'>
 ====================================
 10. Python chr()
 The chrt() method returns a character (a string) from an integer (represents unicode code point of the character).
