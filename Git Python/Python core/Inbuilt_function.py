@@ -1,7 +1,8 @@
 1. Python abs()
-The abs() method returns the absolute value of the given number. If the number is a complex number, abs() returns its magnitude.
-# random integer
 
+The abs() method returns the absolute value of the given number. If the number is a complex number, abs() returns its magnitude.
+
+# random integer
 integer = -20
 print('Absolute value of -20 is:', abs(integer))
 #random floating number
@@ -16,12 +17,15 @@ print(abs(a))
 #6.4031242374328485
 ===================================
 2. Python any()
+
 The any() method returns True if any element of an iterable is True. If not, any() returns False.
 ==================================
 3. Python all()
+
 The all() method returns True when all elements in the given iterable are true. If not, it returns False.
 ================================
 4. Python ascii()
+
 The ascii() method returns a string containing a printable representation of an object. It escapes the non-ASCII characters in the 
 string using \x, \u or \U escapes.
 
@@ -36,18 +40,26 @@ print('Pyth\xf6n is interesting')
 Pythön is interesting
 ===========================
 5. Python bin()
-The bin() method converts and returns the binary equivalent string of a given integer. If the parameter isn't an integer, it has to
-implement __index__() method to return an integer.
+
+The bin() method converts and returns the binary equivalent string of a given integer. If the parameter isn't an integer, it has to implement __index__() method to return an integer.
 
 number = 5
 print('The binary equivalent of 5 is:', bin(number))
-
 The binary equivalent of 5 is: 0b101
+
+a = bin(10)
+print(a)
+print(type(a))
+
+0b1010
+<class 'str'>
 ==========================
 6. Python bool()
+
 The bool() method converts a value to Boolean (True or False) using the standard truth testing procedure.
 ==============================
 7. Python bytearray()
+
 The bytearray() method returns a bytearray object which is an array of the given bytes.
 bytearray() Parameters
 The bytearray() takes three optional parameters:
@@ -60,8 +72,13 @@ string = "Python is interesting."
 # string with encoding 'utf-8'
 arr = bytearray(string, 'utf-8')
 print(arr)
-
 bytearray(b'Python is interesting.')
+
+string = "Python is interesting."
+# string with encoding 'utf-8'
+arr = bytearray(string, 'utf-8')
+print(type(arr))
+#<class 'bytearray'>
 ------------
 for i in bytes(b"hi"):
     print(type(i))
@@ -70,9 +87,10 @@ for i in bytearray(b"hi"):
 #<class 'int'>
 #<class 'int'>
 #<class 'int'>
-#<class 'int'>
+#<class 'int'> 
 ==============================
 8. Python callable()
+
 The callable() method returns True if the object passed appears callable. If not, it returns False.
 
 x = 5
@@ -86,6 +104,7 @@ False
 True
 ==================================
 9. Python bytes()
+
 The bytes() method returns a immutable bytes object initialized with the given size and data
 string = "Python is interesting."
 # string with encoding 'utf-8'
