@@ -26,7 +26,7 @@ The all() method returns True when all elements in the given iterable are true. 
 ================================
 4. Python ascii()
 
-The ascii() method returns a string containing a printable representation of an object. It escapes the non-ASCII characters in the 
+The ascii() method returns a string containing a printable representation of an object. It escapes the non-ASCII characters in the
 string using \x, \u or \U escapes.
 
 normalText = 'Python is interesting'
@@ -87,7 +87,7 @@ for i in bytearray(b"hi"):
 #<class 'int'>
 #<class 'int'>
 #<class 'int'>
-#<class 'int'> 
+#<class 'int'>
 ==============================
 8. Python callable()
 
@@ -121,6 +121,8 @@ for i in bytearray(b"hi"):
 #<class 'int'>
 #<class 'int'>
 #<class 'int'>
+
+bytes() == bytearray (string,'utf-6')
 ====================================
 10. Python chr()
 The chrt() method returns a character (a string) from an integer (represents unicode code point of the character).
@@ -132,6 +134,11 @@ print(chr(1200))
 a
 A
 Ұ
+
+print(chr(65))
+print(ord('A'))
+#A
+#65
 ====================================
 11. Python compile()
 The compile() method returns a Python code object from the source (normal string, a byte string, or an AST object).
@@ -141,6 +148,16 @@ codeObejct = compile(codeInString, 'sumstring', 'exec')
 exec(codeObejct)
 
 sum = 11
+
+codeInString = 'a = 5\nb=6\nsum=a+b\nprint("sum =",sum)'
+codeObejct = compile(codeInString,'', 'exec')
+exec(codeObejct)
+#sum = 11
+
+codeInString = 'a = 5\nb=6\nsum=a+b\nprint("sum =",sum)'
+codeObejct = compile(codeInString,'xyz', 'exec')
+exec(codeObejct)
+#sum = 11
 =====================================
 12. Python classmethod()
 The classmethod() method returns a class method for the given function.
@@ -216,7 +233,7 @@ class Coordinate:
   x = 10
   y = -5
   z = 0
-point1 = Coordinate() 
+point1 = Coordinate()
 print('x = ',point1.x)
 print('y = ',point1.y)
 print('z = ',point1.z)
@@ -240,7 +257,7 @@ AttributeError: 'Coordinate' object has no attribute 'z'
 =======================================
 15. Python dict()
 
-The dict() constructor creates a dictionary in Python. 
+The dict() constructor creates a dictionary in Python.
 
 numbers = dict(x=5, y=0)
 print('numbers = ',numbers)
@@ -270,13 +287,13 @@ print(dir(string))
 
 number = 10
 print(dir(number))
-['__abs__', '__add__', '__and__', '__bool__', '__ceil__', '__class__', '__delattr__', '__dir__', '__divmod__', '__doc__', 
- '__eq__', '__float__', '__floor__', '__floordiv__', '__format__', '__ge__', '__getattribute__', '__getnewargs__', '__gt__', 
+['__abs__', '__add__', '__and__', '__bool__', '__ceil__', '__class__', '__delattr__', '__dir__', '__divmod__', '__doc__',
+ '__eq__', '__float__', '__floor__', '__floordiv__', '__format__', '__ge__', '__getattribute__', '__getnewargs__', '__gt__',
  '__hash__', '__index__', '__init__', '__init_subclass__', '__int__', '__invert__', '__le__', '__lshift__', '__lt__', '__mod__',
- '__mul__', '__ne__', '__neg__', '__new__', '__or__', '__pos__', '__pow__', '__radd__', '__rand__', '__rdivmod__', '__reduce__', 
- '__reduce_ex__', '__repr__', '__rfloordiv__', '__rlshift__', '__rmod__', '__rmul__', '__ror__', '__round__', '__rpow__', 
- '__rrshift__', '__rshift__', '__rsub__', '__rtruediv__', '__rxor__', '__setattr__', '__sizeof__', '__str__', '__sub__', 
- '__subclasshook__', '__truediv__', '__trunc__', '__xor__', 'bit_length', 'conjugate', 'denominator', 'from_bytes', 'imag', 
+ '__mul__', '__ne__', '__neg__', '__new__', '__or__', '__pos__', '__pow__', '__radd__', '__rand__', '__rdivmod__', '__reduce__',
+ '__reduce_ex__', '__repr__', '__rfloordiv__', '__rlshift__', '__rmod__', '__rmul__', '__ror__', '__round__', '__rpow__',
+ '__rrshift__', '__rshift__', '__rsub__', '__rtruediv__', '__rxor__', '__setattr__', '__sizeof__', '__str__', '__sub__',
+ '__subclasshook__', '__truediv__', '__trunc__', '__xor__', 'bit_length', 'conjugate', 'denominator', 'from_bytes', 'imag',
  'numerator', 'real', 'to_bytes']
 
 =====================================
@@ -392,6 +409,7 @@ for i in obj1:
 filteredVowels = filter(function, iterable)
 ===========================================
 21. Python eval()
+
 The eval() method parses the expression passed to this method and runs python expression (code) within the program.
 
 x = 1
@@ -412,6 +430,10 @@ print(eval(x+'10'))
 x = 5
 print(eval(x+1))
 #TypeError: eval() arg 1 must be a string, bytes or code object
+
+x = '5'
+print(eval('x'+10))
+#TypeError: must be str, not int
 
 ==========================================
 22. Python float()
@@ -472,7 +494,7 @@ The frozen set is: frozenset({'name', 'sex', 'age'})
 ===============================================
 25. Python getattr()
 
-The getattr() method returns the value of the named attribute of an object. If not found, it returns the default value 
+The getattr() method returns the value of the named attribute of an object. If not found, it returns the default value
 provided to the function.
 
 class Person:
@@ -494,6 +516,17 @@ print('The age is:', getattr(person, "age"))
 print('The age is:', person.age)
 
 The age is: 23
+The age is: 23
+-----------------
+class Person:
+    age = 23
+    name = "Adam"
+person = Person()
+# when default value is provided
+print('The sex is:', getattr(person, 'sex', 'Male'))
+# when no default value is provided
+print('The age is:', getattr(person, 'age'))
+The sex is: Male
 The age is: 23
 ==========================================
 26. Python globals()
@@ -529,136 +562,136 @@ The help() method calls the built-in Python help system.
 help(list)
 class list(object)
  |  list(iterable=(), /)
- |  
+ |
  |  Built-in mutable sequence.
- |  
+ |
  |  If no argument is given, the constructor creates a new empty list.
  |  The argument must be an iterable if specified.
- |  
+ |
  |  Methods defined here:
- |  
+ |
  |  __add__(self, value, /)
  |      Return self+value.
- |  
+ |
  |  __contains__(self, key, /)
  |      Return key in self.
- |  
+ |
  |  __delitem__(self, key, /)
  |      Delete self[key].
- |  
+ |
  |  __eq__(self, value, /)
  |      Return self==value.
- |  
+ |
  |  __ge__(self, value, /)
  |      Return self>=value.
- |  
+ |
  |  __getattribute__(self, name, /)
  |      Return getattr(self, name).
- |  
+ |
  |  __getitem__(...)
  |      x.__getitem__(y) <==> x[y]
- |  
+ |
  |  __gt__(self, value, /)
  |      Return self>value.
- |  
+ |
  |  __iadd__(self, value, /)
  |      Implement self+=value.
- |  
+ |
  |  __imul__(self, value, /)
  |      Implement self*=value.
- |  
+ |
  |  __init__(self, /, *args, **kwargs)
  |      Initialize self.  See help(type(self)) for accurate signature.
- |  
+ |
  |  __iter__(self, /)
  |      Implement iter(self).
- |  
+ |
  |  __le__(self, value, /)
  |      Return self<=value.
- |  
+ |
  |  __len__(self, /)
  |      Return len(self).
- |  
+ |
  |  __lt__(self, value, /)
  |      Return self<value.
- |  
+ |
  |  __mul__(self, value, /)
  |      Return self*value.
- |  
+ |
  |  __ne__(self, value, /)
  |      Return self!=value.
- |  
+ |
  |  __repr__(self, /)
  |      Return repr(self).
- |  
+ |
  |  __reversed__(self, /)
  |      Return a reverse iterator over the list.
- |  
+ |
  |  __rmul__(self, value, /)
  |      Return value*self.
- |  
+ |
  |  __setitem__(self, key, value, /)
  |      Set self[key] to value.
- |  
+ |
  |  __sizeof__(self, /)
  |      Return the size of the list in memory, in bytes.
- |  
+ |
  |  append(self, object, /)
  |      Append object to the end of the list.
- |  
+ |
  |  clear(self, /)
  |      Remove all items from list.
- |  
+ |
  |  copy(self, /)
  |      Return a shallow copy of the list.
- |  
+ |
  |  count(self, value, /)
  |      Return number of occurrences of value.
- |  
+ |
  |  extend(self, iterable, /)
  |      Extend list by appending elements from the iterable.
- |  
+ |
  |  index(self, value, start=0, stop=2147483647, /)
  |      Return first index of value.
- |      
+ |
  |      Raises ValueError if the value is not present.
- |  
+ |
  |  insert(self, index, object, /)
  |      Insert object before index.
- |  
+ |
  |  pop(self, index=-1, /)
  |      Remove and return item at index (default last).
- |      
+ |
  |      Raises IndexError if list is empty or index is out of range.
- |  
+ |
  |  remove(self, value, /)
  |      Remove first occurrence of value.
- |      
+ |
  |      Raises ValueError if the value is not present.
- |  
+ |
  |  reverse(self, /)
  |      Reverse *IN PLACE*.
- |  
+ |
  |  sort(self, /, *, key=None, reverse=False)
  |      Stable sort *IN PLACE*.
- |  
+ |
  |  ----------------------------------------------------------------------
  |  Static methods defined here:
- |  
+ |
  |  __new__(*args, **kwargs) from builtins.type
  |      Create and return a new object.  See help(type) for accurate signature.
- |  
+ |
  |  ----------------------------------------------------------------------
  |  Data and other attributes defined here:
- |  
+ |
  |  __hash__ = None
- 
+
  print(help(str))
- 
+
  class str(object)
  |  str(object='') -> str
  |  str(bytes_or_buffer[, encoding[, errors]]) -> str
- |  
+ |
  |  Create a new string object from the given object. If encoding or
  |  errors is specified, then the object must expose a data buffer
  |  that will be decoded using the given encoding and error handler.
@@ -666,98 +699,98 @@ class list(object)
  |  or repr(object).
  |  encoding defaults to sys.getdefaultencoding().
  |  errors defaults to 'strict'.
- |  
+ |
  |  Methods defined here:
- |  
+ |
  |  __add__(self, value, /)
  |      Return self+value.
- |  
+ |
  |  __contains__(self, key, /)
  |      Return key in self.
- |  
+ |
  |  __eq__(self, value, /)
  |      Return self==value.
- |  
+ |
  |  __format__(self, format_spec, /)
  |      Return a formatted version of the string as described by format_spec.
- |  
+ |
  |  __ge__(self, value, /)
  |      Return self>=value.
- |  
+ |
  |  __getattribute__(self, name, /)
  |      Return getattr(self, name).
- |  
+ |
  |  __getitem__(self, key, /)
  |      Return self[key].
- |  
+ |
  |  __getnewargs__(...)
- |  
+ |
  |  __gt__(self, value, /)
  |      Return self>value.
- |  
+ |
  |  __hash__(self, /)
  |      Return hash(self).
- |  
+ |
  |  __iter__(self, /)
  |      Implement iter(self).
- |  
+ |
  |  __le__(self, value, /)
  |      Return self<=value.
- |  
+ |
  |  __len__(self, /)
  |      Return len(self).
- |  
+ |
  |  __lt__(self, value, /)
  |      Return self<value.
- |  
+ |
  |  __mod__(self, value, /)
  |      Return self%value.
- |  
+ |
  |  __mul__(self, value, /)
  |      Return self*value.
- |  
+ |
  |  __ne__(self, value, /)
  |      Return self!=value.
- |  
+ |
  |  __repr__(self, /)
  |      Return repr(self).
- |  
+ |
  |  __rmod__(self, value, /)
  |      Return value%self.
- |  
+ |
  |  __rmul__(self, value, /)
  |      Return value*self.
- |  
+ |
  |  __sizeof__(self, /)
  |      Return the size of the string in memory, in bytes.
- |  
+ |
  |  __str__(self, /)
  |      Return str(self).
- |  
+ |
  |  capitalize(self, /)
  |      Return a capitalized version of the string.
- |      
+ |
  |      More specifically, make the first character have upper case and the rest lower
  |      case.
- |  
+ |
  |  casefold(self, /)
  |      Return a version of the string suitable for caseless comparisons.
- |  
+ |
  |  center(self, width, fillchar=' ', /)
  |      Return a centered string of length width.
- |      
+ |
  |      Padding is done using the specified fill character (default is a space).
- |  
+ |
  |  count(...)
  |      S.count(sub[, start[, end]]) -> int
- |      
+ |
  |      Return the number of non-overlapping occurrences of substring sub in
  |      string S[start:end].  Optional arguments start and end are
  |      interpreted as in slice notation.
- |  
+ |
  |  encode(self, /, encoding='utf-8', errors='strict')
  |      Encode the string using the codec registered for encoding.
- |      
+ |
  |      encoding
  |        The encoding in which to encode the string.
  |      errors
@@ -766,199 +799,199 @@ class list(object)
  |        UnicodeEncodeError.  Other possible values are 'ignore', 'replace' and
  |        'xmlcharrefreplace' as well as any other name registered with
  |        codecs.register_error that can handle UnicodeEncodeErrors.
- |  
+ |
  |  endswith(...)
  |      S.endswith(suffix[, start[, end]]) -> bool
- |      
+ |
  |      Return True if S ends with the specified suffix, False otherwise.
  |      With optional start, test S beginning at that position.
  |      With optional end, stop comparing S at that position.
  |      suffix can also be a tuple of strings to try.
- |  
+ |
  |  expandtabs(self, /, tabsize=8)
  |      Return a copy where all tab characters are expanded using spaces.
- |      
+ |
  |      If tabsize is not given, a tab size of 8 characters is assumed.
- |  
+ |
  |  find(...)
  |      S.find(sub[, start[, end]]) -> int
- |      
+ |
  |      Return the lowest index in S where substring sub is found,
  |      such that sub is contained within S[start:end].  Optional
  |      arguments start and end are interpreted as in slice notation.
- |      
+ |
  |      Return -1 on failure.
- |  
+ |
  |  format(...)
  |      S.format(*args, **kwargs) -> str
- |      
+ |
  |      Return a formatted version of S, using substitutions from args and kwargs.
  |      The substitutions are identified by braces ('{' and '}').
- |  
+ |
  |  format_map(...)
  |      S.format_map(mapping) -> str
- |      
+ |
  |      Return a formatted version of S, using substitutions from mapping.
  |      The substitutions are identified by braces ('{' and '}').
- |  
+ |
  |  index(...)
  |      S.index(sub[, start[, end]]) -> int
- |      
- |      Return the lowest index in S where substring sub is found, 
+ |
+ |      Return the lowest index in S where substring sub is found,
  |      such that sub is contained within S[start:end].  Optional
  |      arguments start and end are interpreted as in slice notation.
- |      
+ |
  |      Raises ValueError when the substring is not found.
- |  
+ |
  |  isalnum(self, /)
  |      Return True if the string is an alpha-numeric string, False otherwise.
- |      
+ |
  |      A string is alpha-numeric if all characters in the string are alpha-numeric and
  |      there is at least one character in the string.
- |  
+ |
  |  isalpha(self, /)
  |      Return True if the string is an alphabetic string, False otherwise.
- |      
+ |
  |      A string is alphabetic if all characters in the string are alphabetic and there
  |      is at least one character in the string.
- |  
+ |
  |  isascii(self, /)
  |      Return True if all characters in the string are ASCII, False otherwise.
- |      
+ |
  |      ASCII characters have code points in the range U+0000-U+007F.
  |      Empty string is ASCII too.
- |  
+ |
  |  isdecimal(self, /)
  |      Return True if the string is a decimal string, False otherwise.
- |      
+ |
  |      A string is a decimal string if all characters in the string are decimal and
  |      there is at least one character in the string.
- |  
+ |
  |  isdigit(self, /)
  |      Return True if the string is a digit string, False otherwise.
- |      
+ |
  |      A string is a digit string if all characters in the string are digits and there
  |      is at least one character in the string.
- |  
+ |
  |  isidentifier(self, /)
  |      Return True if the string is a valid Python identifier, False otherwise.
- |      
+ |
  |      Use keyword.iskeyword() to test for reserved identifiers such as "def" and
  |      "class".
- |  
+ |
  |  islower(self, /)
  |      Return True if the string is a lowercase string, False otherwise.
- |      
+ |
  |      A string is lowercase if all cased characters in the string are lowercase and
  |      there is at least one cased character in the string.
- |  
+ |
  |  isnumeric(self, /)
  |      Return True if the string is a numeric string, False otherwise.
- |      
+ |
  |      A string is numeric if all characters in the string are numeric and there is at
  |      least one character in the string.
- |  
+ |
  |  isprintable(self, /)
  |      Return True if the string is printable, False otherwise.
- |      
+ |
  |      A string is printable if all of its characters are considered printable in
  |      repr() or if it is empty.
- |  
+ |
  |  isspace(self, /)
  |      Return True if the string is a whitespace string, False otherwise.
- |      
+ |
  |      A string is whitespace if all characters in the string are whitespace and there
  |      is at least one character in the string.
- |  
+ |
  |  istitle(self, /)
  |      Return True if the string is a title-cased string, False otherwise.
- |      
+ |
  |      In a title-cased string, upper- and title-case characters may only
  |      follow uncased characters and lowercase characters only cased ones.
- |  
+ |
  |  isupper(self, /)
  |      Return True if the string is an uppercase string, False otherwise.
- |      
+ |
  |      A string is uppercase if all cased characters in the string are uppercase and
  |      there is at least one cased character in the string.
- |  
+ |
  |  join(self, iterable, /)
  |      Concatenate any number of strings.
- |      
+ |
  |      The string whose method is called is inserted in between each given string.
  |      The result is returned as a new string.
- |      
+ |
  |      Example: '.'.join(['ab', 'pq', 'rs']) -> 'ab.pq.rs'
- |  
+ |
  |  ljust(self, width, fillchar=' ', /)
  |      Return a left-justified string of length width.
- |      
+ |
  |      Padding is done using the specified fill character (default is a space).
- |  
+ |
  |  lower(self, /)
  |      Return a copy of the string converted to lowercase.
- |  
+ |
  |  lstrip(self, chars=None, /)
  |      Return a copy of the string with leading whitespace removed.
- |      
+ |
  |      If chars is given and not None, remove characters in chars instead.
- |  
+ |
  |  partition(self, sep, /)
  |      Partition the string into three parts using the given separator.
- |      
+ |
  |      This will search for the separator in the string.  If the separator is found,
  |      returns a 3-tuple containing the part before the separator, the separator
  |      itself, and the part after it.
- |      
+ |
  |      If the separator is not found, returns a 3-tuple containing the original string
  |      and two empty strings.
- |  
+ |
  |  replace(self, old, new, count=-1, /)
  |      Return a copy with all occurrences of substring old replaced by new.
- |      
+ |
  |        count
  |          Maximum number of occurrences to replace.
  |          -1 (the default value) means replace all occurrences.
- |      
+ |
  |      If the optional argument count is given, only the first count occurrences are
  |      replaced.
- |  
+ |
  |  rfind(...)
  |      S.rfind(sub[, start[, end]]) -> int
- |      
+ |
  |      Return the highest index in S where substring sub is found,
  |      such that sub is contained within S[start:end].  Optional
  |      arguments start and end are interpreted as in slice notation.
- |      
+ |
  |      Return -1 on failure.
- |  
+ |
  |  rindex(...)
  |      S.rindex(sub[, start[, end]]) -> int
- |      
+ |
  |      Return the highest index in S where substring sub is found,
  |      such that sub is contained within S[start:end].  Optional
  |      arguments start and end are interpreted as in slice notation.
- |      
+ |
  |      Raises ValueError when the substring is not found.
- |  
+ |
  |  rjust(self, width, fillchar=' ', /)
  |      Return a right-justified string of length width.
- |      
+ |
  |      Padding is done using the specified fill character (default is a space).
- |  
+ |
  |  rpartition(self, sep, /)
  |      Partition the string into three parts using the given separator.
- |      
+ |
  |      This will search for the separator in the string, starting at the end. If
  |      the separator is found, returns a 3-tuple containing the part before the
  |      separator, the separator itself, and the part after it.
- |      
+ |
  |      If the separator is not found, returns a 3-tuple containing two empty strings
  |      and the original string.
- |  
+ |
  |  rsplit(self, /, sep=None, maxsplit=-1)
  |      Return a list of the words in the string, using sep as the delimiter string.
- |      
+ |
  |        sep
  |          The delimiter according which to split the string.
  |          None (the default value) means split according to any whitespace,
@@ -966,17 +999,17 @@ class list(object)
  |        maxsplit
  |          Maximum number of splits to do.
  |          -1 (the default value) means no limit.
- |      
+ |
  |      Splits are done starting at the end of the string and working to the front.
- |  
+ |
  |  rstrip(self, chars=None, /)
  |      Return a copy of the string with trailing whitespace removed.
- |      
+ |
  |      If chars is given and not None, remove characters in chars instead.
- |  
+ |
  |  split(self, /, sep=None, maxsplit=-1)
  |      Return a list of the words in the string, using sep as the delimiter string.
- |      
+ |
  |      sep
  |        The delimiter according which to split the string.
  |        None (the default value) means split according to any whitespace,
@@ -984,63 +1017,63 @@ class list(object)
  |      maxsplit
  |        Maximum number of splits to do.
  |        -1 (the default value) means no limit.
- |  
+ |
  |  splitlines(self, /, keepends=False)
  |      Return a list of the lines in the string, breaking at line boundaries.
- |      
+ |
  |      Line breaks are not included in the resulting list unless keepends is given and
  |      true.
- |  
+ |
  |  startswith(...)
  |      S.startswith(prefix[, start[, end]]) -> bool
- |      
+ |
  |      Return True if S starts with the specified prefix, False otherwise.
  |      With optional start, test S beginning at that position.
  |      With optional end, stop comparing S at that position.
  |      prefix can also be a tuple of strings to try.
- |  
+ |
  |  strip(self, chars=None, /)
  |      Return a copy of the string with leading and trailing whitespace remove.
- |      
+ |
  |      If chars is given and not None, remove characters in chars instead.
- |  
+ |
  |  swapcase(self, /)
  |      Convert uppercase characters to lowercase and lowercase characters to uppercase.
- |  
+ |
  |  title(self, /)
  |      Return a version of the string where each word is titlecased.
- |      
+ |
  |      More specifically, words start with uppercased characters and all remaining
  |      cased characters have lower case.
- |  
+ |
  |  translate(self, table, /)
  |      Replace each character in the string using the given translation table.
- |      
+ |
  |        table
  |          Translation table, which must be a mapping of Unicode ordinals to
  |          Unicode ordinals, strings, or None.
- |      
+ |
  |      The table must implement lookup/indexing via __getitem__, for instance a
  |      dictionary or list.  If this operation raises LookupError, the character is
  |      left untouched.  Characters mapped to None are deleted.
- |  
+ |
  |  upper(self, /)
  |      Return a copy of the string converted to uppercase.
- |  
+ |
  |  zfill(self, width, /)
  |      Pad a numeric string with zeros on the left, to fill a field of the given width.
- |      
+ |
  |      The string is never truncated.
- |  
+ |
  |  ----------------------------------------------------------------------
  |  Static methods defined here:
- |  
+ |
  |  __new__(*args, **kwargs) from builtins.type
  |      Create and return a new object.  See help(type) for accurate signature.
- |  
+ |
  |  maketrans(x, y=None, z=None, /)
  |      Return a translation table usable for str.translate().
- |      
+ |
  |      If there is only one argument, it must be a dictionary mapping Unicode
  |      ordinals (integers) or characters to Unicode ordinals, strings or None.
  |      Character keys will be then converted to ordinals.
@@ -1079,7 +1112,7 @@ print(type(x))
 ============================================
 31. Python hash()
 
-Hash values are just integers which are used to compare dictionary keys during a dictionary 
+Hash values are just integers which are used to compare dictionary keys during a dictionary
 lookup quickly.
 The hash() method returns the hash value of an object if it has one.
 
@@ -1092,7 +1125,7 @@ print('Hash for Python is:', hash('Python'))
 
 Hash for 181 is: 181
 Hash for 181.23 is: 530343892119126197
-Hash for Python is: 2230730083538390373 
+Hash for Python is: 2230730083538390373
 
 a = "abc"
 print(hash(a))
@@ -1102,6 +1135,7 @@ print(hash(b)
 -1430047951
 ==============================================
 32. Python input()
+
 The input() method reads a line from input, converts into a string and returns it.
 =====================================
 33. Python id()
@@ -1210,9 +1244,11 @@ u
 error stopIteration
 =======================================
 38. Python list() Function
+
 The list() constructor creates a list in Python.
 ======================================
 39. Python locals()
+
 The locals() method updates and returns a dictionary of the current local symbol table.
 ========================================
 40. Python len()
@@ -1275,6 +1311,7 @@ print(numbersSquare)
 {16, 1, 4, 9}
 ====================================
 44. Python next()
+
 The next() function returns the next item from the iterator.
 ====================================
 45. Python memoryview()
@@ -1309,7 +1346,7 @@ print(dir(test))
 =====================================
 47. Python oct()
 
-The oct() method takes an integer number and returns its octal representation. If the given number is an int, it must 
+The oct() method takes an integer number and returns its octal representation. If the given number is an int, it must
 implement __index__() method to return an integer.
 
 # decimal number
@@ -1329,7 +1366,7 @@ The ord() method returns an integer representing Unicode code point for the give
 
 # code point of integer
 print(ord('5'))
-# code point of alphabet 
+# code point of alphabet
 print(ord('A'))
 # code point of character
 print(ord('$'))
@@ -1348,9 +1385,9 @@ The open() function opens the file (if possible) and returns a corresponding fil
 
 # opens for read
 f = open("path_to_file", mode='r')
-# opens for write 
+# opens for write
 f = open("path_to_file", mode = 'w')
-# opens for writing to the end 
+# opens for writing to the end
 f = open("path_to_file", mode = 'a')
 ===================================
 50. Python pow()
@@ -1381,12 +1418,15 @@ print(pow(x, y, z)) #7*7 % 5 = 4
 
 ==================================
 51. Python print()
+
 The print() function prints the given object to the standard output device (screen) or to the text stream file.
 ==================================
 52. Python property()
+
 The property() method a returns a property attribute.
 ==================================
 53. Python range()
+
 The range() type returns an immutable sequence of numbers between the given start integer to the stop integer.
 ===================================
 54. Python repr()
@@ -1398,6 +1438,7 @@ print(repr(var))
 'foo'
 ===================================
 55. Python reversed()
+
 The reversed() method returns the reversed iterator of the given sequence.
 ===================================
 56. Python round()
@@ -1454,15 +1495,19 @@ Before modification: Adam
 After modification: John
 ==================================
 59. Python slice()
+
 The slice() constructor creates a slice object representing the set of indices specified by range(start, stop, step).
 =================================
 60. Python sorted()
+
 The sorted() method returns a sorted list from the given iterable.
 =================================
 61. Python str()
+
 The str() method returns the "informal" or nicely printable representation of a given object.
 =================================
 62. Python sum()
+
 The sum() function adds the items of an iterable and returns the sum.
 ==================================
 63. Python tuple() Function
@@ -1488,7 +1533,7 @@ t1= (1, 2)
 ===================================
 64. Python type()
 
-If a single argument (object) is passed to type() built-in, it returns type of the given object. If three arguments 
+If a single argument (object) is passed to type() built-in, it returns type of the given object. If three arguments
 (name, bases and dict) are passed, it returns a new type object.
 ===================================
 65. Python vars()
@@ -1506,7 +1551,7 @@ print(vars(InstanceOfFoo))
 ===================================
 66. Python zip()
 
-The zip() function take iterables (can be zero or more), makes iterator that aggregates elements based on the 
+The zip() function take iterables (can be zero or more), makes iterator that aggregates elements based on the
 iterables passed, and returns an iterator of tuples.
 ===================================
 67. Python __import__()
