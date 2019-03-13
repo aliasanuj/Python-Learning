@@ -1,6 +1,7 @@
 1. Python abs()
 
-The abs() method returns the absolute value of the given number. If the number is a complex number, abs() returns its magnitude.
+The abs() method returns the absolute value of the given number. If the number is a complex number, abs() returns its 
+magnitude.
 
 # random integer
 integer = -20
@@ -41,7 +42,8 @@ Pythön is interesting
 ===========================
 5. Python bin()
 
-The bin() method converts and returns the binary equivalent string of a given integer. If the parameter isn't an integer, it has to implement __index__() method to return an integer.
+The bin() method converts and returns the binary equivalent string of a given integer. If the parameter isn't an integer, 
+it has to implement __index__() method to return an integer.
 
 number = 5
 print('The binary equivalent of 5 is:', bin(number))
@@ -66,7 +68,8 @@ The bytearray() takes three optional parameters:
 
 source (Optional) - source to initialize the array of bytes.
 encoding (Optional) - if source is a string, the encoding of the string.
-errors (Optional) - if source is a string, the action to take when the encoding conversion fails (Read more: String encoding)
+errors (Optional) - if source is a string, the action to take when the encoding conversion fails 
+(Read more: String encoding)
 
 string = "Python is interesting."
 # string with encoding 'utf-8'
@@ -210,7 +213,8 @@ Adam's age is: 19
 John's age is: 34
 =========================================
 13. Python complex()
-The complex() method returns a complex number when real and imaginary parts are provided, or it converts a string to a complex number.
+The complex() method returns a complex number when real and imaginary parts are provided, or it converts a string 
+to a complex number.
 
 z = complex(2, -3)
 print(z)
@@ -288,9 +292,12 @@ print(dir(string))
 number = 10
 print(dir(number))
 ['__abs__', '__add__', '__and__', '__bool__', '__ceil__', '__class__', '__delattr__', '__dir__', '__divmod__', '__doc__',
- '__eq__', '__float__', '__floor__', '__floordiv__', '__format__', '__ge__', '__getattribute__', '__getnewargs__', '__gt__',
- '__hash__', '__index__', '__init__', '__init_subclass__', '__int__', '__invert__', '__le__', '__lshift__', '__lt__', '__mod__',
- '__mul__', '__ne__', '__neg__', '__new__', '__or__', '__pos__', '__pow__', '__radd__', '__rand__', '__rdivmod__', '__reduce__',
+ '__eq__', '__float__', '__floor__', '__floordiv__', '__format__', '__ge__', '__getattribute__', '__getnewargs__', 
+ '__gt__',
+ '__hash__', '__index__', '__init__', '__init_subclass__', '__int__', '__invert__', '__le__', '__lshift__', '__lt__', 
+ '__mod__',
+ '__mul__', '__ne__', '__neg__', '__new__', '__or__', '__pos__', '__pow__', '__radd__', '__rand__', '__rdivmod__',
+ '__reduce__',
  '__reduce_ex__', '__repr__', '__rfloordiv__', '__rlshift__', '__rmod__', '__rmul__', '__ror__', '__round__', '__rpow__',
  '__rrshift__', '__rshift__', '__rsub__', '__rtruediv__', '__rxor__', '__setattr__', '__sizeof__', '__str__', '__sub__',
  '__subclasshook__', '__truediv__', '__trunc__', '__xor__', 'bit_length', 'conjugate', 'denominator', 'from_bytes', 'imag',
@@ -1167,7 +1174,8 @@ print(id(b))
 =========================================
 34. Python isinstance()
 
-The isinstance() function checks if the object (first argument) is an instance or subclass of classinfo class (second argument).
+The isinstance() function checks if the object (first argument) is an instance or subclass of classinfo class 
+      (second argument).
 
 class Foo:
   a = 5
@@ -1296,7 +1304,8 @@ Minimum is: 2
 =========================================
 43. Python map()
 
-The map() function applies a given function to each item of an iterable (list, tuple etc.) and returns a list of the results.
+The map() function applies a given function to each item of an iterable (list, tuple etc.) and returns 
+      a list of the results.
 
 def calculateSquare(n):
   return n*n
@@ -1340,8 +1349,10 @@ print(type(test))
 print(dir(test))
 
 <class 'object'>
-['__class__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__',
- '__init__', '__init_subclass__', '__le__', '__lt__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__',
+['__class__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', 
+ '__gt__', '__hash__',
+ '__init__', '__init_subclass__', '__le__', '__lt__', '__ne__', '__new__', '__reduce__', '__reduce_ex__',
+ '__repr__', '__setattr__',
  '__sizeof__', '__str__', '__subclasshook__']
 =====================================
 47. Python oct()
