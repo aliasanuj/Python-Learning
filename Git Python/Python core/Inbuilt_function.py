@@ -27,7 +27,8 @@ The all() method returns True when all elements in the given iterable are true. 
 ================================
 4. Python ascii()
 
-The ascii() method returns a string containing a printable representation of an object. It escapes the non-ASCII characters in the
+The ascii() method returns a string containing a printable representation of an object. It escapes the non-ASCII
+characters in the
 string using \x, \u or \U escapes.
 
 normalText = 'Python is interesting'
