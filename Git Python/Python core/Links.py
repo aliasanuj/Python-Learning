@@ -12,7 +12,9 @@ http://www.mysqltutorial.org/select-nth-highest-record-database-table-using-mysq
 #Data_structure_sorting
 https://medium.com/@george.seif94/a-tour-of-the-top-5-sorting-algorithms-with-python-code-43ea9aa02889
   
-  
+#Data_structure 
+http://scanftree.com/Data_Structure/
+ 
   
   
   
