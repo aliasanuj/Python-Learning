@@ -74,12 +74,15 @@ print(alist)
 2. Merge sort :
 =============================
 =============================
-1. Like QuickSort, Merge Sort is a Divide and Conquer algorithm. It divides input array in two halves, calls itself for the two halves and then merges the two sorted halves. The merge() function is used for merging two halves.
+1. Like QuickSort, Merge Sort is a Divide and Conquer algorithm. It divides input array in two halves, calls itself for the two 
+halves and then merges the two sorted halves. The merge() function is used for merging two halves.
 
 2. Merge sort is a perfectly elegant example of a Divide and Conquer algorithm. It simple uses the 2 main steps of such an algorithm:
 
-==> Continuously divide the unsorted list until you have N sublists, where each sublist has 1 element that is “unsorted” and N is the number of elements in the original array.
-==> Repeatedly merge i.e conquer the sublists together 2 at a time to produce new sorted sublists until all elements have been fully merged into a single sorted array.
+==> Continuously divide the unsorted list until you have N sublists, where each sublist has 1 element that is “unsorted” and N is 
+the number of elements in the original array.
+==> Repeatedly merge i.e conquer the sublists together 2 at a time to produce new sorted sublists until all elements have been 
+fully merged into a single sorted array.
 
 
 def mergeSort(alist):
