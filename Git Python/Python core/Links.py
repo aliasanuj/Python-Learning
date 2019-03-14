@@ -5,3 +5,7 @@ https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.ht
 #spotify icard link
 
 https://www.canva.com/design/DADT6TalWKg/76547GHtVcABeDL56erp_w/edit?layoutQuery=id&category=tACZCnZq6cQ&utm_source=onboarding
+  
+#mysql_nth  
+http://www.mysqltutorial.org/select-nth-highest-record-database-table-using-mysql.aspx
+    
