@@ -9,3 +9,11 @@ https://www.canva.com/design/DADT6TalWKg/76547GHtVcABeDL56erp_w/edit?layoutQuery
 #mysql_nth  
 http://www.mysqltutorial.org/select-nth-highest-record-database-table-using-mysql.aspx
     
+#Data_structure_sorting
+https://medium.com/@george.seif94/a-tour-of-the-top-5-sorting-algorithms-with-python-code-43ea9aa02889
+  
+  
+  
+  
+  
+  
