@@ -12,6 +12,7 @@ __str__() | __repr__()
 
 
 ===================
+All datatypes (mutable | imutable)
 switch case 
 break | continue | pass | 
 decorator(class | function)
