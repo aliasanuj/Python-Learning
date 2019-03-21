@@ -1,3 +1,5 @@
+https://medium.com/contentsquare-engineering-blog/multithreading-vs-multiprocessing-in-python-ece023ad55a
+
 #Its all about MultiThreading.py
 ===================================
 1. A thread is an entity within a process that can be scheduled for execution.
