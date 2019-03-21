@@ -1,4 +1,4 @@
-#closure.py
+#closure.py  
 =====================
 1. Before getting into what a closure is, we have to first understand what a nested function and nonlocal variable is.
 2. A function defined inside another function is called a nested function. 
@@ -134,11 +134,9 @@ def multiply_by(num):
   def multiply_by_num(k):
     return num * k
   return multiply_by_num
-  
 five = multiply_by(5)
 print(five(2))	# 10
 print(five(4))	# 20
- 
 decimal = multiply_by(10)
 print(decimal(20))	# 200
 print(decimal(3))	# 30
