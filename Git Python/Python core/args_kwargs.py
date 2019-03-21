@@ -43,7 +43,6 @@ def myFun(**kwargs):
     for i in kwargs.values():
         print(i)
 myFun(first ='Geeks', mid ='for', last='Geeks')
-
 #Geeks
 #for
 #Geeks
@@ -55,7 +54,6 @@ myFun(a=10, b=20,c=30)
 myFun(a="10", b="20",c="30")
 #myFun("a"="10", "b"="20","c"="30") #SyntaxError: keyword can't be an expression
 #myFun(1="10", 2="20",3="30") #SyntaxError: keyword can't be an expression
-
 #('a', 10)
 #('b', 20)
 #('c', 30)
@@ -67,7 +65,6 @@ def myFun(**kwargs):
     for i in kwargs.items():
         print(i)
 myFun(first ='Geeks', mid ='for', last='Geeks')
-
 #('first', 'Geeks')
 #('mid', 'for')
 #('last', 'Geeks')
@@ -76,7 +73,6 @@ def myFun(**kwargs):
     for i in kwargs.items():
         print(i)
 myFun(a='Geeks',b='for',c='Geeks')
-
 #('a', 'Geeks')
 #('b', 'for')
 #('c', 'Geeks')
@@ -97,7 +93,6 @@ def myFun(**kwargs):
     for i in kwargs.items():
         print("%s = %s"%(i))
 myFun(first ='Geeks', mid ='for', last='Geeks')
-
 #first = Geeks
 #mid = for
 #last = Geeks
@@ -107,7 +102,6 @@ def test_var_kwargs(farg, **kwargs):
     for i in kwargs.items():
         print("{}".format(i))
 test_var_kwargs(farg=1, myarg2="two", myarg3=3)
-
 #formal arg: 1
 #('myarg2', 'two')
 #('myarg3', 3)
@@ -117,12 +111,10 @@ def test_var_kwargs(farg, **kwargs):
     for i in kwargs.items():
         print(i)
 test_var_kwargs(farg=1, myarg2="two", myarg3=3)
-
 #formal arg: 1
 #('myarg2', 'two')
 #('myarg3', 3)
 ===============================
-
 def myFun(*argv):  
     for arg in argv:  
         print (arg) 
@@ -179,12 +171,10 @@ def myFun(arg,**kwargs):
     for i in kwargs.items(): 
         print (i) 
 myFun('anuj',first ='Geeks', mid ='for', last='Geeks')
-
 #anuj
 #('first', 'Geeks')
 #('mid', 'for')
 #('last', 'Geeks')
-   
 ==================================
 def myFun(arg1, **kwargs):  
     for key, value in kwargs.items(): 
@@ -227,7 +217,6 @@ def test_var_kwargs(farg, *kwargs):
         print(i)
 test_var_kwargs(farg=1, myarg2="two", myarg3=3)
 #TypeError: test_var_kwargs() got an unexpected keyword argument 'myarg2'
-
 ===============================================
 def myFun(arg1, arg2, arg3): 
     print("arg1:", arg1) 
@@ -269,7 +258,6 @@ intro(Firstname="John", Lastname="Wood", Email="johnwood@nomail.com", Country="W
 #Lastname is Sharma
 #Age is 22
 #Phone is 1234567890
-
 #Data type of argument: <class 'dict'>
 #Firstname is John
 #Lastname is Wood
