@@ -23,6 +23,13 @@ print(any([]))
 #True
 #True
 #False
+================================
+print (any({False, False, False, False}))
+print (any((False, True, False, False)))
+print (any([True, False, False, False]))
+False
+True
+True
 ==========================================
 #all
 print (all([True, True, True, True])) 
