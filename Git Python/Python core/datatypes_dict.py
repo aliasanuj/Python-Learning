@@ -3,8 +3,7 @@
 1. Python dictionary is an unordered collection of items. While other compound data types have only value as an element,
 a dictionary has a key: value pair.
 2. Dictionaries are optimized to retrieve values when the key is known.
-3. While values can be of any data type and can repeat, keys must be of immutable type (string, number or tuple with immutable elements)
-and must be unique.
+3. While values can be of any data type and can repeat, keys must be of immutable type (string, number or tuple with is immutable elements) and must be unique.
 4. While indexing is used with other container types to access values, dictionary uses keys. Key can be used either inside square 
 brackets or with the get() method.
 5. The difference while using get() is that it returns None instead of KeyError, if the key is not found.
@@ -196,6 +195,18 @@ sorted_x = sorted(x.items())
 print(sorted_x)
 #[(0, 0), (1, 2), (2, 1), (3, 4), (4, 3)]
 ==================================
+import operator
+x = {'a': "anuj", 't': "gfwe", 'e': "bfhjsd", 'd': "cbfhdcbf", 'q': "jhcfj"}
+sorted_x = sorted(x.items())
+print(sorted_x)
+#[('a', 'anuj'), ('d', 'cbfhdcbf'), ('e', 'bfhjsd'), ('q', 'jhcfj'), ('t', 'gfwe')]
+===================================
+import operator
+x = {1: "anuj", 't': "gfwe", 'e': "bfhjsd", 3: "cbfhdcbf", 'q': "jhcfj"}
+sorted_x = sorted(x.items())
+print(sorted_x)
+#TypeError: '<' not supported between instances of 'str' and 'int'
+====================================
 thisdict =	{
   "brand": "Ford",
   "model": "Mustang",
@@ -488,7 +499,7 @@ Dict = {'Tim': 18,'Charlie':12,'Tiffany':22,'Robert':25}
 Dict.update({"Sarah":9})
 print(Dict)
 #{'Tim': 18, 'Charlie': 12, 'Tiffany': 22, 'Robert': 25, 'Sarah': 9}
-================================================
+===========================================
 Dict = {'Tim': 18,'Charlie':12,'Tiffany':22,'Robert':25}
 Dict.update({"Tim":9})
 print(Dict)
@@ -553,7 +564,7 @@ print("Length : %d" % len (Dict))
 ===========================================================
 Dict = {'Tim': 18,'Charlie':12,'Tiffany':22,'Robert':25}	
 print("variable Type: %s" %type (Dict))
-#variable Type: <class 'dict'>
+#variable Type: <class 'dict'> #we cant give here as %d as it is not integer value
 ===========================================================
 Dict = {'Tim': 18,'Charlie':12,'Tiffany':22,'Robert':25}	
 print("printable string:%s" % str (Dict))
@@ -568,7 +579,7 @@ for i in string1:
     dict1[i] = 1
 print(dict1)
 #{'a': 4, 'n': 3, 'u': 4, 'j': 3, ' ': 3, 'k': 1, 'm': 1, 'r': 1}
-================================================
+===============================================================
 string1 = "anuj anuj anuj kumar"
 dict1 = {}
 for i in string1:
