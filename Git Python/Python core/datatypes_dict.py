@@ -226,6 +226,14 @@ thisdict =	{
 thisdict.pop("model")
 print(thisdict)
 #{'brand': 'Ford', 'year': 1964}
+=====================================================
+dict1 = {'a':"anuj",'b':"boy", 'c':"cat"}
+print(dict1.pop('c'))
+print(dict1.popitem())
+print(dict1)
+#cat
+#('b', 'boy')
+#{'a': 'anuj'}
 =======================================================
 thisdict =	{
   "brand": "Ford",
