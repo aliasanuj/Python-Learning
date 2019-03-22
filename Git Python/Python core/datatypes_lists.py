@@ -15,9 +15,13 @@ my_list = [1, "Hello", 3.4]
 # nested list
 my_list = ["mouse", [8, 4, 6], ['a']]
 ==================================================
+#List Comprehension: Elegant way to create new List
+#List comprehension is an elegant and concise way to create new list from an existing list in Python.
+#List comprehension consists of an expression followed by for statement inside square brackets.
+#Here is an example to make a list with each item being increasing power of 2.
+==================================================
 #How to access elements from a list -->
 #There are various ways in which we can access the elements of a list.
-
 #List Index :
 #We can use the index operator [] to access an item in a list.
 #Index starts from 0. So, a list having 5 elements will have index from 0 to 4.
@@ -58,6 +62,16 @@ print(my_list[:])
 #['p', 'r', 'o', 'g']
 #['a', 'm', 'i', 'z']
 #['p', 'r', 'o', 'g', 'r', 'a', 'm', 'i', 'z']
+========================================
+list1 = [1,2,4,7,9,5,6]
+print(list1[:])
+print(list1[:20])
+print(list1[20:])
+print(list1[:])
+[1, 2, 4, 7, 9, 5, 6]
+[1, 2, 4, 7, 9, 5, 6]
+[]
+[1, 2, 4, 7, 9, 5, 6]
 =========================================
 #How to change or add elements to a list -->
 #List are mutable, meaning, their elements can be changed unlike string or tuple.
@@ -97,6 +111,10 @@ odd[2:2] = [5, 7]
 print(odd)
 #[1, 3, 9]
 #[1, 3, 5, 7, 9]
+=================================
+list1 = [1,2,4,7,9,5,6]
+print(list1.insert(20,10))
+#None
 =================================
 odd = [1, 9]
 odd.insert(1,5)
@@ -147,6 +165,13 @@ my_list = ['p','r','o','b','l','e','m']
 my_list.remove('r')
 print(my_list)
 #['p', 'o', 'b', 'l', 'e', 'm']
+=======================
+list1 = [1,2,3,4,'a','y']
+print(list1.pop(1))
+list1.remove('a')
+print(list1)
+#2
+#[1, 3, 4, 'y']
 ========================
 #Finally, we can also delete items in a list by assigning an empty list to a slice of elements.
 my_list = ['p','r','o','b','l','e','m']
@@ -156,7 +181,12 @@ my_list[2:5] = []
 print(my_list)
 #['p', 'r', 'b', 'l', 'e', 'm']
 #['p', 'r', 'm']
-=========================
+============================================
+list1 = [1,2,3,4,'a','y']
+list1[:] = []
+print(list1)
+#[]
+===============================
 list1 = ['p','r','o','b','l','e','m']
 list1.pop()
 print(list1)
@@ -243,6 +273,12 @@ list2 = ["anuj","kumar","aman","anshu"]
 list1.extend(list2)
 print(list1)
 #[1, 2, 3, 4, 5, 6, 6, 'anuj', 'kumar', 'aman', 'anshu']
+===========================
+list1 = [1,2,3,4,5,6,6]
+list2 = ["anuj","kumar","aman","anshu"]
+list1.append(list2)
+print(list1)
+#[1, 2, 3, 4, 5, 6, 6, ['anuj', 'kumar', 'aman', 'anshu']]
 ======================
 list1 = [1,2,3,4,5,6,6]
 list2 = ["anuj","kumar","aman","anshu"]
@@ -282,6 +318,12 @@ list2 = ["anuj","kumar","aman","anshu"]
 list1.sort() 
 print(list1)
 #[1, 3, 4, 4, 5, 6, 6, 28, 45]
+============================
+list1 = [1,2,3,4,5,6,6]
+list2 = ["anuj","kumar","aman","anshu"]
+list2.sort()
+print(list2)
+#['aman', 'anshu', 'anuj', 'kumar']
 =============================
 list1 = [1,28,45,4]
 list2 = ["anuj","kumar","aman","anshu"]
@@ -316,6 +358,17 @@ list1.reverse()
 print(list1)
 #[77, 55, 9, 7, 7, 5, 4, 4, 1]
 #[1, 4, 4, 5, 7, 7, 9, 55, 77]
+=========================================
+list1 = [1,4,7,9,5,4,77,55,7]
+def reverse(list1):
+    for i in range(len(list1)-1):
+        for j in range(len(list1) -1):
+            if list1[j] > list1[j+1]:
+                list1[j],list1[j+1] = list1[j+1],list1[j]
+    return list1
+x = reverse(list1)
+print(list(set(sorted(x))))
+#[1, 4, 5, 7, 9, 77, 55]
 =============================================
 my_list = [3, 8, 1, 6, 0, 8, 4]
 print(my_list.index(8))
@@ -328,11 +381,6 @@ print(my_list)
 #2
 #[0, 1, 3, 4, 6, 8, 8]
 #[8, 8, 6, 4, 3, 1, 0]
-=========================================
-#List Comprehension: Elegant way to create new List
-#List comprehension is an elegant and concise way to create new list from an existing list in Python.
-#List comprehension consists of an expression followed by for statement inside square brackets.
-#Here is an example to make a list with each item being increasing power of 2.
 =========================================
 pow2 = [2 ** x for x in range(10)]
 print(pow2)
@@ -460,6 +508,16 @@ print(my_list[:])
 #['p', 'r', 'o', 'g']
 #['a', 'm', 'i', 'z']
 #['p', 'r', 'o', 'g', 'r', 'a', 'm', 'i', 'z']
+=====================================================
+list1 = [1,2,3,4,5]
+print(list1[0:20])
+print(list1[10:])
+print(list1[10:-1])
+print(list1[-1:20])
+#[1, 2, 3, 4, 5]
+#[]
+#[]
+#[5]
 ======================================================
 # mistake values
 odd = [2, 4, 6, 8]
@@ -694,3 +752,4 @@ print(Sliced_List)
 #['G', 'E', 'E', 'K', 'S', 'F', 'O', 'R', 'G', 'E', 'E', 'K', 'S']
 #Printing List in reverse: 
 #['S', 'K', 'E', 'E', 'G', 'R', 'O', 'F', 'S', 'K', 'E', 'E', 'G']
+=====================================
