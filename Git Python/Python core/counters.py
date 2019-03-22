@@ -92,7 +92,7 @@ coun = Counter(a=1, b=2, c=3, d=120, e=1, f=219)
 for i in coun.most_common(3): 
     print(i) 
 #('f', 219)
-#3('d', 120)
+#('d', 120)
 #('c', 3)
 ========================
 from collections import Counter 
