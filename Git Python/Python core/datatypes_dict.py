@@ -3,7 +3,8 @@
 1. Python dictionary is an unordered collection of items. While other compound data types have only value as an element,
 a dictionary has a key: value pair.
 2. Dictionaries are optimized to retrieve values when the key is known.
-3. While values can be of any data type and can repeat, keys must be of immutable type (string, number or tuple with is immutable elements) and must be unique.
+3. While values can be of any data type and can repeat, keys must be of immutable type (string, number or tuple with is immutable 
+elements) and must be unique.
 4. While indexing is used with other container types to access values, dictionary uses keys. Key can be used either inside square 
 brackets or with the get() method.
 5. The difference while using get() is that it returns None instead of KeyError, if the key is not found.
@@ -40,8 +41,9 @@ sorted()	Return a new sorted list of keys in the dictionary.
 Method	Description	Syntax
 ===========================================================
 copy()		dict.copy()		Copy the entire dictionary to new dictionary			
-update()	Dict.update()		Update a dictionary by adding a new entry or a key-value pair to an existing entry or by deleting an existing entry.
-items()	dictionary.items()	Returns a list of tuple pairs (Keys, Value) in the dictionary.
+update()	Dict.update()		Update a dictionary by adding a new entry or a key-value pair to an existing entry or by 
+					deleting an existing entry.
+items()		dictionary.items()	Returns a list of tuple pairs (Keys, Value) in the dictionary.
 sort()		sort()			You can sort the elements	dictionary.			
 len()		len(dict)		Gives the number of pairs in the dictionary.			
 cmp()		cmp(dict1, dict2) 	Compare values and keys of two dictionaries			
