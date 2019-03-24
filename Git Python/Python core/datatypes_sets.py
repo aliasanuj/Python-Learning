@@ -1,6 +1,5 @@
-================================
-#sets===========================
-================================
+#sets :
+===========
 #Sets in Python
 #A Set is an unordered collection data type that is iterable, mutable, and 
 #has no duplicate elements. Python’s set class represents the mathematical 
@@ -13,7 +12,7 @@
 #frozen set or sets to which they are applied.
 ===================================
 1. set --> mutable
-2. frozenset --> Imutable
+2. frozenset --> Immutable
 ===================================
 # Same as {"a", "b","c"} 
 normal_set = set(["a", "b","c"]) 
@@ -38,7 +37,14 @@ Output:
 people = {"Jay", "Idrish", "Archil"}
 people.add("Daxit") 
 -> This will add Daxit in people set.
-
+people = {"Jay", "Idrish", "Archil"}
+people.add("Daxit")
+print(people)
+people.add("Daxit")
+print(people)
+#{'Jay', 'Archil', 'Idrish', 'Daxit'}
+#{'Jay', 'Archil', 'Idrish', 'Daxit'}
+===============================
 2. union(s) Method: Returns a union of two set.Using the ‘|’ operator between
 #2 sets is the same as writing set1.union(set2)
 people = {"Jay", "Idrish", "Archil"}
@@ -47,26 +53,54 @@ population = people.union(vampires)
 OR
 population = people|vampires
 #Set population set will have components of both people and vampire
-
+people = {"Jay", "Idrish", "Archil"}
+vampires = {"Karan", "Arjun"}
+population = people.union(vampires)
+print(population)
+population1 = people|vampires
+print(population1)
+#{'Arjun', 'Idrish', 'Archil', 'Karan', 'Jay'}
+#{'Arjun', 'Idrish', 'Archil', 'Karan', 'Jay'}
+==============================
 3. intersect(s) Method: Returns an intersection of two sets.The ‘&’ 
 #operator comes can also be used in this case.
 victims = people.intersection(vampires)
 -> Set victims will contain the common element of people and vampire
-
+people = {"Jay", "Idrish", "Archil"}
+vampires = {"Karan", "Arjun","Jay"} #case sensitive 'j' will not work
+population = people.intersection(vampires)
+print(population)
+population1 = people&vampires
+print(population1)
+#{'Jay'}
+#{'Jay'}
+=================================
 4. difference(s) Method: Returns a set containing all the elements of invoking
 # set but not of the second set. We can use ‘-‘ operator here.
 safe = people.difference(vampires)
 OR
 safe = people – vampires
 #-> Set safe  will have all the elements that are in people but not vampire
-
+people = {"Jay", "Idrish", "Archil"}
+vampires = {"Karan", "Arjun","Jay"} #case sensitive 'j' will not work
+population = people.difference(vampires)
+print(population)
+population1 = people-vampires
+print(population1)
+#{'Idrish', 'Archil'}
+#{'Idrish', 'Archil'}
+=================================
 5. clear() Method: Empties the whole set.
 victims.clear()
 -> Clears victim set
 However there are two major pitfalls in Python sets:
 The set doesn’t maintain elements in any particular order.
 Only instances of immutable types can be added to a Python set.
-
+people = {"Jay", "Idrish", "Archil"}
+vampires = {"Karan", "Arjun","Jay"} #case sensitive 'j' will not work
+population = people.clear()
+print(population)
+#None
 ============================================
 Method	Description
 add()	      Adds an element to the set
@@ -86,3 +120,4 @@ symmetric_difference()	Returns a set with the symmetric differences of two sets
 symmetric_difference_update()	inserts the symmetric differences from this set and another
 union()	Return a set containing the union of sets
 update()	Update the set with the union of this set and others
+=================================
