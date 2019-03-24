@@ -41,6 +41,44 @@ def abc(func,a):
     print(result)
 obj = abc(a1,5)
 #6
+==============================
+def outer(param):
+    print("outer")
+    def inner():
+        print("inner")
+        param()
+    return inner
+def outer1():
+    print("outer1")
+obj = outer(outer1)
+#outer
+=============================
+def outer(param):
+    print("outer")
+    def inner():
+        print("inner")
+        param()
+    return inner()
+def outer1():
+    print("outer1")
+obj = outer(outer1)
+#outer
+#inner
+#outer1
+=============================
+def outer(param):
+    print("outer")
+    def inner():
+        print("inner")
+        param()
+    return inner()
+def outer1():
+    print("outer1")
+obj = outer(outer1)
+obj
+#outer
+#inner
+#outer1
 =============================
 def make_pretty(func):
     def inner():
@@ -53,6 +91,28 @@ pretty = make_pretty(ordinary)
 pretty()
 #I got decorated
 #I am ordinary
+===================================
+def make_pretty(func):
+    def inner():
+        print("I got decorated")
+        func()
+    return inner()
+def ordinary():
+    print("I am ordinary")
+pretty = make_pretty(ordinary)
+#I got decorated
+#I am ordinary
+===================================
+def make_pretty(func):
+    def inner():
+        print("I got decorated")
+        func()
+    return inner()
+def ordinary():
+    print("I am ordinary")
+pretty = make_pretty(ordinary)
+pretty()
+#error
 ===================================
 def outer():
     print("in outer")
@@ -87,6 +147,20 @@ def outer1():
     print("outer 1")
 obj1 = outer(outer1)
 #in outer
+===================================
+def outer(func):
+    print("in outer")
+    def inner():
+        print("in inner")
+        func()
+    return inner
+def outer1():
+    print("outer 1")
+obj1 = outer(outer1)
+obj1()
+#in outer
+#in inner
+#outer 1
 ===================================
 def outer(abc):
     def inner():
@@ -146,6 +220,26 @@ def outer(abc,abcd):
         abcd()
         print("abcd function")
         abc()
+        print("abc function")
+    return inner
+def outer1():
+    print("in outer1 function")
+def outer2():
+    print("in outer2 function")
+obj = outer(outer1,outer2)
+obj()
+#inner function
+#in outer2 function
+#abcd function
+#in outer1 function
+#abc function
+=========================
+def outer(outer1,outer2):
+    def inner():
+        print("inner function")
+        outer2()
+        print("abcd function")
+        outer1()
         print("abc function")
     return inner
 def outer1():
@@ -305,9 +399,9 @@ def add_num_decorate(abc):
         print("after adding")
     return add_num1
 @add_num_decorate
-def add_num2(i,j):
+def add_num2(i,j):  #same name
     return i+j
-def add_num2(i,j):
+def add_num2(i,j):	#same name
     return i*j
 add_num2(10,10)
 #no output
@@ -342,6 +436,27 @@ obj()
 #inner function
 #in outer1 function
 #after inner None
+============================
+def outer(abcd):
+    def inner():
+        print("inner function")
+        print("after inner",abcd())
+    return inner
+def outer1():
+    print("in outer1 function")
+obj = outer(outer1)
+#No output
+==============================
+def outer(abcd):
+    print("kjcbdhh")
+    def inner():
+        print("inner function")
+        print("after inner",abcd())
+    return inner
+def outer1():
+    print("in outer1 function")
+obj = outer(outer1)
+#kjcbdhh
 =============================
 def outer(abcd):
     def inner():
@@ -374,6 +489,20 @@ outer1()
 #abc function 00 
 #outer1 function
 #abc function 01
+==============================
+def outer(abc):
+    def inner():
+        print("inner function",abc())
+        abc()
+        print("abc function 00 ")
+        abc()
+        print("abc function 01")
+    return  inner
+@outer
+def outer1():
+    print("outer1 function")
+outer()
+#error
 ===========================
 def outer(abc):
     def inner():
@@ -392,6 +521,20 @@ outer1()
 #abc function 00 
 #outer1 function
 #abc function 01
+======================
+def outer(abc):
+    def inner():
+        print("inner function",abc())
+        abc()
+        print("abc function 00 ")
+        abc()
+        print("abc function 01")
+    return  inner
+@outer1
+def outer1():
+    print("outer1 function")
+outer()
+#error
 =======================
 def outer(abc):
     def inner():
