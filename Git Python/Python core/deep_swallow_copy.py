@@ -9,7 +9,7 @@ Deep Copy --> In case of deep copy, an object is copied in another object. It me
 do not reflect in the original object. In python it is implemented using "deep copy()" function.
 We need to import copy 
 
-shallow copy --> 	In this, references of object is copied in other object. 
+shallow copy -->In this, references of object is copied in other object. 
 It means that any change made to a copy of object do reflect in the original object.
 In python, it is implemented by "copy()" function.
 ========================================================
