@@ -291,7 +291,9 @@ been joined by str separator.
 list1 = ['1', '2', '3', '4']
 s = "".join(list1)
 print(s)
+print(type(s))
 #1234
+#<class 'str'>
 ================================
 list1 = ['1', '2', '3', '4']
 s = "-".join(list1)
@@ -318,12 +320,20 @@ s = "-".join(list1)
 print(s)
 #ANUJ -ANUJ-KUMAR
 ================================
+a = "kumaranuj"
+x = "".join(a)
+print(x)
+#kumaranuj
+================================
 list1 = [1, 2, 3, 4]
 s = "".join(list1)
 print(s)
 #error TypeError: sequence item 0: expected str instance, int found
 ================================
 split() method returns a list of strings after breaking the given string by the specified separator.
+===============================
+join = [list to string]
+split = string to [list]
 ================================
 x = "blue, red, green"
 print(x.split())
@@ -355,6 +365,11 @@ txt = "145615 615145"
 x = txt.split()
 print(x)
 #['145615', '615145']
+==================================
+txt = "145615615145"
+x = txt.split()
+print(x)
+#['145615'615145']
 ===============================
 The strip() returns a copy of the string with both leading and trailing characters stripped.
 ==================================
@@ -369,6 +384,17 @@ print(string.strip('an'))
 #xoxo love xoxo   
 #droid is awesome
 ===========================
+string = 'Hello anuj, i am anuj'
+print(string.strip())
+print(string.strip('anuj'))
+print(string.strip('xxx'))
+string = 'android is awesome'
+print(string.strip('a'))
+#Hello anuj, i am anuj
+#Hello anuj, i am 
+#Hello anuj, i am anuj
+#ndroid is awesome
+===========================
 x = "anuj"
 y = x.capitalize()
 print(y)
@@ -380,6 +406,11 @@ print(y)
 #anuj
 =========================
 x = "patna banglore pune"
+y = x.count("b")
+print(y)
+#1
+========================
+x = "patna banglore Banglore pune"
 y = x.count("b")
 print(y)
 #1
@@ -408,6 +439,18 @@ x = "patna banglore pune"
 y = x.find("a")
 print(y)
 #1
+==========================
+x = "patna banglore pune"
+print(x.find(" "))
+print(x.find(""))
+print(x.find("a"))
+print(x.find("z"))
+print(x.find("p"))
+#5
+#0
+#1
+#-1
+#0
 =====================
 x = "patna banglore pune"
 y = x.center(26,"*")
@@ -660,6 +703,12 @@ print('The value of x is %3.2f' %x)
 #The value of x is 12.35
 print('The value of x is %3.4f' %x)
 #The value of x is 12.3457
+==========================================
+x = 12.3456789
+print('The value of x is %.5f' %x)
+print('The value of x is %3.4f' %x)
+#The value of x is 12.34568
+#The value of x is 12.3457
 ===========================================
 astring = "Hello world!"
 print("single quotes are ' '")
@@ -682,6 +731,14 @@ print(astring[3:7])
 astring = "Hello world!"
 print(astring[3:7:2])
 #1
+===============================
+astring = "kumar anuj"
+print(astring[3:7])
+print(astring[3:7:2])
+print(astring[3:7:3])
+#ar a
+#a 
+#aa
 ========================================
 astring = "Hello world!"
 print(astring[3:7])
