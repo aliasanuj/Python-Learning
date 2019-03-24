@@ -57,7 +57,6 @@ print(counter_list
 l1 = ["eat","sleep","repeat"]
 for ele in enumerate(l1,10): 
     print(ele)
-	
 #(10, 'eat')
 #(11, 'sleep')
 #(12, 'repeat')
@@ -119,4 +118,4 @@ for x,y in enumerate(list1,10):
 x = ["apple","banana","cherry"]
 print(list(enumerate(x)))
 #[(0, 'apple'), (1, 'banana'), (2, 'cherry')]
-==============================
+=============================
