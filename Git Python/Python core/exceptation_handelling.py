@@ -208,7 +208,6 @@ throw an AssertionError exception.
 ==========================================================
 Python assert statement :
 Have a look at the following example, where it is asserted that the code will be executed on a Linux system:
-
 import sys
 assert ('linux' in sys.platform), "This code runs on Linux only."
 If you run this code on a Linux machine, the assertion passes.
@@ -225,13 +224,11 @@ The try and except block in Python is used to catch and handle exceptions.
 Python executes code following the try statement as a “normal” part of the program. 
 The code that follows the except statement is the program’s response to any exceptions 
 in the preceding try clause.
-
 As you saw earlier, when syntactically correct code runs into an error,
 Python will throw an exception error. This exception error will crash the 
 program if it is unhandled. The except clause determines how your program responds to exceptions.
 ==========================================================
 The following function can help you understand the try and except block:
-
 def linux_interaction():
     assert ('linux' in sys.platform), "Function can only run on Linux systems."
     print('Doing something.')
@@ -427,8 +424,6 @@ while True:
        print("This value is too large, try again!")
        print()
 print("Congratulations! You guessed it correctly.")
-
-
 =======================================================
 class Error(Exception):
    """Base class for other exceptions"""
@@ -489,7 +484,7 @@ print("Congratulations! You guessed it correctly.")
 #please enter appropriate input
 #Enter a number: 
 ========================================================
-# = int(input("enter any number"))
+x = int(input("enter any number"))
 try:
     x = int(input("enter any number"))
     if x > 5:
