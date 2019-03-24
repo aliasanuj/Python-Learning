@@ -513,7 +513,8 @@ You’ll also notice that in the above example we didn’t use the “file.close
 automatically call that for us upon execution. It really makes things a lot easier, doesn’t it?
 ============================================
 Using the With Statement in the Real World
-To better understand the with statement, let’s take a look at some real world examples just like we did with the file handling functions.
+To better understand the with statement, let’s take a look at some real world examples just like we did with the file handling 
+functions.
 To write to a file using the with statement:
 ============================================
 with open(“hello.txt”, “w”) as f: 
@@ -539,4 +540,5 @@ If you wanted to use a colon instead of a space to split your text, you would si
 The output for this will be:
 [“hello”, “world”, “how”, “are”, “you”, “today?”]
 [“today”, “is”, “Saturday”]
-The reason the words are presented in this manner is because they are stored – and returned – as an array. Be sure to remember this when working with the split function.
+The reason the words are presented in this manner is because they are stored – and returned – as an array. Be sure to remember this 
+when working with the split function.
