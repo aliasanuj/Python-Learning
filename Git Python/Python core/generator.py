@@ -350,7 +350,6 @@ def lottery():
     yield random.randint(11,20)
 for i in lottery():
     print("number is ",i)
-
 #number is  5
 #number is  4
 #number is  2
