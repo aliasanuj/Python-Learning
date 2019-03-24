@@ -1,10 +1,8 @@
-#datatypes_tuple.py=================
-====================================
-====================================
+#datatypes_tuple.py :
+==========================
 In Python programming, a tuple is similar to a list.
 The difference between the two is that we cannot change the elements of a tuple once it is assigned whereas in a list,
 elements can be changed.
-
 Advantages of Tuple over List:
 1. Since, tuples are quite similiar to lists, both of them are used in similar situations as well.
 2. However, there are certain advantages of implementing a tuple over a list. Below listed are some of the main advantages:
@@ -19,6 +17,11 @@ optional but is a good practice to write it.
 a = "kumar","anuj","prem"
 print(type(a))
 #<class 'tuple'>
+-----------------
+a = "kumar","anuj","prem",
+print(type(a))
+#<class 'tuple'>
+-------------------
 2. A tuple can have any number of items and they may be of different types (integer, float, list, string etc.).
 =======================================
 Creating a tuple with one element is a bit tricky.
