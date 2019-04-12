@@ -5,7 +5,7 @@ any
 1. Returns true if any of the items is True. 
 2. It returns False if empty or all are false.
 3. Any can be thought of as a sequence of OR operations on the provided iterables.
-. It short circuit the execution i.e. stop the execution as soon as the result is known.
+4. It short circuit the execution i.e. stop the execution as soon as the result is known.
 =============================
 all
 =============================
