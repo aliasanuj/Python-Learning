@@ -149,7 +149,6 @@ s = " "
 print(all(s))
 s = ""
 print(all(s))
-
 #True
 #True
 ==============================
