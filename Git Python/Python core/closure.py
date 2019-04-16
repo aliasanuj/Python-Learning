@@ -5,7 +5,7 @@
 3. Nested functions can access variables of the enclosing scope.
 4. In Python, these non-local variables are read only by default and 
 5. we must declare them explicitly as non-local (using nonlocal keyword) in order to modify them
-6. A Closure is a function object that remembers values in enclosing scopes even if they are not present in memory. 
+==> A Closure is a function object that remembers values in enclosing scopes even if they are not present in memory. 
 base concept of decorator is closure
 ======================================
 def gen_multiplier(x):
@@ -13,6 +13,23 @@ def gen_multiplier(x):
         return x * y
     return multiplier
 obj = gen_multiplier(10)
+print(obj(5))
+#50
+=======================
+def gen_multiplier(x):
+    def multiplier(y):
+        return x * y
+    return multiplier()
+obj = gen_multiplier(10)
+print(obj(5))
+#error
+=========================
+def gen_multiplier():
+    x = 10
+    def multiplier(y):
+        return x * y
+    return multiplier
+obj = gen_multiplier()
 print(obj(5))
 #50
 =======================
@@ -26,7 +43,39 @@ obj = gen_multiplier()
 del gen_multiplier #it will delete
 print(obj(5))
 #50
+==============================
+def outer(a):
+    print(a)
+    def inner(b):
+        print(a+b)
+    return inner
+obj = outer(5)
+#5
+============================
+def outer(a):
+    print(a)
+    def inner(b):
+        print(a+b)
+    return inner
+obj = outer(5)
+print(obj(10))
+#5
+#10
+#none
 ==========================
+def outer(a):
+    print(a)
+    def inner(b):
+        print(a+b)
+    return inner
+obj = outer(5)
+print(obj(10))
+obj(10)
+#5
+#15
+#None
+#15
+==============================
 def gen_multiplier(a):
     x = 10 #non-local variable
     def multiplier(y): #stores the reference to non-local variable
@@ -63,6 +112,24 @@ def print_msg(msg):
 # We execute the function
 # Output: Hello
 print_msg("Hello")
+=======================================
+def print_msg(msg):
+# This is the outer enclosing function
+    def printer():
+# This is the nested function
+        print(msg)
+    return printer
+# We execute the function
+# Output: Hello
+print_msg("Hello")
+#print nothing
+=====================================
+def print_msg(msg):
+    def printer():
+        print(msg)
+    return printer()
+print_msg("Hello")
+#Hello
 =====================================
 def outer(a1):
     def inner(a2):
@@ -71,6 +138,13 @@ def outer(a1):
 obj = outer(12)
 obj(15)
 #27
+================================
+def print_msg(msg):
+    def printer():
+        print(msg)
+    return printer()
+obj = print_msg("Hello")
+#Hello
 =================================
 def print_msg(msg):
 # This is the outer enclosing function
@@ -102,6 +176,13 @@ another()
 #On calling another(), the message was still remembered although 
 #we had already finished executing the print_msg() function.
 #This technique by which some data ("Hello") gets attached to the code is called closure in Python.
+========================================
+def print_msg(msg):
+    def printer():
+        print(msg)
+    return printer()
+another = print_msg("Hello")
+#Hello
 ==================================================
 x = 'global'
 def outer_func():
@@ -113,6 +194,19 @@ def outer_func():
 print(outer_func())
 #global enclose local
 #None
+===================================
+x = 'global'
+def outer_func():
+  y = 'enclose'
+  def inner_func():
+    z = 'local'
+    print(x, y, z)
+  inner_func()
+outer_func()
+print(outer_func())
+#global enclose local
+#global enclose local
+#None
 ================================
 def outer_func():
   x = 5
@@ -120,7 +214,7 @@ def outer_func():
     return (x + y)
   return inner_func
 a = outer_func()
- print(a())	# 8
+print(a)	# 8
 ======================
 def outer_func():
   x = 5
@@ -130,6 +224,17 @@ def outer_func():
 print(outer_func())
 #8
 =======================
+def outer_func():
+  x = 5
+  def inner_func(y = 3):
+    return (x + y)
+  return inner_func()
+print(outer_func())
+a = outer_func()
+print(a)
+#8
+#8
+=====================================
 def multiply_by(num):
   def multiply_by_num(k):
     return num * k
