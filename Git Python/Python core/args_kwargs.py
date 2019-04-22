@@ -6,8 +6,10 @@
 * args allows us to do is take an in more aeguments than the number of formal of arguments that you previously defined.
 with * args,any number of extra arguments can be tracked on to your current formal parameter.
 ================================
-1. kwargs : The special syntax **kwargs in function definations in python is used to pass a keyword, variable-length argument list.
-2. We use the name kwargs with double star. The reason is because the double star allow us to pass through keyword arguments(and any number)
+1. kwargs : The special syntax **kwargs in function definations in python is used to pass a keyword, variable-length
+argument list.
+2. We use the name kwargs with double star. The reason is because the double star allow us to pass through keyword
+arguments(and any number)
 3. A key word argument is where you provide a name to the variable as you pass into function.
 =======================================
 def abc(a, *b, **c):
@@ -38,6 +40,36 @@ abc(list1, "kumar", "dfvdf", one = "dbvfdfj", two="vknjd" , three="fklnhdf")
 #('one', 'dbvfdfj')
 #('two', 'vknjd')
 #('three', 'fklnhdf')
+=========================================
+def abc(a, *b, **c):
+    print("first argument is ",a)
+    for i in b:
+        print(i, end = " ")
+    print("\n")
+    for j in c.items():
+        print(j)
+list1 = ["ckvnd","dvjdf","bmngfjbn"]
+abc("anuj",one = "dbvfdfj", two="vknjd" , three="fklnhdf",list1)
+#  File "C:/Users/kanuj/PycharmProjects/learning/test01.py", line 9
+#     abc("anuj",one = "dbvfdfj", two="vknjd" , three="fklnhdf",list1)
+#                                                              ^
+# SyntaxError: positional argument follows keyword argument
+==============================================
+def abc(a, *b, **c):
+    print("first argument is ",a)
+    for i in b:
+        print(i, end = " ")
+    print("\n")
+    for j in c.items():
+        print(j)
+list1 = ["ckvnd","dvjdf","bmngfjbn"]
+abc("anuj",list1, one = "dbvfdfj", two="vknjd" , three="fklnhdf")
+# first argument is  anuhj
+# ['ckvnd', 'dvjdf', 'bmngfjbn'] 
+# 
+# ('one', 'dbvfdfj')
+# ('two', 'vknjd')
+# ('three', 'fklnhdf')
 ========================================
 def myFun(**kwargs):
     for i in kwargs.values():
@@ -46,6 +78,14 @@ myFun(first ='Geeks', mid ='for', last='Geeks')
 #Geeks
 #for
 #Geeks
+========================================
+def myFun(**kwargs):
+    for i in kwargs.keys():
+        print(i)
+myFun(first ='Geeks', mid ='for', last='Geeks')
+# first
+# mid
+# last
 ====================================
 def myFun(**kwargs):
     for i in kwargs.items():
