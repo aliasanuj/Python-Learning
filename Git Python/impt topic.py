@@ -9,7 +9,8 @@ execute vs compile
 memoryview()
 str() | repr()
 __str__() | __repr__()
-
+Modules in python
+Pickling and unpickling
 
 ===================
 All datatypes (mutable | imutable)
