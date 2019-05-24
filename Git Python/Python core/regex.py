@@ -12,11 +12,14 @@ string : This is the string, which would be searched to match the pattern at the
 flags :You can specify different flags using bitwise OR (|). These are modifiers, which are listed in the table below.
 =============================
 re.I : Performs case-insensitive matching.
-re.L : Interprets words according to the current locale. This interpretation affects the alphabetic group (\w and \W), as well as word boundary behavior(\b and \B).
-re.M : Makes $ match the end of a line (not just the end of the string) and makes ^ match the start of any line (not just the start of the string).
+re.L : Interprets words according to the current locale. This interpretation affects the alphabetic group (\w and \W), as well as word 
+boundary behavior(\b and \B).
+re.M : Makes $ match the end of a line (not just the end of the string) and makes ^ match the start of any line (not just the start 
+of the string).
 re.S : Makes a period (dot) match any character, including a newline.
 re.U : Interprets letters according to the Unicode character set. This flag affects the behavior of \w, \W, \b, \B.
-re.X : Permits "cuter" regular expression syntax. It ignores whitespace (except inside a set [] or when escaped by a backslash) and treats unescaped # as a comment marker.
+re.X : Permits "cuter" regular expression syntax. It ignores whitespace (except inside a set [] or when escaped by a backslash) and 
+treats unescaped # as a comment marker.
 ==============================
 ^ Matches beginning of line.
 $ Matches end of line.
@@ -94,7 +97,8 @@ rub[ye] :  Match "ruby" or "rube"
 \w+ matches to group of alphanumeric charcter. 
 \W matches to non alphanumeric characters. 
 '\W+' denotes Non-Alphanumeric Characters or group of characters 
-'\W+' denotes Non-Alphanumeric Characters or group of charactersUpon finding (,) or (') or whitespace ' ', the split(), splits the string from that point.
+'\W+' denotes Non-Alphanumeric Characters or group of charactersUpon finding (,) or (') or whitespace ' ', the split(), splits the 
+string from that point.
 ==============================================
 re.match()
 re.search()
