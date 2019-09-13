@@ -1,6 +1,10 @@
-=======================
+======================================
+======================================
+======================================
 Inheritance :
-=======================
+======================================
+======================================
+======================================
 1. Inheritance enable us to define a class that takes all the functionality from parent class and allows us to add more.
 2. Inheritance is a powerful feature in object oriented programming.
 3. class BaseClass:
@@ -105,4 +109,4 @@ print(issubclass(list,object))
 # Output: True
 print(isinstance(5.5,object))
 # Output: True
-print(isinstance("Hello",object)) 
+print(isinstance("Hello",object))
