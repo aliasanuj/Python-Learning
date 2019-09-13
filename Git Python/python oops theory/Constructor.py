@@ -57,6 +57,17 @@ student.show()
 #This is parametrized constructor
 #Hello irfan
 ===============================
+class Student:
+    # Constructor - parameterized
+    def __init__(self, name):
+        print("This is parametrized constructor")
+        self.name = name
+    def show(self):
+        print("Hello",name) #error
+student = Student("irfan")
+student.show()
+#error  (NameError: name 'name' is not defined)
+-------------------------------
 class outer():
     def __init__(self,name):
         print("this is parametrised constructor")
@@ -68,6 +79,17 @@ obj1 = outer("anuj") #parametrised constructor
 obj1.inner()
 #this is parametrised constructor
 #anuj
+-------------------------------
+class outer():
+    def __init__(self,name):
+        print("this is parametrised constructor")
+        self.name = "aaa"
+
+    def inner():
+        print(self.name)
+obj1 = outer("anuj") #parametrised constructor
+obj1.inner()
+#error  TypeError: inner() takes 0 positional arguments but 1 was given
 ========================================
 Non Parameterized Constructor:
 ========================================
@@ -154,6 +176,18 @@ obj = DemoClass()
 obj.read_number(10)
 #10
 #101
+-----------------------------------
+class DemoClass:
+    #global num
+    num1 = 101
+    def read_number(self,num):
+        print(num)
+        print(self.num1)
+        #print(self.num) #error
+obj = DemoClass()
+obj.read_number(10)
+# 10
+# 101
 ====================================
 class DemoClass:
     num = 101 #No global means it can be called with self.num
@@ -168,6 +202,7 @@ obj = DemoClass()
 obj.read_number(10)
 #101
 #10
+-----------------------------------
 When we declare a constructor:
 -----------------------------------
 class DemoClass:
