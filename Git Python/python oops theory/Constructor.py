@@ -8,7 +8,7 @@ instantiates an object using the definitions found in your class
 4. When you create a class without a constructor, Python automatically creates a default constructor
 for you that doesn’t do anything.
 5. Every class must have a constructor, even if it simply relies on the default constructor. 
-6. Constructor can be parameterized and non-parameterized as well. 
+6. Constructor can be parameterized and non=parameterized as well. 
 7. A constructor is a class function that begins with double underscore (_). 
 8. The name of the constructor is always the same __init__()
 
@@ -33,7 +33,7 @@ that can be used further in the application.
 2. constructor with parameters is known as parameterized constructor.
 ==============================
 class Student:  
-    # Constructor - parameterized  
+    # Constructor = parameterized  
     def __init__(self, name):  
         print("This is parametrized constructor")  
         self.name = name  
@@ -41,12 +41,12 @@ class Student:
         print("Hello",self.name)  
 student = Student("irfan")  
 student.show()  
-op-->
+op==>
 This is parametrized constructor
 Hello irfan
 ===============================
 class Student:
-    # Constructor - parameterized
+    # Constructor = parameterized
     def __init__(self, name):
         print("This is parametrized constructor")
         self.name = name
@@ -58,7 +58,7 @@ student.show()
 #Hello irfan
 ===============================
 class Student:
-    # Constructor - parameterized
+    # Constructor = parameterized
     def __init__(self, name):
         print("This is parametrized constructor")
         self.name = name
@@ -67,7 +67,7 @@ class Student:
 student = Student("irfan")
 student.show()
 #error  (NameError: name 'name' is not defined)
--------------------------------
+===============================
 class outer():
     def __init__(self,name):
         print("this is parametrised constructor")
@@ -79,7 +79,7 @@ obj1 = outer("anuj") #parametrised constructor
 obj1.inner()
 #this is parametrised constructor
 #anuj
--------------------------------
+===============================
 class outer():
     def __init__(self,name):
         print("this is parametrised constructor")
@@ -95,19 +95,19 @@ Non Parameterized Constructor:
 ========================================
 1. This constructor doesn’t accept any arguments.
 class Student:  
-    # Constructor - non parameterized  
+    # Constructor = non parameterized  
     def __init__(self):  
         print("This is non parametrized constructor")  
     def show(self,name):  
         print("Hello",name)  
 student = Student()  
 student.show("irfan")  
-op-->
+op==>
 This is non parametrized constructor
 Hello irfan
 ========================================
 class Student:
-    # Constructor - non parameterized
+    # Constructor = non parameterized
     def __init__(self):
         print("This is non parametrized constructor")
     def show(self,abc):
@@ -119,7 +119,7 @@ student.show("irfan")
 #Hello irfan
 ========================================
 class Student:
-    # Constructor - non parameterized
+    # Constructor = non parameterized
     def __init__(self):
         print("This is non parametrized constructor")
     def show(self,name):
@@ -130,7 +130,7 @@ student.show("irfan")
 #error
 ==========================================
 When we do not declare a constructor:
-------------------------------------
+====================================
 class DemoClass:
     num = 101
 
@@ -141,7 +141,7 @@ class DemoClass:
 obj = DemoClass()
 # calling the instance method using the object obj
 obj.read_number()
-op-->101
+op==>101
 ===================================
 class DemoClass:
    global num  #Global means it can be called with simply "num"
@@ -176,7 +176,7 @@ obj = DemoClass()
 obj.read_number(10)
 #10
 #101
------------------------------------
+===================================
 class DemoClass:
     #global num
     num1 = 101
@@ -202,12 +202,12 @@ obj = DemoClass()
 obj.read_number(10)
 #101
 #10
------------------------------------
+===================================
 When we declare a constructor:
------------------------------------
+===================================
 class DemoClass:
     num = 101
-    # non-parameterized constructor
+    # non=parameterized constructor
     def __init__(self):
         self.num = 999
     # a method
@@ -217,11 +217,11 @@ class DemoClass:
 obj = DemoClass()
 # calling the instance method using the object obj
 obj.read_number()
-op-->999
+op==>999
 =====================================
 class DemoClass:
     num = 101
-    # non-parameterized constructor
+    # non=parameterized constructor
     def __init__(self):
         print("aaa")
         #self.num = 999
@@ -238,7 +238,7 @@ obj.read_number()
 class DemoClass:
     global num
     num = 101
-    # non-parameterized constructor
+    # non=parameterized constructor
     def __init__(self):
         self.num = 999
     # a method
@@ -253,7 +253,7 @@ obj.read_number()
 class DemoClass:
     global num
     num = 101
-    # non-parameterized constructor
+    # non=parameterized constructor
     def __init__(self):
         self.num = 999
     # a method
@@ -272,7 +272,7 @@ obj.read_number(100)
 =====================================
 class DemoClass:
     num = 101
-    # non-parameterized constructor
+    # non=parameterized constructor
     def __init__(self):
         self.num = 999
     # a method
@@ -300,7 +300,7 @@ obj.read_number(20)
 #20
 =====================================
 Parameterized constructor example:
--------------------------------------
+=====================================
 class DemoClass:
     num = 101
     # parameterized constructor
@@ -318,7 +318,7 @@ obj.read_number()
 obj2 = DemoClass(66)
 # calling the instance method using the object obj
 obj2.read_number()
-op-->
+op==>
 55
 66
 ========================================
@@ -345,7 +345,7 @@ obj2.read_number()
 #55
 #101
 #66
------------------------------
+=============================
 class DemoClass:
     num1 = 101
     # parameterized constructor
@@ -366,7 +366,7 @@ obj2.read_number()
 #101
 #66
 #66
------------------------------
+=============================
 #non parametrised constructor
 
 class outer():
@@ -409,7 +409,7 @@ obj1 = outer("xdjcbnd") #non parametrised constructor
 obj1.inner()
 #this is non parametrised constructor
 #xdjcbnd
----------------------------
+===========================
 class abc:
     def inner(self):
         print("abc")
@@ -421,7 +421,7 @@ obj1.inner()
 obj1.inner1("anuj")
 #abc
 #anuj
---------------------------
+==========================
 class abc:
     def __inin__(self,name):
         self.name = name
