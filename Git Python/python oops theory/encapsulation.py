@@ -47,6 +47,7 @@ class Car:
 redcar = Car()
 redcar.drive()
 #redcar.__updateSoftware()  not accesible from object.
+
 #updating software
 #driving
 ------------------------------
@@ -135,6 +136,25 @@ obj.abc01()
 
 #abc03
 #20
+-----------------------------------
+class abc:
+    def __init__(self):
+        self.__variable = 20
+        self.__abc03()
+
+    def abc01(self):
+        print(self.__variable)
+        self.__variable = 10
+        print(self.__variable)
+    def __abc03(self):
+        print("abc03")
+
+obj = abc()
+obj.abc01()
+# 
+# abc03
+# 20
+# 10
 =========================================
 Type			Description
 =========================================
@@ -201,6 +221,3 @@ obj.abc()
 #anuj
 #abc method
 #zzz
-
-
-
