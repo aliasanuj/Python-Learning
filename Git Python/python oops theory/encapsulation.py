@@ -27,13 +27,13 @@ AttributeError: 'Robot' object has no attribute '__c'
 ==>A single underscore: Private variable, it should not be accessed directly. But nothing stops you from doing that (except convention).
 ==>A double underscore: Private variable, harder to access but still possible.
 ==============================
----------------------
-Private methods :----
----------------------
+=====================
+Private methods :====
+=====================
 We create a class Car which has two methods:  drive() and updateSoftware().
 When a car object is created, it will call the private methods __updateSoftware().  
 This function cannot be called on the object directly, only from within the class.
------------------------
+=======================
 class Car:
 
     def __init__(self):
@@ -50,7 +50,7 @@ redcar.drive()
 
 #updating software
 #driving
-------------------------------
+==============================
 class Car:
     def __init__(self):
         #self.__updateSoftware()
@@ -64,7 +64,7 @@ redcar = Car()
 redcar.drive()
 #updating software
 #driving
-------------------------------
+==============================
 class Car:
 
     def __init__(self):
@@ -77,12 +77,12 @@ class Car:
         print('updating software')
 redcar = Car()
 redcar.drive()
-redcar.__updatesoftware() #error -->AttributeError: 'Car' object has no attribute '__updatesoftware'
+redcar.__updatesoftware() #error ==>AttributeError: 'Car' object has no attribute '__updatesoftware'
 
 #updating software
 #driving
 #AttributeError: 'Car' object has no attribute '__updatesoftware'
-------------------------------
+==============================
 class Car:
 
     def __init__(self):
@@ -100,7 +100,7 @@ redcar.drive()
 #updating software
 #driving
 #updating software
-------------------------------
+==============================
 class Car:
     __maxspeed = 0
     __name = ""
@@ -118,7 +118,7 @@ redcar.drive()
 
 #driving  maxspeed 200
 #driving  maxspeed 200
------------------------------
+=============================
 class abc:
     def __init__(self):
         self.__variable = 20
@@ -136,7 +136,7 @@ obj.abc01()
 
 #abc03
 #20
------------------------------------
+===================================
 class abc:
     def __init__(self):
         self.__variable = 20
@@ -162,7 +162,7 @@ public methods		Accessible from anywhere
 private methods		Accessible only in their own class. starts with two underscores
 public variables	Accessible from anywhere
 private variables	Accesible only in their own class or by a method if defined. starts with two underscores
-----------------------------------------
+========================================
 class Person:
     def __init__(self):
         self.name = 'Manjula'
@@ -178,7 +178,7 @@ print(P.PrintName())  # Manjula Dube
 
 #Manjula
 #Manjula Dube
-----------------------------------------
+========================================
 class Robot(object):
    def __init__(self):
       self.__version = 22
