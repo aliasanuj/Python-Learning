@@ -11,16 +11,16 @@ Inheritance :
   Body of base class
 class DerivedClass(BaseClass):
   Body of derived class
-4. Derived class inherits features from the base class, adding new features to it. This results into re-usability of code.
+4. Derived class inherits features from the base class, adding new features to it. This results into re=usability of code.
 5. It provides reusability of a code. We don’t have to write the same code again and again. Also, it allows us to
 add more features to a class without modifying it.
 6. It is transitive in nature, which means that if class B inherits from another class A, 
 then all the subclasses of B would automatically inherit from class A.
 7. A process of using details from a new class without modifying existing class
 
----------------------------------
+=================================
 Multiple Inheritance in Python :
----------------------------------
+=================================
 1. In multiple inheritance, the features of all the base classes are inherited into the derived class
 2. class Base1:
     pass
@@ -30,9 +30,9 @@ class MultiDerived(Base1, Base2):
     pass
 Here, MultiDerived is derived from classes Base1 and Base2.
 3. In the multiple inheritance scenario, any specified attribute is searched first in the current class. 
-If not found, the search continues into parent classes in depth-first, left-right fashion without searching same class twice
+If not found, the search continues into parent classes in depth=first, left=right fashion without searching same class twice
 
------------------------------------
+===================================
 class Person:
     def __init__(self, personName, personAge):
         self.name = personName
@@ -59,7 +59,7 @@ resident1.showName()
 print(resident1.getId())
 #John
 #102
-------------------------------------------
+==========================================
 class outer:
     def __init__(self,fname,lname):
         self.fname = fname
@@ -101,9 +101,9 @@ class Derived2(Derived1):
     pass
 
 Method Resolution Order in Python:
-----------------------------------
+==================================
 1. Every class in Python is derived from the class object. It is the most base type in Python.
-2. So technically, all other class, either built-in or user-defines, are derived classes and all objects are instances of object class.
+2. So technically, all other class, either built=in or user=defines, are derived classes and all objects are instances of object class.
 # Output: True
 print(issubclass(list,object))
 # Output: True
