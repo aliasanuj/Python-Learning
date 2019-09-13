@@ -1,3 +1,6 @@
+=================================
+class vs instance variable : add more contents
+=================================
 =============================
 ===========Class=============
 =============================
@@ -16,7 +19,6 @@
 1. Instance variables are owned by instances of the class. This means that for each object or instance of 
 a class, the instance variables are different.
 2. Unlike class variables, instance variables are defined within methods.
-
 class Shark:
     def __init__(self, name, age):
         self.name = name
@@ -28,10 +30,49 @@ class Shark:
         self.name = name
         self.age = age
 new_shark = Shark("Sammy", 5)
-
+------------------------------------
+class Shark:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        print("aa")
+class Shark:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        print(age)
+new_shark = Shark("Sammy", 5)
+#5
+-----------------------------------
+class Shark:
+    def __init__(self, name, age):
+        self.name = "aaa"
+        self.age = 58
+        print("aa")
+class Shark:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        print(age)
+new_shark = Shark("Sammy", 5)
+#5
+--------------------------------------
+class Shark:
+    def __init__(self, name, age):
+        self.name = "aaa"
+        self.age = 58
+        print("aa")
+    def __init__(self, name, age):
+        self.name = "anuj"
+        self.age = age
+        print(name)
+        print(self.name)
+new_shark = Shark("Sammy", 5)
+#Sammy
+#anuj
+---------------------------------------
 3. Instance variables, owned by objects of the class, allow for each object or instance to have different 
 values assigned to those variables.
-
 =====================================
 =======Class variable================
 =====================================
@@ -53,6 +94,9 @@ new_shark = Shark()
 print(new_shark.animal_type)
 print(new_shark.location)
 print(new_shark.followers)
+#fish
+#ocean
+#5
 
 Working with Class and Instance Variables Together:
 ===================================================
@@ -157,8 +201,5 @@ obj1.inner()
 level are called instance variables.
 2. Instance variables are for data which is unique to every object but, Class variables are for data 
 shared between different instances of a class.
-
-
 ==> Class or static variables are shared by all objects.
 ==>Instance or non-static variables are different for different objects (every object has a copy of it)
-
