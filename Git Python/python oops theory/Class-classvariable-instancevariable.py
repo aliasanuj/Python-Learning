@@ -30,7 +30,7 @@ class Shark:
         self.name = name
         self.age = age
 new_shark = Shark("Sammy", 5)
-------------------------------------
+=================================
 class Shark:
     def __init__(self, name, age):
         self.name = name
@@ -43,7 +43,7 @@ class Shark:
         print(age)
 new_shark = Shark("Sammy", 5)
 #5
------------------------------------
+=================================
 class Shark:
     def __init__(self, name, age):
         self.name = "aaa"
@@ -56,7 +56,7 @@ class Shark:
         print(age)
 new_shark = Shark("Sammy", 5)
 #5
---------------------------------------
+=================================
 class Shark:
     def __init__(self, name, age):
         self.name = "aaa"
@@ -70,7 +70,7 @@ class Shark:
 new_shark = Shark("Sammy", 5)
 #Sammy
 #anuj
----------------------------------------
+=================================
 3. Instance variables, owned by objects of the class, allow for each object or instance to have different 
 values assigned to those variables.
 =====================================
@@ -82,10 +82,10 @@ class variables are shared by all instances of the class. They therefore will ge
 for every instance unless you are using the class variable to initialize a variable.
 2. Defined outside of all the methods, class variables are, by convention, typically 
 placed right below the class header and before the constructor method and other methods.
--------------------------------
+=================================
 class Shark:
     animal_type = "fish"
-------------------------------
+=================================
 class Shark:
     animal_type = "fish"
     location = "ocean"
