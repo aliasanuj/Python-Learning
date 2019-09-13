@@ -1,6 +1,12 @@
+============================================
+============================================
+============================================
 ===============================
 ==========super================
 ===============================
+============================================
+============================================
+
 super().__init__('Dog') --> super().__init__("argument")
 Mammal.__init__(self, 'Dog') --> baseclassName.__init__(self,"argument")
 
@@ -16,6 +22,39 @@ Mammal.__init__(self, 'Dog') --> baseclassName.__init__(self,"argument")
 
 super() with Single Inheritance:
 ----------------------------------
+class Rectangle:
+    def __init__(self, length, width):
+        self.length = length
+        self.width = width
+
+    def area(self):
+        print(self.length * self.width)
+
+    def perimeter(self):
+        print( 2 * self.length + 2 * self.width)
+
+# Here we declare that the Square class inherits from the Rectangle class
+class Square(Rectangle):
+    def __init__(self, length):
+        super().__init__(length, length)
+
+square = Square(4)
+square.area()
+#16
+------------------------------------
+class abc():
+    def __init__(self,name,age):
+        self.sjsh = name
+        self.jjhdj = age
+        print("name is ",name)
+        print("name is ",age)
+class abc01(abc):
+    def __init__(self):
+        super().__init__("anuj",54)
+obj1 = abc01()
+# name is  anuj
+# name is  54
+------------------------------------
 class Mammal(object):
   def __init__(self, mammalName):
     print(mammalName, 'is a warm-blooded animal.')
@@ -110,7 +149,7 @@ class Dog(Mammal):
 d1 = Dog()
 #Dog has four legs.
 #Dog is a warm-blooded animal.
-
+-------------------------------------
 super() with Multiple Inheritance:
 ---------------------------------
 class Animal:
