@@ -1,27 +1,22 @@
-============================================
-============================================
-============================================
 ===============================
 ==========super================
 ===============================
-============================================
-============================================
 
-super().__init__('Dog') --> super().__init__("argument")
-Mammal.__init__(self, 'Dog') --> baseclassName.__init__(self,"argument")
+super().__init__('Dog') ==> super().__init__("argument")
+Mammal.__init__(self, 'Dog') ==> baseclassName.__init__(self,"argument")
 
 
 1. The super() builtin returns a proxy object that allows you to refer parent class by 'super'.
-2. In Python, super() built-in has two major use cases:
+2. In Python, super() built=in has two major use cases:
 ==>Allows us to avoid using base class explicitly
 ==>Working with Multiple Inheritance
-3. If your program contains multi-level inheritance, then this super() function is helpful for you.
+3. If your program contains multi=level inheritance, then this super() function is helpful for you.
 4. super() is useful for accessing inherited methods that have been overridden in a class. 
 5. The search order is same as that used by getattr() except that the type itself is skipped.
 
 
 super() with Single Inheritance:
-----------------------------------
+==================================
 class Rectangle:
     def __init__(self, length, width):
         self.length = length
@@ -41,7 +36,7 @@ class Square(Rectangle):
 square = Square(4)
 square.area()
 #16
-------------------------------------
+====================================
 class abc():
     def __init__(self,name,age):
         self.sjsh = name
@@ -54,21 +49,21 @@ class abc01(abc):
 obj1 = abc01()
 # name is  anuj
 # name is  54
-------------------------------------
+====================================
 class Mammal(object):
   def __init__(self, mammalName):
-    print(mammalName, 'is a warm-blooded animal.')
+    print(mammalName, 'is a warm=blooded animal.')
 class Dog(Mammal):
   def __init__(self):
     print('Dog has four legs.')
     super().__init__('Dog')
 d1 = Dog()
 #Dog has four legs.
-#Dog is a warm-blooded animal.
+#Dog is a warm=blooded animal.
 =================================
 class Mammal(object):
     def __init__(self, mammalName):
-      print(mammalName, 'is a warm-blooded animal.')
+      print(mammalName, 'is a warm=blooded animal.')
     def abc(self,parameter):
        print("the parameter is ",parameter)
 class Dog(Mammal):
@@ -82,7 +77,7 @@ d1 = Dog()
 =================================
 class Mammal(object):
     def __init__(self, mammalName):
-      print(mammalName, 'is a warm-blooded animal.')
+      print(mammalName, 'is a warm=blooded animal.')
     def abc(self,parameter):
        print("the parameter is ",parameter)
 class Dog(Mammal):
@@ -94,11 +89,11 @@ d1 = Dog()
 
 #Dog has four legs.
 #the parameter is  parameter1
-#parameter 2  is a warm-blooded animal.
+#parameter 2  is a warm=blooded animal.
 =================================
 class Mammal(object):
     def __init__(self, mammalName):
-      print(mammalName, 'is a warm-blooded animal.')
+      print(mammalName, 'is a warm=blooded animal.')
     def abc(self,parameter):
        print("the parameter is ",parameter)
 class Dog(Mammal):
@@ -112,7 +107,7 @@ d1 = Dog()
 =================================
 class Mammal(object):
   def __init__(self, mammalName):
-    print(mammalName, 'is a warm-blooded animal.')
+    print(mammalName, 'is a warm=blooded animal.')
 class Dog(Mammal):
   def __init__(self):
     print('Dog has four legs.')
@@ -120,14 +115,14 @@ class Dog(Mammal):
 d1 = Dog()
 
 #Dog has four legs.
-#Dog is a warm-blooded animal.
+#Dog is a warm=blooded animal.
 
 ==================================
 class Mammal(object):
   def __init__(self, mammalName):
       self.mammalName = mammalName
-      print(self.mammalName, 'is a warm-blooded animal.')
-      print(mammalName, 'is a warm-blooded animal.')
+      print(self.mammalName, 'is a warm=blooded animal.')
+      print(mammalName, 'is a warm=blooded animal.')
 class Dog(Mammal):
   def __init__(self):
     print('Dog has four legs.')
@@ -135,29 +130,29 @@ class Dog(Mammal):
 d1 = Dog()
 
 #Dog has four legs.
-#Dog is a warm-blooded animal.
-#Dog is a warm-blooded animal.
+#Dog is a warm=blooded animal.
+#Dog is a warm=blooded animal.
 =================================
 
 class Mammal(object):
   def __init__(self, mammalName):
-    print(mammalName, 'is a warm-blooded animal.')
+    print(mammalName, 'is a warm=blooded animal.')
 class Dog(Mammal):
   def __init__(self):
     print('Dog has four legs.')
     Mammal.__init__(self, 'Dog')    
 d1 = Dog()
 #Dog has four legs.
-#Dog is a warm-blooded animal.
--------------------------------------
+#Dog is a warm=blooded animal.
+=====================================
 super() with Multiple Inheritance:
----------------------------------
+=================================
 class Animal:
   def __init__(self, animalName):
     print(animalName, 'is an animal.');
 class Mammal(Animal):
   def __init__(self, mammalName):
-    print(mammalName, 'is a warm-blooded animal.')
+    print(mammalName, 'is a warm=blooded animal.')
     super().__init__(mammalName)
 class NonWingedMammal(Mammal):
   def __init__(self, NonWingedMammalName):
@@ -178,11 +173,11 @@ bat = NonMarineMammal('Bat')
 #Dog has 4 legs.
 #Dog can't swim.
 #Dog can't fly.
-#Dog is a warm-blooded animal.
+#Dog is a warm=blooded animal.
 #Dog is an animal.
 #
 #Bat can't swim.
-#Bat is a warm-blooded animal.
+#Bat is a warm=blooded animal.
 #Bat is an animal.
 =============================
 class Animal:
@@ -191,7 +186,7 @@ class Animal:
 
 class Mammal(Animal):
   def __init__(self, mammalName):
-    print(mammalName, 'is a warm-blooded animal.')
+    print(mammalName, 'is a warm=blooded animal.')
     super().__init__(mammalName)
 
 class NonWingedMammal(Mammal):
@@ -216,11 +211,11 @@ bat = NonMarineMammal('Bat')
 #Dog has 4 legs.
 #Dog can't swim.
 #Dog can't fly.
-#Dog is a warm-blooded animal.
+#Dog is a warm=blooded animal.
 #Dog is an animal.
 
 #Bat can't swim.
-#Bat is a warm-blooded animal.
+#Bat is a warm=blooded animal.
 #Bat is an animal.
 ==============================
 class Animal:
@@ -229,7 +224,7 @@ class Animal:
 
 class Mammal(Animal):
   def __init__(self, mammalName):
-    print(mammalName, 'is a warm-blooded animal.')
+    print(mammalName, 'is a warm=blooded animal.')
     super().__init__(mammalName)
 
 class NonWingedMammal(Mammal):
@@ -254,11 +249,11 @@ bat = NonMarineMammal('Bat')
 #Dog has 4 legs.
 #Dog can't fly.
 #Dog can't swim.
-#Dog is a warm-blooded animal.
+#Dog is a warm=blooded animal.
 #Dog is an animal.
 
 #Bat can't swim.
-#Bat is a warm-blooded animal.
+#Bat is a warm=blooded animal.
 #Bat is an animal.
 ==============================
 
