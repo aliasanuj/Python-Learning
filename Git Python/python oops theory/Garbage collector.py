@@ -14,7 +14,7 @@ start doing it only after the app has completely started and then continue doing
 in steady operations.
 
 Automatic garbage collection:
-------------------------------
+==============================
 # loading gc 
 import gc 
 # get the current collection  
@@ -30,7 +30,7 @@ Thus any portion of your code which frees up large blocks of memory is a good ca
 manual garbage collection.
 
 Manual Garbage Collection:
-----------------------------
+============================
 Invoking the garbage collector manually during the execution of a program can be a good idea on how to 
 handle memory being consumed by reference cycles.
 The garbage collection can be invoked manually in the following way:
