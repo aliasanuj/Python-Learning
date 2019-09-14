@@ -110,3 +110,4 @@ print(issubclass(list,object))
 print(isinstance(5.5,object))
 # Output: True
 print(isinstance("Hello",object))
+
