@@ -27,10 +27,10 @@ the attributes and methods of the class in python.
 It's called first, and is responsible for returning a new instance of your class. 
 In contrast, __init__ doesn't return anything; it's only responsible for initializing the instance 
 after it's been created.
------------------------------
-https://spyhce.com/blog/understanding-new-and-init
-https://howto.lintel.in/python-__new__-magic-method-explained/
------------------------------
+=============================
+https://spyhce.com/blog/understanding=new=and=init
+https://howto.lintel.in/python=__new__=magic=method=explained/
+=============================
 class parent:
     def inner(self):
         print("this is inner class")
@@ -49,7 +49,7 @@ class parent:
         print(self.a)
         print(self.b)
 obj = parent()
-#obj.inner() -->error
+#obj.inner() ==>error
 #aaaa
 #bbbbbb
 ==========================================
@@ -77,7 +77,7 @@ obj.__init__() #no output
 # bbbbbb
 # aaaa
 # bbbbbb
-----------------------------
+============================
 class parent:
     def inner(self):
         print("this is inner class")
@@ -96,10 +96,10 @@ class parent:
         print(cls.a)
         print(cls.b)
 obj = parent()
-#obj.inner() -->error
+#obj.inner() ==>error
 #aaaa
 #bbbbbb
-------------------------------
+==============================
 class parent:
     def inner(self):
         print("this is inner class")
@@ -124,7 +124,7 @@ print(parent())
 #aaaa
 #bbbbbb
 #None
-------------------------------
+==============================
 class parent:
     def inner(self):
         print("this is inner class")
@@ -141,7 +141,7 @@ class parent:
         print("__new__")
 obj = parent()
 #__new__
--------------------------------
+===============================
 class parent:
     def inner(self):
         print("this is inner class")
@@ -158,44 +158,44 @@ class parent:
         print("__new__")
 parent()
 #__new__
---------------------------------------
+======================================
 class A(object):
 
     def __new__(cls):
         print("A.__new__ called")
 
     def __init__(self):
-        print("A.__init__ called")  # -> is actually never called
+        print("A.__init__ called")  # => is actually never called
 
 print(A())
 A()
 #A.__new__ called
 #None
 #A.__new__ called
--------------------------------
+===============================
 class A:
 
     def __new__(cls):
         print("A.__new__ called")
 
     def __init__(self):
-        print("A.__init__ called")  # -> is actually never called
+        print("A.__init__ called")  # => is actually never called
 print(A())
 A()
 #A.__new__ called
 #None
 #A.__new__ called
--------------------------------
+===============================
 class A:
 
     def __new__(cls):
         print("A.__new__ called")
 
     def __init__(self):
-        print("A.__init__ called")  # -> is actually never called
+        print("A.__init__ called")  # => is actually never called
 obj = A()
 #A.__new__ called
------------------------------
+=============================
 class parent:
     def inner(self):
         print("this is inner class")
@@ -212,7 +212,7 @@ class parent:
      #   print("__new__")
 obj = parent()
 #this is constructor call
---------------------------
+==========================
 class parent:
     def inner(self):
         print("this is inner class")
@@ -229,8 +229,8 @@ class parent:
      #   print("__new__")
 parent()
 #this is constructor call
---------------------------
-class A:  # -> don't forget the object specified as base
+==========================
+class A:  # => don't forget the object specified as base
 
     def __new__(cls):
         print("A.__new__ called")
@@ -241,16 +241,16 @@ class A:  # -> don't forget the object specified as base
 A()
 #A.__new__ called
 #A.__init__ called
----------------------------
+===========================
 class A(object):
 
     def __init__(self):
         print("A.__init__ called")
-        return 33  # -> TypeError: __init__ should return None
+        return 33  # => TypeError: __init__ should return None
 A()
 #A.__init__ called
 #TypeError: __init__() should return None, not 'int'
---------------------------
+==========================
 class Sample(object):
     def __str__(self):
         return "SAMPLE"
@@ -259,7 +259,7 @@ class A(object):
         return Sample()
 print(A())
 #SAMPLE
-------------------------
+========================
 class Sample(object):
     def __str__(self):
         return "SAMPLE"
@@ -268,7 +268,7 @@ class A(object):
         return super(A, cls).__new__(Sample)
 print(A())
 #SAMPLE
-------------------------
+========================
 class Animal(object):
     def __new__(cls, name):
         print('__new__() called.')
@@ -279,7 +279,7 @@ a = Animal('Bob')
 print(a.name)
 #__new__() called.
 #Bob
-------------------------
+========================
 class Animal(object):
     def __new__(cls, name):
         print('__new__() called.')
@@ -290,7 +290,7 @@ a = Animal('Bob')
 print(a.name)
 #__new__() called.
 #Bob
-------------------------
+========================
 #You can create instance inside __new__  method either by using super function or by directly calling __new__
 method over object  Where if parent class is object. That is,
 
