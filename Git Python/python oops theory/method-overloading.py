@@ -10,11 +10,11 @@ definition, it can be called with zero, one, two or more parameters.
 Given a single method or function, we can specify the number of parameters ourself.
 Depending on the function definition, it can be called with zero, one, two or more parameters.
 This is known as method overloading. Not all programming languages support method overloading, but Python does.
-----------------------------------
+==================================
 # First product method. 
 # Takes two argument and print their 
 # product 
-----------------------------------
+==================================
 def product(a, b): 
     p = a * b 
     print(p) 
@@ -29,7 +29,7 @@ def product(a, b, c):
 # This line will call the second product method 
 product(4, 5, 5) 
 #100
----------------------------------
+=================================
 def product(a, b):
     p = a * b
     print(p)
@@ -39,7 +39,7 @@ def product(a, b, c):
 #product(4, 5)
 product(4, 5,10)
 #200
----------------------------------
+=================================
 def add(datatype, *args): 
     # if datatype is int 
     # initialize answer as 0 
@@ -61,7 +61,7 @@ add('int', 5, 6)
 add('str', 'Hi ', 'Geeks') 
 #11
 #Hi Geeks
----------------------------------------
+=======================================
 def add(datatype, *args):
     if datatype =='int':
         answer = 0
@@ -74,7 +74,7 @@ add('int', 5, 6)
 add('str', 'Hi ', 'Geeks')
 #11
 #Hi Geeks
----------------------------------------
+=======================================
 class Human:
  
     def sayHello(self, name=None):
@@ -91,7 +91,7 @@ obj.sayHello()
 obj.sayHello('Guido')
 #Hello 
 #Hello Guido
---------------------------------
+================================
 class Human:
     def sayHello(self, name=None):
         if name is not None:
@@ -103,15 +103,15 @@ obj.sayHello()
 obj.sayHello('Guido')
 # Hello
 # Hello Guido
-------------------------------
+==============================
 class A:
     def stackoverflow(self):    
         print ('first method')
     def stackoverflow(self, i):
         print ('second method', i)
 ob=A()
-ob.stackoverflow() #error --> TypeError: stackoverflow() missing 1 required positional argument: 'i'
-------------------------------
+ob.stackoverflow() #error ==> TypeError: stackoverflow() missing 1 required positional argument: 'i'
+==============================
 class A:
     def stackoverflow(self):    
         print ('first method')
@@ -135,3 +135,41 @@ r.action1()
 
 #Hello world
 #action 2
+=============================
+class Robot:
+    def action1(self):
+        print('action 1')
+    def action1(self):
+        print('action 2')
+    def action(self):
+        print('Hello world55')
+
+class HelloRobot(Robot):
+    def action(self):
+        print('Hello world')
+r = HelloRobot()
+r.action()
+r.action1()
+
+# Hello world
+# action 2
+===========================o
+class Robot:
+    def action1(self):
+        print('action 1')
+    def action1(self):
+        print('action 2')
+    def action(self):
+        print('Hello world55')
+
+class HelloRobot(Robot):
+    pass
+r = HelloRobot()
+r.action()
+r.action1()
+# Hello world55
+# action 2
+
+======================
+
+
