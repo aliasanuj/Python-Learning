@@ -13,7 +13,7 @@ the method of the corresponding class will be executed.
 Overriding is a very important part of OOP since it is the feature that makes inheritance exploit its full power. 
 Through method overriding a class may "copy" another class, avoiding duplicated code, and at the same time enhance 
 or customize part of it. Method overriding is thus a strict part of the inheritance mechanism.
---------------------------
+==========================
 class A:
   def sayhi(self):
     print("I'm in A")                          
@@ -25,7 +25,21 @@ bobj.sayhi()
 A.sayhi("xxx")
 #I'm in B
 #I'm in A
-------------------------
+========================
+class A:
+  def sayhi(self):
+    print("I'm in A")
+class B(A):
+  def sayhi(self):
+    print("I'm in B")
+bobj=B()
+bobj.sayhi()
+A.sayhi("xxx")
+B.sayhi("aaa")
+# I'm in B
+# I'm in A
+# I'm in B
+========================
 class A:
   def sayhi():
     print("I'm in A")                          
@@ -35,7 +49,18 @@ class B(A):
 bobj=B()
 bobj.sayhi1()
 #TypeError: sayhi1() takes 0 positional arguments but 1 was given
--------------------------
+=========================
+class A:
+  def sayhi(self):
+    print("I'm in A")
+class B(A):
+  def sayhi1(self):
+    print("I'm in B")
+bobj=B()
+bobj.sayhi1()
+#I'm in B
+===============================
+
 class A:
   def sayhi():
     print("I'm in A")                          
@@ -45,7 +70,7 @@ class B(A):
 bobj=B()
 bobj.sayhi1()
 #I'm in B
--------------------------
+=========================
 class A:
   def sayhi(self):
     print("I'm in A")                          
@@ -55,7 +80,7 @@ class B(A):
 bobj=B()
 bobj.sayhi1()
 #TypeError: sayhi1() takes 0 positional arguments but 1 was given
----------------------------
+===========================
 class Rectangle():
 	def __init__(self,length,breadth):
 		self.length = length
@@ -91,6 +116,28 @@ s = Square(4)
 r = Rectangle(2,4)
 s.getArea()
 r.getArea()
+#16  is area of square
+#8  is area of rectangle
+================================
+class Rectangle():
+	def __init__(self,length,breadth):
+		self.length = length
+		self.breadth = breadth
+	def getArea(self):
+		print(self.length*self.breadth," is area of rectangle")
+class Square(Rectangle):
+	def __init__(self,side):
+		self.side = side
+		#Rectangle.__init__(self,side,side)
+	def getArea(self):
+		print(self.side*self.side," is area of square")
+s = Square(4)
+r = Rectangle(2,4)
+s.getArea()
+r.getArea()
 
 #16  is area of square
 #8  is area of rectangle
+
+
+
