@@ -52,6 +52,31 @@ obj = parent()
 #obj.inner() -->error
 #aaaa
 #bbbbbb
+==========================================
+class parent:
+    def inner(self):
+        print("this is inner class")
+        print("first name is ",self.fname)
+        print("last name is ",self.lname)
+
+    def __init__(self):
+        self.fname = "kumar"
+        self.lname = "anuj"
+        self.roll = 101
+        print("this is constructor call")
+
+    def __new__(self):
+        self.a = "aaaa"
+        self.b = "bbbbbb"
+        print(self.a)
+        print(self.b)
+obj = parent()
+obj1 = parent()
+obj.__init__() #no output
+# aaaa
+# bbbbbb
+# aaaa
+# bbbbbb
 ----------------------------
 class parent:
     def inner(self):
