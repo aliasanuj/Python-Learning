@@ -9,7 +9,7 @@ Self is another Python special term. Inside any instance method, you can use sel
 methods that may reside in your class. You won’t be able to access them without going through self.
 3. Finally, as instance methods are the most common, there’s no decorator needed. Any method you 
 create will automatically be created as an instance method, unless you tell Python otherwise.
----------------------------------------
+=======================================
 class DecoratorExample:
   """ Example Class """
   def __init__(self):
@@ -26,7 +26,7 @@ de.example_function()
 #Hello, World!
 #I'm an instance method!
 #My name is Decorator_Example
-----------------------------------
+==================================
 class DecoratorExample:
     def __init__(self,aaa):
         print('Hello, World!')
@@ -67,7 +67,7 @@ It doesn't require creation of a class instance, much like staticmethod.
 Class.classmethod()
 Or even
 Class().classmethod()
-----------------------------------
+==================================
 6. Create class method using classmethod()
 class Person:
     age = 25
@@ -76,7 +76,7 @@ class Person:
 Person.printAge = classmethod(Person.printAge)
 Person.printAge()
 #The age is: 25
----------------------------------
+=================================
 class Person:
     age = 25
     def printAge(aaa):
@@ -94,7 +94,7 @@ class Person:
 Person.printAge = classmethod(Person.printAge)
 Person.printAge()
 #The age is: 25
---------------------------------
+================================
 class Person:
     age = 25
     def printAge(cls):
@@ -105,7 +105,7 @@ class Person:
 Person.printAge1 = classmethod(Person.printAge1)
 Person.printAge1()
 #The age is Printage1: 25
----------------------------------
+=================================
 class Person:
     age = 25
     def printAge(cls):
@@ -137,7 +137,7 @@ Person.printAge()
 #The age is: 25
 
 
----------------------------------
+=================================
 7. A class method receives the class as implicit first argument, just like an instance 
 method receives the instance
 
@@ -155,7 +155,7 @@ returns: a class method for function.
 3. Class methods don’t need self as an argument, but they do need a parameter called cls. 
 4. This stands for class, and like self, gets automatically passed in by Python.
 5. Class methods are created using the @classmethod decorator.
------------------------------
+=============================
 class DecoratorExample:
     def __init__(fvgxfd):
         print('Hello, World!')
@@ -174,7 +174,7 @@ de.some_other_function()
 #I'm a class method!
 #Hello!
 #Hello!
------------------------------
+=============================
 class DecoratorExample:
     def __init__(self):  # either self or anything bdvhfdvghd, if both self and one arg , then intialize 1st parameter also
         print('Hello, World!')
@@ -250,7 +250,7 @@ de.example_function()
 #Hello, World!
 #I'm a class method!
 #Hello!
-------------------------------
+==============================
 class DecoratorExample:
   """ Example Class """
   def __init__(self):
@@ -272,7 +272,7 @@ de.example_function()
 Hello, World!
 I'm a class method!
 Hello!
-------------------------------
+==============================
 class DecoratorExample:
     def __init__(self):
         print('Hello, World!')
@@ -288,7 +288,7 @@ de.example_function()
 # Hello, World!
 # I'm a class method!
 # Hello!
--------------------------------
+===============================
 class DecoratorExample:
     def __init__(self):
         print('Hello, World!')
@@ -308,7 +308,7 @@ de.some_other_function()
 
 6. Class methods are possibly the more confusing method types of the three, but they do have their uses. 
 7. Class methods can manipulate the class itself, which is useful when you’re working on larger, more complex projects
-------------------------------------
+====================================
 class Person:
     age = 25
 
