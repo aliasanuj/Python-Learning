@@ -806,3 +806,129 @@ outer().inner01 = classmethod(outer.inner01(100,10))
 
 #roll no is  10
 #salary  is  100
+
+=========================================
+===========static method=================
+=========================================
+1. Static methods are methods that are related to a class in some way, but don’t need to access any class=specific data. 
+You don’t have to use self, and you don’t even need to instantiate an instance, you can simply call your method:
+
+class DecoratorExample:
+  """ Example Class """
+  def __init__(self):
+    """ Example Setup """
+    print('Hello, World!') 
+
+  @staticmethod
+  def example_function():
+    """ This method is a static method! """
+    print('I\'m a static method!')
+ 
+de = DecoratorExample.example_function()
+#I'm a static method!
+========================================
+class DecoratorExample:
+    """ Example Class """
+    def __init__(self):
+        """ Example Setup """
+        print('Hello, World!')
+
+    @staticmethod
+    def example_function():
+        """ This method is a static method! """
+        print('I\'m a static method!')
+
+de = DecoratorExample.example_function()
+de1 = DecoratorExample()
+# I'm a static method!
+# Hello, World!
+======================================
+class DecoratorExample:
+    def __init__(self):
+        print('Hello, World!')\
+    @staticmethod
+    def example_function():
+        print('I\'m a static method!')
+de = DecoratorExample.example_function()
+#I'm a static method!
+=======================================
+class DecoratorExample:
+    def __init__(self):
+        print('Hello, World!')\
+    @staticmethod
+    def example_function():
+        print('I\'m a static method!')
+de = staticmethod(DecoratorExample.example_function())
+
+#I'm a static method!
+===================================
+
+2. The @staticmethod decorator was used to tell Python that this method is a static method.
+3. Static methods are great for utility functions, which perform a task in isolation. 
+4. They don’t need to (and cannot) access class data. They should be completely self=contained, and only work with data 
+passed in as arguments. 
+5. You may use a static method to add two numbers together, or print a given string.
+
+========================================
+1. A static method does not receive an implicit first argument.
+
+class C(object):
+    @staticmethod
+    def fun(arg1, arg2, ...):
+        ...
+returns: a static method for function fun.
+
+2. A static method can’t access or modify class state.
+3. It is present in a class because it makes sense for the method to be present in class.
+
+===========================================
+class outer:
+    @staticmethod
+    def inner01(salary,rollno):
+        outer.salary1 = salary
+        outer.rollno1 = rollno
+        print("roll no is ",rollno)
+        print("salary  is ",salary)
+    @staticmethod
+    def inner02(fname,lname):
+        outer.fname1=fname
+        outer.lname1=lname
+        print("fname is ", fname)
+        print("lname  is ", lname)
+outer.inner01 = staticmethod(outer.inner01(100,10))
+outer().inner02 = staticmethod(outer.inner02("kumar","anuj"))
+
+#roll no is  10
+#salary  is  100
+#fname is  kumar
+#lname  is  anuj
+=============================================
+class outer:
+    @staticmethod
+    def inner01(salary,rollno):
+        outer.salary1 = salary
+        outer.rollno1 = rollno
+        print("roll no is ",rollno)
+        print("salary  is ",salary)
+    @staticmethod
+    def inner02(fname,lname):
+        outer.fname1=fname
+        outer.lname1=lname
+        print("fname is ", fname)
+        print("lname  is ", lname)
+obj1 = staticmethod(outer.inner01(100,10))
+obj2 = staticmethod(outer.inner02("kumar","anuj"))
+
+#roll no is  10
+#salary  is  100
+#fname is  kumar
+#lname  is  anuj
+===========================================
+====Class method vs Static Method==========
+===========================================
+1. A class method takes cls as first parameter while a static method needs no specific parameters.
+2. A class method can access or modify class state while a static method can’t access or modify it.
+3. In general, static methods know nothing about class state. They are utility type methods that take 
+some parameters and work upon those parameters. On the other hand class methods must have class as parameter.
+4. We use @classmethod decorator in python to create a class method and we use @staticmethod 
+decorator to create a static method in python.
