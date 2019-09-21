@@ -9,11 +9,11 @@ types or classes. This permits functions to use entities of different types at d
 have commonly named methods across classes or subclasses. This allows functions to use objects of
 any of these polymorphic classes without needing to be aware of distinctions across the classes.
 5. Sometimes an object comes in many types or forms. If we have a button, there are many different draw outputs
- (round button, check button, square button, button with image) but they do share the same logic: onClick().  
+(round button, check button, square button, button with image) but they do share the same logic: onClick().  
  We access them using the same method . This idea is called Polymorphism.
 
 Polymorphism with a function:
---------------------------------
+================================
 
 class dog():
     def sound(self):
@@ -30,9 +30,23 @@ animal(obj2)
 
 #bark
 #meow
+===============================
+class dog():
+    def sound():
+        print("bark")
+class cat():
+    def sound(self):
+        print("meow")
+def animal(animaltype):
+    animaltype.sound()
+obj1 = dog()
+obj2 = cat()
+animal(obj1)
+animal(obj2)
+#TypeError: sound() takes 0 positional arguments but 1 was given
 
 Polymorphism with abstract class:
----------------------------------
+=================================
 1. If you create an editor you may not know in advance what type of documents a user will 
 open (pdf format or word format?).  
 2. To do so, we create an abstract class called document.
@@ -58,12 +72,12 @@ documents = [Pdf('Document1'),
 for document in documents:
     print document.name + ': ' + document.show()
 
-output -->
+output ==>
 Document1: Show pdf contents!
 Document2: Show pdf contents!
 Document3: Show word contents!
 
----------------------------------
+=================================
 class Shark():
     def swim(self):
         print("The shark is swimming.")
@@ -92,7 +106,7 @@ casey.skeleton()
 
 #The shark's skeleton is made of cartilage.
 #The clownfish's skeleton is made of bone.
-----------------------------------
+==================================
 class India():
     def capital(self):
         print("New Delhi is the capital of India.")
@@ -126,7 +140,7 @@ for country in (obj_ind, obj_usa):
 #Washington, D.C. is the capital of USA.
 #English is the primary language of USA.
 #USA is a developed country.
----------------------------------------
+=======================================
 class Bird:
     def intro(self):
         print("There are many types of birds.")
@@ -155,7 +169,7 @@ obj_ost.flight()
 #Sparrows can fly.
 #There are many types of birds.
 #Ostriches cannot fly
---------------------------------------
+======================================
 class India():
     def capital(self):
         print("New Delhi is the capital of India.")
@@ -186,4 +200,6 @@ func(obj_usa)
 #English is the primary language of USA.
 #USA is a developed country.
 
---------------------------------
+================================
+
+
