@@ -1,6 +1,4 @@
 =================================
-class vs instance variable : add more contents
-=================================
 =============================
 ===========Class=============
 =============================
@@ -46,6 +44,14 @@ new_shark = Shark("Sammy", 5)
 =================================
 class Shark:
     def __init__(self, name, age):
+        self.anything = name
+        self.anything = age
+        print(name)
+new_shark = Shark("Sammy", 5)
+#5
+=================================
+class Shark:
+    def __init__(self, name, age):
         self.name = "aaa"
         self.age = 58
         print("aa")
@@ -56,6 +62,7 @@ class Shark:
         print(age)
 new_shark = Shark("Sammy", 5)
 #5
+=================================good example
 =================================
 class Shark:
     def __init__(self, name, age):
@@ -176,6 +183,7 @@ obj1.inner()
 #ball
 #dog
 #inner
+========================================GE
 ========================================
 class abc():
     a = "anuj"
@@ -189,11 +197,9 @@ print(obj1.a)
 print(obj1.b)
 #print(obj1.c) #error
 obj1.inner()
-
 #anuj
 #ball
 #inner
-
 ========================================
 ==class vs instance variable============
 ========================================
