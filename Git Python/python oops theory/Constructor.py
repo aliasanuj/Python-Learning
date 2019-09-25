@@ -9,7 +9,7 @@ instantiates an object using the definitions found in your class
 for you that doesn’t do anything.
 5. Every class must have a constructor, even if it simply relies on the default constructor. 
 6. Constructor can be parameterized and non=parameterized as well. 
-7. A constructor is a class function that begins with double underscore (_). 
+7. A constructor is a class function that begins with double underscore (__). 
 8. The name of the constructor is always the same __init__()
 
 ========================
@@ -49,9 +49,21 @@ class Student:
     # Constructor = parameterized
     def __init__(self, name):
         print("This is parametrized constructor")
+        self.anything = name
+    def show(self):
+        print("Hello",self.anything)
+student = Student("irfan")
+student.show()
+# This is parametrized constructor
+# Hello irfan
+==============================
+class Student:
+    # Constructor = parameterized
+    def __init__(self, name):
+        print("This is parametrized constructor")
         self.name = name
     def show(self):
-       print("Hello",self.name) #error
+       print("Hello",self.name)
 student = Student("irfan")
 student.show()
 #This is parametrized constructor
@@ -68,6 +80,38 @@ student = Student("irfan")
 student.show()
 #error  (NameError: name 'name' is not defined)
 ===============================
+class Student:
+    # Constructor = parameterized
+    def __init__(self, name):
+        print("This is parametrized constructor")
+        self.name = name
+        print(name)
+        print(self.name)
+    def show(self):
+        print("Hello",name) #error
+student = Student("irfan")
+student.show()
+# This is parametrized constructor
+# irfan
+# irfan
+# NameError: name 'name' is not defined
+=====================================
+class Student:
+    # Constructor = parameterized
+    def __init__(self, name):
+        print("This is parametrized constructor")
+        self.name = name
+        print(name)
+        print(self.name)
+    def show(self):
+        print("Hello",self.name) #error
+student = Student("irfan")
+student.show()
+# This is parametrized constructor
+# irfan
+# irfan
+# Hello irfan
+=====================================
 class outer():
     def __init__(self,name):
         print("this is parametrised constructor")
@@ -79,7 +123,31 @@ obj1 = outer("anuj") #parametrised constructor
 obj1.inner()
 #this is parametrised constructor
 #anuj
+=================================
+class outer():
+    def __init__(self,name):
+        print("this is parametrised constructor")
+        self.name = name
+
+    def inner():
+        print(self.name)
+obj1 = outer("anuj") #parametrised constructor
+obj1.inner()
+# this is parametrised constructor
+# TypeError: inner() takes 0 positional arguments but 1 was given
 ===============================
+class outer():
+    def __init__(self,name):
+        print("this is parametrised constructor")
+        self.name = name
+
+    def inner(self):
+        print(self.name)
+obj1 = outer("anuj") #parametrised constructor
+obj1.inner()
+# this is parametrised constructor
+# anuj
+================================
 class outer():
     def __init__(self,name):
         print("this is parametrised constructor")
@@ -90,10 +158,27 @@ class outer():
 obj1 = outer("anuj") #parametrised constructor
 obj1.inner()
 #error  TypeError: inner() takes 0 positional arguments but 1 was given
+===================================
+class outer():
+    def __init__(self,name):
+        print("this is parametrised constructor")
+        self.name = "aaa"
+        print(name)
+        print(self.name)
+
+    def inner(self):
+        print(self.name)
+obj1 = outer("anuj") #parametrised constructor
+obj1.inner()
+# this is parametrised constructor
+# anuj
+# aaa
+# aaa
 ========================================
 Non Parameterized Constructor:
 ========================================
 1. This constructor doesn’t accept any arguments.
+
 class Student:  
     # Constructor = non parameterized  
     def __init__(self):  
@@ -144,6 +229,18 @@ obj.read_number()
 op==>101
 ===================================
 class DemoClass:
+    num = 101
+
+    # a method
+    def read_number():
+        print(self.num)
+# creating object of the class
+obj = DemoClass()
+# calling the instance method using the object obj
+obj.read_number()
+#TypeError: read_number() takes 0 positional arguments but 1 was given
+==============================
+class DemoClass:
    global num  #Global means it can be called with simply "num"
    num = 101
    def read_number(self):
@@ -153,6 +250,19 @@ obj = DemoClass()
 # calling the instance method using the object obj
 obj.read_number()
 #101
+============================
+class DemoClass:
+    global num  #Global means it can be called with simply "num"
+    num = 101
+    def read_number(self):
+        print(num)
+        print(self.num)
+# creating object of the class
+obj = DemoClass()
+# calling the instance method using the object obj
+obj.read_number()
+#101
+#AttributeError: 'DemoClass' object has no attribute 'num'
 ====================================
 class DemoClass:
    global num
@@ -257,6 +367,21 @@ class DemoClass:
     def __init__(self):
         self.num = 999
     # a method
+    def read_number():
+        print(num)
+# creating object of the class
+obj = DemoClass()
+# calling the instance method using the object obj
+obj.read_number()
+#TypeError: read_number() takes 0 positional arguments but 1 was given
+====================================
+class DemoClass:
+    global num
+    num = 101
+    # non=parameterized constructor
+    def __init__(self):
+        self.num = 999
+    # a method
     def read_number(self,anything):
         self.abc = anything
         print(self.abc)
@@ -286,6 +411,23 @@ obj.read_number(20)
 #999
 #20
 =====================================
+class DemoClass:
+    global num
+    num = 101
+    # non=parameterized constructor
+    def __init__(self):
+        self.num = 999
+    # a method
+    def read_number(self,num):
+        print(self.num)
+        print(num)
+# creating object of the class
+obj = DemoClass()
+# calling the instance method using the object obj
+obj.read_number(20)
+#999
+#20
+===============================
 class DemoClass:
     num = 101
     def __init__(self):
@@ -423,7 +565,7 @@ obj1.inner1("anuj")
 #anuj
 ==========================
 class abc:
-    def __inin__(self,name):
+    def __init__(self,name):
         self.name = name
         print("name",name)
 
@@ -432,3 +574,4 @@ class abc:
         print("roll",roll)
 obj = abc(101)
 #roll 101
+==================================
