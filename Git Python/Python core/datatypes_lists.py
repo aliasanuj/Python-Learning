@@ -825,3 +825,4 @@ print(Sliced_List)
 #Printing List in reverse: 
 #['S', 'K', 'E', 'E', 'G', 'R', 'O', 'F', 'S', 'K', 'E', 'E', 'G']
 =====================================
+
