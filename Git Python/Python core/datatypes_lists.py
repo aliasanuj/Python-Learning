@@ -1,33 +1,37 @@
-#datatypes_lists.py
+datatypes_lists.py
 
-#List -->Python offers a range of compound datatypes often referred to as sequences. 
-#List is one of the most frequently used and very versatile datatype used in Python.
-#How to create a list? -->
-#In Python programming, a list is created by placing all the items (elements) inside a square bracket [ ], separated by commas.
-#It can have any number of items and they may be of different types (integer, float, string etc.).
-# empty list
+1. List -->Python offers a range of compound datatypes often referred to as sequences. 
+2. List is one of the most frequently used and very versatile datatype used in Python.
+3. How to create a list? -->
+In Python programming, a list is created by placing all the items (elements) inside a square bracket [ ], separated by commas.
+It can have any number of items and they may be of different types (integer, float, string etc.).
+empty list
 my_list = []
-# list of integers
+list of integers
 my_list = [1, 2, 3]
-# list with mixed datatypes
+list with mixed datatypes
 my_list = [1, "Hello", 3.4]
-#Also, a list can even have another list as an item. This is called nested list.
-# nested list
+
+Also, a list can even have another list as an item. This is called nested list.
+nested list
 my_list = ["mouse", [8, 4, 6], ['a']]
+
+a = ['m','j','j']
+print(type(a))
+<class 'list'>
 ==================================================
-#List Comprehension: Elegant way to create new List
-#List comprehension is an elegant and concise way to create new list from an existing list in Python.
-#List comprehension consists of an expression followed by for statement inside square brackets.
-#Here is an example to make a list with each item being increasing power of 2.
+List Comprehension: Elegant way to create new List
+List comprehension is an elegant and concise way to create new list from an existing list in Python.
+List comprehension consists of an expression followed by for statement inside square brackets.
 ==================================================
-#How to access elements from a list -->
-#There are various ways in which we can access the elements of a list.
-#List Index :
-#We can use the index operator [] to access an item in a list.
-#Index starts from 0. So, a list having 5 elements will have index from 0 to 4.
-#Trying to access an element other that this will raise an IndexError.
-#The index must be an integer. We can't use float or other types, this will result into TypeError.
-#Nested list are accessed using nested indexing.
+How to access elements from a list -->
+There are various ways in which we can access the elements of a list.
+List Index :
+We can use the index operator [] to access an item in a list.
+Index starts from 0. So, a list having 5 elements will have index from 0 to 4.
+Trying to access an element other that this will raise an IndexError.
+The index must be an integer. We can't use float or other types, this will result into TypeError.
+Nested list are accessed using nested indexing.
 ====================================================
 my_list = ['p','r','o','b','e']
 print(my_list[0])
@@ -73,10 +77,10 @@ print(list1[:])
 []
 [1, 2, 4, 7, 9, 5, 6]
 =========================================
-#How to change or add elements to a list -->
-#List are mutable, meaning, their elements can be changed unlike string or tuple.
-#We can use assignment operator (=) to change an item or a range of items.
-# mistake values
+How to change or add elements to a list -->
+List are mutable, meaning, their elements can be changed unlike string or tuple.
+We can use assignment operator (=) to change an item or a range of items.
+mistake values
 odd = [2, 4, 6, 8]
 odd[0] = 1
 print(odd)
@@ -85,7 +89,7 @@ print(odd)
 #[1, 4, 6, 8]
 #[1, 3, 5, 7]
 =======================================               
-#We can add one item to a list using append() method or add several items using extend() method.
+We can add one item to a list using append() method or add several items using extend() method.
 odd = [1, 3, 5]
 odd.append(7)
 print(odd)
@@ -94,16 +98,16 @@ print(odd)
 #[1, 3, 5, 7]
 #[1, 3, 5, 7, 9, 11, 13]
 ====================================
-#We can also use + operator to combine two lists. This is also called concatenation.
-#The * operator repeats a list for the given number of times.
+We can also use + operator to combine two lists. This is also called concatenation.
+The * operator repeats a list for the given number of times.
 odd = [1, 3, 5]
 print(odd + [9, 7, 5])
 print(["re"] * 3)
 #[1, 3, 5, 9, 7, 5]
 #['re', 're', 're']
 ==================================
-#Furthermore, we can insert one item at a desired location by using the method insert() or 
-#insert multiple items by squeezing it into an empty slice of a list.
+Furthermore, we can insert one item at a desired location by using the method insert() or 
+insert multiple items by squeezing it into an empty slice of a list.
 odd = [1, 9]
 odd.insert(1,3)
 print(odd)
@@ -111,10 +115,40 @@ odd[2:2] = [5, 7]
 print(odd)
 #[1, 3, 9]
 #[1, 3, 5, 7, 9]
+
+odd = [1,9,5,7,5,9]
+odd.insert(1,3)
+print(odd)
+odd[2:] = [6,7,8,8]
+print(odd)
+odd[2:3] = [5,5,5,5]
+print(odd)
+odd[2:5] = [9,9,9,9,9]
+print(odd)
+# [1, 3, 9, 5, 7, 5, 9]
+# [1, 3, 6, 7, 8, 8]
+# [1, 3, 5, 5, 5, 5, 7, 8, 8]
+# [1, 3, 9, 9, 9, 9, 9, 5, 7, 8, 8]
+
+odd = [1,9,5,7,5,9]
+odd[2:4] = [5,5,5,5]
+print(odd)
+#[1, 9, 5, 5, 5, 5, 5, 9]
 =================================
 list1 = [1,2,4,7,9,5,6]
 print(list1.insert(20,10))
 #None
+
+odd = [1, 9]
+odd.insert(5,8)
+print(odd)
+#[1, 9, 8]
+
+list1 = [1,2,4,7,9,5,6]
+list1.insert(20,10)
+print(list1)
+#[1, 2, 4, 7, 9, 5, 6, 10]
+
 =================================
 odd = [1, 9]
 odd.insert(1,5)
@@ -124,9 +158,9 @@ print(odd)
 #[1, 5, 9]
 #[1, 5, 5, 7, 9]
 ================================
-#How to delete or remove elements from a list ->
-#We can delete one or more items from a list using the keyword del.
-#It can even delete the list entirely.
+How to delete or remove elements from a list ->
+We can delete one or more items from a list using the keyword del.
+It can even delete the list entirely.
 my_list = ['p','r','o','b','l','e','m']
 del my_list[2]
 print(my_list)
@@ -137,10 +171,34 @@ print(my_list)
 #['p', 'r', 'b', 'l', 'e', 'm']
 #['p', 'm']
 #error
+
+my_list = ['p','r','o','b','l','e','m']
+del my_list[10]
+print(my_list)
+#IndexError: list assignment index out of range
+
+my_list = ['p','r','o','b','l','e','m']
+del my_list
+print(my_list)
+NameError: name 'my_list' is not defined
+
+list1 = [1,2,4,7,9,5,6]
+print(list1[-1:-2])
+print(list1[-1:2])
+print(list1[1:-2])
+print(list1[1:2])
+[]
+[]
+[2, 4, 7, 9]
+[2]
+
+my_list = ['p','r','o','b','l','e','m']
+del my_list[20]
+#IndexError: list assignment index out of range
 =============================
-#We can use remove() method to remove the given item or pop() method to remove an item at the given index.
-#The pop() method removes and returns the last item if index is not provided. This helps us implement lists as stacks (first in, last out data structure).
-#We can also use the clear() method to empty a list.
+We can use remove() method to remove the given item or pop() method to remove an item at the given index.
+The pop() method removes and returns the last item if index is not provided. This helps us implement lists as stacks (first in, last out data structure).
+We can also use the clear() method to empty a list.
 my_list = ['p','r','o','b','l','e','m']
 my_list.remove('p')
 print(my_list)
@@ -156,11 +214,25 @@ print(my_list)
 #m
 #['r', 'b', 'l', 'e']
 #[]
+
+my_list = ['p','r','o','b','l','e','m']
+print(my_list.pop(1))
+print(my_list.pop())
+print(my_list)
+r
+m
+['p', 'o', 'b', 'l', 'e']
 ==========================
 my_list = ['p','r','o','b','l','e','m']
 my_list.remove(1)
-#error ValueError: list.remove(x): x not in list
+print(my_list)
+ValueError: list.remove(x): x not in list
 =======================
+my_list = ['p','r','o','b','l','e','m']
+my_list.remove()
+print(my_list)
+#TypeError: remove() takes exactly one argument (0 given)
+=====================
 my_list = ['p','r','o','b','l','e','m']
 my_list.remove('r')
 print(my_list)
@@ -173,7 +245,7 @@ print(list1)
 #2
 #[1, 3, 4, 'y']
 ========================
-#Finally, we can also delete items in a list by assigning an empty list to a slice of elements.
+Finally, we can also delete items in a list by assigning an empty list to a slice of elements.
 my_list = ['p','r','o','b','l','e','m']
 my_list[2:3] = []
 print(my_list)
