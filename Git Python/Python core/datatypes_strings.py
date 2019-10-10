@@ -1,5 +1,5 @@
 #datatypes_strings.py
-===============================
+================================================
 #What is String in Python --> 
 #A string is a sequence of characters.
 #A character is simply a symbol. For example, the English language has 26 characters.
@@ -10,12 +10,12 @@
 #In Python, string is a sequence of Unicode character.
 #Unicode was introduced to include every character in all languages and bring uniformity in encoding. You can learn more
 #about Unicode from here.
-==============================
+================================================
 #How to create a string in Python -->
 #Strings can be created by enclosing characters inside a single quote or double quotes.
 #Even triple quotes can be used in Python but generally used to represent multiline strings and docstrings.
 # all of the following are equivalent
-==============================
+===============================================
 my_string = 'Hello'
 print(my_string)
 my_string = "Hello"
@@ -32,7 +32,7 @@ Hello
 Hello
 Hello, welcome to
            the world of Python
-================================
+==================================================
 #How to access characters in a string -->
 #We can access individual characters using indexing and a range of characters using slicing.
 #Index starts from 0. Trying to access a character out of index range will raise an IndexError.
@@ -40,19 +40,39 @@ Hello, welcome to
 #Python allows negative indexing for its sequences.
 #The index of -1 refers to the last item, -2 to the second last item and so on.
 #We can access a range of items in a string by using the slicing operator (colon).
-==========================================
+=====================================================
 str = 'programiz'
-print('str = ', str)
-print('str[0] = ', str[0])
-print('str[-1] = ', str[-1])
-print('str[1:5] = ', str[1:5])
-print('str[5:-2] = ', str[5:-2])
-#str =  programiz
-#str[0] =  p
-#str[-1] =  z
-#str[1:5] =  rogr
-#str[5:-2] =  am
-=====================================
+print(str) 
+print(str[0])
+print(str[-1])
+print(str[1:5])
+print(str[5:-2])
+print(str[-1:10])
+print(str[-1:-10]) #no output
+print(str[-1:5]) #no output
+# programiz
+# p
+# z
+# rogr
+# am
+# z
+=======================================
+str = 'programizabcdef'
+print(str)
+print(str[0])
+print(str[-1])
+print(str[1:5])
+print(str[5:-2])
+print(str[-1:10])
+print(str[-1:-10])
+print(str[-1:-5])
+print(str[-1:5])
+# programizabcdef
+# p
+# f
+# rogr
+# amizabcd
+========================================================
 If we try to access index out of the range or use decimal number, we will get errors.
 # index must be in range
 my_string[15]  
@@ -60,17 +80,17 @@ IndexError: string index out of range
 # index must be an integer
 my_string[1.5] 
 TypeError: string indices must be integers
-=========================================
+=======================================================
 #How to change or delete a string -->
 #Strings are immutable.
 #This means that elements of a string cannot be changed once it has been assigned.
 #We can simply reassign different strings to the same name.
-=====================================
+==================================================
 #Concatenation of Two or More Strings -->
 #Joining of two or more strings into a single one is called concatenation.
 #The + operator does this in Python. Simply writing two string literals together also concatenates them.
 #The * operator can be used to repeat the string for a given number of times.
-=====================================
+======================================================
 str1 = 'Hello'
 str2 ='World!'
 # using +
@@ -79,7 +99,7 @@ print('str1 + str2 = ', str1 + str2)
 print('str1 * 3 =', str1 * 3)
 #str1 + str2 =  HelloWorld!
 #str1 * 3 = HelloHelloHello
-========================================
+=========================================================
 #Iterating Through String -->
 #Using for loop we can iterate through a string. Here is an example to count the number of 'l' in a string.
 count = 0
@@ -88,20 +108,53 @@ for letter in 'Hello World':
         count += 1
 print(count,'letters found')
 #3 letters found
-=========================================
+==================================
+count = 0
+str ="kumar anuj kumar aman"
+for i in str:
+    if i == 'a':
+        count += 1
+print(count)
+#5
+========================================================
 #String Membership Test
 #We can test if a sub string exists within a string or not, using the keyword in.
 >>> 'a' in 'program'
 True
 >>> 'at' not in 'battle'
 False
-======================================
+=======================================================
 #Built-in functions to Work with Python -->
 #Various built-in functions that work with sequence, works with string as well.
 #Some of the commonly used ones are enumerate() and len(). The enumerate() function returns an enumerate object.
 #It contains the index and value of all the items in the string as pairs. This can be useful for iteration.
 #Similarly, len() returns the length (number of characters) of the string.
-======================================
+======================================================
+str = "kumar anuj santosh rakesh"
+x = enumerate(str)
+print(x)
+#<enumerate object at 0x0214D760>
+=======================================================
+str = "kumar anuj"
+x = list(enumerate(str))
+print(x)
+#[(0, 'k'), (1, 'u'), (2, 'm'), (3, 'a'), (4, 'r'), (5, ' '), (6, 'a'), (7, 'n'), (8, 'u'), (9, 'j')]
+=======================================================
+str = "kumar anuj"
+x = list(enumerate(str))
+for i in x:
+    print(i)
+# (0, 'k')
+# (1, 'u')
+# (2, 'm')
+# (3, 'a')
+# (4, 'r')
+# (5, ' ')
+# (6, 'a')
+# (7, 'n')
+# (8, 'u')
+# (9, 'j')
+===============================================
 str = 'cold'
 # enumerate()
 list_enumerate = list(enumerate(str))
@@ -116,7 +169,7 @@ for i in enumerate(str):
 #(1, 'o')
 #(2, 'l')
 #(3, 'd')
-=====================================
+=====================================================
 #Escape Sequence -->
 #If we want to print a text like - He said, "What's there?"- we can neither use single quote or double quotes.
 #This will result into SyntaxError as the text itself contains both single and double quotes.
@@ -124,12 +177,12 @@ for i in enumerate(str):
 SyntaxError: invalid syntax
 #>>> print('He said, "What's there?"')
 SyntaxError: invalid syntax
-======================================
+===================================================
 #One way to get around this problem is to use triple quotes. Alternatively, we can use escape sequences.
 #An escape sequence starts with a backslash and is interpreted differently.
 #If we use single quote to represent a string, all the single quotes inside the string must be escaped.
 #Similar is the case with double quotes. 
-======================================
+=====================================================
 # using triple quotes
 print('''He said, "What's there?"''')
 # escaping single quotes
@@ -139,68 +192,69 @@ print("He said, \"What's there?\"")
 #He said, "What's there?"
 #He said, "What's there?"
 #He said, "What's there?"
-=======================================
+======================================================
 #Here is a list of all the escape sequence supported by Python.
 #Escape Sequence in Python
-#Escape Sequence	Description
-#\newline		Backslash and newline ignored
-#\\		Backslash
-#\'		Single quote
-#\"		Double quote
-#\a		ASCII Bell
-#\b		ASCII Backspace
-#\f		ASCII Formfeed
-#\n		ASCII Linefeed
-#\r		ASCII Carriage Return
-#\t		ASCII Horizontal Tab
-#\v		ASCII Vertical Tab
-#\ooo		Character with octal value ooo
-#\xHH		Character with hexadecimal value HH
+
+Escape Sequence		Description
+#\newline			Backslash and newline ignored
+#\\					Backslash
+#\'					Single quote
+#\"					Double quote
+#\a					ASCII Bell
+#\b					ASCII Backspace
+#\f					ASCII Formfeed
+#\n					ASCII Linefeed
+#\r					ASCII Carriage Return
+#\t					ASCII Horizontal Tab
+#\v					ASCII Vertical Tab
+#\ooo				Character with octal value ooo
+#\xHH				Character with hexadecimal value HH
 ========================================
 Method	Description
 ========================================
 capitalize()			Converts the first character to upper case
-casefold()			Converts string into lower case
-center()			Returns a centered string
-count()			Returns the number of times a specified value occurs in a string
-encode()			Returns an encoded version of the string
-endswith()			Returns true if the string ends with the specified value
+casefold()				Converts string into lower case
+center()				Returns a centered string
+count()					Returns the number of times a specified value occurs in a string
+encode()				Returns an encoded version of the string
+endswith()				Returns true if the string ends with the specified value
 expandtabs()			Sets the tab size of the string
-find()				Searches the string for a specified value and returns the position of where it was found
-format()			Formats specified values in a string
+find()					Searches the string for a specified value and returns the position of where it was found
+format()				Formats specified values in a string
 format_map()			Formats specified values in a string
-index()			Searches the string for a specified value and returns the position of where it was found
-isalnum()			Returns True if all characters in the string are alphanumeric
-isalpha()			Returns True if all characters in the string are in the alphabet
-isdecimal()			Returns True if all characters in the string are decimals
-isdigit()			Returns True if all characters in the string are digits
+index()					Searches the string for a specified value and returns the position of where it was found
+isalnum()				Returns True if all characters in the string are alphanumeric
+isalpha()				Returns True if all characters in the string are in the alphabet
+isdecimal()				Returns True if all characters in the string are decimals
+isdigit()				Returns True if all characters in the string are digits
 isidentifier()			Returns True if the string is an identifier
-islower()			Returns True if all characters in the string are lower case
-isnumeric()			Returns True if all characters in the string are numeric
+islower()				Returns True if all characters in the string are lower case
+isnumeric()				Returns True if all characters in the string are numeric
 isprintable()			Returns True if all characters in the string are printable
-isspace()			Returns True if all characters in the string are whitespaces
-istitle()			Returns True if the string follows the rules of a title
-isupper()			Returns True if all characters in the string are upper case
-join()			           Joins the elements of an iterable to the end of the string
-ljust()			Returns a left justified version of the string
-lower()			Converts a string into lower case
-lstrip()			Returns a left trim version of the string
-maketrans()			Returns a translation table to be used in translations
-partition()			Returns a tuple where the string is parted into three parts
-replace()			Returns a string where a specified value is replaced with a specified value
-rfind()			Searches the string for a specified value and returns the last position of where it was found
-rindex()			Searches the string for a specified value and returns the last position of where it was found
+isspace()				Returns True if all characters in the string are whitespaces
+istitle()				Returns True if the string follows the rules of a title
+isupper()				Returns True if all characters in the string are upper case
+join()					Joins the elements of an iterable to the end of the string
+ljust()					Returns a left justified version of the string
+lower()					Converts a string into lower case
+lstrip()				Returns a left trim version of the string
+maketrans()				Returns a translation table to be used in translations
+partition()				Returns a tuple where the string is parted into three parts
+replace()				Returns a string where a specified value is replaced with a specified value
+rfind()					Searches the string for a specified value and returns the last position of where it was found
+rindex()				Searches the string for a specified value and returns the last position of where it was found
 rpartition()			Returns a tuple where the string is parted into three parts
-rsplit()			Splits the string at the specified separator, and returns a list
-rstrip()			Returns a right trim version of the string
-split()			Splits the string at the specified separator, and returns a list
+rsplit()				Splits the string at the specified separator, and returns a list
+rstrip()				Returns a right trim version of the string
+split()					Splits the string at the specified separator, and returns a list
 splitlines()			Splits the string at line breaks and returns a list
 startswith()			Returns true if the string starts with the specified value
-swapcase()			Swaps cases, lower case becomes upper case and vice versa
-title()			Converts the first character of each word to upper case
-translate()			Returns a translated string
-upper()			Converts a string into upper case
-zfill()			Fills the string with a specified number of 0 values at the beginning
+swapcase()				Swaps cases, lower case becomes upper case and vice versa
+title()					Converts the first character of each word to upper case
+translate()				Returns a translated string
+upper()					Converts a string into upper case
+zfill()				Fills the string with a specified number of 0 values at the beginning
 ===========================================
 Format Symbol	Conversion
 ===========================================
@@ -218,37 +272,37 @@ Format Symbol	Conversion
 %g	the shorter of %f and %e
 %G	the shorter of %f and %E
 ==========================================
-*	argument specifies width or precision
--	left justification
-+	display the sign
+*		argument specifies width or precision
+-		left justification
++		display the sign
 <sp>	leave a blank space before a positive number
-#	add the octal leading zero ( '0' ) or hexadecimal leading '0x' or '0X', depending on whether 'x' or 'X' were used.
-0	pad from left with zeros (instead of spaces)
-%	'%%' leaves you with a single literal '%'
+#		add the octal leading zero ( '0' ) or hexadecimal leading '0x' or '0X', depending on whether 'x' or 'X' were used.
+0		pad from left with zeros (instead of spaces)
+%		'%%' leaves you with a single literal '%'
 (var)	mapping variable (dictionary arguments)
 m.n.	m is the minimum total width and n is the number of digits to display after the decimal point (if appl.)
 ======================================
-string.ascii_letter              Concatenation of the ascii_lowercase and ascii_uppercase constants.
-string.ascii_lowercase           Concatenation of lowercase letters
-string.ascii_uppercase           Concatenation of uppercase letters
+string.ascii_letter			Concatenation of the ascii_lowercase and ascii_uppercase constants.
+string.ascii_lowercase      Concatenation of lowercase letters
+string.ascii_uppercase      Concatenation of uppercase letters
 string.digits	           	Digit in strings
-string.hexdigits		Hexadigit in strings
+string.hexdigits			Hexadigit in strings
 string.letters        		concatenation of the strings lowercase and uppercase
-string.lowercase		A string must contain lowercase letters.
-string.octdigits		Octadigit in a string
-string.punctuation		ASCII characters having punctuation characters.
-string.printable		String of characters which are printable
-String.endswith()		Returns True if a string ends with the given suffix otherwise returns False
-String.startswith()		Returns True if a string starts with the given prefix otherwise returns False
-String.isdigit()		Returns “True” if all characters in the string are digits, Otherwise, It returns “False”.
-String.isalpha()		Returns “True” if all characters in the string are alphabets, Otherwise, It returns “False”.
-string.isdecimal()		Returns true if all characters in a string are decimal.
+string.lowercase			A string must contain lowercase letters.
+string.octdigits			Octadigit in a string
+string.punctuation			ASCII characters having punctuation characters.
+string.printable			String of characters which are printable
+String.endswith()			Returns True if a string ends with the given suffix otherwise returns False
+String.startswith()			Returns True if a string starts with the given prefix otherwise returns False
+String.isdigit()			Returns “True” if all characters in the string are digits, Otherwise, It returns “False”.
+String.isalpha()			Returns “True” if all characters in the string are alphabets, Otherwise, It returns “False”.
+string.isdecimal()			Returns true if all characters in a string are decimal.
 str.format()          		one of the string formatting methods in Python3, which allows multiple substitutions and value formatting.
 String.index          		Returns the position of the first occurrence of substring in a string
-string.uppercase		A string must contain uppercase letters.
-string.whitespace		A string containing all characters that are considered whitespace.
-string.swapcase()		Method converts all uppercase characters to lowercase and vice versa of the given string, and returns it
-replace()			returns a copy of the string where all occurrences of a substring is replaced with another substring.
+string.uppercase			A string must contain uppercase letters.
+string.whitespace			A string containing all characters that are considered whitespace.
+string.swapcase()			Method converts all uppercase characters to lowercase and vice versa of the given string, and returns it
+replace()					returns a copy of the string where all occurrences of a substring is replaced with another substring.
 ======================================
 BUILT-IN FUNCTION	DESCRIPTION
 =======================================
@@ -257,43 +311,64 @@ String.Isalnum		Returns true if all the characters in a given string are alphanu
 string.Istitle		Returns True if the string is a titlecased string
 String.partition	splits the string at the first occurrence of the separator and returns a tuple.
 String.Isidentifier	Check whether a string is a valid identifier or not.
-String.len		Returns the length of the string.
+String.len			Returns the length of the string.
 String.rindex		Returns the highest index of the substring inside the string if substring is found.
-String.Max		Returns the highest alphabetical character in a string.
-String.min		Returns the minimum alphabetical character in a string.
+String.Max			Returns the highest alphabetical character in a string.
+String.min			Returns the minimum alphabetical character in a string.
 String.splitlines	Returns a list of lines in the string.
 string.capitalize	Return a word with its first character capitalized.
 string.expandtabs	Expand tabs in a string replacing them by one or more spaces
-string.find		Return the lowest indexin a sub string.
+string.find			Return the lowest indexin a sub string.
 string.rfind		find the highest index.
 string.rindex		Raise ValueError when the substring is not found.
 string.count		Return the number of (non-overlapping) occurrences of substring sub in string
 string.lower		Return a copy of s, but with upper case letters converted to lower case.
 string.split		Return a list of the words of the string,If the optional second argument sep is absent or None
-string.rsplit()	Return a list of the words of the string s, scanning s from the end.
+string.rsplit()		Return a list of the words of the string s, scanning s from the end.
 rpartition()		Method splits the given string into three parts
 string.splitfields	Return a list of the words of the string when only used with two arguments.
-string.join		Concatenate a list or tuple of words with intervening occurrences of sep.
+string.join			Concatenate a list or tuple of words with intervening occurrences of sep.
 string.strip()		It return a copy of the string with both leading and trailing characters removed
 string.lstrip		Return a copy of the string with leading characters removed.
 string.rstrip		Return a copy of the string with trailing characters removed.
-string.swapcase	Converts lower case letters to upper case and vice versa.
+string.swapcase		Converts lower case letters to upper case and vice versa.
 string.translate	translate the characters using table
 string.upper		lower case letters converted to upper case.
 string.ljust		left-justify in a field of given width.
 string.rjust		Right-justify in a field of given width. 
 string.center()		Center-justify in a field of given width.
-string-zfill	Pad a numeric string on the left with zero digits until the given width is reached.
+string-zfill		Pad a numeric string on the left with zero digits until the given width is reached.
 string.replace		Return a copy of string s with all occurrences of substring old replaced by new.
-================================================================
-Join - The join() method is a string method and returns a string in which the elements of sequence have 
-been joined by str separator.
+=======================================================================================================
+Join - The join() method is a string method and returns a string in which the elements of sequence have been joined by str separator.
+=======================================================================================================
 list1 = ['1', '2', '3', '4']
 s = "".join(list1)
 print(s)
 print(type(s))
 #1234
 #<class 'str'>
+================================
+list1 = "kumar, anuj , aman, kumar"
+s = "".join(list1)
+print(s)
+print(type(s))
+# kumar, anuj , aman, kumar
+# <class 'str'>
+================================
+list1 = "kumar", "anuj" , "aman" , "kumar"
+s = "".join(list1)
+print(s)
+print(type(s))
+# kumaranujamankumar
+# <class 'str'>
+================================
+list1 = "kumar"."anuj"."aman"."kumar"
+s = "".join(list1)
+print(s)
+print(type(s))
+#SyntaxError: invalid syntax
+#    list1 = "kumar"."anuj"."aman"."kumar"
 ================================
 list1 = ['1', '2', '3', '4']
 s = "-".join(list1)
@@ -325,15 +400,20 @@ x = "".join(a)
 print(x)
 #kumaranuj
 ================================
+a = "kuma,ranuj"
+x = "".join(a)
+print(x)
+#kuma,ranuj
+================================
 list1 = [1, 2, 3, 4]
 s = "".join(list1)
 print(s)
 #error TypeError: sequence item 0: expected str instance, int found
-================================
+==============================================================================
 split() method returns a list of strings after breaking the given string by the specified separator.
-===============================
-join = [list to string]
-split = string to [list]
+=============================================================================
+join = [list] to "string"
+split = "string" to [list]
 ================================
 x = "blue, red, green"
 print(x.split())
@@ -350,6 +430,16 @@ print(x)
 #['blue', 'red', 'green']
 #['blue red green']
 #blue red green
+==================================
+x = "blue red green"
+print(x.split())
+print(x.split(" "))
+print(x.split(","))
+print(x)
+# ['blue', 'red', 'green']
+# ['blue', 'red', 'green']
+# ['blue red green']
+# blue red green
 ==================================
 txt = "welcome to the jungle"
 x = txt.split()
@@ -369,7 +459,7 @@ print(x)
 txt = "145615615145"
 x = txt.split()
 print(x)
-#['145615'615145']
+#['145615615145']
 ===============================
 The strip() returns a copy of the string with both leading and trailing characters stripped.
 ==================================
@@ -383,6 +473,30 @@ print(string.strip('an'))
 #lov
 #xoxo love xoxo   
 #droid is awesome
+====================================
+string = 'anuj kumar anuj aman'
+#print(string.strip())
+print(string.strip('anuj '))
+print(string.strip(' anuj'))
+print(string.strip(' anuj aman '))
+# kumar anuj am
+# kumar anuj am
+# kumar
+===================================
+string = 'xoxo love xoxo'
+print(string.strip())
+print(string.strip('xoxoe'))
+print(string.strip(' xoxoe'))
+print(string.strip('xo'))
+print(string.strip('sti'))
+string = 'android is an awesome'
+print(string.strip('an'))
+# xoxo love xoxo
+# love
+# lov
+# love
+# xoxo love xoxo
+# droid is an awesome
 ===========================
 string = 'Hello anuj, i am anuj'
 print(string.strip())
@@ -395,6 +509,19 @@ print(string.strip('a'))
 #Hello anuj, i am anuj
 #ndroid is awesome
 ===========================
+string = 'Hello anuj, i am anuj'
+print(string.strip())
+print(string.strip('anuj'))
+print(string.strip('xxx'))
+string = 'android is awesome'
+print(string.strip(''))
+print(string.strip('awe'))
+# Hello anuj, i am anuj
+# Hello anuj, i am
+# Hello anuj, i am anuj
+# android is awesome
+# ndroid is awesom
+===========================
 x = "anuj"
 y = x.capitalize()
 print(y)
@@ -405,10 +532,30 @@ y = x.casefold()
 print(y)
 #anuj
 =========================
+x = "anuj"
+y = x.casefold()
+print(y)
+#anuj
+=========================
+x = "ANUJ"
+y = x.casefold()
+print(y)
+#anuj
+=========================
 x = "patna banglore pune"
 y = x.count("b")
 print(y)
 #1
+========================
+x = "patna banglore pune"
+y = x.count("A")
+print(y)
+#0
+========================
+x = "patna banglore pune"
+y = x.count("a")
+print(y)
+#3
 ========================
 x = "patna banglore Banglore pune"
 y = x.count("b")
@@ -434,11 +581,24 @@ x = "patna banglore pune"
 y = x.expandtabs()
 print(y)
 #patna banglore pune
+=======================
+x = "patna banglore \tpune"
+y = x.expandtabs()
+print(y)
+y = x.expandtabs(5)
+print(y)
+# patna banglore  pune
+# patna banglore      pune
 =====================
 x = "patna banglore pune"
 y = x.find("a")
 print(y)
 #1
+==========================
+x = "patna banglore pune"
+y = x.find("p")
+print(y)
+#0
 ==========================
 x = "patna banglore pune"
 print(x.find(" "))
@@ -453,9 +613,31 @@ print(x.find("p"))
 #0
 =====================
 x = "patna banglore pune"
+print(x.find(" "))
+print(x.find(""))
+print(x.find("a"))
+print(x.find("z"))
+print(x.find("p"))
+print(x.find("q"))
+5
+0
+1
+-1
+0
+-1
+=====================
+x = "patna banglore pune"
 y = x.center(26,"*")
 print(y)
 #***patna banglore pune****
+======================
+x = "patna banglore pune"
+y = x.center(26,"*")
+print(y)
+y = x.center(27,"*")
+print(y)
+# ***patna banglore pune****
+# ****patna banglore pune****
 =================================
 x = "patna banglore pune {}".format(10)
 print(x)
@@ -465,13 +647,23 @@ x = "patna banglore pune"
 y = x.index("a")
 print(y)
 #1
+==============================
+x = "patna banglore pune"
+y = x.index("w")
+print(y)
+#ValueError: substring not found
 ============================
 x = "patnh"
 y = x.isalnum()
 print(y)
 #True
 ==========================
-x = "patnh"
+x = "pat$%$%nh"
+y = x.isalnum()
+print(y)
+#False
+==========================
+x = "pat756473nh"
 y = x.isalnum()
 print(y)
 #True
@@ -485,7 +677,17 @@ print(y)
 #good example
 #>>> print(r"This is \x61 \ngood example")
 #This is \x61 \ngood example
-=============================================
+===================================
+print("This is \x61 \ngood example")
+# This is a
+# good example
+===================================
+print(r"This is \x61 \ngood example")
+#This is \x61 \ngood example
+===================================
+print(R"This is \x61 \ngood example")
+#This is \x61 \ngood example
+==================================
 #The format() Method for Formatting Strings
 #The format() method that is available with the string object is very versatile and powerful in formatting strings.
 #Format strings contains curly braces {} as placeholders or replacement fields which gets replaced.
@@ -506,6 +708,11 @@ print(keyword_order)
 #Bill, John and Sean
 #--- Keyword Order ---
 #Sean, Bill and John
+==============================================
+keyword_order = "{z}, {b} and {j}".format(j='John',b='Bill',s='Sean')
+print('--- Keyword Order ---')
+print(keyword_order)
+#KeyError: 'z'
 ==================================================
 #The format() method can have optional format specifications.
 #They are separated from field name using colon.
@@ -541,9 +748,13 @@ print(a[1])
 b = "Hello, World!"
 print(b[2:5])
 #llo
+======================
+b = "Hello, World!"
+print(b[2:6])
+#llo,
 =======================
 a = " Hello, World! "
-print(a.strip()) # returns "Hello, World!"
+print(a.strip()) # returns "Hello, World!" remove xtra blank space
 #Hello, World!
 =======================
 a = "Hello, World!"
@@ -705,6 +916,22 @@ print('The value of x is %3.4f' %x)
 #The value of x is 12.3457
 ==========================================
 x = 12.3456789
+print('The value of x is %0.5f' %x)
+print('The value of x is %1.5f' %x)
+print('The value of x is %2.5f' %x)
+print('The value of x is %3.5f' %x)
+print('The value of x is %4.5f' %x)
+print('The value of x is %10.5f' %x)
+print('The value of x is %3.4f' %x)
+# The value of x is 12.34568
+# The value of x is 12.34568
+# The value of x is 12.34568
+# The value of x is 12.34568
+# The value of x is 12.34568
+# The value of x is   12.34568
+# The value of x is 12.3457
+==========================================
+x = 12.3456789
 print('The value of x is %.5f' %x)
 print('The value of x is %3.4f' %x)
 #The value of x is 12.34568
@@ -731,6 +958,18 @@ print(astring[3:7])
 astring = "Hello world!"
 print(astring[3:7:2])
 #1
+===================================
+astring = "kumar aman kumar anuj"
+print(astring[3:8:2])
+print(astring[3:7:3])
+print(astring[1:9:4])
+print(astring[1:9:3])
+print(astring[3:7:2])
+# a m
+# aa
+# u
+# urm
+# a
 ===============================
 astring = "kumar anuj"
 print(astring[3:7])
@@ -763,9 +1002,14 @@ print(astring.endswith("asdfasdfasdf"))
 #False
 ================================
 astring = "Hello world!"
-afewwords = astring.split(" ")
+afewwords = astring.split(" ") #some seperator is required
 print(afewwords)
 #['Hello', 'world!']
+==============================
+astring = "Hello world!"
+afewwords = astring.split("") # #some seperator is required
+print(afewwords)
+#ValueError: empty separator
 ==============================
 s = "Hey there! what should this string be?"
 # Length should be 20
