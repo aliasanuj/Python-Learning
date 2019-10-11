@@ -57,6 +57,24 @@ obj.close()
 #anuj
 #kumar anuj
 ================================
+def outer(searching):
+    print("searching for {}".format(searching))
+    while True:
+        y = yield
+        if searching in y:
+            print(searching)
+obj1 = outer("anuj")
+obj1.__next__()
+obj1.send("Anuj")
+obj1.send("Anuj anuj")
+obj1.send("Anuj kumar")
+obj1.send("anuj Anuj")
+obj1.close()
+
+# searching for anuj
+# anuj
+# anuj
+==================================
 def print_name(prefix): 
     print("Searching prefix:{}".format(prefix)) 
     try :  
