@@ -14,8 +14,3 @@ https://medium.com/@george.seif94/a-tour-of-the-top-5-sorting-algorithms-with-py
   
 #Data_structure 
 http://scanftree.com/Data_Structure/
- 
-  
-  
-  
-  
