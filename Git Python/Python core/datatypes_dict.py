@@ -18,17 +18,17 @@ can be removed at once using the clear() method.
 ==========================================
 Method	Description
 ==========================================
-clear()	Removes all the elements from the dictionary
-copy()		Returns a copy of the dictionary
-fromkeys()	Returns a dictionary with the specified keys and values
-get()		Returns the value of the specified key
-items()	Returns a list containing the a tuple for each key value pair
-keys()		Returns a list contianing the dictionary's keys
-pop()		Removes the element with the specified key
-popitem()	Removes the last inserted key-value pair
+clear()			Removes all the elements from the dictionary
+copy()			Returns a copy of the dictionary
+fromkeys()		Returns a dictionary with the specified keys and values
+get()			Returns the value of the specified key
+items()			Returns a list containing the a tuple for each key value pair
+keys()			Returns a list contianing the dictionary's keys
+pop()			Removes the element with the specified key
+popitem()		Removes the last inserted key-value pair
 setdefault()	Returns the value of the specified key. If the key does not exist: insert the key, with the specified value
-update()	Updates the dictionary with the specified key-value pairs
-values()	Returns a list of all the values in the dictionary
+update()		Updates the dictionary with the specified key-value pairs
+values()		Returns a list of all the values in the dictionary
 ===================================================
 Function	Description
 =======================================================
@@ -40,14 +40,14 @@ sorted()	Return a new sorted list of keys in the dictionary.
 ===========================================================
 Method	Description	Syntax
 ===========================================================
-copy()		dict.copy()		Copy the entire dictionary to new dictionary			
+copy()		dict.copy()			Copy the entire dictionary to new dictionary			
 update()	Dict.update()		Update a dictionary by adding a new entry or a key-value pair to an existing entry or by 
-					deleting an existing entry.
+								deleting an existing entry.
 items()		dictionary.items()	Returns a list of tuple pairs (Keys, Value) in the dictionary.
-sort()		sort()			You can sort the elements	dictionary.			
-len()		len(dict)		Gives the number of pairs in the dictionary.			
+sort()		sort()				You can sort the elements	dictionary.			
+len()		len(dict)			Gives the number of pairs in the dictionary.			
 cmp()		cmp(dict1, dict2) 	Compare values and keys of two dictionaries			
-Str()		Str(dict)		Make a dictionary into a printable string format		
+Str()		Str(dict)			Make a dictionary into a printable string format		
 =============================================================
 Sr.No.	Methods with Description
 =============================================================
@@ -286,6 +286,12 @@ thisdict =	dict(brand="Ford", model="Mustang", year=1964)
 # note the use of equals rather than colon for the assignment
 print(thisdict)
 #{'brand': 'Ford', 'model': 'Mustang', 'year': 1964}
+========================================
+thisdict =	{}.(brand="Ford", model="Mustang", year=1964)
+# note that keywords are not string literals
+# note the use of equals rather than colon for the assignment
+print(thisdict)
+#    thisdict =	{}.(brand="Ford", model="Mustang", year=1964)
 ==================================================================
 creating a dict
 my_dict = {}
@@ -338,6 +344,17 @@ print(list(sorted(marks.keys())))
 #('Science', 0)
 #['English', 'Math', 'Science']
 ==================================================
+marks = dict.fromkeys(['Math','English','Science'], 0)
+print(marks)
+for item in marks.items():
+    print(item)
+print(list(sorted(marks.keys())))
+# {'Math': 0, 'English': 0, 'Science': 0}
+# ('Math', 0)
+# ('English', 0)
+# ('Science', 0)
+# ['English', 'Math', 'Science']
+==================================================
 marks = {}.fromkeys(['Math','English','Science'], 0)
 print(marks)
 for item in marks.items():
@@ -350,6 +367,15 @@ print(list(sorted(marks.keys())))
 #('Science', 0)
 #[0, 0, 0]
 #['English', 'Math', 'Science']
+===================================================
+marks = dict.fromkeys(['Math','English','Science'], 0)
+print(marks)
+for item in marks.items():
+    print(item)
+# {'Math': 0, 'English': 0, 'Science': 0}
+# ('Math', 0)
+# ('English', 0)
+# ('Science', 0)
 ===================================================================
 squares = {x: x*x for x in range(6)}
 # Output: {0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
@@ -607,7 +633,7 @@ for i,j in dict1.items():
 #k = 1
 #m = 1
 #r = 1
-========================================
+========================================*******************
 string1 = "anuj anuj anuj kumar"
 string2 = string1.split()
 dict1 = {}
@@ -631,6 +657,12 @@ print(c)
 #['anuj', 'kumar', 'anuj', 'kumar', 'anuj']
 #{'anuj': 3, 'kumar': 2}
 ===========================================
+a = "anuj kumar anuj kumar anuj"
+s = a.split()
+c = dict(Counter(s))
+print(c)
+#NameError: name 'Counter' is not defined
+=========================================
 a = "anuj kumar anuj kumar anuj"
 s = a.split()
 d = {}
