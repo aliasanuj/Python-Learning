@@ -26,7 +26,7 @@ items()			Returns a list containing the a tuple for each key value pair
 keys()			Returns a list contianing the dictionary's keys
 pop()			Removes the element with the specified key
 popitem()		Removes the last inserted key-value pair
-setdefault()	Returns the value of the specified key. If the key does not exist: insert the key, with the specified value
+setdefault()		Returns the value of the specified key. If the key does not exist: insert the key, with the specified value
 update()		Updates the dictionary with the specified key-value pairs
 values()		Returns a list of all the values in the dictionary
 ===================================================
@@ -40,14 +40,14 @@ sorted()	Return a new sorted list of keys in the dictionary.
 ===========================================================
 Method	Description	Syntax
 ===========================================================
-copy()		dict.copy()			Copy the entire dictionary to new dictionary			
+copy()		dict.copy()		Copy the entire dictionary to new dictionary			
 update()	Dict.update()		Update a dictionary by adding a new entry or a key-value pair to an existing entry or by 
-								deleting an existing entry.
+					deleting an existing entry.
 items()		dictionary.items()	Returns a list of tuple pairs (Keys, Value) in the dictionary.
-sort()		sort()				You can sort the elements	dictionary.			
-len()		len(dict)			Gives the number of pairs in the dictionary.			
+sort()		sort()			You can sort the elements dictionary.			
+len()		len(dict)		Gives the number of pairs in the dictionary.			
 cmp()		cmp(dict1, dict2) 	Compare values and keys of two dictionaries			
-Str()		Str(dict)			Make a dictionary into a printable string format		
+Str()		Str(dict)		Make a dictionary into a printable string format		
 =============================================================
 Sr.No.	Methods with Description
 =============================================================
