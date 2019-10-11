@@ -1,6 +1,6 @@
 #args_kwargs.py
 ==================================
-1. Args --> The special syntax "*" is function in python is used to pass variable number of arguments to a function.
+1. Args ==> The special syntax "*" is function in python is used to pass variable number of arguments to a function.
 2. It is used to pass non-keyworded variable-length argument list.
 3. The syntax is used to symbol * to take in variable numbers of arguments,by convention it is often used with the word args.
 * args allows us to do is take an in more aeguments than the number of formal of arguments that you previously defined.
@@ -26,6 +26,47 @@ abc("anuj", "kumar", "dfvdf", one = "dbvfdfj", two="vknjd" , three="fklnhdf")
 #('two', 'vknjd')
 #('three', 'fklnhdf')
 =======================================
+def abc(a, *b, **c):
+    print("first argument is ",a)
+    for i in b:
+        print(i, end = " ")
+    print("\n")
+    for j in c.keys():
+        print(j)
+abc("anuj", "kumar", "dfvdf", one = "dbvfdfj", two="vknjd" , three="fklnhdf")
+# first argument is  anuj
+# kumar dfvdf 
+# 
+# one
+# two
+# three
+===================================
+def abc(*b, a, **c):
+    print("first argument is ",a)
+    for i in b:
+        print(i, end = " ")
+    print("\n")
+    for j in c.keys():
+        print(j)
+abc("anuj", "kumar", "dfvdf", one = "dbvfdfj", two="vknjd" , three="fklnhdf")
+#TypeError: abc() missing 1 required keyword-only argument: 'a'
+# it has to be in proper order
+===================================
+def abc(a, *b, **c):
+    print("first argument is ",a)
+    for i in b:
+        print(i, end = " ")
+    print("\n")
+    for j in c.values():
+        print(j)
+abc("anuj", "kumar", "dfvdf", one = "dbvfdfj", two="vknjd" , three="fklnhdf")
+# first argument is  anuj
+# kumar dfvdf
+#
+# dbvfdfj
+# vknjd
+# fklnhdf
+===================================
 def abc(a, *b, **c):
     print("first argument is ",a)
     for i in b:
@@ -192,6 +233,21 @@ myFun(first ='Geeks', mid ='for', last='Geeks')
 #mid == for
 #last == Geeks
 ============================
+def myFun(**kwargs):
+    for i in kwargs.items():
+        print ("%s == %s",%i)
+myFun(first ='Geeks', mid ='for', last='Geeks')
+#SyntaxError: invalid syntax
+
+===============================
+def myFun(**kwargs):
+    for i in kwargs.items():
+        print ("%s == %s"%i)
+myFun(first ='Geeks', mid ='for', last='Geeks')
+# first == Geeks
+# mid == for
+# last == Geeks
+=============================
 def myFun(**argv):  
     for arg in argv:  
         print (arg) 
@@ -371,6 +427,15 @@ abc(name="aman",city="agra",rollno=101,company="NIIT")
 #city is agra
 #rollno is 101
 #company is NIIT
+==================================
+def test_var_kwargs(farg, **kwargs):
+    print("formal arg:", farg)
+    for key in kwargs:
+        print("another keyword arg: %s: %s" % (key, kwargs[key]))
+test_var_kwargs(farg=1, myarg2="two", myarg3=3)
+#formal arg: 1
+#another keyword arg: myarg2: two
+#another keyword arg: myarg3: 3
 ==================================
 def abc(a,*b):
     print("the first parameter is ",a)
