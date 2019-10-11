@@ -114,7 +114,7 @@ print(all(s))
 # '0' is True
 s = '000'
 print(all(s))
-s = ''
+s = '' # s = " "  it will also return true
 print(all(s))
 #True
 #True
@@ -137,7 +137,7 @@ print(all(s))
 #False
 #True
 #True
-===================================
+===================================************
 s = " "
 print(any(s))
 s = ""
@@ -151,3 +151,4 @@ s = ""
 print(all(s))
 #True
 #True
+=============================
