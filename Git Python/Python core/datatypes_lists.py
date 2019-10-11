@@ -1,4 +1,4 @@
-datatypes_lists.py
+\datatypes_lists.py
 
 1. List -->Python offers a range of compound datatypes often referred to as sequences. 
 2. List is one of the most frequently used and very versatile datatype used in Python.
@@ -98,6 +98,20 @@ print(odd)
 #[1, 3, 5, 7]
 #[1, 3, 5, 7, 9, 11, 13]
 ====================================
+odd = [1, 3, 5]
+odd.append([7])
+print(odd)
+odd.append(7)
+print(odd)
+odd.extend([9, 11, 13])
+print(odd)
+odd.extend(9, 11, 13)
+print(odd)
+# [1, 3, 5, [7]]
+# [1, 3, 5, [7], 7]
+# [1, 3, 5, [7], 7, 9, 11, 13]
+#TypeError: extend() takes exactly one argument (3 given)
+===================================
 We can also use + operator to combine two lists. This is also called concatenation.
 The * operator repeats a list for the given number of times.
 odd = [1, 3, 5]
@@ -273,11 +287,11 @@ print(list1)
 ============================================
 Method	Description
 append()	Adds an element at the end of the list
-clear()	Removes all the elements from the list
+clear()		Removes all the elements from the list
 copy()		Returns a copy of the list
-count()	Returns the number of elements with the specified value
+count()		Returns the number of elements with the specified value
 extend()	Add the elements of a list (or any iterable), to the end of the current list
-index()	Returns the index of the first element with the specified value
+index()		Returns the index of the first element with the specified value
 insert()	Adds an element at the specified position
 pop()		Removes the element at the specified position #pop(index no)
 remove()	Removes the item with the specified value
@@ -824,5 +838,4 @@ print(Sliced_List)
 #['G', 'E', 'E', 'K', 'S', 'F', 'O', 'R', 'G', 'E', 'E', 'K', 'S']
 #Printing List in reverse: 
 #['S', 'K', 'E', 'E', 'G', 'R', 'O', 'F', 'S', 'K', 'E', 'E', 'G']
-=====================================
-
+====================================
