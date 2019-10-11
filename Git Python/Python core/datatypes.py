@@ -1,5 +1,6 @@
 immutable :
-===============
+==================
+==================
 int
 float
 decimal
@@ -12,6 +13,7 @@ frozenset
 bytes
 
 Mutable :
+=============
 =============
 list
 dictionary
