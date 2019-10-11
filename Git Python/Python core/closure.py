@@ -7,6 +7,7 @@
 5. we must declare them explicitly as non-local (using nonlocal keyword) in order to modify them
 ==> A Closure is a function object that remembers values in enclosing scopes even if they are not present in memory. 
 base concept of decorator is closure
+6. First class function 
 ======================================
 def gen_multiplier(x):
     def multiplier(y):
@@ -60,7 +61,7 @@ def outer(a):
 obj = outer(5)
 print(obj(10))
 #5
-#10
+#15
 #none
 ==========================
 def outer(a):
@@ -76,6 +77,25 @@ obj(10)
 #None
 #15
 ==============================
+def outer(a):
+    print(a)
+    def inner(b):
+        print("aaa")
+        print(b)
+        print(a+b)
+    return inner
+obj = outer(5)
+print(obj(10))
+obj(10)
+# 5
+# aaa
+# 10
+# 15
+# None
+# aaa
+# 10
+# 15
+==============================
 def gen_multiplier(a):
     x = 10 #non-local variable
     def multiplier(y): #stores the reference to non-local variable
@@ -87,6 +107,21 @@ del gen_multiplier #it will delete
 print(obj(5))
 #500
 ===========================
+def gen_multiplier(a):
+    x = 10 #non-local variable
+    print(a)
+    def multiplier(y): #stores the reference to non-local variable
+        print(y)
+        return x * y * a #x is non local to multiplier
+    return multiplier
+#call the function
+obj = gen_multiplier(10)
+del gen_multiplier #it will delete
+print(obj(5))
+# 10
+# 5
+# 500
+=========================
 m = 12
 def gen_multiplier(a):
     x = 10 #non-local variable
@@ -146,6 +181,31 @@ def print_msg(msg):
 obj = print_msg("Hello")
 #Hello
 =================================
+def print_msg(msg):
+    def printer():
+        print(msg)
+    return printer
+obj = print_msg("Hello")
+#No output
+==================================
+def print_msg(msg):
+
+    def printer():
+        print(msg)
+
+    return printer  # this got changed
+another = print_msg("Hello")
+#no output
+=============================
+def print_msg(msg):
+
+    def printer():
+        print(msg)
+
+    return printer()  # this got changed
+another = print_msg("Hello")
+#Hello
+==================================
 def print_msg(msg):
 # This is the outer enclosing function
     def printer():
