@@ -38,6 +38,20 @@ for color in col:
 #yellow 1
 #green 0     
 ===============================
+from collections import Counter
+z = ['blue', 'red', 'blue', 'yellow', 'blue', 'red']
+# col_count = Counter(z)
+# print(col_count)
+# for color in z:
+#     print (color, col_count[color])  # [] square bracket
+Counter({'blue': 3, 'red': 2, 'yellow': 1})
+# blue 3
+# red 2
+# blue 3
+# yellow 1
+# blue 3
+# red 2
+===============================
 from collections import Counter 
 z = ['blue', 'red', 'blue', 'yellow', 'blue', 'red'] 
 col_count = Counter(z) 
@@ -122,6 +136,13 @@ c1.subtract(c2)
 print(c1)
 #Counter({'C': 6, 'B': 0, 'A': -6})
 =============================
+from collections import Counter
+c1 = Counter(A=4,  B=3, C=10)
+c2 = Counter(A=10, B=3, D=4)
+c1.subtract(c2)
+print(c1)
+#Counter({'C': 10, 'B': 0, 'D': -4, 'A': -6})
+===========================
 from collections import Counter 
 # Create a list 
 z = ['blue', 'red', 'blue', 'yellow', 'blue', 'red'] 
@@ -211,6 +232,11 @@ print(c['bacon'])
 from collections import Counter
 c = Counter(['eggs', 'ham'])
 print(c['ham'])
+#1
+=============================================
+from collections import Counter
+c = Counter(['eggs', 'ham'])
+print(c['eggs'])
 #1
 =============================================
 from collections import Counter 
