@@ -56,6 +56,30 @@ sum = reduce((lambda x, y: x + y), li)
 print (sum) 
 #193
 ============================
+from functools import reduce
+li = [5, 8, 10, 20, 50, 100]
+sum = list(map(lambda x,y: x + y, li))
+print (sum)
+#TypeError: <lambda>() missing 1 required positional argument: 'y'
+===============================
+from functools import reduce
+li = [5, 8, 10, 20, 50, 100]
+sum = list(filter(lambda x,y: x + y, li))
+print (sum)
+#TypeError: <lambda>() missing 1 required positional argument: 'y'
+============================
+from functools import reduce
+li = [5, 8, 10, 20, 50, 100]
+sum = list(map(lambda x: x + x, li))
+print (sum)
+#[10, 16, 20, 40, 100, 200]
+============================
+from functools import reduce
+li = [5, 8, 10, 20, 50, 100]
+sum = list(filter(lambda x: x + x, li))
+print (sum)
+#[5, 8, 10, 20, 50, 100]
+=============================
 li = [5, 8, 10, 20, 50, 100] 
 sum = map(lambda x: x + x,li) 
 print(list(sum))
