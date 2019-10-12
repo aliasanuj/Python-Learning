@@ -1,25 +1,25 @@
 #File handelling 
 =======================
 =======================
-r : Opens a file for reading only. The file pointer is placed at the beginning of the file. This is the default mode.
-rb : Opens a file for reading only in binary format. The file pointer is placed at the beginning of the file. This is the default mode.
-r+ : Opens a file for both reading and writing. The file pointer placed at the beginning of the file.
-rb+ : Opens a file for both reading and writing in binary format. The file pointer placed at the beginning of the file.
-w : Opens a file for writing only. Overwrites the file if the file exists. If the file does not exist, creates a new file for writing.
-wb : Opens a file for writing only in binary format. Overwrites the file if the file exists. If the file does not exist, creates a 
-new file for writing.
-w+ : Opens a file for both writing and reading. Overwrites the existing file if the file exists. If the file does not exist,
-creates a new file for reading and writing.
-wb+ : Opens a file for both writing and reading in binary format. Overwrites the existing file if the file exists. If the 
-file does not exist, creates a new file for reading and writing.
-a : Opens a file for appending. The file pointer is at the end of the file if the file exists. That is, the file is
-in the append mode. If the file does not exist, it creates a new file for writing.
-ab : ?Opens a file for appending in binary format. The file pointer is at the end of the file if the file exists. 
-That is, the file is in the append mode. If the file does not exist, it creates a new file for writing.
-a+ : Opens a file for both appending and reading. The file pointer is at the end of the file if the file exists. 
-The file opens in the append mode. If the file does not exist, it creates a new file for reading and writing.
-ab+ : Opens a file for both appending and reading in binary format. The file pointer is at the end of the file if the file exists.
-The file opens in the append mode. If the file does not exist, it creates a new file for reading and writing.
+r : 	Opens a file for reading only. The file pointer is placed at the beginning of the file. This is the default mode.
+rb : 	Opens a file for reading only in binary format. The file pointer is placed at the beginning of the file. This is the default mode.
+r+ : 	Opens a file for both reading and writing. The file pointer placed at the beginning of the file.
+rb+ : 	Opens a file for both reading and writing in binary format. The file pointer placed at the beginning of the file.
+w : 	Opens a file for writing only. Overwrites the file if the file exists. If the file does not exist, creates a new file for writing.
+wb : 	Opens a file for writing only in binary format. Overwrites the file if the file exists. If the file does not exist, creates a 
+		new file for writing.
+w+ : 	Opens a file for both writing and reading. Overwrites the existing file if the file exists. If the file does not exist,
+		creates a new file for reading and writing.
+wb+ : 	Opens a file for both writing and reading in binary format. Overwrites the existing file if the file exists. If the 
+		file does not exist, creates a new file for reading and writing.
+a : 	Opens a file for appending. The file pointer is at the end of the file if the file exists. That is, the file is
+		in the append mode. If the file does not exist, it creates a new file for writing.
+ab : 	Opens a file for appending in binary format. The file pointer is at the end of the file if the file exists. 
+		That is, the file is in the append mode. If the file does not exist, it creates a new file for writing.
+a+ : 	Opens a file for both appending and reading. The file pointer is at the end of the file if the file exists. 
+		The file opens in the append mode. If the file does not exist, it creates a new file for reading and writing.
+ab+ : 	Opens a file for both appending and reading in binary format. The file pointer is at the end of the file if the file exists.
+		The file opens in the append mode. If the file does not exist, it creates a new file for reading and writing.
 ============================
 Mode	Description
 'r'	Open a file for reading. (default)
@@ -30,23 +30,23 @@ Mode	Description
 'b'	Open in binary mode.
 '+'	Open a file for updating (reading and writing)
 ============================
-Method	Description
+Method	Description : 
 ============================
-close()	Close an open file. It has no effect if the file is already closed.
-detach()	Separate the underlying binary buffer from the TextIOBase and return it.
-fileno()	Return an integer number (file descriptor) of the file.
-flush()	Flush the write buffer of the file stream.
-isatty()	Return True if the file stream is interactive.
-read(n)	Read atmost n characters form the file. Reads till end of file if it is negative or None.
-readable()	Returns True if the file stream can be read from.
-readline(n=-1)	Read and return one line from the file. Reads in at most n bytes if specified.
-readlines(n=-1)	Read and return a list of lines from the file. Reads in at most n bytes/characters if specified.
+close()				Close an open file. It has no effect if the file is already closed.
+detach()			Separate the underlying binary buffer from the TextIOBase and return it.
+fileno()			Return an integer number (file descriptor) of the file.
+flush()				Flush the write buffer of the file stream.
+isatty()			Return True if the file stream is interactive.
+read(n)				Read atmost n characters form the file. Reads till end of file if it is negative or None.
+readable()			Returns True if the file stream can be read from.
+readline(n=-1)		Read and return one line from the file. Reads in at most n bytes if specified.
+readlines(n=-1)		Read and return a list of lines from the file. Reads in at most n bytes/characters if specified.
 seek(offset,from=SEEK_SET)	Change the file position to offset bytes, in reference to from (start, current, end).
-seekable()	Returns True if the file stream supports random access.
-tell()	Returns the current file location.
+seekable()			Returns True if the file stream supports random access.
+tell()				Returns the current file location.
 truncate(size=None)	Resize the file stream to size bytes. If size is not specified, resize to current location.
-writable()	Returns True if the file stream can be written to.
-write(s)	Write string s to the file and return the number of characters written.
+writable()			Returns True if the file stream can be written to.
+write(s)			Write string s to the file and return the number of characters written.
 writelines(lines)	Write a list of lines to the file.
 ==========================================
 #File handelling 
@@ -271,30 +271,38 @@ When you’re done with a file, use close() to close it and free up any system
 resources taken up by the open file
 ============================================
 File Handling Examples
+
 To open a text file, use:
 fh = open("hello.txt", "r")
+
 To read a text file, use:
 fh = open("hello.txt","r")
 print fh.read()
+
 To read one line at a time, use:
 fh = open("hello".txt", "r")
 print fh.readline()
+
 To read a list of lines use:
 fh = open("hello.txt.", "r")
 print fh.readlines()
+
 To write to a file, use:
 fh = open("hello.txt","w")
 write("Hello World")
 fh.close()
+
 To write to a file, use:
 fh = open("hello.txt", "w")
 lines_of_text = ["a line of text", "another line of text", "a third line"]
 fh.writelines(lines_of_text)
 fh.close()
+
 To append to file, use:
 fh = open("Hello.txt", "a")
 write("Hello World again")
 fh.close()
+
 To close a file, use
 fh = open("hello.txt", "r")
 print fh.read()
