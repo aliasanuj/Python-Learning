@@ -1,4 +1,4 @@
-#map_function.py
+\#map_function.py
 ==============================
 #Map functions retrurns a list of results after applying the given function to each item of a given iterable (list | tuple).
 #Syntax : map(function,iterable)
