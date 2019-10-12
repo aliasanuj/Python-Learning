@@ -34,7 +34,7 @@ print(next(a))
 #2
 #3
 #4
-========================
+========================*******************
 list1 = [1,3,4,5,6]
 a = list1.__iter__()
 print(next(a))
@@ -144,7 +144,7 @@ for i in d:
 #Dictionary Iteration
 #xyz  123
 #abc  345
-=============================
+=============================**********************
 class InfIter:
     """Infinite iterator to return all
         odd numbers"""
