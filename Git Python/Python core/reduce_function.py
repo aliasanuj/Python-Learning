@@ -6,15 +6,15 @@ filter(function,iterator)
 Reduce() | Accumulate()
 3. Both reduce and accumulate can be used to calculate the summation od a sequence.
 4. But there are some difference in the implementation aspects in both of these.
-reduce() --> defined in functools
-Accumuate() --> defined in accumulate
-5. Reduce() --> store the intermediate result and only returns the final summation value.
+reduce() ==> defined in functools
+Accumuate() ==> defined in accumulate
+5. Reduce() ==> store the intermediate result and only returns the final summation value.
 Accumulate() returns a list containing the intermediate result. The last number of the list is returned is summation value of the list.
-6. Reduce --> Reduce(function,sequence)
-Accumulate --> Accumulate(sequence,function)
+6. Reduce ==> Reduce(function,sequence)
+Accumulate ==> Accumulate(sequence,function)
 7. filter(function, iterable)
 map(function,iterable)
-#Reduce --> 
+#Reduce ==> 
 import functools
 functools.reduce(function,iterator)
 functools.reduce(lambda x:x+x,list1)
@@ -91,8 +91,8 @@ product = reduce((lambda x, y: x * y), [1, 2, 3, 4])
 print(product)
 #24
 ==============================
-print(list( filter((lambda x: x < 0), range(-5,5))))
-#[-5, -4, -3, -2, -1]
+print(list( filter((lambda x: x < 0), range(=5,5))))
+#[=5, =4, =3, =2, =1]
 =============================
 list1 = [1,2,3,4,5,6]
 def add(x):
@@ -141,7 +141,7 @@ x=functools.reduce(lambda x,y:x+y,list1)
 print(x)
 #23
 ==========================
-#Accumulate -->
+#Accumulate ==>
 list1 = [1,2,3,6,4,7]
 import itertools
 y = itertools.accumulate(list1,lambda x,y : x+y)
