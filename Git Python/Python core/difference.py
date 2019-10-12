@@ -34,6 +34,11 @@ print(less_than_zero)
 #<filter object at 0x0115DD90>
 ===========================
 number_list = range(-5, 5)
+less_than_zero = map(lambda x: x < 0, number_list)
+print(less_than_zero)
+#<map object at 0x056BDD90>
+===========================
+number_list = range(-5, 5)
 less_than_zero = list(map(lambda x: x < 0, number_list))
 print(less_than_zero)
 #[True, True, True, True, True, False, False, False, False, False]
