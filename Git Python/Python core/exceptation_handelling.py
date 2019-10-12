@@ -142,23 +142,23 @@ Sr.No.	Exception Name & Description
 ====================================================
 Exception Class	Event
 ====================================================
-Exception		Base class for all exceptions
-ArithmeticError		Raised when numeric calculations fails
-FloatingPointError	Raised when a floating point calculation fails
-ZeroDivisionError	Raised when division or modulo by zero takes place for all numeric types
-AssertionError		Raised when Assert statement fails
-OverflowError		Raised when result of an arithmetic operation is too large to be represented
-ImportError		Raised when the imported module is not found
-IndexError		Raised when index of a sequence is out of range
-KeyboardInterrupt	Raised when the user interrupts program execution, generally by pressing Ctrl+c
-IndentationError	Raised when there is incorrect indentation
-SyntaxError		Raised by parser when syntax error is encountered
-KeyError		Raised when the specified key is not found in the dictionary
-NameError		Raised when an identifier is not found in the local or global namespace
-TypeError		Raised when a function or operation is applied to an object of incorrect type
-ValueError		Raised when a function gets argument of correct type but improper value
-IOError			Raised when an input/ output operation fails
-RuntimeError		Raised when a generated error does not fall into any category
+Exception				Base class for all exceptions
+ArithmeticError			Raised when numeric calculations fails
+FloatingPointError		Raised when a floating point calculation fails
+ZeroDivisionError		Raised when division or modulo by zero takes place for all numeric types
+AssertionError			Raised when Assert statement fails
+OverflowError			Raised when result of an arithmetic operation is too large to be represented
+ImportError				Raised when the imported module is not found
+IndexError				Raised when index of a sequence is out of range
+KeyboardInterrupt		Raised when the user interrupts program execution, generally by pressing Ctrl+c
+IndentationError		Raised when there is incorrect indentation
+SyntaxError				Raised by parser when syntax error is encountered
+KeyError				Raised when the specified key is not found in the dictionary
+NameError				Raised when an identifier is not found in the local or global namespace
+TypeError				Raised when a function or operation is applied to an object of incorrect type
+ValueError				Raised when a function gets argument of correct type but improper value
+IOError					Raised when an input/ output operation fails
+RuntimeError			Raised when a generated error does not fall into any category
 =======================================================
 Exceptions versus Syntax Errors :
 Syntax errors occur when the parser detects an incorrect statement. Observe the following example:
