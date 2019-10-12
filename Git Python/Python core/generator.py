@@ -57,6 +57,77 @@ Traceback (most recent call last):
 StopIteration
 =============================
 def my_gen():
+    yield 7
+    yield 6
+    yield 8
+    yield 4
+    yield 5
+    yield 6
+print("by objevt creation")
+obj = my_gen()
+print(next(obj))
+print(next(obj))
+print(next(obj))
+print(next(obj))
+print("by for loop")
+for i in my_gen():
+  print(i)
+print("x.__next__()") #x will be obj name
+print(obj.__next__())
+print(obj.__iter__())
+# by objevt creation
+# 7
+# 6
+# 8
+# 4
+# by for loop
+# 7
+# 6
+# 8
+# 4
+# 5
+# 6
+# x.__next__()
+# 5
+# <generator object my_gen at 0x011AAEB0>
+
+=====================================
+def my_gen():
+    yield 7
+    yield 6
+    yield 8
+    yield 4
+    yield 5
+    yield 6
+print("by objevt creation")
+obj = my_gen()
+print(next(obj))
+print(next(obj))
+print(next(obj))
+print(next(obj))
+print("by for loop")
+for i in my_gen():
+  print(i)
+print("x.__next__()") #x will be obj name
+print(obj.__next__())
+print(obj.__next__())
+#print(obj.__next__())
+# 7
+# 6
+# 8
+# 4
+# by for loop
+# 7
+# 6
+# 8
+# 4
+# 5
+# 6
+# x.__next__()
+# 5
+# 6
+=============================
+def my_gen():
     n = 1
     print('This is printed first')
     # Generator function contains yield statements
@@ -361,3 +432,4 @@ whenever we are using object, we need to  apply "next" keyword.
 print(next(x));  # In Python 3, __next__()
 print(x.__next__());  # In Python 3, __next__()
 #x is object
+=====================================
