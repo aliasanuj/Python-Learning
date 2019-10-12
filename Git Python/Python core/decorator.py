@@ -47,7 +47,7 @@ def outer(param):
     def inner():
         print("inner")
         param()
-    return inner
+    return inner  #its not returning anything with inner() so only "outer" will print
 def outer1():
     print("outer1")
 obj = outer(outer1)
@@ -58,7 +58,7 @@ def outer(param):
     def inner():
         print("inner")
         param()
-    return inner()
+    return inner() #it will called and print some thing 
 def outer1():
     print("outer1")
 obj = outer(outer1)
@@ -75,7 +75,7 @@ def outer(param):
 def outer1():
     print("outer1")
 obj = outer(outer1)
-obj
+
 #outer
 #inner
 #outer1
@@ -91,6 +91,15 @@ pretty = make_pretty(ordinary)
 pretty()
 #I got decorated
 #I am ordinary
+=================================
+def make_pretty(func):
+    def inner():
+        print("I got decorated")
+        func()
+    return inner
+def ordinary():
+    print("I am ordinary")
+pretty = make_pretty(ordinary)
 ===================================
 def make_pretty(func):
     def inner():
@@ -112,8 +121,23 @@ def ordinary():
     print("I am ordinary")
 pretty = make_pretty(ordinary)
 pretty()
-#error
+# I got decorated
+# I am ordinary
+# TypeError: 'NoneType' object is not callable
 ===================================
+def make_pretty(func):
+    def inner():
+        print("I got decorated")
+        func()
+    return inner
+def ordinary():
+    print("I am ordinary")
+pretty = make_pretty(ordinary)
+pretty()
+# I got decorated
+# I am ordinary
+
+=======================
 def outer():
     print("in outer")
     def inner():
@@ -136,6 +160,17 @@ obj1()
 #in outer
 #in inner
 #outer 1
+=================================
+def make_pretty(func):
+    def inner():
+        print("I got decorated")
+        func()
+    return inner
+def ordinary():
+    print("I am ordinary")
+pretty = make_pretty(ordinary)
+#no output
+
 ===============================
 def outer(func):
     print("in outer")
@@ -147,6 +182,20 @@ def outer1():
     print("outer 1")
 obj1 = outer(outer1)
 #in outer
+===================================
+def outer(func):
+    print("in outer")
+    def inner():
+        print("in inner")
+        func()
+    return inner
+def outer1():
+    print("outer 1")
+obj1 = outer(outer1)
+obj1()
+# in outer
+# in inner
+# outer 1
 ===================================
 def outer(func):
     print("in outer")
@@ -175,7 +224,7 @@ obj()
 #inner function
 #in outer1 function
 #abc function
-======================
+======================************************
 def decorator(sum,sub,mul):
     def inner(i,j):
         print("before operation")
@@ -214,6 +263,37 @@ outer1()
 #in outer1 function
 #again in abc
 =====================
+def outer(abc):
+    def inner():
+        print("inner function")
+        print("abcd function")
+        abc()
+        print("abc function")
+        print("abc function")
+    return inner
+@outer
+def outer1():
+    print("in outer1 function")
+outer1()
+# inner function
+# abcd function
+# in outer1 function
+# abc function
+# abc function
+========================
+def outer(abc):
+    def inner():
+        print("in inner function")
+        abc()
+        print("in abc ")
+        abc()
+        print("again in abc")
+    return inner
+def outer1():
+    print("in outer1 function")
+@outer # it expect def after @outer or @anything 
+outer1()
+=============================
 def outer(abc,abcd):
     def inner():
         print("inner function")
@@ -306,6 +386,21 @@ obj(10,15)
 #sum =  25
 #after adding
 ========================
+def add_num_decorate(add_num):
+    def add_num1(i,j):
+        print("before adding")
+        print("sum = ",add_num(i,j))
+        print("after adding")
+    return add_num1
+def add_num2(i,j):
+    return i+j
+obj = add_num_decorate(add_num2)
+obj(10,15)
+# before adding
+# sum =  25
+# after adding
+
+==========================
 def outer(abc):
     def inner(i,j):
         print("before sum :")
@@ -401,7 +496,7 @@ def add_num_decorate(abc):
 @add_num_decorate
 def add_num2(i,j):  #same name
     return i+j
-def add_num2(i,j):	#same name
+def add_num2(i,j):	#same name it dont follow over reading
     return i*j
 add_num2(10,10)
 #no output
@@ -501,7 +596,7 @@ def outer(abc):
 @outer
 def outer1():
     print("outer1 function")
-outer()
+outer() #it should be outer1() then it will work
 #error
 ===========================
 def outer(abc):
@@ -551,13 +646,16 @@ outer1()
 #outer1 function
 =====================
 #file name : learning.py
+
 def outer(abc):
     def inner():
         print("inner function")
         abc()
         abc()
     return  inner
+
 #file name : learning1.py
+
 from learning import outer
 @outer
 def outer1():
