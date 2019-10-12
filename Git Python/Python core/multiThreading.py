@@ -16,19 +16,21 @@ Multithreading
 3. All thread of a process share global variables (stored in heap) and the program code.
 4. Multithreading is defined as the ability of a processor to execute multiple threads concurrently.
 =====================================
-import threading 
-  def print_cube(num): 
-    print("Cube: {}".format(num * num * num)) 
-def print_square(num): 
-    print("Square: {}".format(num * num)) 
-if __name__ == "__main__": 
+import threading
+def print_cube(num):
+    print("Cube: {}".format(num * num * num))
+def print_square(num):
+    print("Square: {}".format(num * num))
+if __name__ == "__main__":
     t1 = threading.Thread(target=print_square, args=(10,)) #args=(10,) must be tuple
     t2 = threading.Thread(target=print_cube, args=(10,)) #args=(10,) must be tuple
-    t1.start() 
-    t2.start() 
-    t1.join() 
-    t2.join() 
+    t1.start()
+    t2.start()
+    t1.join()
+    t2.join()
     print("Done!")
+
+
 #Square: 100
 #Cube: 1000
 #Done!
