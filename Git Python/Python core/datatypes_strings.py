@@ -405,6 +405,11 @@ x = "".join(a)
 print(x)
 #kuma,ranuj
 ================================
+a = "kumar anuj"
+x = " ".join(a)
+print(x)
+#k u m a r   a n u j
+================================
 list1 = [1, 2, 3, 4]
 s = "".join(list1)
 print(s)
