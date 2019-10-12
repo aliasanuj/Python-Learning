@@ -1,6 +1,6 @@
 Difference between python 2.7 vs 3.x
 =======================================
-=======================================
+======================================
 1. THERE IS BETTER UNICODE SUPPORT IN PYTHON 3
 2. In Python 3, text strings are Unicode by default.
 3. In Python 2, strings are stored as ASCII by default–you have to add a “u” if you want to store strings as Unicode in Python 2.x.
