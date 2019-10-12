@@ -17,11 +17,11 @@ optional but is a good practice to write it.
 a = "kumar","anuj","prem"
 print(type(a))
 #<class 'tuple'>
------------------
+================================
 a = "kumar","anuj","prem",
 print(type(a))
 #<class 'tuple'>
--------------------
+================================
 2. A tuple can have any number of items and they may be of different types (integer, float, list, string etc.).
 =======================================
 Creating a tuple with one element is a bit tricky.
@@ -134,7 +134,16 @@ for name in ('John','Kate'):
 #Hello Kate
 ====================================
 #Built-in Functions with Tuple
-#Built-in functions like all(), any(), enumerate(), len(), max(), min(), sorted(), tuple() etc. are commonly used with tuple to perform different tasks.
+#Built-in functions like: 
+all(), 
+any(), 
+enumerate(), 
+len(), 
+max(), 
+min(), 
+sorted(), 
+tuple() 
+
 Function		Description
 all()		Return True if all elements of the tuple are true (or if the tuple is empty).
 any()		Return True if any element of the tuple is true. If the tuple is empty, return False.
@@ -144,7 +153,7 @@ max()		Return the largest item in the tuple.
 min()		Return the smallest item in the tuple
 sorted()	Take elements in the tuple and return a new sorted list (does not sort the tuple itself).
 sum()		Retrun the sum of all elements in the tuple.
-tuple()	Convert an iterable (list, string, set, dictionary) to a tuple.
+tuple()		Convert an iterable (list, string, set, dictionary) to a tuple.
 ====================================================
 thistuple = ("apple", "banana", "cherry")
 print(thistuple)
