@@ -31,6 +31,28 @@ def abc(a, *b, **c):
     for i in b:
         print(i, end = " ")
     print("\n")
+    for j in c.items():
+        print(j)
+abc("anuj", {'a':10} ,{'b':20},one = "dbvfdfj", two="vknjd" , three="fklnhdf")
+abc({'a':10} ,{'b':20},"anuj",one = "dbvfdfj", two="vknjd" , three="fklnhdf")
+# first argument is  anuj
+# {'a': 10} {'b': 20}
+#
+# ('one', 'dbvfdfj')
+# ('two', 'vknjd')
+# ('three', 'fklnhdf')
+# first argument is  {'a': 10}
+# {'b': 20} anuj
+#
+# ('one', 'dbvfdfj')
+# ('two', 'vknjd')
+# ('three', 'fklnhdf')
+====================================
+def abc(a, *b, **c):
+    print("first argument is ",a)
+    for i in b:
+        print(i, end = " ")
+    print("\n")
     for j in c.keys():
         print(j)
 abc("anuj", "kumar", "dfvdf", one = "dbvfdfj", two="vknjd" , three="fklnhdf")
@@ -41,6 +63,55 @@ abc("anuj", "kumar", "dfvdf", one = "dbvfdfj", two="vknjd" , three="fklnhdf")
 # two
 # three
 ===================================
+def abc(a, *b, **c):
+    print("first argument is ",a)
+    for i in b:
+        print(i, end = " ")
+    print("\n")
+    for j in c.keys():
+        print(j)
+abc("anuj", "kumar", "dfvdf", one = {"a":"dbvfdfj", "two":"vknjd" , "three":"fklnhdf"})
+# first argument is  anuj
+# kumar dfvdf 
+# 
+# one
+=====================================
+def abc(a, *b, **c):
+    print("first argument is ",a)
+    for i in b:
+        print(i, end = " ")
+    print("\n")
+    for j in c.items():
+        print(j)
+abc("anuj", "kumar", "dfvdf", one = {"a":"dbvfdfj", "two":"vknjd" , "three":"fklnhdf"})
+# first argument is  anuj
+# kumar dfvdf 
+# 
+# ('one', {'a': 'dbvfdfj', 'two': 'vknjd', 'three': 'fklnhdf'})
+==================================
+def abc(a, *b, **c):
+    print("first argument is ",a)
+    for i in b:
+        print(i, end = " ")
+    print("\n")
+    for j in c.values():
+        print(j)
+abc("anuj", "kumar", "dfvdf", one = {"a":"dbvfdfj", "two":"vknjd" , "three":"fklnhdf"})
+# first argument is  anuj
+# kumar dfvdf 
+# 
+# {'a': 'dbvfdfj', 'two': 'vknjd', 'three': 'fklnhdf'}
+===============================
+def abc(a, *b, **c):
+    print("first argument is ",a)
+    for i in b:
+        print(i, end = " ")
+    print("\n")
+    for j in c.items():
+        print(j)
+abc(one = "dbvfdfj", two="vknjd" , three="fklnhdf","anuj", {'a':10} ,{'b':20})
+#SyntaxError: positional argument follows keyword argument
+=================================
 def abc(*b, a, **c):
     print("first argument is ",a)
     for i in b:
@@ -67,6 +138,29 @@ abc("anuj", "kumar", "dfvdf", one = "dbvfdfj", two="vknjd" , three="fklnhdf")
 # vknjd
 # fklnhdf
 ===================================
+def abc(a, *b, **c):
+    print("first argument is ",a)
+    for i in b:
+        print(i, end = " ")
+    print("\n")
+    for j in c.values():
+        print(j)
+abc("anuj", "kumar", "dfvdf", d{"one":"dbvfdfj", "two":"vknjd" , "three":"fklnhdf"})
+#SyntaxError: invalid syntax
+==================================
+def abc(a, *b, **c):
+    print("first argument is ",a)
+    for i in b:
+        print(i, end = " ")
+    print("\n")
+    for j in c.values():
+        print(j)
+abc("anuj", "kumar", "dfvdf", d={"one":"dbvfdfj", "two":"vknjd" , "three":"fklnhdf"})
+# first argument is  anuj
+# kumar dfvdf
+#
+# {'one': 'dbvfdfj', 'two': 'vknjd', 'three': 'fklnhdf'}
+=================================
 def abc(a, *b, **c):
     print("first argument is ",a)
     for i in b:
@@ -178,6 +272,47 @@ myFun(first ='Geeks', mid ='for', last='Geeks')
 #mid = for
 #last = Geeks
 ===============================
+def myFun(**kwargs):
+    for i in kwargs.keys():
+        print("%s"%(i))
+myFun(first ='Geeks', mid ='for', last='Geeks')
+# first
+# mid
+# last
+# no tuple as input 
+===============================
+def myFun(**kwargs):
+    for i in kwargs.values():
+        print("%s"%(i))
+myFun(first ='Geeks', mid ='for', last='Geeks')
+# Geeks
+# for
+# Geeks
+===============================
+def myFun(**kwargs):
+    for i in kwargs.keys():
+        print("{}".format(i))
+myFun(first ='Geeks', mid ='for', last='Geeks')
+#first
+#mid
+#last
+===============================
+def myFun(**kwargs):
+    for i in kwargs.items():
+        print("{}".format(i))
+myFun(first ='Geeks', mid ='for', last='Geeks')
+# ('first', 'Geeks')
+# ('mid', 'for')
+# ('last', 'Geeks')
+============================
+def myFun(**kwargs):
+    for i in kwargs.values():
+        print("{}".format(i))
+myFun(first ='Geeks', mid ='for', last='Geeks')
+# Geeks
+# for
+# Geeks
+================================
 def test_var_kwargs(farg, **kwargs):
     print("formal arg:", farg)
     for i in kwargs.items():
@@ -225,6 +360,18 @@ myFun('Hello', 'Welcome', 'to', 'GeeksforGeeks')
 #Next argument through *argv : to
 #Next argument through *argv : GeeksforGeeks
 ============================
+def myFun(arg1, *argv,**abc):
+    print ("First argument :", arg1)
+    for arg in argv:
+        print("Next argument through *argv :", arg)
+    for i in abc.items():
+        print("Next argument through *argv :", i)
+myFun('Hello', 'Welcome', 'to', 'GeeksforGeeks')
+# First argument : Hello
+# Next argument through *argv : Welcome
+# Next argument through *argv : to
+# Next argument through *argv : GeeksforGeeks
+===========================
 def myFun(**kwargs):  
     for key, value in kwargs.items(): 
         print ("%s == %s" %(key, value)) 
@@ -238,8 +385,13 @@ def myFun(**kwargs):
         print ("%s == %s",%i)
 myFun(first ='Geeks', mid ='for', last='Geeks')
 #SyntaxError: invalid syntax
-
 ===============================
+def myFun(**kwargs):
+    for i in kwargs.items():
+        print ("%s",%i)
+myFun(first ='Geeks', mid ='for', last='Geeks')
+#SyntaxError: invalid syntax
+=================================
 def myFun(**kwargs):
     for i in kwargs.items():
         print ("%s == %s"%i)
@@ -436,6 +588,15 @@ test_var_kwargs(farg=1, myarg2="two", myarg3=3)
 #formal arg: 1
 #another keyword arg: myarg2: two
 #another keyword arg: myarg3: 3
+==================================
+def test_var_kwargs(farg, **kwargs):
+    print("formal arg:", farg)
+    for key,value in kwargs.items():
+        print("another keyword arg: %s: %s" % (key, value))
+test_var_kwargs(farg=1, myarg2="two", myarg3=3)
+# formal arg: 1
+# another keyword arg: myarg2: two
+# another keyword arg: myarg3: 3
 ==================================
 def abc(a,*b):
     print("the first parameter is ",a)
