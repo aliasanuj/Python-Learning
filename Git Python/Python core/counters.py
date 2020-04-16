@@ -271,10 +271,10 @@
 
 
 #########################################################################################
-# from collections import Counter 
-# coun = Counter(a=1, b=2, c=3) 
-# print(coun) 
-# print(list(coun.elements())) 
+# from collections import Counter
+# coun = Counter(a=1, b=2, c=3)
+# print(coun)
+# print(list(coun.elements()))
 # a = "kumar anuj"
 # b = Counter(a)
 # print(b)
@@ -287,20 +287,20 @@
 
 
 
-================================
-import collections
-c1 = collections.Counter(['a', 'b', 'c', 'a', 'b', 'b'])
-c2 = collections.Counter('alphabet')
-print('C1:', c1)
-print('C2:', c2)
-print('\nCombined counts:')
-print(c1 + c2)
-print('\nSubtraction:')
-print(c1 - c2)
-print('\nIntersection (taking positive minimums):')
-print(c1 & c2)
-print('\nUnion (taking maximums):')
-print(c1 | c2)
+#########################################################################################
+# import collections
+# c1 = collections.Counter(['a', 'b', 'c', 'a', 'b', 'b'])
+# c2 = collections.Counter('alphabet')
+# print('C1:', c1)
+# print('C2:', c2)
+# print('\nCombined counts:')
+# print(c1 + c2)
+# print('\nSubtraction:')
+# print(c1 - c2)
+# print('\nIntersection (taking positive minimums):')
+# print(c1 & c2)
+# print('\nUnion (taking maximums):')
+# print(c1 | c2)
 #C1: Counter({'b': 3, 'a': 2, 'c': 1})
 #C2: Counter({'a': 2, 'l': 1, 'p': 1, 'h': 1, 'b': 1, 'e': 1, 't': 1})
 #Combined counts:
@@ -315,27 +315,27 @@ print(c1 | c2)
 
 
 
-============================================
-from collections import Counter 
-c = Counter(['eggs', 'ham'])
-print(c['bacon'])
+#########################################################################################
+# from collections import Counter 
+# c = Counter(['eggs', 'ham'])
+# print(c['bacon'])
 #0
 
 
 
-=============================================
-from collections import Counter
-c = Counter(['eggs', 'ham'])
-print(c['ham'])
+#########################################################################################
+# from collections import Counter
+# c = Counter(['eggs', 'ham'])
+# print(c['ham'])
 #1
 
 
 
 
-================================
-from collections import Counter
-c = Counter(['eggs', 'ham'])
-print(c['eggs'])
+#########################################################################################
+# from collections import Counter
+# c = Counter(['eggs', 'ham'])
+# print(c['eggs'])
 #1
 
 
@@ -343,48 +343,48 @@ print(c['eggs'])
 
 
 
-=============================================
-from collections import Counter 
-c = Counter(a=4, b=2, c=0, d=-2)
-print(list(c.elements()))
+#########################################################################################
+# from collections import Counter 
+# c = Counter(a=4, b=2, c=0, d=-2)
+# print(list(c.elements()))
 #['a', 'a', 'a', 'a', 'b', 'b']
 
 
 
 
 
-==============================================
-from collections import Counter 
-c = Counter(a=4, b=2, c=0, d=-2)
-d = Counter(a=1, b=2, c=3, d=4)
-c.subtract(d)
-print(c)
+#########################################################################################
+# from collections import Counter 
+# c = Counter(a=4, b=2, c=0, d=-2)
+# d = Counter(a=1, b=2, c=3, d=4)
+# c.subtract(d)
+# print(c)
 #Counter({'a': 3, 'b': 0, 'c': -3, 'd': -6})
 
 
 
 
-==============================================
-from collections import Counter 
-a = "anuj"
-b = "anju"
-if Counter(a) == Counter(b):
-  print("matched")
-else :
-  print("not matched")
+#########################################################################################
+# from collections import Counter 
+# a = "anuj"
+# b = "anju"
+# if Counter(a) == Counter(b):
+#   print("matched")
+# else :
+#   print("not matched")
 #matched
 
 
 
 
-===============================================
-from collections import Counter
-string1 = "kumare anuj"
-result1 = Counter(string1)
-print(result1)
-string2 = ["anuj","aman","anuj"]
-result2 = Counter(string2)
-print(result2)
+#########################################################################################
+# from collections import Counter
+# string1 = "kumare anuj"
+# result1 = Counter(string1)
+# print(result1)
+# string2 = ["anuj","aman","anuj"]
+# result2 = Counter(string2)
+# print(result2)
 #Counter({'u': 2, 'a': 2, 'k': 1, 'm': 1, 'r': 1, 'e': 1, ' ': 1, #'n': 1, 'j': 1})
 #Counter({'anuj': 2, 'aman': 1})
 
@@ -392,13 +392,13 @@ print(result2)
 
 
 
-==================================================
-from collections import Counter 
-coun = Counter() 
-coun.update([1, 2, 3, 1, 2, 1, 1, 2]) 
-print(coun) 
-coun.update([1, 2, 4]) 
-print(coun)
+#########################################################################################
+# from collections import Counter 
+# coun = Counter() 
+# coun.update([1, 2, 3, 1, 2, 1, 1, 2]) 
+# print(coun) 
+# coun.update([1, 2, 4]) 
+# print(coun)
 #Counter({1: 4, 2: 3, 3: 1})
 #Counter({1: 5, 2: 4, 3: 1, 4: 1})
 
@@ -406,26 +406,25 @@ print(coun)
 
 
 
-==================================================
-import collections
-c = collections.Counter()
-print('Initial :', c)
-c.update('abcdaab')
-print('Sequence:', c)
-c.update({'a':1, 'd':5})
-print(c)
+#########################################################################################
+# import collections
+# c = collections.Counter()
+# print('Initial :', c)
+# c.update('abcdaab')
+# print('Sequence:', c)
+# c.update({'a':1, 'd':5})
+# print(c)
 #Initial : Counter()
 #Sequence: Counter({'a': 3, 'b': 2, 'c': 1, 'd': 1})
 #Counter({'d': 6, 'a': 4, 'b': 2, 'c': 1})
 
 
 
-
-=======================================================
-import collections
-c = collections.Counter('abcdaab')
-for letter in 'abcdefgh':
-    print('%s : %d' % (letter, c[letter]))
+#########################################################################################
+# import collections
+# c = collections.Counter('abcdaab')
+# for letter in 'abcdefgh':
+#     print('%s : %d' % (letter, c[letter]))
 #a : 3
 #b : 2
 #c : 1
@@ -438,7 +437,7 @@ for letter in 'abcdefgh':
 
 
 
-======================================================
+#########################################################################################
 # - coun.most_common(3)
 # - for color in col_count.items():
 #     print (color)
@@ -448,4 +447,4 @@ for letter in 'abcdefgh':
 # - coun.update
 
 
-======================================================
+#########################################################################################
