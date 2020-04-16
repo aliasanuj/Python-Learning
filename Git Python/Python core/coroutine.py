@@ -13,7 +13,7 @@
 
 
 
-    
+
 #############################################################################
 # def name(prefix):
 #   print("searchimg prefix {} ".format(prefix))
@@ -28,7 +28,7 @@
 # obj.send("anuj kumar")
 # obj.send("kumar anuj")
 # obj.close()
-# #searchimg prefix anuj 
+# #searchimg prefix anuj
 # #anuj
 # #Anuj anuj
 # #anuj kumar
@@ -39,15 +39,15 @@
 
 
 #############################################################################
-# def print_name(prefix): 
-#     print("Searching prefix:{}".format(prefix)) 
-#     while True: 
-#         name = (yield) 
-#         if prefix in name: 
-#             print(name) 
-# corou = print_name("Dear") 
-# corou.__next__() 
-# corou.send("Atul") 
+# def print_name(prefix):
+#     print("Searching prefix:{}".format(prefix))
+#     while True:
+#         name = (yield)
+#         if prefix in name:
+#             print(name)
+# corou = print_name("Dear")
+# corou.__next__()
+# corou.send("Atul")
 # corou.send("Dear Atul")
 # corou.close()
 # #Searching prefix:Dear
@@ -97,20 +97,20 @@
 
 
 #############################################################################
-# def print_name(prefix): 
-#     print("Searching prefix:{}".format(prefix)) 
-#     try :  
-#         while True: 
-#                 name = (yield) 
-#                 if prefix in name: 
-#                     print(name) 
-#     except GeneratorExit: 
-#             print("Closing coroutine!!") 
-# corou = print_name("Dear") 
-# corou.__next__() 
-# corou.send("Atul") 
-# corou.send("Dear Atul") 
-# corou.close() 
+# def print_name(prefix):
+#     print("Searching prefix:{}".format(prefix))
+#     try :
+#         while True:
+#                 name = (yield)
+#                 if prefix in name:
+#                     print(name)
+#     except GeneratorExit:
+#             print("Closing coroutine!!")
+# corou = print_name("Dear")
+# corou.__next__()
+# corou.send("Atul")
+# corou.send("Dear Atul")
+# corou.close()
 # #Searching prefix:Dear
 # #Dear Atul
 #Closing coroutine!!
@@ -134,47 +134,59 @@
 # Output: I love coroutines instead!
 #Searching for coroutine
 #I love coroutines instead!
-============================
-def my_coroutine():
-    while True:
-        received = yield
-        print('Received:', received)
-it = my_coroutine()
-next(it)             # Prime the coroutine
-it.send('First')
-it.send('Second')
+
+
+
+#############################################################################
+# def my_coroutine():
+#     while True:
+#         received = yield
+#         print('Received:', received)
+# it = my_coroutine()
+# next(it)             # Prime the coroutine
+# it.send('First')
+# it.send('Second')
 #Received: First
 #Received: Second
-================================
-def minimize():
-    current = yield
-    while True:
-        value = yield current
-        current = min(value, current)
-it = minimize()
-next(it)            # Prime the generator
-print(it.send(10))
-print(it.send(4))
-print(it.send(22))
-print(it.send(-1))
+
+
+
+
+#############################################################################
+# def minimize():
+#     current = yield
+#     while True:
+#         value = yield current
+#         current = min(value, current)
+# it = minimize()
+# next(it)            # Prime the generator
+# print(it.send(10))
+# print(it.send(4))
+# print(it.send(22))
+# print(it.send(-1))
 #10
 #4
 #4
 #-1
-================================
-def abc(n):
-  print("searching element",n)
-  try:
-    while True:
-      y = yield 
-      if n in y:
-        print(n," is there")
-  except GeneratorExit:
-    print("stopped")
-obj1 = abc("anuj")
-obj1.__next__()
-obj1.send("kumar Anuj")
-obj1.send("anUj")
-obj1.close()
+
+
+
+
+#############################################################################
+# def abc(n):
+#   print("searching element",n)
+#   try:
+#     while True:
+#       y = yield 
+#       if n in y:
+#         print(n," is there")
+#   except GeneratorExit:
+#     print("stopped")
+# obj1 = abc("anuj")
+# obj1.__next__()
+# obj1.send("kumar Anuj")
+# obj1.send("anUj")
+# obj1.close()
 #searching element anuj
 #stopped
+
