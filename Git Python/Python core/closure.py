@@ -340,92 +340,162 @@
 
 
 #########################################################################
-nested-function
-nested function should access non-local variable
-it should return the en-closed function
-=====================================
-def print_msg(msg):
-# This is the outer enclosing function
-    def printer():
-# This is the nested function
-        print(msg)
-    return printer()
-# We execute the function
-# Output: Hello
-print_msg("Hello")
-=======================================
-def print_msg(msg):
-    print("aaa")
-    def printer():
-        print(msg)
-    return printer()
-print_msg("Hello")
+# nested-function
+# nested function should access non-local variable
+# it should return the en-closed function
+#########################################################################
+
+
+
+
+#########################################################################
+# def print_msg(msg):
+# # This is the outer enclosing function
+#     def printer():
+# # This is the nested function
+#         print(msg)
+#     return printer()
+# # We execute the function
+# # Output: Hello
+# print_msg("Hello")
+
+
+
+
+#########################################################################
+# def print_msg(msg):
+#     print("aaa")
+#     def printer():
+#         print(msg)
+#     return printer()
+# print_msg("Hello")
 # aaa
 # Hello
-=========================
-def print_msg(msg):
-# This is the outer enclosing function
-    def printer():
-# This is the nested function
-        print(msg)
-    return printer
-# We execute the function
-# Output: Hello
-print_msg("Hello")
+
+
+
+
+#########################################################################
+# def print_msg(msg):
+# # This is the outer enclosing function
+#     def printer():
+# # This is the nested function
+#         print(msg)
+#     return printer
+# # We execute the function
+# # Output: Hello
+# print_msg("Hello")
 #print nothing
-=====================================
-def print_msg(msg):
-    def printer():
-        print(msg)
-    return printer # () is required
-print_msg("Hello")
+
+
+
+
+
+#########################################################################
+# def print_msg(msg):
+#     def printer():
+#         print(msg)
+#     return printer # () is required
+# print_msg("Hello")
 # no output
-======================
-def print_msg(msg):
-    def printer():
-        print(msg)
-    return printer()
-print_msg("Hello")
+
+
+
+
+
+#########################################################################
+# def print_msg(msg):
+#     def printer():
+#         print(msg)
+#     return printer()
+# print_msg("Hello")
 #Hello
-=====================================
-def print_msg(msg):
-    def printer(msg):
-        print(msg)
-    return printer()
-print_msg("Hello")
+
+
+
+
+#########################################################################
+# def print_msg(msg):
+#     def printer(msg):
+#         print(msg)
+#     return printer()
+# print_msg("Hello")
 #TypeError: printer() missing 1 required positional argument: 'msg'
-======================
-def outer(a1):
-    def inner(a2):
-        print(a1 + a2)
-    return inner
-obj = outer(12)
-obj(15)
+
+
+
+
+#########################################################################
+# def print_msg(msg):
+#     def printer(msg):
+#         print(msg)
+#     return printer
+# print_msg("Hello")
+#no output
+
+
+
+
+
+#########################################################################
+# def outer(a1):
+#     def inner(a2):
+#         print(a1 + a2)
+#     return inner
+# obj = outer(12)
+# obj(15)
 #27
-================================
-def outer(a1):
-    def inner(a2):
-        print(a1 + a2)
-    return inner
-print(outer(10))
+
+
+
+
+#########################################################################
+# def outer(a1):
+#     def inner(a2):
+#         print(a1 + a2)
+#     return inner
+# print(outer(10))
 #<function outer.<locals>.inner at 0x036E9D68>
-========================
-def outer(a1):
-    def inner(a2):
-        print(a1 + a2)
-    return inner
-obj = outer(10)
-print(obj(5))
+
+
+
+#########################################################################
+# def outer(a1):
+#     def inner(a2):
+#         print(a1 + a2)
+#     return inner
+# obj = outer(10)
+# print(obj(5))
 # 15
 # None
-=====================
-def outer(a1):
-    def inner(a2):
-        print(a1 + a2)
-    return inner()
-obj = outer(10)
-print(obj(5))
+
+
+
+#########################################################################
+# def outer(a1):
+#     def inner(a2):
+#         print(a1 + a2)
+#     return inner
+# obj = outer(10)
+# print(obj(5))
+# 15
+# None
+
+
+
+
+#########################################################################
+# def outer(a1):
+#     def inner(a2):
+#         print(a1 + a2)
+#     return inner()
+# obj = outer(10)
+# print(obj(5))
 #TypeError: inner() missing 1 required positional argument: 'a2'
+
+
+
+
 ==========================
 def print_msg(msg):
     def printer():
@@ -433,6 +503,8 @@ def print_msg(msg):
     return printer()
 obj = print_msg("Hello")
 #Hello
+
+
 =================================
 def print_msg(msg):
     def printer():
@@ -440,6 +512,9 @@ def print_msg(msg):
     return printer
 obj = print_msg("Hello")
 #No output
+
+
+
 ==================================
 def print_msg(msg):
 
@@ -449,6 +524,9 @@ def print_msg(msg):
     return printer  # this got changed
 another = print_msg("Hello")
 #no output
+
+
+
 =============================
 def print_msg(msg):
 
@@ -458,6 +536,9 @@ def print_msg(msg):
     return printer()  # this got changed
 another = print_msg("Hello")
 #Hello
+
+
+
 ==================================
 def print_msg(msg):
 # This is the outer enclosing function
@@ -470,6 +551,10 @@ def print_msg(msg):
 print_msg("Hello")
 #Hello
 #We can see that the nested function printer() was able to access the non-local variable msg of the enclosing function.
+
+
+
+
 =================================
 def print_msg(msg):
     def printer():
@@ -477,6 +562,9 @@ def print_msg(msg):
     return printer()
 print_msg("aaa")
 #aaa
+
+
+
 ==============================
 def print_msg(msg):
     def printer():
@@ -484,6 +572,10 @@ def print_msg(msg):
     return printer
 print_msg("aaa")
 #no output
+
+
+
+
 ============================
 def print_msg(msg):
     def printer():
@@ -491,6 +583,10 @@ def print_msg(msg):
     return printer
 obj = print_msg("aaa")
 #no output
+
+
+
+
 =============================
 def print_msg(msg):
     def printer():
@@ -499,6 +595,11 @@ def print_msg(msg):
 obj = print_msg("aaa")
 print(obj("aac"))
 #TypeError: printer() takes 0 positional arguments but 1 was given
+
+
+
+
+
 ==============================
 #Defining a Closure Function
 def print_msg(msg):
@@ -518,6 +619,41 @@ another()
 #On calling another(), the message was still remembered although 
 #we had already finished executing the print_msg() function.
 #This technique by which some data ("Hello") gets attached to the code is called closure in Python.
+
+
+
+
+# def print_msg(msg):
+# # This is the outer enclosing function
+#
+#     def printer():
+# # This is the nested function
+#         print(msg)
+#
+#     return printer()  # this got changed
+# # Now let's try calling this function.
+# # Output: Hello
+# another = print_msg("Hello")
+
+
+
+
+#def print_msg(msg):
+#
+#     def printer():
+#         print(msg)
+#
+#     return printer
+#
+# another = print_msg("Hello")
+# another()
+# Hello
+
+
+
+
+
+
 ========================================
 def print_msg(msg):
     def printer():
@@ -525,6 +661,9 @@ def print_msg(msg):
     return printer()
 another = print_msg("Hello")
 #Hello
+
+
+
 ==================================================
 x = 'global'
 def outer_func():
@@ -536,6 +675,10 @@ def outer_func():
 print(outer_func())
 #global enclose local
 #None
+
+
+
+
 ===================================
 x = 'global'
 def outer_func():
@@ -551,6 +694,30 @@ print(outer_func())
 # global enclose local
 # local
 # None
+
+
+x = 'global'
+# def outer_func():
+#   y = 'enclose'
+#
+#   def inner_func():
+#     z = 'local'
+#     print(x, y, z)
+#
+#     def aaa():
+#         print(z)
+#     return  aaa
+#
+#   return inner_func()
+#
+# print(outer_func())
+# global enclose local
+# <function outer_func.<locals>.inner_func.<locals>.aaa at 0x04D89D60>
+
+
+
+
+
 ================================
 x = 'global'
 def outer_func():
@@ -564,6 +731,10 @@ print(outer_func())
 #global enclose local
 #global enclose local
 #None
+
+
+
+
 ================================
 x = 'global'
 def outer_func():
@@ -576,6 +747,9 @@ print(outer_func())
 # global enclose local
 # None
 
+
+
+
 ===============================
 def outer_func():
   x = 5
@@ -584,6 +758,11 @@ def outer_func():
   return inner_func
 a = outer_func()
 print(a)	# 8
+
+
+
+
+
 ======================
 def outer_func():
   x = 5
@@ -592,6 +771,9 @@ def outer_func():
   return inner_func()
 print(outer_func())
 #8
+
+
+
 =======================
 def outer_func():
   x = 5
@@ -603,6 +785,21 @@ a = outer_func()
 print(a)
 #8
 #8
+
+
+
+def outer_func():
+  x = 5
+  def inner_func(y = 3):
+    return (x + y)
+  return inner_func()
+print(outer_func())
+a = outer_func()
+#8
+
+
+
+
 =====================================
 def multiply_by(num):
   def multiply_by_num(k):
@@ -614,4 +811,6 @@ print(five(4))	# 20
 decimal = multiply_by(10)
 print(decimal(20))	# 200
 print(decimal(3))	# 30
-=========================
+
+
+
