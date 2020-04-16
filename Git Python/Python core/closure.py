@@ -235,33 +235,33 @@
 
 
 #########################################################################
-def gen_multiplier(a):
-    x = 10 #non-local variable
-    def multiplier(y): #stores the reference to non-local variable
-        return x * y * a #x is non local to multiplier
-    return multiplier
-#call the function
-obj = gen_multiplier(10)
-del gen_multiplier #it will delete
-print(obj(5))
+# def gen_multiplier(a):
+#     x = 10 #non-local variable
+#     def multiplier(y): #stores the reference to non-local variable
+#         return x * y * a #x is non local to multiplier
+#     return multiplier
+# #call the function
+# obj = gen_multiplier(10)
+# del gen_multiplier #it will delete
+# print(obj(5))
 #500
 
 
 
 
 
-===========================
-def gen_multiplier(a):
-    x = 10 #non-local variable
-    print(a)
-    def multiplier(y): #stores the reference to non-local variable
-        print(y)
-        return x * y * a #x is non local to multiplier
-    return multiplier
-#call the function
-obj = gen_multiplier(10)
-del gen_multiplier #it will delete
-print(obj(5))
+#########################################################################
+# def gen_multiplier(a):
+#     x = 10 #non-local variable
+#     print(a)
+#     def multiplier(y): #stores the reference to non-local variable
+#         print(y)
+#         return x * y * a #x is non local to multiplier
+#     return multiplier
+# #call the function
+# obj = gen_multiplier(10)
+# del gen_multiplier #it will delete
+# print(obj(5))
 # 10
 # 5
 # 500
@@ -269,56 +269,77 @@ print(obj(5))
 
 
 
-=========================
-def gen_multiplier(a):
-    x = 10 #non-local variable
-    print(a)
-    def multiplier(y): #stores the reference to non-local variable
-        print(y)
-        return x * y * a #x is non local to multiplier
-    return multiplier
-#call the function
-obj = gen_multiplier(12)
-del gen_multiplier #it will delete
-print(obj(5))
+#########################################################################
+# def gen_multiplier(a):
+#     x = 10 #non-local variable
+#     print(a)
+#     def multiplier(y): #stores the reference to non-local variable
+#         print(y)
+#         return x * y * a #x is non local to multiplier
+#     return multiplier
+# #call the function
+# obj = gen_multiplier(12)
+# del gen_multiplier #it will delete
+# print(obj(5))
 # 12
 # 5
 # 600
 
 
 
+#########################################################################
+# m = 12
+# def gen_multiplier(a):
+#     x = 10 #non-local variable
+#     def multiplier(y): #stores the reference to non-local variable
+#         return x * y * a  #x is non local to multiplier
+#     return multiplier
+# #call the function
+# obj = gen_multiplier(10)
+# del gen_multiplier #it will delete
+# print(obj(5))
+# 500
 
 
-=======================
-m = 12
-def gen_multiplier(a):
-    x = 10 #non-local variable
-    def multiplier(y): #stores the reference to non-local variable
-        return x * y * a * m#x is non local to multiplier
-    return multiplier
-#call the function
-obj = gen_multiplier(10)
-del gen_multiplier #it will delete
-print(obj(5))
+
+
+#########################################################################
+# m = 12
+# def gen_multiplier(a):
+#     x = 10 #non-local variable
+#     def multiplier(y): #stores the reference to non-local variable
+#         return x * y * a *m #x is non local to multiplier
+#     return multiplier
+# #call the function
+# obj = gen_multiplier(10)
+# del gen_multiplier #it will delete
+# print(obj(5))
 #6000
-===========================
-global m
-m = 12
-def gen_multiplier(a):
-    m = 10
-    print(m)
-    print(a)
-    def multiplier(y): #stores the reference to non-local variable
-        return m * y * a #m will be 10 not 12
-    return multiplier
-#call the function
-obj = gen_multiplier(7)
-del gen_multiplier #it will delete
-print(obj(5))
-# 10
+
+
+
+
+#########################################################################
+# global m
+# m = 12
+# def gen_multiplier(a):
+#     m = 10
+#     print(m)
+#     print(a)
+#     def multiplier(y): #stores the reference to non-local variable
+#         return m * y * a #m will be 10 not 12
+#     return multiplier
+# #call the function
+# obj = gen_multiplier(7)
+# del gen_multiplier #it will delete
+# print(obj(5))
+# # 10
 # 7
 # 350
-==========================
+
+
+
+#########################################################################
 nested-function
 nested function should access non-local variable
 it should return the en-closed function
