@@ -32,12 +32,12 @@
 
 
 #########################################################################################
-# from collections import Counter 
-# z = ['blue', 'red', 'blue', 'yellow', 'blue', 'red'] 
-# col_count = Counter(z) 
-# print(col_count) 
-# col = ['blue','red','yellow','green'] 
-# for color in col: 
+# from collections import Counter
+# z = ['blue', 'red', 'blue', 'yellow', 'blue', 'red']
+# col_count = Counter(z)
+# print(col_count)
+# col = ['blue','red','yellow','green']
+# for color in col:
 #     print (color, col_count[color])  # [] square bracket
 #Counter({'blue': 3, 'red': 2, 'yellow': 1})
 #blue 3
@@ -70,11 +70,11 @@
 
 
 #########################################################################################
-# from collections import Counter 
-# z = ['blue', 'red', 'blue', 'yellow', 'blue', 'red'] 
-# col_count = Counter(z) 
-# print(col_count) 
-# for color in col_count.items(): 
+# from collections import Counter
+# z = ['blue', 'red', 'blue', 'yellow', 'blue', 'red']
+# col_count = Counter(z)
+# print(col_count)
+# for color in col_count.items():
 #     print (color)
 #Counter({'blue': 3, 'red': 2, 'yellow': 1})
 #('blue', 3)
@@ -114,10 +114,10 @@
 
 
 #########################################################################################
-# from collections import Counter 
-# coun = Counter(a=1, b=2, c=3) 
-# print(coun) 
-# print(list(coun.elements())) 
+# from collections import Counter
+# coun = Counter(a=1, b=2, c=3)
+# print(coun)
+# print(list(coun.elements()))
 #Counter({'c': 3, 'b': 2, 'a': 1})
 #['a', 'b', 'b', 'c', 'c', 'c']
 
@@ -125,11 +125,11 @@
 
 
 #########################################################################################
-# from collections import Counter 
-# coun = Counter(a=1, b=2, c=3, d=120, e=1, f=219) 
-# # This prints 3 most frequent characters 
-# for letter, count in coun.most_common(3): 
-#     print('%s: %d' % (letter, count)) 
+# from collections import Counter
+# coun = Counter(a=1, b=2, c=3, d=120, e=1, f=219)
+# # This prints 3 most frequent characters
+# for letter, count in coun.most_common(3):
+#     print('%s: %d' % (letter, count))
 #f: 219
 #d: 120
 #c: 3
@@ -138,11 +138,11 @@
 
 
 #########################################################################################
-# from collections import Counter 
-# coun = Counter(a=1, b=2, c=3, d=120, e=1, f=219) 
-# # This prints 3 most frequent characters 
-# for i in coun.most_common(3): 
-#     print(i) 
+# from collections import Counter
+# coun = Counter(a=1, b=2, c=3, d=120, e=1, f=219)
+# # This prints 3 most frequent characters
+# for i in coun.most_common(3):
+#     print(i)
 #('f', 219)
 #('d', 120)
 #('c', 3)
@@ -152,12 +152,12 @@
 
 
 #########################################################################################
-# from collections import Counter 
-# # With sequence of items  
-# print (Counter(['B','B','A','B','C','A','B','B','A','C'])) 
-# # with dictionary 
+# from collections import Counter
+# # With sequence of items
+# print (Counter(['B','B','A','B','C','A','B','B','A','C']))
+# # with dictionary
 # print (Counter({'A':3, 'B':5, 'C':2}))
-# # with keyword arguments 
+# # with keyword arguments
 # print (Counter(A=3, B=5, C=2))
 #Counter({'B': 5, 'A': 3, 'C': 2})
 #Counter({'B': 5, 'A': 3, 'C': 2})
@@ -170,11 +170,11 @@
 
 
 #########################################################################################
-# from collections import Counter 
-# coun = Counter() 
-# coun.update([1, 2, 3, 1, 2, 1, 1, 2]) 
-# print(coun) 
-# coun.update([1, 2, 4]) 
+# from collections import Counter
+# coun = Counter()
+# coun.update([1, 2, 3, 1, 2, 1, 1, 2])
+# print(coun)
+# coun.update([1, 2, 4])
 # print(coun)
 #Counter({1: 4, 2: 3, 3: 1})
 #Counter({1: 5, 2: 4, 3: 1, 4: 1})
@@ -182,10 +182,10 @@
 
 
 #########################################################################################
-# from collections import Counter 
-# c1 = Counter(A=4,  B=3, C=10) 
-# c2 = Counter(A=10, B=3, C=4) 
-# c1.subtract(c2) 
+# from collections import Counter
+# c1 = Counter(A=4,  B=3, C=10)
+# c2 = Counter(A=10, B=3, C=4)
+# c1.subtract(c2)
 # print(c1)
 #Counter({'C': 6, 'B': 0, 'A': -6})
 
@@ -193,34 +193,33 @@
 
 
 
-=============================
-from collections import Counter
-c1 = Counter(A=4,  B=3, C=10)
-c2 = Counter(A=10, B=3, D=4)
-c1.subtract(c2)
-print(c1)
+#########################################################################################
+# from collections import Counter
+# c1 = Counter(A=4,  B=3, C=10)
+# c2 = Counter(A=10, B=3, D=4)
+# c1.subtract(c2)
+# print(c1)
 #Counter({'C': 10, 'B': 0, 'D': -4, 'A': -6})
 
 
 
 
-===========================
-from collections import Counter 
-# Create a list 
-z = ['blue', 'red', 'blue', 'yellow', 'blue', 'red'] 
-# Count distinct elements and print Counter aboject 
-print(Counter(z))
+#########################################################################################
+# from collections import Counter
+# # Create a list
+# z = ['blue', 'red', 'blue', 'yellow', 'blue', 'red']
+# # Count distinct elements and print Counter aboject
+# print(Counter(z))
 #Counter({'blue': 3, 'red': 2, 'yellow': 1})
 
 
 
 
-
-==============================
-import collections
-print(collections.Counter(['a', 'b', 'c', 'a', 'b', 'b']))
-print(collections.Counter({'a':2, 'b':3, 'c':1}))
-print(collections.Counter(a=2, b=3, c=1))
+#########################################################################################
+# import collections
+# print(collections.Counter(['a', 'b', 'c', 'a', 'b', 'b']))
+# print(collections.Counter({'a':2, 'b':3, 'c':1}))
+# print(collections.Counter(a=2, b=3, c=1))
 #Counter({'b': 3, 'a': 2, 'c': 1})
 #Counter({'b': 3, 'a': 2, 'c': 1})
 #Counter({'b': 3, 'a': 2, 'c': 1})
@@ -229,14 +228,14 @@ print(collections.Counter(a=2, b=3, c=1))
 
 
 
-==============================
-import collections
-c = collections.Counter()
-print('Initial :', c)
-c.update('abcdaab')
-print('Sequence:', c)
-c.update({'a':1, 'd':5})
-print('Dict    :', c)
+#########################################################################################
+# import collections
+# c = collections.Counter()
+# print('Initial :', c)
+# c.update('abcdaab')
+# print('Sequence:', c)
+# c.update({'a':1, 'd':5})
+# print('Dict    :', c)
 #Initial : Counter()
 #Sequence: Counter({'a': 3, 'b': 2, 'c': 1, 'd': 1})
 #Dict    : Counter({'d': 6, 'a': 4, 'b': 2, 'c': 1})
@@ -245,11 +244,11 @@ print('Dict    :', c)
 
 
 
-================================
-import collections
-c = collections.Counter('abcdaab')
-for letter in 'abcde':
-    print('%s : %d' % (letter, c[letter]))
+#########################################################################################
+# import collections
+# c = collections.Counter('abcdaab')
+# for letter in 'abcde':
+#     print('%s : %d' % (letter, c[letter]))
 #a : 3
 #b : 2
 #c : 1
@@ -259,27 +258,27 @@ for letter in 'abcde':
 
 
 
-================================
-import collections
-c = collections.Counter('extremely')
-c['z'] = 0
-print(c)
-print(list(c.elements()))
+#########################################################################################
+# import collections
+# c = collections.Counter('extremely')
+# c['z'] = 0
+# print(c)
+# print(list(c.elements()))
 #Counter({'e': 3, 'x': 1, 't': 1, 'r': 1, 'm': 1, 'l': 1, 'y': 1, 'z': 0})
 #['e', 'e', 'e', 'x', 't', 'r', 'm', 'l', 'y']
 
 
 
 
-=====================================
-from collections import Counter 
-coun = Counter(a=1, b=2, c=3) 
-print(coun) 
-print(list(coun.elements())) 
-a = "kumar anuj"
-b = Counter(a)
-print(b)
-print(list(b.elements()))
+#########################################################################################
+# from collections import Counter 
+# coun = Counter(a=1, b=2, c=3) 
+# print(coun) 
+# print(list(coun.elements())) 
+# a = "kumar anuj"
+# b = Counter(a)
+# print(b)
+# print(list(b.elements()))
 #Counter({'c': 3, 'b': 2, 'a': 1})
 #['a', 'b', 'b', 'c', 'c', 'c']
 #Counter({'u': 2, 'a': 2, 'k': 1, 'm': 1, 'r': 1, ' ': 1, 'n': 1, 'j': 1})
