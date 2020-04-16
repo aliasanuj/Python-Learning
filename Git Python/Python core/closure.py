@@ -496,124 +496,124 @@
 
 
 
-==========================
-def print_msg(msg):
-    def printer():
-        print(msg)
-    return printer()
-obj = print_msg("Hello")
+#########################################################################
+# def print_msg(msg):
+#     def printer():
+#         print(msg)
+#     return printer()
+# obj = print_msg("Hello")
 #Hello
 
 
-=================================
-def print_msg(msg):
-    def printer():
-        print(msg)
-    return printer
-obj = print_msg("Hello")
-#No output
+#########################################################################
+# # def print_msg(msg):
+#     def printer():
+#         print(msg)
+#     return printer
+# obj = print_msg("Hello")
+# #No output
 
 
 
-==================================
-def print_msg(msg):
+#########################################################################
+# def print_msg(msg):
+#
+#     def printer():
+#         print(msg)
+#
+#     return printer  # this got changed
+# another = print_msg("Hello")
+# #no output
 
-    def printer():
-        print(msg)
-
-    return printer  # this got changed
-another = print_msg("Hello")
-#no output
 
 
-
-=============================
-def print_msg(msg):
-
-    def printer():
-        print(msg)
-
-    return printer()  # this got changed
-another = print_msg("Hello")
+#########################################################################
+# def print_msg(msg):
+#
+#     def printer():
+#         print(msg)
+#
+#     return printer()  # this got changed
+# another = print_msg("Hello")
 #Hello
 
 
 
-==================================
-def print_msg(msg):
-# This is the outer enclosing function
-    def printer():
-# This is the nested function
-        print(msg)
-    printer()
-# We execute the function
-# Output: Hello
-print_msg("Hello")
+#########################################################################
+# def print_msg(msg):
+# # This is the outer enclosing function
+#     def printer():
+# # This is the nested function
+#         print(msg)
+#     printer()
+# # We execute the function
+# # Output: Hello
+# print_msg("Hello")
 #Hello
 #We can see that the nested function printer() was able to access the non-local variable msg of the enclosing function.
 
 
 
 
-=================================
-def print_msg(msg):
-    def printer():
-        print(msg)
-    return printer()
-print_msg("aaa")
+#########################################################################
+# def print_msg(msg):
+#     def printer():
+#         print(msg)
+#     return printer()
+# print_msg("aaa")
 #aaa
 
 
 
-==============================
-def print_msg(msg):
-    def printer():
-        print(msg)
-    return printer
-print_msg("aaa")
+#########################################################################=
+# def print_msg(msg):
+#     def printer():
+#         print(msg)
+#     return printer
+# print_msg("aaa")
 #no output
 
 
 
 
-============================
-def print_msg(msg):
-    def printer():
-        print(msg)
-    return printer
-obj = print_msg("aaa")
+#########################################################################
+# def print_msg(msg):
+#     def printer():
+#         print(msg)
+#     return printer
+# obj = print_msg("aaa")
 #no output
 
 
 
 
-=============================
-def print_msg(msg):
-    def printer():
-        print(msg)
-    return printer
-obj = print_msg("aaa")
-print(obj("aac"))
+#########################################################################
+# def print_msg(msg):
+#     def printer():
+#         print(msg)
+#     return printer
+# obj = print_msg("aaa")
+# print(obj("aac"))
 #TypeError: printer() takes 0 positional arguments but 1 was given
 
 
 
 
 
-==============================
+#########################################################################
 #Defining a Closure Function
-def print_msg(msg):
+#def print_msg(msg):
 # This is the outer enclosing function
 
-    def printer():
+#    def printer():
 # This is the nested function
-        print(msg)
+#        print(msg)
 
-    return printer  # this got changed
+#    return printer  # this got changed
 # Now let's try calling this function.
 # Output: Hello
-another = print_msg("Hello")
-another()
+#another = print_msg("Hello")
+#another()
 #The print_msg() function was called with the string "Hello" 
 #and the returned function was bound to the name another.
 #On calling another(), the message was still remembered although 
@@ -622,7 +622,7 @@ another()
 
 
 
-
+#########################################################################
 # def print_msg(msg):
 # # This is the outer enclosing function
 #
@@ -637,7 +637,7 @@ another()
 
 
 
-
+#########################################################################
 #def print_msg(msg):
 #
 #     def printer():
@@ -654,49 +654,52 @@ another()
 
 
 
-========================================
-def print_msg(msg):
-    def printer():
-        print(msg)
-    return printer()
-another = print_msg("Hello")
+#########################################################################
+# def print_msg(msg):
+#     def printer():
+#         print(msg)
+#     return printer()
+# another = print_msg("Hello")
 #Hello
 
 
 
-==================================================
-x = 'global'
-def outer_func():
-  y = 'enclose'
-  def inner_func():
-    z = 'local'
-    print(x, y, z)
-  inner_func()
-print(outer_func())
+
+#########################################################################
+# x = 'global'
+# def outer_func():
+#   y = 'enclose'
+#   def inner_func():
+#     z = 'local'
+#     print(x, y, z)
+#   inner_func()
+# print(outer_func())
 #global enclose local
 #None
 
 
 
 
-===================================
-x = 'global'
-def outer_func():
-  y = 'enclose'
-  def inner_func():
-    z = 'local'
-    print(x, y, z)
-    def aaa():
-        print(z)
-    return  aaa()
-  return inner_func()
-print(outer_func())
+#########################################################################
+# x = 'global'
+# def outer_func():
+#   y = 'enclose'
+#   def inner_func():
+#     z = 'local'
+#     print(x, y, z)
+#     def aaa():
+#         print(z)
+#     return  aaa()
+#   return inner_func()
+# print(outer_func())
 # global enclose local
 # local
 # None
 
 
-x = 'global'
+
+#########################################################################
+#x = 'global'
 # def outer_func():
 #   y = 'enclose'
 #
@@ -718,16 +721,16 @@ x = 'global'
 
 
 
-================================
-x = 'global'
-def outer_func():
-  y = 'enclose'
-  def inner_func():
-    z = 'local'
-    print(x, y, z)
-  inner_func()
-outer_func()
-print(outer_func())
+#########################################################################
+# x = 'global'
+# def outer_func():
+#   y = 'enclose'
+#   def inner_func():
+#     z = 'local'
+#     print(x, y, z)
+#   inner_func()
+# outer_func()
+# print(outer_func())
 #global enclose local
 #global enclose local
 #None
@@ -735,82 +738,83 @@ print(outer_func())
 
 
 
-================================
-x = 'global'
-def outer_func():
-  y = 'enclose'
-  def inner_func():
-    z = 'local'
-    print(x, y, z)
-  inner_func()
-print(outer_func())
+#########################################################################
+# x = 'global'
+# def outer_func():
+#   y = 'enclose'
+#   def inner_func():
+#     z = 'local'
+#     print(x, y, z)
+#   inner_func()
+# print(outer_func())
 # global enclose local
 # None
 
 
 
 
-===============================
-def outer_func():
-  x = 5
-  def inner_func(y = 3):
-    return (x + y)
-  return inner_func
-a = outer_func()
-print(a)	# 8
+#########################################################################
+# def outer_func():
+#   x = 5
+#   def inner_func(y = 3):
+#     return (x + y)
+#   return inner_func
+# a = outer_func()
+# print(a)	# 8
 
 
 
 
 
-======================
-def outer_func():
-  x = 5
-  def inner_func(y = 3):
-    return (x + y)
-  return inner_func()
-print(outer_func())
+#########################################################################
+# def outer_func():
+#   x = 5
+#   def inner_func(y = 3):
+#     return (x + y)
+#   return inner_func()
+# print(outer_func())
 #8
 
 
 
-=======================
-def outer_func():
-  x = 5
-  def inner_func(y = 3):
-    return (x + y)
-  return inner_func()
-print(outer_func())
-a = outer_func()
-print(a)
+#########################################################################
+# def outer_func():
+#   x = 5
+#   def inner_func(y = 3):
+#     return (x + y)
+#   return inner_func()
+# print(outer_func())
+# a = outer_func()
+# print(a)
 #8
 #8
 
 
 
-def outer_func():
-  x = 5
-  def inner_func(y = 3):
-    return (x + y)
-  return inner_func()
-print(outer_func())
-a = outer_func()
+#########################################################################
+# def outer_func():
+#   x = 5
+#   def inner_func(y = 3):
+#     return (x + y)
+#   return inner_func()
+# print(outer_func())
+# a = outer_func()
 #8
 
 
 
 
-=====================================
-def multiply_by(num):
-  def multiply_by_num(k):
-    return num * k
-  return multiply_by_num
-five = multiply_by(5)
-print(five(2))	# 10
-print(five(4))	# 20
-decimal = multiply_by(10)
-print(decimal(20))	# 200
-print(decimal(3))	# 30
+#########################################################################
+# def multiply_by(num):
+#   def multiply_by_num(k):
+#     return num * k
+#   return multiply_by_num
+# five = multiply_by(5)
+# print(five(2))	# 10
+# print(five(4))	# 20
+# decimal = multiply_by(10)
+# print(decimal(20))	# 200
+# print(decimal(3))	# 30
 
 
 
