@@ -230,3 +230,9 @@ There are following methods to control the Queue −
 4. empty() − The empty( ) returns True if queue is empty; otherwise, False.
 5. full() − the full() returns True if queue is full; otherwise, False.
 ============================
+concurrent.futures module has"ThreadPoolExecutor" and 'ProcessPoolExecutor' which can be used to create multithread 
+using context manager.So , we dont have to do .join() explicitly . e.g
+
+with concurrent.futures.ThreadPoolExecutor(max_workers=20) as f:
+	f.map(yourfunction , args=(,))
+=============================
